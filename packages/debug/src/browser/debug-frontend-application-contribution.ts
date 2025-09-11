@@ -563,7 +563,7 @@ export class DebugFrontendApplicationContribution extends AbstractViewContributi
             }
         };
 
-        menus.registerSubmenu(DebugMenus.DEBUG, nls.localizeByDefault('Run'));
+        menus.registerSubmenu(DebugMenus.DEBUG, nls.localizeByDefault('Wasome Run'));
         registerMenuActions(DebugMenus.DEBUG_CONTROLS,
             DebugCommands.START,
             DebugCommands.START_NO_DEBUG,

@@ -26,7 +26,7 @@ import { MemoryDockpanelPlaceholder } from './memory-dockpanel-placeholder-widge
 @injectable()
 export class MemoryLayoutWidget extends Panel implements Disposable, ApplicationShell.TrackableWidgetProvider {
     static readonly ID = 'memory-layout-widget';
-    static readonly LABEL = nls.localize('theia/memory-inspector/memoryInspector', 'Memory Inspector');
+    static readonly LABEL = nls.localize('theia/memory-inspector/memoryInspector', 'Memory Inspector 1232');
 
     // Necessary to inherit theia's tabbar styling
     static readonly DOCK_PANEL_ID = 'theia-main-content-panel';

@@ -615,10 +615,12 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
     }
 
     registerMenus(registry: MenuModelRegistry): void {
-        registry.registerSubmenu(CommonMenus.FILE, nls.localizeByDefault('File'));
-        registry.registerSubmenu(CommonMenus.EDIT, nls.localizeByDefault('Edit'));
-        registry.registerSubmenu(CommonMenus.VIEW, nls.localizeByDefault('View'));
-        registry.registerSubmenu(CommonMenus.HELP, nls.localizeByDefault('Help'));
+        registry.registerSubmenu(CommonMenus.FILE, nls.localizeByDefault('Wasome File'));
+        registry.registerSubmenu(CommonMenus.EDIT, nls.localizeByDefault('Wasome Debug'));
+        // 移除Edit和View菜单的注册
+        // registry.registerSubmenu(CommonMenus.EDIT, nls.localizeByDefault('Edit'));
+        registry.registerSubmenu(CommonMenus.VIEW, nls.localizeByDefault('Wasome Project'), { sortString: "1" });
+        registry.registerSubmenu(CommonMenus.HELP, nls.localizeByDefault('Wasome Help'));
 
         // For plugins contributing create new file commands/menu-actions
         registry.registerSubmenu(CommonMenus.FILE_NEW_CONTRIBUTIONS, nls.localizeByDefault('New File...'));

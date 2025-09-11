@@ -27,7 +27,7 @@ export interface MonacoActionGroup {
     actions: string[];
 }
 export namespace MonacoMenus {
-    export const SELECTION = [...MAIN_MENU_BAR, '3_selection'];
+    export const SELECTION = [...MAIN_MENU_BAR, '6_debug', '3_selection'];
     export const PEEK_CONTEXT_SUBMENU: MenuPath = [...EDITOR_CONTEXT_MENU, 'navigation', 'peek_submenu'];
     export const MARKERS_GROUP = [...EditorMainMenu.GO, '5_markers_group'];
 }

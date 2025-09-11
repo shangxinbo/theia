@@ -88,6 +88,7 @@ export class SampleCommandContribution implements CommandContribution {
         commands.registerCommand(SampleCommand2, {
             execute: () => {
                 alert('This is sample command2!');
+
             }
         });
         commands.registerCommand(SampleCommandConfirmDialog, {
@@ -226,11 +227,12 @@ export class SampleCommandContribution implements CommandContribution {
 export class SampleMenuContribution implements MenuContribution {
     registerMenus(menus: MenuModelRegistry): void {
         setTimeout(() => {
-            const subMenuPath = [...MAIN_MENU_BAR, 'sample-menu'];
+            const subMenuPath = [...MAIN_MENU_BAR, '6_debug', 'sample-menu'];
             menus.registerSubmenu(subMenuPath, 'Sample Menu', { sortString: '2' }); // that should put the menu right next to the File menu
 
             menus.registerMenuAction(subMenuPath, {
-                commandId: SampleCommand.id,
+                commandId: "webide.project.home",
+                label: "Open Project",
                 order: '0'
             });
             menus.registerMenuAction(subMenuPath, {

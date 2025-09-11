@@ -38,13 +38,84 @@ export const SampleToolbarDefaultsOverride: () => DeflatedToolbarTree = () => ({
                     icon: 'codicon codicon-split-horizontal',
                 },
             ],
+            // 新增文件操作组
+            [
+                {
+                    id: 'core.newFile',
+                    command: 'workbench.action.files.newUntitledFile',
+                    icon: 'codicon codicon-new-file',
+                    tooltip: 'New File',
+                },
+                {
+                    id: 'core.save',
+                    command: 'core.save',
+                    icon: 'codicon codicon-save',
+                    tooltip: 'Save',
+                },
+                {
+                    id: 'core.saveAll',
+                    command: 'core.saveAll',
+                    icon: 'codicon codicon-save-all',
+                    tooltip: 'Save All',
+                },
+            ],
+            // 新增编辑操作组
+            [
+                {
+                    id: 'core.undo',
+                    command: 'core.undo',
+                    icon: 'codicon codicon-undo',
+                    tooltip: 'Undo',
+                },
+                {
+                    id: 'core.redo',
+                    command: 'core.redo',
+                    icon: 'codicon codicon-redo',
+                    tooltip: 'Redo',
+                },
+                {
+                    id: 'core.cut',
+                    command: 'core.cut',
+                    icon: 'codicon codicon-cut',
+                    tooltip: 'Cut',
+                },
+                {
+                    id: 'core.copy',
+                    command: 'core.copy',
+                    icon: 'codicon codicon-copy',
+                    tooltip: 'Copy',
+                },
+                {
+                    id: 'core.paste',
+                    command: 'core.paste',
+                    icon: 'codicon codicon-paste',
+                    tooltip: 'Paste',
+                },
+            ],
         ],
-        [ToolbarAlignment.CENTER]: [[
-            {
-                id: 'theia-sample-toolbar-contribution',
-                group: 'contributed'
-            }
-        ]],
+        [ToolbarAlignment.CENTER]: [
+            [
+                {
+                    id: 'theia-sample-toolbar-contribution',
+                    group: 'contributed'
+                }
+            ],
+            // 新增搜索操作组
+            [
+                {
+                    id: 'core.find',
+                    command: 'core.find',
+                    icon: 'codicon codicon-search',
+                    tooltip: 'Find',
+                },
+                {
+                    id: 'core.replace',
+                    command: 'core.replace',
+                    icon: 'codicon codicon-replace',
+                    tooltip: 'Replace',
+                },
+            ],
+        ],
         [ToolbarAlignment.RIGHT]: [
             [
                 {
@@ -53,7 +124,28 @@ export const SampleToolbarDefaultsOverride: () => DeflatedToolbarTree = () => ({
                     icon: 'codicon codicon-terminal',
                     tooltip: 'Command Palette',
                 },
-            ]
+            ],
+            // 新增运行调试操作组
+            [
+                {
+                    id: 'debug.start',
+                    command: 'debug.start',
+                    icon: 'codicon codicon-debug-start',
+                    tooltip: 'Start Debugging',
+                },
+                {
+                    id: 'debug.stop',
+                    command: 'debug.stop',
+                    icon: 'codicon codicon-debug-stop',
+                    tooltip: 'Stop Debugging',
+                },
+                {
+                    id: 'debug.restart',
+                    command: 'debug.restart',
+                    icon: 'codicon codicon-debug-restart',
+                    tooltip: 'Restart Debugging',
+                },
+            ],
         ]
     },
 });
