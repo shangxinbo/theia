@@ -195,8 +195,8 @@ export namespace Autorun {
      * ```
      * In particular, this pattern might be useful when copying existing autorun code from VS Code,
      * where observables can only be tracked manually with `read(reader)`, which corresponds to
-     * `get(accessor)` in Theia; calls to `get()` never cause an observable to be tracked. This directly
-     * corresponds to disabling automatic tracking in Theia with {@link Observable.noAutoTracking}.
+     * `get(accessor)` inWasomeCodeX; calls to `get()` never cause an observable to be tracked. This directly
+     * corresponds to disabling automatic tracking inWasomeCodeX with {@link Observable.noAutoTracking}.
      */
     export function create<TChangeSummary = void>(run: (args: Args<TChangeSummary>) => void, options?: Options<TChangeSummary>): Disposable {
         return new Autorun(run, options);

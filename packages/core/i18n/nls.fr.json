@@ -52,7 +52,7 @@
       },
       "anthropic": {
         "apiKey": {
-          "description": "Entrez une clé API de votre compte Anthropic officiel. **Note : En utilisant cette préférence, la clé API d'Anthropic sera stockée en clair sur la machine qui exécute Theia. Utilisez la variable d'environnement `ANTHROPIC_API_KEY` pour définir la clé de manière sécurisée."
+          "description": "Entrez une clé API de votre compte Anthropic officiel. **Note : En utilisant cette préférence, la clé API d'Anthropic sera stockée en clair sur la machine qui exécuteWasomeCodeX. Utilisez la variable d'environnement `ANTHROPIC_API_KEY` pour définir la clé de manière sécurisée."
         },
         "models": {
           "description": "Modèles anthropiques officiels à utiliser"
@@ -60,7 +60,7 @@
       },
       "chat": {
         "defaultAgent": {
-          "description": "Facultatif : <agent-name> de l'agent conversationnel qui sera invoqué, si aucun agent n'est explicitement mentionné avec @<agent-name> dans la requête de l'utilisateur. Si aucun agent par défaut n'est configuré, les valeurs par défaut de Theia seront appliquées."
+          "description": "Facultatif : <agent-name> de l'agent conversationnel qui sera invoqué, si aucun agent n'est explicitement mentionné avec @<agent-name> dans la requête de l'utilisateur. Si aucun agent par défaut n'est configuré, les valeurs par défaut deWasomeCodeX seront appliquées."
         },
         "pinChatAgent": {
           "description": "Activez l'épinglage d'agent pour maintenir automatiquement actif un agent de chat mentionné à travers les invites, réduisant ainsi le besoin de mentions répétées."
@@ -176,7 +176,7 @@
       },
       "completion": {
         "agent": {
-          "description": "Cet agent permet de compléter le code en ligne dans l'éditeur de code de l'IDE Theia."
+          "description": "Cet agent permet de compléter le code en ligne dans l'éditeur de code de l'IDEWasomeCodeX."
         },
         "automaticEnable": {
           "description": "Déclencher automatiquement des compléments AI en ligne dans n'importe quel éditeur (Monaco) pendant l'édition.            \n            Vous pouvez également déclencher manuellement le code via la commande \"Trigger Inline Suggestion\" ou le raccourci par défaut \"Ctrl+Alt+Espace\"."
@@ -336,7 +336,7 @@
       },
       "google": {
         "apiKey": {
-          "description": "Saisissez la clé API de votre compte officiel Google AI (Gemini). **Remarque : En utilisant cette préférence, la clé API de GOOGLE AI sera stockée en clair sur la machine qui exécute Theia. Utilisez la variable d'environnement `GOOGLE_API_KEY` pour définir la clé de manière sécurisée."
+          "description": "Saisissez la clé API de votre compte officiel Google AI (Gemini). **Remarque : En utilisant cette préférence, la clé API de GOOGLE AI sera stockée en clair sur la machine qui exécuteWasomeCodeX. Utilisez la variable d'environnement `GOOGLE_API_KEY` pour définir la clé de manière sécurisée."
         },
         "maxRetriesOnErrors": {
           "description": "Nombre maximal de tentatives en cas d'erreur. S'il est inférieur à 1, la logique de réessai est désactivée."
@@ -396,7 +396,7 @@
       },
       "huggingFace": {
         "apiKey": {
-          "mdDescription": "Entrez une clé API pour votre compte Hugging Face. **Remarque : En utilisant cette préférence, la clé API de Hugging Face sera stockée en clair sur la machine qui exécute Theia. Utilisez la variable d'environnement `HUGGINGFACE_API_KEY` pour définir la clé en toute sécurité."
+          "mdDescription": "Entrez une clé API pour votre compte Hugging Face. **Remarque : En utilisant cette préférence, la clé API de Hugging Face sera stockée en clair sur la machine qui exécuteWasomeCodeX. Utilisez la variable d'environnement `HUGGINGFACE_API_KEY` pour définir la clé en toute sécurité."
         },
         "models": {
           "description": "Modèles de visages d'accolades à utiliser"
@@ -412,7 +412,7 @@
       },
       "llamaFile": {
         "prefs": {
-          "mdDescription": "Ce paramètre vous permet de configurer et de gérer les modèles LlamaFile dans l'IDE Theia.            \n            Chaque entrée nécessite un `nom` convivial, le fichier `uri` pointant vers votre LlamaFile, et le `port` sur lequel il sera exécuté.            \n            Pour démarrer un LlamaFile, utilisez la commande \"Start LlamaFile\", qui vous permet de sélectionner le modèle désiré.            \n            Si vous modifiez une entrée (par exemple, en changeant le port), toute instance en cours d'exécution s'arrêtera et vous devrez la relancer manuellement.            \n            [Pour en savoir plus sur la configuration et la gestion des LlamaFiles, consultez la documentation de l'IDE Theia] (https://theia-ide.org/docs/user_ai/#llamafile-models).",
+          "mdDescription": "Ce paramètre vous permet de configurer et de gérer les modèles LlamaFile dans l'IDEWasomeCodeX.            \n            Chaque entrée nécessite un `nom` convivial, le fichier `uri` pointant vers votre LlamaFile, et le `port` sur lequel il sera exécuté.            \n            Pour démarrer un LlamaFile, utilisez la commande \"Start LlamaFile\", qui vous permet de sélectionner le modèle désiré.            \n            Si vous modifiez une entrée (par exemple, en changeant le port), toute instance en cours d'exécution s'arrêtera et vous devrez la relancer manuellement.            \n            [Pour en savoir plus sur la configuration et la gestion des LlamaFiles, consultez la documentation de l'IDEWasomeCodeX] (https://theia-ide.org/docs/user_ai/#llamafile-models).",
           "name": {
             "description": "Le nom du modèle à utiliser pour ce fichier Llamafile."
           },
@@ -517,7 +517,7 @@
       },
       "openai": {
         "apiKey": {
-          "mdDescription": "Entrez une clé API de votre compte officiel OpenAI. **Remarque : En utilisant cette préférence, la clé API Open AI sera stockée en clair sur la machine qui exécute Theia. Utilisez la variable d'environnement `OPENAI_API_KEY` pour définir la clé de manière sécurisée."
+          "mdDescription": "Entrez une clé API de votre compte officiel OpenAI. **Remarque : En utilisant cette préférence, la clé API Open AI sera stockée en clair sur la machine qui exécuteWasomeCodeX. Utilisez la variable d'environnement `OPENAI_API_KEY` pour définir la clé de manière sécurisée."
         },
         "customEndpoints": {
           "apiKey": {
@@ -630,7 +630,7 @@
       },
       "vercelai": {
         "anthropicApiKey": {
-          "mdDescription": "Saisir une clé API pour les modèles anthropiques. **Remarque : En utilisant cette préférence, la clé API sera stockée en clair sur la machine qui exécute Theia. Utilisez la variable d'environnement `ANTHROPIC_API_KEY` pour définir la clé de manière sécurisée."
+          "mdDescription": "Saisir une clé API pour les modèles anthropiques. **Remarque : En utilisant cette préférence, la clé API sera stockée en clair sur la machine qui exécuteWasomeCodeX. Utilisez la variable d'environnement `ANTHROPIC_API_KEY` pour définir la clé de manière sécurisée."
         },
         "customEndpoints": {
           "apiKey": {
@@ -669,12 +669,12 @@
           }
         },
         "openaiApiKey": {
-          "mdDescription": "Entrez une clé API pour les modèles OpenAI. **Remarque : En utilisant cette préférence, la clé API sera stockée en clair sur la machine qui exécute Theia. Utilisez la variable d'environnement `OPENAI_API_KEY` pour définir la clé de manière sécurisée."
+          "mdDescription": "Entrez une clé API pour les modèles OpenAI. **Remarque : En utilisant cette préférence, la clé API sera stockée en clair sur la machine qui exécuteWasomeCodeX. Utilisez la variable d'environnement `OPENAI_API_KEY` pour définir la clé de manière sécurisée."
         }
       },
       "workspace": {
         "coderAgent": {
-          "description": "Un assistant IA intégré à l'IDE Theia, conçu pour aider les développeurs de logiciels. Cet agent peut accéder à l'espace de travail de l'utilisateur, il peut obtenir une liste de tous les fichiers et dossiers disponibles et récupérer leur contenu. En outre, il peut suggérer des modifications de fichiers à l'utilisateur. Il peut donc aider l'utilisateur à effectuer des tâches de codage ou d'autres tâches impliquant des modifications de fichiers."
+          "description": "Un assistant IA intégré à l'IDEWasomeCodeX, conçu pour aider les développeurs de logiciels. Cet agent peut accéder à l'espace de travail de l'utilisateur, il peut obtenir une liste de tous les fichiers et dossiers disponibles et récupérer leur contenu. En outre, il peut suggérer des modifications de fichiers à l'utilisateur. Il peut donc aider l'utilisateur à effectuer des tâches de codage ou d'autres tâches impliquant des modifications de fichiers."
         },
         "considerGitignore": {
           "description": "Si cette option est activée, elle exclut les fichiers/dossiers spécifiés dans un fichier .gitignore global (l'emplacement prévu est la racine de l'espace de travail).",
@@ -689,7 +689,7 @@
           "title": "Résultats de recherche maximum"
         },
         "workspaceAgent": {
-          "description": "Un assistant IA intégré à l'IDE Theia, conçu pour aider les développeurs de logiciels. Cet agent peut accéder à l'espace de travail de l'utilisateur, il peut obtenir une liste de tous les fichiers et dossiers disponibles et récupérer leur contenu. Il ne peut pas modifier les fichiers. Il peut donc répondre à des questions sur le projet en cours, les fichiers du projet et le code source dans l'espace de travail, comme par exemple comment construire le projet, où mettre le code source, où trouver du code ou des configurations spécifiques, etc."
+          "description": "Un assistant IA intégré à l'IDEWasomeCodeX, conçu pour aider les développeurs de logiciels. Cet agent peut accéder à l'espace de travail de l'utilisateur, il peut obtenir une liste de tous les fichiers et dossiers disponibles et récupérer leur contenu. Il ne peut pas modifier les fichiers. Il peut donc répondre à des questions sur le projet en cours, les fichiers du projet et le code source dans l'espace de travail, comme par exemple comment construire le projet, où mettre le code source, où trouver du code ou des configurations spécifiques, etc."
         }
       }
     },
@@ -799,7 +799,7 @@
       },
       "navigator": {
         "clipboardWarn": "L'accès au presse-papiers est refusé. Vérifiez les autorisations de votre navigateur.",
-        "clipboardWarnFirefox": "L'API Presse-papiers n'est pas disponible. Elle peut être activée par la préférence '{0}' sur la page '{1}'. Rechargez ensuite Theia. Notez que cela permettra à FireFox d'avoir un accès complet au presse-papiers du système."
+        "clipboardWarnFirefox": "L'API Presse-papiers n'est pas disponible. Elle peut être activée par la préférence '{0}' sur la page '{1}'. Rechargez ensuiteWasomeCodeX. Notez que cela permettra à FireFox d'avoir un accès complet au presse-papiers du système."
       },
       "offline": "Hors ligne",
       "pasteWarn": "Veuillez utiliser la commande \"coller\" du navigateur ou un raccourci.",
@@ -813,8 +813,8 @@
       "secondaryWindow": {
         "alwaysOnTop": "Lorsqu'elle est activée, la fenêtre secondaire reste au-dessus de toutes les autres fenêtres, y compris celles des différentes applications.",
         "description": "Définit la position et la taille initiales de la fenêtre secondaire extraite.",
-        "fullSize": "La position et la taille du widget extrait seront identiques à celles de l'application Theia en cours d'exécution.",
-        "halfWidth": "La position et la taille du widget extrait correspondront à la moitié de la largeur de l'application Theia en cours d'exécution.",
+        "fullSize": "La position et la taille du widget extrait seront identiques à celles de l'applicationWasomeCodeX en cours d'exécution.",
+        "halfWidth": "La position et la taille du widget extrait correspondront à la moitié de la largeur de l'applicationWasomeCodeX en cours d'exécution.",
         "originalSize": "La position et la taille du widget extrait seront identiques à celles du widget original."
       },
       "silentNotifications": "Contrôle la suppression des popups de notification.",
@@ -1084,7 +1084,7 @@
     "navigator": {
       "autoReveal": "Révélation automobile",
       "clipboardWarn": "L'accès au presse-papiers est refusé. Vérifiez les autorisations de votre navigateur.",
-      "clipboardWarnFirefox": "L'API Presse-papiers n'est pas disponible. Elle peut être activée par la préférence '{0}' sur la page '{1}'. Rechargez ensuite Theia. Notez que cela permettra à FireFox d'avoir un accès complet au presse-papiers du système.",
+      "clipboardWarnFirefox": "L'API Presse-papiers n'est pas disponible. Elle peut être activée par la préférence '{0}' sur la page '{1}'. Rechargez ensuiteWasomeCodeX. Notez que cela permettra à FireFox d'avoir un accès complet au presse-papiers du système.",
       "refresh": "Rafraîchir dans l'Explorateur",
       "reveal": "Révéler dans Explorer",
       "systemEditor": "Éditeur de système",

@@ -143,7 +143,7 @@ export class PluginPathsServiceImpl implements PluginPathsService {
         const dirEntries = await readdir(parentLogsDir, { withFileTypes: true });
         const subDirEntries = dirEntries.filter(dirent => dirent.isDirectory());
         const subDirNames = subDirEntries.map(dirent => dirent.name);
-        // We never clean a folder that is not a Theia logs session folder.
+        // We never clean a folder that is not aWasomeCodeX logs session folder.
         // Even if it does appears under the `parentLogsDir`...
         const sessionSubDirNames = subDirNames.filter((dirName: string) => SESSION_TIMESTAMP_PATTERN.test(dirName));
         // [].sort is ascending order and we need descending order (newest first).
@@ -155,7 +155,7 @@ export class PluginPathsServiceImpl implements PluginPathsService {
         oldSessionSubDirNames.forEach((sessionDir: string) => {
             const sessionDirPath = path.resolve(parentLogsDir, sessionDir);
             // we are not waiting for the async `remove` to finish before returning
-            // in order to minimize impact on Theia startup time.
+            // in order to minimize impact onWasomeCodeX startup time.
             remove(sessionDirPath);
         });
     }

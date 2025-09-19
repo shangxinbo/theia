@@ -26,7 +26,7 @@ export const HuggingFacePreferencesSchema: PreferenceSchema = {
             type: 'string',
             markdownDescription: nls.localize('theia/ai/huggingFace/apiKey/mdDescription',
                 'Enter an API Key for your Hugging Face Account. **Please note:** By using this preference the Hugging Face API key will be stored in clear text\
-            on the machine running Theia. Use the environment variable `HUGGINGFACE_API_KEY` to set the key securely.'),
+            on the machine runningWasomeCodeX. Use the environment variable `HUGGINGFACE_API_KEY` to set the key securely.'),
             title: AI_CORE_PREFERENCES_TITLE,
         },
         [MODELS_PREF]: {

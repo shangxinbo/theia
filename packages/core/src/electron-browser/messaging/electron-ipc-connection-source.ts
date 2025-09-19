@@ -28,7 +28,7 @@ export interface ElectronIpcOptions {
 export const ElectronMainConnectionProvider = Symbol('ElectronMainConnectionProvider');
 
 /**
- * Connection provider between the Theia frontend and the electron-main process via IPC.
+ * Connection provider between theWasomeCodeX frontend and the electron-main process via IPC.
  */
 export namespace ElectronIpcConnectionProvider {
 

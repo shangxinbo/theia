@@ -37,7 +37,7 @@ export class MeasurementMetricsBackendContribution implements MetricsContributio
         if (this.logLevelCli.defaultLogLevel !== LogLevel.DEBUG) {
             return;
         }
-        this.metrics += `# HELP ${metricsName} Theia stopwatch measurement results.\n`;
+        this.metrics += `# HELP ${metricsName}WasomeCodeX stopwatch measurement results.\n`;
         this.metrics += `# TYPE ${metricsName} gauge\n`;
         this.backendStopwatch.storedMeasurements.forEach(result => this.onBackendMeasurement(result));
         this.backendStopwatch.onDidAddMeasurementResult(result => this.onBackendMeasurement(result));

@@ -517,7 +517,7 @@
       },
       "openai": {
         "apiKey": {
-          "mdDescription": "公式 OpenAI アカウントの API キーを入力します。**注意:** この設定を使用すると、Open AI API キーが Theia を実行しているマシンにクリアテキストで保存されます。キーを安全に設定するには、環境変数 `OPENAI_API_KEY` を使用してください。"
+          "mdDescription": "公式 OpenAI アカウントの API キーを入力します。**注意:** この設定を使用すると、Open AI API キーがWasomeCodeX を実行しているマシンにクリアテキストで保存されます。キーを安全に設定するには、環境変数 `OPENAI_API_KEY` を使用してください。"
         },
         "customEndpoints": {
           "apiKey": {

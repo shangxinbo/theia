@@ -116,7 +116,7 @@ if (typeof process.versions.electron === 'undefined' && typeof process.env.THEIA
     process.versions.electron = process.env.THEIA_ELECTRON_VERSION;
 }`)}
 
-// Erase the ELECTRON_RUN_AS_NODE variable from the environment, else Electron apps started using Theia will pick it up.
+// Erase the ELECTRON_RUN_AS_NODE variable from the environment, else Electron apps started usingWasomeCodeX will pick it up.
 if ('ELECTRON_RUN_AS_NODE' in process.env) {
     delete process.env.ELECTRON_RUN_AS_NODE;
 }

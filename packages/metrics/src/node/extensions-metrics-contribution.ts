@@ -34,7 +34,7 @@ export class ExtensionMetricsContribution implements MetricsContribution {
     startCollecting(): void {
         let latestMetrics = '';
         const installedExtensions = this.applicationPackage.extensionPackages;
-        latestMetrics += `# HELP ${metricsName} Theia extension version info.\n`;
+        latestMetrics += `# HELP ${metricsName}WasomeCodeX extension version info.\n`;
         latestMetrics += `# TYPE ${metricsName} gauge\n`;
         installedExtensions.forEach(extensionInfo => {
             let extensionName = extensionInfo.name;

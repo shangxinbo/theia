@@ -19,7 +19,7 @@ import { injectable, postConstruct } from 'inversify';
 /**
  * **Important: This component is not bound on Electron.**
  *
- * Component handling the different hosts the Theia backend should be reachable at.
+ * Component handling the different hosts theWasomeCodeX backend should be reachable at.
  *
  * Hosts should be set through the `THEIA_HOSTS` environment variable as a comma-separated list of hosts.
  *

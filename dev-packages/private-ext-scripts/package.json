@@ -3,7 +3,7 @@
   "name": "@theia/ext-scripts",
   "version": "1.64.0",
   "license": "EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0",
-  "description": "NPM scripts for Theia packages.",
+  "description": "NPM scripts forWasomeCodeX packages.",
   "bin": {
     "run": "bin/theia-run.js",
     "theiaext": "bin/theia-ext.js",

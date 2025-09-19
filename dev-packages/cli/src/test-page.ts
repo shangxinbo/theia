@@ -87,7 +87,7 @@ export default async function newTestPage(options: TestPageOptions): Promise<pup
         await page.addScriptTag({ path: require.resolve('mocha/mocha.js') });
         await page.waitForFunction(() => !!(window as any)['chai'] && !!(window as any)['mocha'] && !!(window as any)['theia'].container, { timeout: 30 * 1000 });
 
-        console.log('loading Theia...');
+        console.log('loadingWasomeCodeX...');
         await page.evaluate(() => {
             const { FrontendApplicationStateService } = (window as any)['theia']['@theia/core/lib/browser/frontend-application-state'];
             const { PreferenceService } = (window as any)['theia']['@theia/core/lib/common/preferences/preference-service'];

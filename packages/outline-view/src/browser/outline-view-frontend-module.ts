@@ -17,7 +17,7 @@
 import { ContainerModule, interfaces } from '@theia/core/shared/inversify';
 import { OutlineViewService } from './outline-view-service';
 import { OutlineViewContribution } from './outline-view-contribution';
-import { WidgetFactory } from '@theia/core/lib/browser/widget-manager';
+// import { WidgetFactory } from '@theia/core/lib/browser/widget-manager';
 import {
     FrontendApplicationContribution,
     createTreeContainer,
@@ -47,7 +47,8 @@ export default new ContainerModule(bind => {
     });
 
     bind(OutlineViewService).toSelf().inSingletonScope();
-    bind(WidgetFactory).toService(OutlineViewService);
+    // 关键行，绑定 WidgetFactory 到 OutlineViewService，用于创建 OutlineViewWidget
+    // bind(WidgetFactory).toService(OutlineViewService);
 
     bindViewContribution(bind, OutlineViewContribution);
     bind(FrontendApplicationContribution).toService(OutlineViewContribution);

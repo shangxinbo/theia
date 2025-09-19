@@ -79,7 +79,7 @@ export class GettingStartedWidget extends ReactWidget {
     /**
      * Collection of useful links to display for end users.
      */
-    protected readonly documentationUrl = 'https://www.theia-ide.org/docs/';
+    protected readonly documentationUrl = 'http://help.wa-edge.com/';
     protected readonly compatibilityUrl = 'https://eclipse-theia.github.io/vscode-theia-comparator/status.html';
     protected readonly extensionUrl = 'https://www.theia-ide.org/docs/authoring_extensions';
     protected readonly pluginUrl = 'https://www.theia-ide.org/docs/authoring_plugins';
@@ -361,10 +361,19 @@ export class GettingStartedWidget extends ReactWidget {
                     tabIndex={0}
                     onClick={() => this.doOpenExternalLink(this.documentationUrl)}
                     onKeyDown={(e: React.KeyboardEvent) => this.doOpenExternalLinkEnter(e, this.documentationUrl)}>
-                    {nls.localizeByDefault('Documentation')}
+                    {nls.localizeByDefault('Web Documentation')}
                 </a>
             </div>
             <div className='gs-action-container'>
+                <a
+                    role={'button'}
+                    tabIndex={0}
+                    onClick={() => this.openHelp()}
+                >
+                    {nls.localizeByDefault('Documentation')}
+                </a>
+            </div>
+            {/* <div className='gs-action-container'>
                 <a
                     role={'button'}
                     tabIndex={0}
@@ -399,7 +408,7 @@ export class GettingStartedWidget extends ReactWidget {
                     onKeyDown={(e: React.KeyboardEvent) => this.doOpenExternalLinkEnter(e, this.dataUsageTelemetryUrl)}>
                     {nls.localize('theia/getting-started/telemetry', 'Data Usage & Telemetry')}
                 </a>
-            </div>
+            </div> */}
         </div>;
     }
 
@@ -407,13 +416,14 @@ export class GettingStartedWidget extends ReactWidget {
      * Render the version section.
      */
     protected renderVersion(): React.ReactNode {
-        return <div className='gs-section'>
-            <div className='gs-action-container'>
-                <p className='gs-sub-header' >
-                    {this.applicationInfo ? nls.localizeByDefault('Version: {0}', this.applicationInfo.version) : ''}
-                </p>
-            </div>
-        </div>;
+        // return <div className='gs-section'>
+        //     <div className='gs-action-container'>
+        //         <p className='gs-sub-header' >
+        //             {this.applicationInfo ? nls.localizeByDefault('Version: {0}', this.applicationInfo.version) : ''}
+        //         </p>
+        //     </div>
+        // </div>;
+        return <></>
     }
 
     protected renderPreferences(): React.ReactNode {
@@ -422,7 +432,7 @@ export class GettingStartedWidget extends ReactWidget {
 
     protected renderNews(): React.ReactNode {
         return <div className='gs-section'>
-            <h3 className='gs-section-header'>🚀 AI Support in the Theia IDE is available (Beta Version)! ✨</h3>
+            <h3 className='gs-section-header'>🚀 AI Support in the WasomeCodeX IDE is available (Beta Version)! ✨</h3>
             <div className='gs-action-container'>
                 <a
                     role={'button'}
@@ -437,12 +447,14 @@ export class GettingStartedWidget extends ReactWidget {
     }
 
     protected renderAIBanner(): React.ReactNode {
+        // return <></>
+        // 样式很好看的一个悬浮弹框
         return <div className='gs-container gs-aifeature-container'>
-            <div className='flex-grid'>
+            {/* <div className='flex-grid'>
                 <div className='col'>
-                    <h3 className='gs-section-header'> 🚀 AI Support in the Theia IDE is available (Beta Version)! ✨</h3>
+                    <h3 className='gs-section-header'> 🚀 AI Support in the WasomeCodeX IDE is available (Beta Version)! ✨</h3>
                     <div className='gs-action-container'>
-                        Theia IDE now contains AI support, which offers early access to cutting-edge AI capabilities within your IDE.
+                        WasomeCodeX IDE now contains AI support, which offers early access to cutting-edge AI capabilities within your IDE.
                         <br />
                         Please note that these features are disabled by default, ensuring that users can opt-in at their discretion.
                         For those who choose to enable AI support, it is important to be aware that these may generate continuous
@@ -469,13 +481,13 @@ export class GettingStartedWidget extends ReactWidget {
                         </a>.
                         &nbsp;Thank you for being part of our community!
                         <br />
-                        The AI features are built on the framework Theia AI. If you want to build a custom AI-powered tool or IDE, Theia AI has been published as stable release.
+                        The AI features are built on the frameworkWasomeCodeX AI. If you want to build a custom AI-powered tool or IDE,WasomeCodeX AI has been published as stable release.
                         Check out <a
                             role={'button'}
                             tabIndex={0}
                             onClick={() => this.doOpenExternalLink(this.theiaAIDocUrl)}
                             onKeyDown={(e: React.KeyboardEvent) => this.doOpenExternalLinkEnter(e, this.theiaAIDocUrl)}>
-                            {'the Theia AI documentation'}
+                            {'theWasomeCodeX AI documentation'}
                         </a>!
                     </div>
                     <br />
@@ -490,7 +502,7 @@ export class GettingStartedWidget extends ReactWidget {
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>;
     }
 
@@ -582,6 +594,7 @@ export class GettingStartedWidget extends ReactWidget {
      * Used to open the preferences widget.
      */
     protected doOpenPreferences = () => this.commandRegistry.executeCommand(CommonCommands.OPEN_PREFERENCES.id);
+    protected openHelp = () => this.commandRegistry.executeCommand(CommonCommands.OPEN_HELP.id);
     protected doOpenPreferencesEnter = (e: React.KeyboardEvent) => {
         if (this.isEnterKey(e)) {
             this.doOpenPreferences();

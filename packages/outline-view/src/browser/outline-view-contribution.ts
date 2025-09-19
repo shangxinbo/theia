@@ -68,7 +68,7 @@ export class OutlineViewContribution extends AbstractViewContribution<OutlineVie
     }
 
     async initializeLayout(app: FrontendApplication): Promise<void> {
-        await this.openView();
+        await this.openView({ activate: false });
     }
 
     override registerCommands(commands: CommandRegistry): void {

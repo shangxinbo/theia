@@ -52,7 +52,7 @@
       },
       "anthropic": {
         "apiKey": {
-          "description": "Zadejte klíč API svého oficiálního účtu Anthropic. **Upozornění:** Při použití této předvolby bude klíč API Anthropic uložen v otevřeném textu na počítači, na kterém běží Theia. Pro bezpečné nastavení klíče použijte proměnnou prostředí `ANTHROPIC_API_KEY`."
+          "description": "Zadejte klíč API svého oficiálního účtu Anthropic. **Upozornění:** Při použití této předvolby bude klíč API Anthropic uložen v otevřeném textu na počítači, na kterém běžíWasomeCodeX. Pro bezpečné nastavení klíče použijte proměnnou prostředí `ANTHROPIC_API_KEY`."
         },
         "models": {
           "description": "Oficiální antropické modely k použití"
@@ -60,7 +60,7 @@
       },
       "chat": {
         "defaultAgent": {
-          "description": "Nepovinné: <agent-name> agenta chatu, který bude vyvolán, pokud v uživatelském dotazu není agent výslovně uveden pomocí @<agent-name>. Pokud není žádný výchozí agent nakonfigurován, použijí se výchozí nastavení Theia."
+          "description": "Nepovinné: <agent-name> agenta chatu, který bude vyvolán, pokud v uživatelském dotazu není agent výslovně uveden pomocí @<agent-name>. Pokud není žádný výchozí agent nakonfigurován, použijí se výchozí nastaveníWasomeCodeX."
         },
         "pinChatAgent": {
           "description": "Povolením připnutí agenta automaticky udržíte zmíněného agenta chatu aktivního napříč výzvami, čímž snížíte potřebu opakovaných zmínek.Agenta můžete kdykoli ručně odepnout nebo přepnout."
@@ -176,7 +176,7 @@
       },
       "completion": {
         "agent": {
-          "description": "Tento agent zajišťuje doplňování kódu v editoru kódu v prostředí Theia IDE."
+          "description": "Tento agent zajišťuje doplňování kódu v editoru kódu v prostředíWasomeCodeX IDE."
         },
         "automaticEnable": {
           "description": "Automatické spouštění doplňků AI inline v jakémkoli editoru (Monaco) během úprav.            \n            Případně můžete kód spustit ručně pomocí příkazu \"Trigger Inline Suggestion\" nebo výchozí klávesové zkratky \"Ctrl+Alt+Mezerník\"."
@@ -311,7 +311,7 @@
           "description": "Složka pro ukládání přizpůsobených šablon výzev. Pokud nejsou přizpůsobeny, použije se adresář uživatelské konfigurace. Zvažte prosím použití složky, která je pod správou verzí pro správu variant šablon výzev."
         },
         "prompts": {
-          "category": "Šablony Theia AI Prompt"
+          "category": "ŠablonyWasomeCodeX AI Prompt"
         },
         "requestSettings": {
           "mdDescription": "Umožňuje zadat vlastní nastavení požadavku pro více modelů.\n            Každý objekt představuje konfiguraci pro konkrétní model. Pole `modelId` určuje ID modelu, `requestSettings` definuje nastavení specifické pro daný model.\n            Pole `providerId` je nepovinné a umožňuje použít nastavení pro konkrétního poskytovatele. Pokud není nastaveno, bude nastavení použito pro všechny poskytovatele.\n            Příklad providerId: huggingface, openai, ollama, llamafile.\n            Další informace naleznete v [naší dokumentaci](https://theia-ide.org/docs/user_ai/#custom-request-settings).",
@@ -325,7 +325,7 @@
           "unavailableVariant": "Vybraná varianta již není k dispozici"
         },
         "variable-contribution": {
-          "builtInVariable": "Vestavěná proměnná Theia",
+          "builtInVariable": "Vestavěná proměnnáWasomeCodeX",
           "currentAbsoluteFilePath": "Absolutní cesta k aktuálně otevřenému souboru. Upozorňujeme, že většina agentů očekává relativní cestu k souboru (vzhledem k aktuální pracovní ploše).",
           "currentFileContent": "Prostý obsah aktuálně otevřeného souboru. Vyloučeny jsou informace o tom, odkud obsah pochází. Upozorňujeme, že většina agentů bude lépe pracovat s relativní cestou k souboru (vzhledem k aktuálnímu pracovnímu prostoru).",
           "currentRelativeDirPath": "Relativní cesta k adresáři obsahujícímu aktuálně otevřený soubor.",
@@ -336,7 +336,7 @@
       },
       "google": {
         "apiKey": {
-          "description": "Zadejte klíč API svého oficiálního účtu Google AI (Gemini). **Upozornění:** Při použití této předvolby bude klíč API GOOGLE AI uložen v otevřeném textu na počítači, na kterém běží Theia. Pro bezpečné nastavení klíče použijte proměnnou prostředí `GOOGLE_API_KEY`."
+          "description": "Zadejte klíč API svého oficiálního účtu Google AI (Gemini). **Upozornění:** Při použití této předvolby bude klíč API GOOGLE AI uložen v otevřeném textu na počítači, na kterém běžíWasomeCodeX. Pro bezpečné nastavení klíče použijte proměnnou prostředí `GOOGLE_API_KEY`."
         },
         "maxRetriesOnErrors": {
           "description": "Maximální počet opakování v případě chyb. Pokud je menší než 1, je logika opakování zakázána."
@@ -396,7 +396,7 @@
       },
       "huggingFace": {
         "apiKey": {
-          "mdDescription": "Zadejte klíč API pro svůj účet Hugging Face. **Upozornění:** Při použití této předvolby bude klíč API služby Hugging Face uložen v otevřeném textu na počítači, na kterém běží Theia. Pro bezpečné nastavení klíče použijte proměnnou prostředí `HUGGINGFACE_API_KEY`."
+          "mdDescription": "Zadejte klíč API pro svůj účet Hugging Face. **Upozornění:** Při použití této předvolby bude klíč API služby Hugging Face uložen v otevřeném textu na počítači, na kterém běžíWasomeCodeX. Pro bezpečné nastavení klíče použijte proměnnou prostředí `HUGGINGFACE_API_KEY`."
         },
         "models": {
           "description": "Objímání modelů obličeje k použití"
@@ -412,7 +412,7 @@
       },
       "llamaFile": {
         "prefs": {
-          "mdDescription": "Toto nastavení umožňuje konfigurovat a spravovat modely LlamaFile v prostředí Theia IDE.            \n            Každá položka vyžaduje uživatelsky přívětivé `jméno`, soubor `uri` ukazující na váš LlamaFile a `port`, na kterém bude spuštěn.            \n            Chcete-li spustit LlamaFile, použijte příkaz \"Start LlamaFile\", který vám umožní vybrat požadovaný model.            \n            Pokud položku upravíte (např. změníte port), jakákoli běžící instance se zastaví a budete ji muset znovu ručně spustit.            \n            [Více informací o konfiguraci a správě LlamaFiles najdete v dokumentaci Theia IDE](https://theia-ide.org/docs/user_ai/#llamafile-models).",
+          "mdDescription": "Toto nastavení umožňuje konfigurovat a spravovat modely LlamaFile v prostředíWasomeCodeX IDE.            \n            Každá položka vyžaduje uživatelsky přívětivé `jméno`, soubor `uri` ukazující na váš LlamaFile a `port`, na kterém bude spuštěn.            \n            Chcete-li spustit LlamaFile, použijte příkaz \"Start LlamaFile\", který vám umožní vybrat požadovaný model.            \n            Pokud položku upravíte (např. změníte port), jakákoli běžící instance se zastaví a budete ji muset znovu ručně spustit.            \n            [Více informací o konfiguraci a správě LlamaFiles najdete v dokumentaciWasomeCodeX IDE](https://theia-ide.org/docs/user_ai/#llamafile-models).",
           "name": {
             "description": "Název modelu, který se použije pro tento soubor Llama."
           },
@@ -517,7 +517,7 @@
       },
       "openai": {
         "apiKey": {
-          "mdDescription": "Zadejte klíč API svého oficiálního účtu OpenAI. **Upozornění:** Při použití této předvolby bude klíč API Open AI uložen v otevřeném textu na počítači, na kterém běží Theia. Pro bezpečné nastavení klíče použijte proměnnou prostředí `OPENAI_API_KEY`."
+          "mdDescription": "Zadejte klíč API svého oficiálního účtu OpenAI. **Upozornění:** Při použití této předvolby bude klíč API Open AI uložen v otevřeném textu na počítači, na kterém běžíWasomeCodeX. Pro bezpečné nastavení klíče použijte proměnnou prostředí `OPENAI_API_KEY`."
         },
         "customEndpoints": {
           "apiKey": {
@@ -630,7 +630,7 @@
       },
       "vercelai": {
         "anthropicApiKey": {
-          "mdDescription": "Zadejte klíč API pro modely Anthropic. **Upozornění:** Při použití této předvolby bude klíč API uložen v otevřeném textu na počítači, na kterém běží Theia. Pro bezpečné nastavení klíče použijte proměnnou prostředí `ANTHROPIC_API_KEY`."
+          "mdDescription": "Zadejte klíč API pro modely Anthropic. **Upozornění:** Při použití této předvolby bude klíč API uložen v otevřeném textu na počítači, na kterém běžíWasomeCodeX. Pro bezpečné nastavení klíče použijte proměnnou prostředí `ANTHROPIC_API_KEY`."
         },
         "customEndpoints": {
           "apiKey": {
@@ -669,12 +669,12 @@
           }
         },
         "openaiApiKey": {
-          "mdDescription": "Zadejte klíč API pro modely OpenAI. **Upozornění:** Při použití této předvolby bude klíč API uložen v otevřeném textu na počítači, na kterém běží Theia. Pro bezpečné nastavení klíče použijte proměnnou prostředí `OPENAI_API_KEY`."
+          "mdDescription": "Zadejte klíč API pro modely OpenAI. **Upozornění:** Při použití této předvolby bude klíč API uložen v otevřeném textu na počítači, na kterém běžíWasomeCodeX. Pro bezpečné nastavení klíče použijte proměnnou prostředí `OPENAI_API_KEY`."
         }
       },
       "workspace": {
         "coderAgent": {
-          "description": "Asistent s umělou inteligencí integrovaný do prostředí Theia IDE, který je určen na pomoc vývojářům softwaru. Tento agent může přistupovat k pracovnímu prostoru uživatele, může získat seznam všech dostupných souborů a složek a načíst jejich obsah. Dále může uživateli navrhovat úpravy souborů. Může tedy uživateli pomáhat s úkoly kódování nebo jinými úkoly zahrnujícími změny souborů."
+          "description": "Asistent s umělou inteligencí integrovaný do prostředíWasomeCodeX IDE, který je určen na pomoc vývojářům softwaru. Tento agent může přistupovat k pracovnímu prostoru uživatele, může získat seznam všech dostupných souborů a složek a načíst jejich obsah. Dále může uživateli navrhovat úpravy souborů. Může tedy uživateli pomáhat s úkoly kódování nebo jinými úkoly zahrnujícími změny souborů."
         },
         "considerGitignore": {
           "description": "Pokud je tato funkce povolena, vyloučí soubory/složky zadané v globálním souboru .gitignore (předpokládané umístění je kořenový adresář pracovního prostoru).",
@@ -689,7 +689,7 @@
           "title": "Maximální výsledky vyhledávání"
         },
         "workspaceAgent": {
-          "description": "Asistent s umělou inteligencí integrovaný do prostředí Theia IDE, který je určen na pomoc vývojářům softwaru. Tento agent může přistupovat k pracovnímu prostoru uživatele, může získat seznam všech dostupných souborů a složek a načíst jejich obsah. Nemůže soubory upravovat. Může tedy odpovídat na otázky týkající se aktuálního projektu, souborů projektu a zdrojového kódu v pracovním prostoru, například jak sestavit projekt, kam umístit zdrojový kód, kde najít konkrétní kód nebo konfigurace atd."
+          "description": "Asistent s umělou inteligencí integrovaný do prostředíWasomeCodeX IDE, který je určen na pomoc vývojářům softwaru. Tento agent může přistupovat k pracovnímu prostoru uživatele, může získat seznam všech dostupných souborů a složek a načíst jejich obsah. Nemůže soubory upravovat. Může tedy odpovídat na otázky týkající se aktuálního projektu, souborů projektu a zdrojového kódu v pracovním prostoru, například jak sestavit projekt, kam umístit zdrojový kód, kde najít konkrétní kód nebo konfigurace atd."
         }
       }
     },
@@ -799,7 +799,7 @@
       },
       "navigator": {
         "clipboardWarn": "Přístup do schránky je odepřen. Zkontrolujte oprávnění prohlížeče.",
-        "clipboardWarnFirefox": "Rozhraní API schránky není k dispozici. Lze ji povolit pomocí předvolby '{0}' na stránce '{1}'. Poté znovu načtěte aplikaci Theia. Všimněte si, že to umožní FireFoxu získat plný přístup k systémové schránce."
+        "clipboardWarnFirefox": "Rozhraní API schránky není k dispozici. Lze ji povolit pomocí předvolby '{0}' na stránce '{1}'. Poté znovu načtěte aplikaciWasomeCodeX. Všimněte si, že to umožní FireFoxu získat plný přístup k systémové schránce."
       },
       "offline": "Offline",
       "pasteWarn": "Použijte příkaz vložit v prohlížeči nebo klávesovou zkratku.",
@@ -813,8 +813,8 @@
       "secondaryWindow": {
         "alwaysOnTop": "Je-li tato funkce povolena, zůstane sekundární okno nad všemi ostatními okny, včetně oken různých aplikací.",
         "description": "Nastaví počáteční pozici a velikost extrahovaného sekundárního okna.",
-        "fullSize": "Pozice a velikost extrahovaného widgetu bude stejná jako u spuštěné aplikace Theia.",
-        "halfWidth": "Pozice a velikost extrahovaného widgetu bude odpovídat polovině šířky spuštěné aplikace Theia.",
+        "fullSize": "Pozice a velikost extrahovaného widgetu bude stejná jako u spuštěné aplikaceWasomeCodeX.",
+        "halfWidth": "Pozice a velikost extrahovaného widgetu bude odpovídat polovině šířky spuštěné aplikaceWasomeCodeX.",
         "originalSize": "Pozice a velikost extrahovaného widgetu bude stejná jako u původního widgetu."
       },
       "silentNotifications": "Řídí, zda se mají potlačit vyskakovací okna s oznámeními.",
@@ -1084,7 +1084,7 @@
     "navigator": {
       "autoReveal": "Automatické odhalení",
       "clipboardWarn": "Přístup do schránky je odepřen. Zkontrolujte oprávnění prohlížeče.",
-      "clipboardWarnFirefox": "Rozhraní API schránky není k dispozici. Lze ji povolit pomocí předvolby '{0}' na stránce '{1}'. Poté znovu načtěte aplikaci Theia. Všimněte si, že to umožní FireFoxu získat plný přístup k systémové schránce.",
+      "clipboardWarnFirefox": "Rozhraní API schránky není k dispozici. Lze ji povolit pomocí předvolby '{0}' na stránce '{1}'. Poté znovu načtěte aplikaciWasomeCodeX. Všimněte si, že to umožní FireFoxu získat plný přístup k systémové schránce.",
       "refresh": "Obnovení v Průzkumníku",
       "reveal": "Odhalení v Průzkumníkovi",
       "systemEditor": "Editor systému",

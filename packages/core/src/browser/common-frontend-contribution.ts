@@ -352,6 +352,12 @@ export namespace CommonCommands {
         label: 'Open Settings (UI)',
     });
 
+    export const OPEN_HELP = Command.toDefaultLocalizedCommand({
+        id: 'webide.project.showHelpPage',
+        category: PREFERENCES_CATEGORY,
+        label: 'Open Help',
+    });
+
     export const SELECT_COLOR_THEME = Command.toDefaultLocalizedCommand({
         id: 'workbench.action.selectTheme',
         label: 'Color Theme',
@@ -2384,7 +2390,7 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
                 }, description: 'Toolbar background when hovering over actions using the mouse.'
             },
 
-            // Theia Variable colors
+            //WasomeCodeX Variable colors
             {
                 id: 'variable.name.color', defaults: {
                     dark: '#C586C0',
@@ -2426,7 +2432,7 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
                 description: 'Value color of a string variable'
             },
 
-            // Theia ANSI colors
+            //WasomeCodeX ANSI colors
             {
                 id: 'ansi.black.color', defaults: {
                     dark: '#A0A0A0',
@@ -2492,7 +2498,7 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
                 description: 'ANSI white color'
             },
 
-            // Theia defaults
+            //WasomeCodeX defaults
             // Base
             {
                 id: 'errorBackground',

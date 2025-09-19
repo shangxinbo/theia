@@ -52,7 +52,7 @@
       },
       "anthropic": {
         "apiKey": {
-          "description": "Enter an API Key of your official Anthropic Account. **Please note:** By using this preference the Anthropic API key will be stored in clear text            on the machine running Theia. Use the environment variable `ANTHROPIC_API_KEY` to set the key securely."
+          "description": "Enter an API Key of your official Anthropic Account. **Please note:** By using this preference the Anthropic API key will be stored in clear text            on the machine runningWasomeCodeX. Use the environment variable `ANTHROPIC_API_KEY` to set the key securely."
         },
         "models": {
           "description": "Official Anthropic models to use"
@@ -60,7 +60,7 @@
       },
       "chat": {
         "defaultAgent": {
-          "description": "Optional: <agent-name> of the Chat Agent that shall be invoked, if no agent is explicitly mentioned with @<agent-name> in the user query. If no Default Agent is configured, Theia´s defaults will be applied."
+          "description": "Optional: <agent-name> of the Chat Agent that shall be invoked, if no agent is explicitly mentioned with @<agent-name> in the user query. If no Default Agent is configured,WasomeCodeX´s defaults will be applied."
         },
         "pinChatAgent": {
           "description": "Enable agent pinning to automatically keep a mentioned chat agent active across prompts, reducing the need for repeated mentions.You can manually unpin or switch agents anytime."
@@ -176,7 +176,7 @@
       },
       "completion": {
         "agent": {
-          "description": "This agent provides inline code completion in the code editor in the Theia IDE."
+          "description": "This agent provides inline code completion in the code editor in theWasomeCodeX IDE."
         },
         "automaticEnable": {
           "description": "Automatically trigger AI completions inline within any (Monaco) editor while editing.            \n            Alternatively, you can manually trigger the code via the command \"Trigger Inline Suggestion\" or the default shortcut \"Ctrl+Alt+Space\"."
@@ -336,7 +336,7 @@
       },
       "google": {
         "apiKey": {
-          "description": "Enter an API Key of your official Google AI (Gemini) Account. **Please note:** By using this preference the GOOGLE AI API key will be stored in clear text            on the machine running Theia. Use the environment variable `GOOGLE_API_KEY` to set the key securely."
+          "description": "Enter an API Key of your official Google AI (Gemini) Account. **Please note:** By using this preference the GOOGLE AI API key will be stored in clear text            on the machine runningWasomeCodeX. Use the environment variable `GOOGLE_API_KEY` to set the key securely."
         },
         "maxRetriesOnErrors": {
           "description": "Maximum number of retries in case of errors. If smaller than 1, then the retry logic is disabled"
@@ -396,7 +396,7 @@
       },
       "huggingFace": {
         "apiKey": {
-          "mdDescription": "Enter an API Key for your Hugging Face Account. **Please note:** By using this preference the Hugging Face API key will be stored in clear text            on the machine running Theia. Use the environment variable `HUGGINGFACE_API_KEY` to set the key securely."
+          "mdDescription": "Enter an API Key for your Hugging Face Account. **Please note:** By using this preference the Hugging Face API key will be stored in clear text            on the machine runningWasomeCodeX. Use the environment variable `HUGGINGFACE_API_KEY` to set the key securely."
         },
         "models": {
           "description": "Hugging Face models to use"
@@ -412,7 +412,7 @@
       },
       "llamaFile": {
         "prefs": {
-          "mdDescription": "This setting allows you to configure and manage LlamaFile models in Theia IDE.            \n            Each entry requires a user-friendly `name`, the file `uri` pointing to your LlamaFile, and the `port` on which it will run.            \n            To start a LlamaFile, use the \"Start LlamaFile\" command, which enables you to select the desired model.            \n            If you edit an entry (e.g., change the port), any running instance will stop, and you will need to manually start it again.            \n            [Learn more about configuring and managing LlamaFiles in the Theia IDE documentation](https://theia-ide.org/docs/user_ai/#llamafile-models).",
+          "mdDescription": "This setting allows you to configure and manage LlamaFile models inWasomeCodeX IDE.            \n            Each entry requires a user-friendly `name`, the file `uri` pointing to your LlamaFile, and the `port` on which it will run.            \n            To start a LlamaFile, use the \"Start LlamaFile\" command, which enables you to select the desired model.            \n            If you edit an entry (e.g., change the port), any running instance will stop, and you will need to manually start it again.            \n            [Learn more about configuring and managing LlamaFiles in theWasomeCodeX IDE documentation](https://theia-ide.org/docs/user_ai/#llamafile-models).",
           "name": {
             "description": "The model name to use for this Llamafile."
           },
@@ -517,7 +517,7 @@
       },
       "openai": {
         "apiKey": {
-          "mdDescription": "Enter an API Key of your official OpenAI Account. **Please note:** By using this preference the Open AI API key will be stored in clear text on the machine running Theia. Use the environment variable `OPENAI_API_KEY` to set the key securely."
+          "mdDescription": "Enter an API Key of your official OpenAI Account. **Please note:** By using this preference the Open AI API key will be stored in clear text on the machine runningWasomeCodeX. Use the environment variable `OPENAI_API_KEY` to set the key securely."
         },
         "customEndpoints": {
           "apiKey": {
@@ -630,7 +630,7 @@
       },
       "vercelai": {
         "anthropicApiKey": {
-          "mdDescription": "Enter an API Key for Anthropic models used by the Vercel AI SDK.                 **Please note:** By using this preference the API key will be stored in clear text on the machine running Theia. Use the environment variable `ANTHROPIC_API_KEY` to set the key securely."
+          "mdDescription": "Enter an API Key for Anthropic models used by the Vercel AI SDK.                 **Please note:** By using this preference the API key will be stored in clear text on the machine runningWasomeCodeX. Use the environment variable `ANTHROPIC_API_KEY` to set the key securely."
         },
         "customEndpoints": {
           "apiKey": {
@@ -669,12 +669,12 @@
           }
         },
         "openaiApiKey": {
-          "mdDescription": "Enter an API Key for OpenAI models used by the Vercel AI SDK.                 **Please note:** By using this preference the API key will be stored in clear text on the machine running Theia. Use the environment variable `OPENAI_API_KEY` to set the key securely."
+          "mdDescription": "Enter an API Key for OpenAI models used by the Vercel AI SDK.                 **Please note:** By using this preference the API key will be stored in clear text on the machine runningWasomeCodeX. Use the environment variable `OPENAI_API_KEY` to set the key securely."
         }
       },
       "workspace": {
         "coderAgent": {
-          "description": "An AI assistant integrated into Theia IDE, designed to assist software developers. This agent can access the users workspace, it can get a list of all available files         and folders and retrieve their content. Furthermore, it can suggest modifications of files to the user. It can therefore assist the user with coding tasks or other         tasks involving file changes."
+          "description": "An AI assistant integrated intoWasomeCodeX IDE, designed to assist software developers. This agent can access the users workspace, it can get a list of all available files         and folders and retrieve their content. Furthermore, it can suggest modifications of files to the user. It can therefore assist the user with coding tasks or other         tasks involving file changes."
         },
         "considerGitignore": {
           "description": "If enabled, excludes files/folders specified in a global .gitignore file (expected location is the workspace root).",
@@ -689,7 +689,7 @@
           "title": "Maximum Search Results"
         },
         "workspaceAgent": {
-          "description": "An AI assistant integrated into Theia IDE, designed to assist software developers. This agent can access the users workspace, it can get a list of all available files          and folders and retrieve their content. It cannot modify files. It can therefore answer questions about the current project, project files and source code in the          workspace, such as how to build the project, where to put source code, where to find specific code or configurations, etc."
+          "description": "An AI assistant integrated intoWasomeCodeX IDE, designed to assist software developers. This agent can access the users workspace, it can get a list of all available files          and folders and retrieve their content. It cannot modify files. It can therefore answer questions about the current project, project files and source code in the          workspace, such as how to build the project, where to put source code, where to find specific code or configurations, etc."
         }
       }
     },
@@ -799,7 +799,7 @@
       },
       "navigator": {
         "clipboardWarn": "Access to the clipboard is denied. Check your browser's permission.",
-        "clipboardWarnFirefox": "Clipboard API is not available. It can be enabled by '{0}' preference on '{1}' page. Then reload Theia. Note, it will allow FireFox getting full access to the system clipboard."
+        "clipboardWarnFirefox": "Clipboard API is not available. It can be enabled by '{0}' preference on '{1}' page. Then reloadWasomeCodeX. Note, it will allow FireFox getting full access to the system clipboard."
       },
       "offline": "Offline",
       "pasteWarn": "Please use the browser's paste command or shortcut.",
@@ -813,8 +813,8 @@
       "secondaryWindow": {
         "alwaysOnTop": "When enabled, the secondary window stays above all other windows, including those of different applications.",
         "description": "Sets the initial position and size of the extracted secondary window.",
-        "fullSize": "The position and size of the extracted widget will be the same as the running Theia application.",
-        "halfWidth": "The position and size of the extracted widget will be half the width of the running Theia application.",
+        "fullSize": "The position and size of the extracted widget will be the same as the runningWasomeCodeX application.",
+        "halfWidth": "The position and size of the extracted widget will be half the width of the runningWasomeCodeX application.",
         "originalSize": "The position and size of the extracted widget will be the same as the original widget."
       },
       "silentNotifications": "Controls whether to suppress notification popups.",
@@ -1084,7 +1084,7 @@
     "navigator": {
       "autoReveal": "Auto Reveal",
       "clipboardWarn": "Access to the clipboard is denied. Check your browser's permission.",
-      "clipboardWarnFirefox": "Clipboard API is not available. It can be enabled by '{0}' preference on '{1}' page. Then reload Theia. Note, it will allow FireFox getting full access to the system clipboard.",
+      "clipboardWarnFirefox": "Clipboard API is not available. It can be enabled by '{0}' preference on '{1}' page. Then reloadWasomeCodeX. Note, it will allow FireFox getting full access to the system clipboard.",
       "refresh": "Refresh in Explorer",
       "reveal": "Reveal in Explorer",
       "systemEditor": "System Editor",

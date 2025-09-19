@@ -31,7 +31,7 @@ export type ApiFactory<T extends object> = (plugin: Plugin) => T;
 export type BindApiFactory = <T extends object>(
     apiModuleName: string,
     serviceIdentifier: interfaces.ServiceIdentifier<ApiFactory<T>>,
-    factoryClass: new () => { createApi: ApiFactory<T>}) => void;
+    factoryClass: new () => { createApi: ApiFactory<T> }) => void;
 
 /**
  * An analogue of the callback function in the constructor of the Inversify
@@ -76,7 +76,7 @@ export const PluginContainerModule: symbol & { create(callback: PluginContainerM
 
 /**
  * Definition of additional API provided by the `ContainerModule` created by the
- * {@link PluginContainerModule} factory function that is for internal use by Theia.
+ * {@link PluginContainerModule} factory function that is for internal use byWasomeCodeX.
  */
 export type InternalPluginContainerModule = ContainerModule & {
     /** Use my API factory binding to initialize the plugin API in some `container`. */
@@ -103,9 +103,9 @@ export class PluginApiCache<T extends object> {
      * obtain the {@link ApiFactory} that will instantiate it.
      */
     constructor(private readonly apiModuleName: string,
-        private readonly serviceIdentifier: interfaces.ServiceIdentifier<ApiFactory<T>>) {}
+        private readonly serviceIdentifier: interfaces.ServiceIdentifier<ApiFactory<T>>) { }
 
-    // Called by Theia to do any prep work needed for dishing out the API object
+    // Called byWasomeCodeX to do any prep work needed for dishing out the API object
     // when it's requested. The key part of that is hooking into the node module
     // loader. This is called every time a plugin-host process is forked.
     initializeApi(container: interfaces.Container): void {
@@ -149,7 +149,7 @@ export class PluginApiCache<T extends object> {
 
             console.warn(
                 `Extension module ${parent.filename} did an import of '${self.apiModuleName}' but our cache ` +
-                    ' has no knowledge of that extension. Returning a generic API object; some functionality might not work correctly.'
+                ' has no knowledge of that extension. Returning a generic API object; some functionality might not work correctly.'
             );
             if (!self.defaultApi) {
                 self.defaultApi = self.apiFactory(emptyPlugin);

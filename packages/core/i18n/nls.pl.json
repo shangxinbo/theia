@@ -60,7 +60,7 @@
       },
       "chat": {
         "defaultAgent": {
-          "description": "Opcjonalnie: <agent-name> agenta czatu, który zostanie wywołany, jeśli żaden agent nie został wyraźnie wymieniony z @<agent-name> w zapytaniu użytkownika. Jeśli nie skonfigurowano domyślnego agenta, zostaną zastosowane domyślne ustawienia Theia."
+          "description": "Opcjonalnie: <agent-name> agenta czatu, który zostanie wywołany, jeśli żaden agent nie został wyraźnie wymieniony z @<agent-name> w zapytaniu użytkownika. Jeśli nie skonfigurowano domyślnego agenta, zostaną zastosowane domyślne ustawieniaWasomeCodeX."
         },
         "pinChatAgent": {
           "description": "Włącz przypinanie agentów, aby automatycznie utrzymywać wspomnianego agenta czatu aktywnego w monitach, zmniejszając potrzebę powtarzania wzmianek. Możesz ręcznie odpiąć lub zmienić agentów w dowolnym momencie."
@@ -176,7 +176,7 @@
       },
       "completion": {
         "agent": {
-          "description": "Ten agent zapewnia uzupełnianie kodu w edytorze kodu w Theia IDE."
+          "description": "Ten agent zapewnia uzupełnianie kodu w edytorze kodu wWasomeCodeX IDE."
         },
         "automaticEnable": {
           "description": "Automatycznie uruchamiaj uzupełnienia AI inline w dowolnym edytorze (Monaco) podczas edycji.            \n            Alternatywnie można ręcznie wyzwolić kod za pomocą polecenia \"Trigger Inline Suggestion\" lub domyślnego skrótu \"Ctrl+Alt+Spacja\"."
@@ -311,7 +311,7 @@
           "description": "Folder do przechowywania niestandardowych szablonów monitów. Jeśli nie został dostosowany, używany jest katalog konfiguracji użytkownika. Należy rozważyć użycie folderu, który jest pod kontrolą wersji do zarządzania wariantami szablonów podpowiedzi."
         },
         "prompts": {
-          "category": "Szablony zachęty Theia AI"
+          "category": "Szablony zachętyWasomeCodeX AI"
         },
         "requestSettings": {
           "mdDescription": "Umożliwia określenie niestandardowych ustawień żądań dla wielu modeli.\n            Każdy obiekt reprezentuje konfigurację dla konkretnego modelu. Pole `modelId` określa ID modelu, `requestSettings` definiuje ustawienia specyficzne dla modelu.\n            Pole `providerId` jest opcjonalne i pozwala na zastosowanie ustawień do konkretnego dostawcy. Jeśli nie zostanie ustawione, ustawienia zostaną zastosowane do wszystkich dostawców.\n            Przykładowe providerIds: huggingface, openai, ollama, llamafile.\n            Więcej informacji można znaleźć w [naszej dokumentacji](https://theia-ide.org/docs/user_ai/#custom-request-settings).",
@@ -325,7 +325,7 @@
           "unavailableVariant": "Wybrany wariant nie jest już dostępny"
         },
         "variable-contribution": {
-          "builtInVariable": "Wbudowana zmienna Theia",
+          "builtInVariable": "Wbudowana zmiennaWasomeCodeX",
           "currentAbsoluteFilePath": "Ścieżka bezwzględna aktualnie otwartego pliku. Należy pamiętać, że większość agentów będzie oczekiwać względnej ścieżki pliku (względem bieżącego obszaru roboczego).",
           "currentFileContent": "Zwykła zawartość aktualnie otwartego pliku. Wyklucza to informacje o tym, skąd pochodzi zawartość. Należy pamiętać, że większość agentów będzie działać lepiej z relatywną ścieżką pliku (względem bieżącego obszaru roboczego).",
           "currentRelativeDirPath": "Względna ścieżka do katalogu zawierającego aktualnie otwarty plik.",
@@ -336,7 +336,7 @@
       },
       "google": {
         "apiKey": {
-          "description": "Wprowadź klucz API swojego oficjalnego konta Google AI (Gemini). **Uwaga:** Korzystając z tej preferencji, klucz API GOOGLE AI będzie przechowywany w postaci zwykłego tekstu na komputerze z uruchomioną aplikacją Theia. Użyj zmiennej środowiskowej `GOOGLE_API_KEY`, aby bezpiecznie ustawić klucz."
+          "description": "Wprowadź klucz API swojego oficjalnego konta Google AI (Gemini). **Uwaga:** Korzystając z tej preferencji, klucz API GOOGLE AI będzie przechowywany w postaci zwykłego tekstu na komputerze z uruchomioną aplikacjąWasomeCodeX. Użyj zmiennej środowiskowej `GOOGLE_API_KEY`, aby bezpiecznie ustawić klucz."
         },
         "maxRetriesOnErrors": {
           "description": "Maksymalna liczba ponownych prób w przypadku błędów. Jeśli mniejsza niż 1, logika ponawiania jest wyłączona"
@@ -396,7 +396,7 @@
       },
       "huggingFace": {
         "apiKey": {
-          "mdDescription": "Wprowadź klucz API dla swojego konta Hugging Face. **Uwaga:** Korzystając z tej preferencji, klucz API Hugging Face będzie przechowywany w postaci zwykłego tekstu na komputerze z uruchomioną aplikacją Theia. Użyj zmiennej środowiskowej `HUGGINGFACE_API_KEY`, aby bezpiecznie ustawić klucz."
+          "mdDescription": "Wprowadź klucz API dla swojego konta Hugging Face. **Uwaga:** Korzystając z tej preferencji, klucz API Hugging Face będzie przechowywany w postaci zwykłego tekstu na komputerze z uruchomioną aplikacjąWasomeCodeX. Użyj zmiennej środowiskowej `HUGGINGFACE_API_KEY`, aby bezpiecznie ustawić klucz."
         },
         "models": {
           "description": "Modele Hugging Face do użycia"
@@ -412,7 +412,7 @@
       },
       "llamaFile": {
         "prefs": {
-          "mdDescription": "To ustawienie umożliwia konfigurację i zarządzanie modelami LlamaFile w Theia IDE.            \n            Każdy wpis wymaga przyjaznej dla użytkownika `nazwy`, pliku `uri` wskazującego na LlamaFile oraz `portu`, na którym będzie uruchamiany.            \n            Aby uruchomić LlamaFile, należy użyć polecenia \"Start LlamaFile\", które umożliwia wybranie żądanego modelu.            \n            Jeśli edytujesz wpis (np. zmienisz port), każda uruchomiona instancja zostanie zatrzymana i będziesz musiał ręcznie uruchomić ją ponownie.            \n            [Więcej informacji na temat konfigurowania i zarządzania LlamaFiles można znaleźć w dokumentacji Theia IDE](https://theia-ide.org/docs/user_ai/#llamafile-models).",
+          "mdDescription": "To ustawienie umożliwia konfigurację i zarządzanie modelami LlamaFile wWasomeCodeX IDE.            \n            Każdy wpis wymaga przyjaznej dla użytkownika `nazwy`, pliku `uri` wskazującego na LlamaFile oraz `portu`, na którym będzie uruchamiany.            \n            Aby uruchomić LlamaFile, należy użyć polecenia \"Start LlamaFile\", które umożliwia wybranie żądanego modelu.            \n            Jeśli edytujesz wpis (np. zmienisz port), każda uruchomiona instancja zostanie zatrzymana i będziesz musiał ręcznie uruchomić ją ponownie.            \n            [Więcej informacji na temat konfigurowania i zarządzania LlamaFiles można znaleźć w dokumentacjiWasomeCodeX IDE](https://theia-ide.org/docs/user_ai/#llamafile-models).",
           "name": {
             "description": "Nazwa modelu używana dla tego pliku Llamafile."
           },
@@ -517,7 +517,7 @@
       },
       "openai": {
         "apiKey": {
-          "mdDescription": "Wprowadź klucz API swojego oficjalnego konta OpenAI. **Uwaga:** Korzystając z tej preferencji, klucz API Open AI będzie przechowywany w postaci zwykłego tekstu na komputerze z uruchomioną aplikacją Theia. Użyj zmiennej środowiskowej `OPENAI_API_KEY`, aby bezpiecznie ustawić klucz."
+          "mdDescription": "Wprowadź klucz API swojego oficjalnego konta OpenAI. **Uwaga:** Korzystając z tej preferencji, klucz API Open AI będzie przechowywany w postaci zwykłego tekstu na komputerze z uruchomioną aplikacjąWasomeCodeX. Użyj zmiennej środowiskowej `OPENAI_API_KEY`, aby bezpiecznie ustawić klucz."
         },
         "customEndpoints": {
           "apiKey": {
@@ -630,7 +630,7 @@
       },
       "vercelai": {
         "anthropicApiKey": {
-          "mdDescription": "Wprowadź klucz API dla modeli Anthropic. **Uwaga:** Używając tej preferencji, klucz API będzie przechowywany w postaci czystego tekstu na komputerze z uruchomioną aplikacją Theia. Użyj zmiennej środowiskowej `ANTHROPIC_API_KEY`, aby bezpiecznie ustawić klucz."
+          "mdDescription": "Wprowadź klucz API dla modeli Anthropic. **Uwaga:** Używając tej preferencji, klucz API będzie przechowywany w postaci czystego tekstu na komputerze z uruchomioną aplikacjąWasomeCodeX. Użyj zmiennej środowiskowej `ANTHROPIC_API_KEY`, aby bezpiecznie ustawić klucz."
         },
         "customEndpoints": {
           "apiKey": {
@@ -669,12 +669,12 @@
           }
         },
         "openaiApiKey": {
-          "mdDescription": "Wprowadź klucz API dla modeli OpenAI. **Uwaga:** Korzystając z tej preferencji, klucz API będzie przechowywany w postaci zwykłego tekstu na komputerze z uruchomioną aplikacją Theia. Użyj zmiennej środowiskowej `OPENAI_API_KEY`, aby bezpiecznie ustawić klucz."
+          "mdDescription": "Wprowadź klucz API dla modeli OpenAI. **Uwaga:** Korzystając z tej preferencji, klucz API będzie przechowywany w postaci zwykłego tekstu na komputerze z uruchomioną aplikacjąWasomeCodeX. Użyj zmiennej środowiskowej `OPENAI_API_KEY`, aby bezpiecznie ustawić klucz."
         }
       },
       "workspace": {
         "coderAgent": {
-          "description": "Asystent AI zintegrowany z Theia IDE, zaprojektowany do pomocy programistom. Agent ten może uzyskać dostęp do obszaru roboczego użytkownika, może uzyskać listę wszystkich dostępnych plików i folderów oraz pobrać ich zawartość. Ponadto może sugerować użytkownikowi modyfikacje plików. Może zatem pomóc użytkownikowi w kodowaniu lub innych zadaniach związanych ze zmianami plików."
+          "description": "Asystent AI zintegrowany zWasomeCodeX IDE, zaprojektowany do pomocy programistom. Agent ten może uzyskać dostęp do obszaru roboczego użytkownika, może uzyskać listę wszystkich dostępnych plików i folderów oraz pobrać ich zawartość. Ponadto może sugerować użytkownikowi modyfikacje plików. Może zatem pomóc użytkownikowi w kodowaniu lub innych zadaniach związanych ze zmianami plików."
         },
         "considerGitignore": {
           "description": "Jeśli jest włączona, wyklucza pliki/foldery określone w globalnym pliku .gitignore (oczekiwaną lokalizacją jest główny obszar roboczy).",
@@ -689,7 +689,7 @@
           "title": "Maksymalne wyniki wyszukiwania"
         },
         "workspaceAgent": {
-          "description": "Asystent AI zintegrowany z Theia IDE, zaprojektowany do pomocy programistom. Ten agent może uzyskać dostęp do obszaru roboczego użytkownika, może uzyskać listę wszystkich dostępnych plików i folderów oraz pobrać ich zawartość. Nie może modyfikować plików. Może zatem odpowiadać na pytania dotyczące bieżącego projektu, plików projektu i kodu źródłowego w obszarze roboczym, takie jak jak zbudować projekt, gdzie umieścić kod źródłowy, gdzie znaleźć określony kod lub konfiguracje itp."
+          "description": "Asystent AI zintegrowany zWasomeCodeX IDE, zaprojektowany do pomocy programistom. Ten agent może uzyskać dostęp do obszaru roboczego użytkownika, może uzyskać listę wszystkich dostępnych plików i folderów oraz pobrać ich zawartość. Nie może modyfikować plików. Może zatem odpowiadać na pytania dotyczące bieżącego projektu, plików projektu i kodu źródłowego w obszarze roboczym, takie jak jak zbudować projekt, gdzie umieścić kod źródłowy, gdzie znaleźć określony kod lub konfiguracje itp."
         }
       }
     },
@@ -799,7 +799,7 @@
       },
       "navigator": {
         "clipboardWarn": "Dostęp do schowka jest zablokowany. Sprawdź uprawnienia przeglądarki.",
-        "clipboardWarnFirefox": "Interfejs API schowka nie jest dostępny. Można go włączyć za pomocą opcji '{0}' na stronie '{1}'. Następnie należy ponownie załadować Theia. Uwaga, pozwoli to FireFox uzyskać pełny dostęp do schowka systemowego."
+        "clipboardWarnFirefox": "Interfejs API schowka nie jest dostępny. Można go włączyć za pomocą opcji '{0}' na stronie '{1}'. Następnie należy ponownie załadowaćWasomeCodeX. Uwaga, pozwoli to FireFox uzyskać pełny dostęp do schowka systemowego."
       },
       "offline": "Offline",
       "pasteWarn": "Użyj polecenia wklejania lub skrótu przeglądarki.",
@@ -813,8 +813,8 @@
       "secondaryWindow": {
         "alwaysOnTop": "Po włączeniu tej opcji okno dodatkowe pozostaje nad wszystkimi innymi oknami, w tym nad oknami różnych aplikacji.",
         "description": "Ustawia początkową pozycję i rozmiar wyodrębnionego okna pomocniczego.",
-        "fullSize": "Pozycja i rozmiar wyodrębnionego widżetu będą takie same jak uruchomionej aplikacji Theia.",
-        "halfWidth": "Pozycja i rozmiar wyodrębnionego widżetu będą równe połowie szerokości uruchomionej aplikacji Theia.",
+        "fullSize": "Pozycja i rozmiar wyodrębnionego widżetu będą takie same jak uruchomionej aplikacjiWasomeCodeX.",
+        "halfWidth": "Pozycja i rozmiar wyodrębnionego widżetu będą równe połowie szerokości uruchomionej aplikacjiWasomeCodeX.",
         "originalSize": "Pozycja i rozmiar wyodrębnionego widżetu będą takie same jak oryginalnego widżetu."
       },
       "silentNotifications": "Określa, czy wyłączyć wyskakujące okienka powiadomień.",
@@ -1084,7 +1084,7 @@
     "navigator": {
       "autoReveal": "Auto ujawnienie",
       "clipboardWarn": "Dostęp do schowka jest zablokowany. Sprawdź uprawnienia przeglądarki.",
-      "clipboardWarnFirefox": "Interfejs API schowka nie jest dostępny. Można go włączyć za pomocą opcji '{0}' na stronie '{1}'. Następnie należy ponownie załadować Theia. Uwaga, pozwoli to FireFox uzyskać pełny dostęp do schowka systemowego.",
+      "clipboardWarnFirefox": "Interfejs API schowka nie jest dostępny. Można go włączyć za pomocą opcji '{0}' na stronie '{1}'. Następnie należy ponownie załadowaćWasomeCodeX. Uwaga, pozwoli to FireFox uzyskać pełny dostęp do schowka systemowego.",
       "refresh": "Odśwież w Eksploratorze",
       "reveal": "Ujawnij w Eksploratorze",
       "systemEditor": "Edytor systemu",

@@ -42,7 +42,7 @@ export module '@theia/plugin' {
          * @param includeDifferentExtensionHosts Include extensions from different extension host
          * @return An extension or `undefined`.
          *
-         * *Note* In Theia, includeDifferentExtensionHosts will always be set to false, as we only support one host currently.
+         * *Note* InWasomeCodeX, includeDifferentExtensionHosts will always be set to false, as we only support one host currently.
          */
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         export function getExtension<T = any>(extensionId: string, includeDifferentExtensionHosts: boolean): Extension<T> | undefined;

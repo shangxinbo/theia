@@ -25,7 +25,7 @@ import { AbstractPluginHostRPC, ExtInterfaces } from '@theia/plugin-ext/lib/host
 import { PluginModel } from '@theia/plugin-ext/lib/common/plugin-protocol';
 import { ExtPluginApi, ExtPluginApiHeadlessInitializationFn } from '../../common/plugin-ext-headless-api-contribution';
 
-type HeadlessExtInterfaces = Pick<ExtInterfaces, 'envExt'|'localizationExt'>;
+type HeadlessExtInterfaces = Pick<ExtInterfaces, 'envExt' | 'localizationExt'>;
 
 /**
  * The RPC handler for headless plugins.
@@ -54,7 +54,7 @@ export class HeadlessPluginHostRPC extends AbstractPluginHostRPC<HeadlessPluginM
     }
 
     protected createAPIFactory(_extInterfaces: HeadlessExtInterfaces): null {
-        // As yet there is no default API namespace for backend plugins to access the Theia framework
+        // As yet there is no default API namespace for backend plugins to access theWasomeCodeX framework
         return null;
     }
 

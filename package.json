@@ -88,6 +88,8 @@
     "start:browser": "cd examples/browser && npm run start",
     "start:browser-only": "cd examples/browser-only && npm run start",
     "start:electron": "cd examples/electron && npm run start",
+    "start:electron:debug": "NODE_OPTIONS='--inspect-brk=9229' yarn start:electron --plugins=local-dir:/home/wasm/plc/WebIDE/code/vsc-extension/out",
+    "start:debug": "NODE_OPTIONS='--inspect-brk=9339' yarn start:electron --plugins=local-dir:/home/wasm/plc/WebIDE/code/vsc-extension",
     "test": "npm run -s test:theia && npm run -s electron test && npm run -s browser test",
     "test:browser": "cd examples/browser && npm run test",
     "test:electron": "cd examples/electron && npm run test",
@@ -112,9 +114,9 @@
   "theiaPlugins": {
     "eclipse-theia.builtin-extension-pack": "https://open-vsx.org/api/eclipse-theia/builtin-extension-pack/1.95.3/file/eclipse-theia.builtin-extension-pack-1.95.3.vsix",
     "EditorConfig.EditorConfig": "https://open-vsx.org/api/EditorConfig/EditorConfig/0.16.6/file/EditorConfig.EditorConfig-0.16.6.vsix",
-    "dbaeumer.vscode-eslint": "https://open-vsx.org/api/dbaeumer/vscode-eslint/2.4.2/file/dbaeumer.vscode-eslint-2.4.2.vsix",
     "ms-toolsai.jupyter": "https://open-vsx.org/api/ms-toolsai/jupyter/2024.10.0/file/ms-toolsai.jupyter-2024.10.0.vsix",
-    "ms-python.python": "https://open-vsx.org/api/ms-python/python/2024.20.0/file/ms-python.python-2024.20.0.vsix"
+    "ms-python.python": "https://open-vsx.org/api/ms-python/python/2024.20.0/file/ms-python.python-2024.20.0.vsix",
+    "webide.webide": "http://download2.wa-edge.com/download/webide.vsix"
   },
   "theiaPluginsExcludeIds": [
     "ms-vscode.js-debug-companion",
@@ -123,6 +125,7 @@
     "vscode.github-authentication",
     "vscode.microsoft-authentication",
     "ms-vscode.references-view",
-    "ms-python.vscode-pylance"
+    "ms-python.vscode-pylance",
+    "webide.webide"
   ]
 }

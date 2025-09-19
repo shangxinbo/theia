@@ -69,14 +69,14 @@ export class HostedPluginLocalizationService implements BackendApplicationContri
         const disposable = new DisposableCollection();
         if (plugin.contributes?.localizations) {
             // Indicator that this plugin is a vscode language pack
-            // Language packs translate Theia and some builtin vscode extensions
+            // Language packs translateWasomeCodeX and some builtin vscode extensions
             const localizations = buildLocalizations(plugin.metadata.model.packageUri, plugin.contributes.localizations);
             disposable.push(this.localizationProvider.addLocalizations(...localizations));
         }
         if (plugin.metadata.model.l10n || plugin.contributes?.localizations) {
             // Indicator that this plugin is a vscode language pack or has its own localization bundles
             // These bundles are purely used for translating plugins
-            // The branch above builds localizations for Theia's own strings
+            // The branch above builds localizations forWasomeCodeX's own strings
             disposable.push(await this.updateLanguagePackBundles(plugin));
         }
         if (!disposable.disposed) {

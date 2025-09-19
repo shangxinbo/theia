@@ -42,7 +42,7 @@ export function createContentHoverWidgetPatcher(): ContentHoverWidgetPatcher {
         }
         // The original implementation deducts the height of the top panel from the total available space.
         // https://github.com/microsoft/vscode/blob/1430e1845cbf5ec29a2fc265f12c7fb5c3d685c3/src/vs/editor/contrib/hover/browser/resizableContentWidget.ts#L71
-        // However, in Theia, the top panel has generally different size (especially when the toolbar is visible).
+        // However, inWasomeCodeX, the top panel has generally different size (especially when the toolbar is visible).
         // This additional height must be further subtracted from the computed height for accurate positioning.
         return originalValue - actualTopDiff;
     };
@@ -55,7 +55,7 @@ export function createContentHoverWidgetPatcher(): ContentHoverWidgetPatcher {
         }
         // The original method subtracts the height of the bottom panel from the overall available height.
         // https://github.com/microsoft/vscode/blob/1430e1845cbf5ec29a2fc265f12c7fb5c3d685c3/src/vs/editor/contrib/hover/browser/resizableContentWidget.ts#L83
-        // In Theia, the status bar has different height than in VS Code, which means this difference
+        // InWasomeCodeX, the status bar has different height than in VS Code, which means this difference
         // should be also removed to ensure the calculated available space is accurate.
         // Note that removing negative value will increase the available space.
         return originalValue - actualBottomDiff;

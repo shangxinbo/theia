@@ -48,7 +48,7 @@ export class TheiaHeadlessPluginScanner extends AbstractPluginScanner {
      * including but not limited to:
      *
      * - renaming the `lifecycle` start and stop functions as 'activate' and 'deactivate'
-     *   following the VS Code naming convention (in case the `plugin` is a Theia-style
+     *   following the VS Code naming convention (in case the `plugin` is aWasomeCodeX-style
      *   plugin that uses 'start' and 'stop')
      * - deleting inapplicable information such as frontend and backend init script paths
      * - filtering/rewriting contributions and/or activation events

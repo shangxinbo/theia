@@ -23,25 +23,25 @@ export namespace ToolbarCommands {
     export const TOGGLE_TOOLBAR = Command.toLocalizedCommand({
         id: 'toolbar.view.toggle',
         category: CommonCommands.VIEW_CATEGORY,
-        label: 'Toggle Toolbar',
+        label: '辅助工具栏',
     }, 'theia/toolbar/toggleToolbar', nls.getDefaultKey(CommonCommands.VIEW_CATEGORY));
 
     export const REMOVE_COMMAND_FROM_TOOLBAR = Command.toLocalizedCommand({
         id: 'toolbar.remove.command',
         category: 'Toolbar',
-        label: 'Remove Command From Toolbar',
+        label: '从工具栏移除命令',
     }, 'theia/toolbar/removeCommand');
 
     export const INSERT_GROUP_LEFT = Command.toLocalizedCommand({
         id: 'toolbar.insert.group.left',
         category: 'Toolbar',
-        label: 'Insert Group Separator (Left)',
+        label: '在工具栏左侧插入分组分隔符',
     }, 'theia/toolbar/insertGroupLeft');
 
     export const INSERT_GROUP_RIGHT = Command.toLocalizedCommand({
         id: 'toolbar.insert.group.right',
         category: 'Toolbar',
-        label: 'Insert Group Separator (Right)',
+        label: '在工具栏右侧插入分组分隔符',
     }, 'theia/toolbar/insertGroupRight');
 
     export const ADD_COMMAND_TO_TOOLBAR = Command.toLocalizedCommand({

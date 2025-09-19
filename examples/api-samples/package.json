@@ -2,7 +2,7 @@
   "private": true,
   "name": "@theia/api-samples",
   "version": "1.64.0",
-  "description": "Theia - Example code to demonstrate Theia API",
+  "description": "Theia - Example code to demonstrateWasomeCodeX API",
   "dependencies": {
     "@theia/ai-chat": "1.64.0",
     "@theia/ai-chat-ui": "1.64.0",

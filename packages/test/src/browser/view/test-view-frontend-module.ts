@@ -59,10 +59,10 @@ export default new ContainerModule(bind => {
 
     bind(TestResultWidget).toSelf();
 
-    bind(TestTreeWidget).toDynamicValue(({ container }) => {
-        const child = createTestTreeContainer(container);
-        return child.get(TestTreeWidget);
-    });
+    // bind(TestTreeWidget).toDynamicValue(({ container }) => {
+    //     const child = createTestTreeContainer(container);
+    //     return child.get(TestTreeWidget);
+    // });
     bind(WidgetFactory).toDynamicValue(({ container }) => ({
         id: TestTreeWidget.ID,
         createWidget: () => container.get<TestTreeWidget>(TestTreeWidget)

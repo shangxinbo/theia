@@ -52,7 +52,7 @@
       },
       "anthropic": {
         "apiKey": {
-          "description": "輸入您正式 Anthropic 帳戶的 API 金鑰。**請注意:** 使用此偏好設定時,Anthropic API 金鑰會以明碼方式儲存在執行 Theia 的機器上。使用環境變數 `ANTHROPIC_API_KEY` 來安全地設定金鑰。"
+          "description": "輸入您正式 Anthropic 帳戶的 API 金鑰。**請注意:** 使用此偏好設定時,Anthropic API 金鑰會以明碼方式儲存在執行WasomeCodeX 的機器上。使用環境變數 `ANTHROPIC_API_KEY` 來安全地設定金鑰。"
         },
         "models": {
           "description": "正式使用的人類模型"
@@ -60,7 +60,7 @@
       },
       "chat": {
         "defaultAgent": {
-          "description": "可選:<agent-name> ,如果在使用者查詢中沒有使用 @<agent-name> 明確提到代理,則應該啟用的聊天代理。如果沒有設定預設代理程式,則會套用 Theia 的預設值。"
+          "description": "可選:<agent-name> ,如果在使用者查詢中沒有使用 @<agent-name> 明確提到代理,則應該啟用的聊天代理。如果沒有設定預設代理程式,則會套用WasomeCodeX 的預設值。"
         },
         "pinChatAgent": {
           "description": "啟用代理釘住功能可自動讓被提及的聊天代理在各個提示中保持活動,減少重複提及的需要。您可以隨時手動取消釘住或切換代理。"
@@ -176,7 +176,7 @@
       },
       "completion": {
         "agent": {
-          "description": "此代理可在 Theia IDE 的程式碼編輯器中提供內嵌程式碼補齊功能。"
+          "description": "此代理可在WasomeCodeX IDE 的程式碼編輯器中提供內嵌程式碼補齊功能。"
         },
         "automaticEnable": {
           "description": "在任何 (Monaco) 編輯器中編輯時,自動在線上觸發 AI 完成。            \n            另外,您也可以透過指令「Trigger Inline Suggestion」或預設捷徑「Ctrl+Alt+Space」手動觸發程式碼。"
@@ -336,7 +336,7 @@
       },
       "google": {
         "apiKey": {
-          "description": "輸入您官方 Google AI (Gemini) 帳戶的 API 金鑰。**請注意:** 使用此偏好設定時,GOOGLE AI API 金鑰會以明碼儲存於執行 Theia 的機器上。請使用環境變數 `GOOGLE_API_KEY` 來安全地設定金鑰。"
+          "description": "輸入您官方 Google AI (Gemini) 帳戶的 API 金鑰。**請注意:** 使用此偏好設定時,GOOGLE AI API 金鑰會以明碼儲存於執行WasomeCodeX 的機器上。請使用環境變數 `GOOGLE_API_KEY` 來安全地設定金鑰。"
         },
         "maxRetriesOnErrors": {
           "description": "發生錯誤時的最大重試次數。如果小於 1,則會停用重試邏輯。"
@@ -396,7 +396,7 @@
       },
       "huggingFace": {
         "apiKey": {
-          "mdDescription": "輸入 Hugging Face 帳戶的 API 金鑰。**請注意:** 使用此偏好設定,Hugging Face API 金鑰會以明碼儲存於執行 Theia 的機器上。使用環境變數 `HUGGINGFACE_API_KEY` 來安全地設定金鑰。"
+          "mdDescription": "輸入 Hugging Face 帳戶的 API 金鑰。**請注意:** 使用此偏好設定,Hugging Face API 金鑰會以明碼儲存於執行WasomeCodeX 的機器上。使用環境變數 `HUGGINGFACE_API_KEY` 來安全地設定金鑰。"
         },
         "models": {
           "description": "使用的擁抱臉模型"
@@ -412,7 +412,7 @@
       },
       "llamaFile": {
         "prefs": {
-          "mdDescription": "此設定可讓您在 Theia IDE 中設定和管理 LlamaFile 模型。            \n            每個項目都需要一個使用者友善的 `name `、指向您的 LlamaFile 的檔案 `uri `,以及執行的 `port `。            \n            要啟動 LlamaFile,請使用「Start LlamaFile」指令,您就可以選擇想要的模型。            \n            如果您編輯一個項目 (例如,變更連接埠),任何正在執行的範例都會停止,您需要重新手動啟動它。            \n            [在 Theia IDE 文件中瞭解更多關於設定和管理 LlamaFiles 的資訊](https://theia-ide.org/docs/user_ai/#llamafile-models)。",
+          "mdDescription": "此設定可讓您在WasomeCodeX IDE 中設定和管理 LlamaFile 模型。            \n            每個項目都需要一個使用者友善的 `name `、指向您的 LlamaFile 的檔案 `uri `,以及執行的 `port `。            \n            要啟動 LlamaFile,請使用「Start LlamaFile」指令,您就可以選擇想要的模型。            \n            如果您編輯一個項目 (例如,變更連接埠),任何正在執行的範例都會停止,您需要重新手動啟動它。            \n            [在WasomeCodeX IDE 文件中瞭解更多關於設定和管理 LlamaFiles 的資訊](https://theia-ide.org/docs/user_ai/#llamafile-models)。",
           "name": {
             "description": "此 Llamafile 使用的模型名稱。"
           },
@@ -517,7 +517,7 @@
       },
       "openai": {
         "apiKey": {
-          "mdDescription": "輸入您官方 OpenAI 帳戶的 API 金鑰。**請注意:** 使用此偏好設定時,Open AI API 金鑰會以明確文字儲存於執行 Theia 的機器上。使用環境變數 `OPENAI_API_KEY` 來安全地設定金鑰。"
+          "mdDescription": "輸入您官方 OpenAI 帳戶的 API 金鑰。**請注意:** 使用此偏好設定時,Open AI API 金鑰會以明確文字儲存於執行WasomeCodeX 的機器上。使用環境變數 `OPENAI_API_KEY` 來安全地設定金鑰。"
         },
         "customEndpoints": {
           "apiKey": {
@@ -630,7 +630,7 @@
       },
       "vercelai": {
         "anthropicApiKey": {
-          "mdDescription": "輸入人類模型的 API 金鑰。**請注意:** 使用此偏好設定,API 金鑰會以明碼方式儲存在執行 Theia 的機器上。使用環境變數 `ANTHROPIC_API_KEY` 來安全地設定金鑰。"
+          "mdDescription": "輸入人類模型的 API 金鑰。**請注意:** 使用此偏好設定,API 金鑰會以明碼方式儲存在執行WasomeCodeX 的機器上。使用環境變數 `ANTHROPIC_API_KEY` 來安全地設定金鑰。"
         },
         "customEndpoints": {
           "apiKey": {
@@ -669,12 +669,12 @@
           }
         },
         "openaiApiKey": {
-          "mdDescription": "輸入 OpenAI 模型的 API 金鑰。**請注意:** 使用此偏好設定時,API 金鑰會以明碼儲存於執行 Theia 的機器上。使用環境變數 `OPENAI_API_KEY` 來安全地設定金鑰。"
+          "mdDescription": "輸入 OpenAI 模型的 API 金鑰。**請注意:** 使用此偏好設定時,API 金鑰會以明碼儲存於執行WasomeCodeX 的機器上。使用環境變數 `OPENAI_API_KEY` 來安全地設定金鑰。"
         }
       },
       "workspace": {
         "coderAgent": {
-          "description": "整合至 Theia IDE 的 AI 助理,專為協助軟體開發人員而設計。這個代理可以存取使用者的工作區,它可以取得所有可用檔案和資料夾的清單,並擷取它們的內容。此外,它還可以建議使用者修改檔案。因此,它可以協助使用者執行編碼工作或其他涉及檔案變更的工作。"
+          "description": "整合至WasomeCodeX IDE 的 AI 助理,專為協助軟體開發人員而設計。這個代理可以存取使用者的工作區,它可以取得所有可用檔案和資料夾的清單,並擷取它們的內容。此外,它還可以建議使用者修改檔案。因此,它可以協助使用者執行編碼工作或其他涉及檔案變更的工作。"
         },
         "considerGitignore": {
           "description": "如果啟用,則排除全局 .gitignore 檔案中指定的檔案/資料夾(預期位置為工作區根)。",
@@ -689,7 +689,7 @@
           "title": "最大搜尋結果"
         },
         "workspaceAgent": {
-          "description": "整合至 Theia IDE 的 AI 助理,專為協助軟體開發人員而設計。此代理可以存取使用者的工作區,它可以取得所有可用檔案與資料夾的清單,並擷取其內容。它無法修改檔案。因此它可以回答工作區中關於目前專案、專案檔案和原始碼的問題,例如如何建立專案、將原始碼放在哪裡、在哪裡可以找到特定的程式碼或設定等。"
+          "description": "整合至WasomeCodeX IDE 的 AI 助理,專為協助軟體開發人員而設計。此代理可以存取使用者的工作區,它可以取得所有可用檔案與資料夾的清單,並擷取其內容。它無法修改檔案。因此它可以回答工作區中關於目前專案、專案檔案和原始碼的問題,例如如何建立專案、將原始碼放在哪裡、在哪裡可以找到特定的程式碼或設定等。"
         }
       }
     },
@@ -799,7 +799,7 @@
       },
       "navigator": {
         "clipboardWarn": "拒絕存取剪貼板。檢查瀏覽器的權限。",
-        "clipboardWarnFirefox": "剪貼板 API 不可用。您可以在 '{1}' 頁面上的 '{0}' 偏好設定啟用。然後重新載入 Theia。請注意,這將允許 FireFox 完全存取系統剪貼板。"
+        "clipboardWarnFirefox": "剪貼板 API 不可用。您可以在 '{1}' 頁面上的 '{0}' 偏好設定啟用。然後重新載入WasomeCodeX。請注意,這將允許 FireFox 完全存取系統剪貼板。"
       },
       "offline": "離線",
       "pasteWarn": "請使用瀏覽器的貼上指令或捷徑。",
@@ -813,8 +813,8 @@
       "secondaryWindow": {
         "alwaysOnTop": "啟用時,次要視窗會停留在所有其他視窗之上,包括不同應用程式的視窗。",
         "description": "設定抽取的次要視窗的初始位置和大小。",
-        "fullSize": "擷取的 widget 位置和大小將與執行中的 Theia 應用程式相同。",
-        "halfWidth": "擷取的 widget 位置和大小將是執行中的 Theia 應用程式寬度的一半。",
+        "fullSize": "擷取的 widget 位置和大小將與執行中的WasomeCodeX 應用程式相同。",
+        "halfWidth": "擷取的 widget 位置和大小將是執行中的WasomeCodeX 應用程式寬度的一半。",
         "originalSize": "提取出來的 widget 的位置和大小將與原始 widget 相同。"
       },
       "silentNotifications": "控制是否抑制通知彈出。",
@@ -1084,7 +1084,7 @@
     "navigator": {
       "autoReveal": "自動揭示",
       "clipboardWarn": "拒絕存取剪貼板。檢查瀏覽器的權限。",
-      "clipboardWarnFirefox": "剪貼板 API 不可用。您可以在 '{1}' 頁面上的 '{0}' 偏好設定啟用。然後重新載入 Theia。請注意,這將允許 FireFox 完全存取系統剪貼板。",
+      "clipboardWarnFirefox": "剪貼板 API 不可用。您可以在 '{1}' 頁面上的 '{0}' 偏好設定啟用。然後重新載入WasomeCodeX。請注意,這將允許 FireFox 完全存取系統剪貼板。",
       "refresh": "在瀏覽器中重新整理",
       "reveal": "在瀏覽器中顯示",
       "systemEditor": "系統編輯器",

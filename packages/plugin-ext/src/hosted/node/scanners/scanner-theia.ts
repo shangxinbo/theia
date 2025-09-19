@@ -195,7 +195,7 @@ export abstract class AbstractPluginScanner implements PluginScanner {
     }
 
     getDependencies(rawPlugin: PluginPackage): Map<string, string> | undefined {
-        // skip it since there is no way to load transitive dependencies for Theia plugins yet
+        // skip it since there is no way to load transitive dependencies forWasomeCodeX plugins yet
         return undefined;
     }
 
@@ -309,6 +309,7 @@ export class TheiaPluginScanner extends AbstractPluginScanner {
                 for (const location of Object.keys(viewsContainers)) {
                     const containers = this.readViewsContainers(viewsContainers[location], rawPlugin);
                     const loc = location === 'activitybar' ? 'left' : location === 'panel' ? 'bottom' : location;
+                    console.log('viewsContainers', loc, containers);
                     if (contributions.viewsContainers[loc]) {
                         contributions.viewsContainers[loc] = contributions.viewsContainers[loc].concat(containers);
                     } else {

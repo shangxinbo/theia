@@ -52,7 +52,7 @@
       },
       "anthropic": {
         "apiKey": {
-          "description": "Digite uma chave de API de sua conta oficial do Anthropic. **Observação:** Ao usar essa preferência, a chave da API do Anthropic será armazenada em texto não criptografado no computador que estiver executando o Theia. Use a variável de ambiente `ANTHROPIC_API_KEY` para definir a chave com segurança."
+          "description": "Digite uma chave de API de sua conta oficial do Anthropic. **Observação:** Ao usar essa preferência, a chave da API do Anthropic será armazenada em texto não criptografado no computador que estiver executando oWasomeCodeX. Use a variável de ambiente `ANTHROPIC_API_KEY` para definir a chave com segurança."
         },
         "models": {
           "description": "Modelos antrópicos oficiais a serem usados"
@@ -60,7 +60,7 @@
       },
       "chat": {
         "defaultAgent": {
-          "description": "Opcional: <agent-name> do Chat Agent que deve ser invocado, se nenhum agente for explicitamente mencionado com @<agent-name> na consulta do usuário. Se nenhum agente padrão for configurado, os padrões do Theia serão aplicados."
+          "description": "Opcional: <agent-name> do Chat Agent que deve ser invocado, se nenhum agente for explicitamente mencionado com @<agent-name> na consulta do usuário. Se nenhum agente padrão for configurado, os padrões doWasomeCodeX serão aplicados."
         },
         "pinChatAgent": {
           "description": "Ative a fixação de agentes para manter automaticamente um agente de chat mencionado ativo em todos os prompts, reduzindo a necessidade de menções repetidas."
@@ -176,7 +176,7 @@
       },
       "completion": {
         "agent": {
-          "description": "Esse agente fornece autocompletar de código em linha no editor de código do Theia IDE."
+          "description": "Esse agente fornece autocompletar de código em linha no editor de código doWasomeCodeX IDE."
         },
         "automaticEnable": {
           "description": "Acione automaticamente as conclusões de IA em linha em qualquer editor (Mônaco) durante a edição.            \n            Como alternativa, você pode acionar manualmente o código por meio do comando \"Trigger Inline Suggestion\" ou do atalho padrão \"Ctrl+Alt+Space\"."
@@ -311,7 +311,7 @@
           "description": "Pasta para armazenar modelos de prompt personalizados. Se não forem personalizados, será usado o diretório de configuração do usuário. Considere a possibilidade de usar uma pasta que esteja sob controle de versão para gerenciar suas variantes de modelos de prompt."
         },
         "prompts": {
-          "category": "Modelos de prompts de IA da Theia"
+          "category": "Modelos de prompts de IA daWasomeCodeX"
         },
         "requestSettings": {
           "mdDescription": "Permite especificar configurações de solicitação personalizadas para vários modelos.\n            Cada objeto representa a configuração de um modelo específico. O campo `modelId` especifica o ID do modelo, `requestSettings` define as configurações específicas do modelo.\n            O campo `providerId` é opcional e permite que você aplique as configurações a um provedor específico. Se não for definido, as configurações serão aplicadas a todos os provedores.\n            Exemplo de providerIds: huggingface, openai, ollama, llamafile.\n            Consulte a [nossa documentação] (https://theia-ide.org/docs/user_ai/#custom-request-settings) para obter mais informações.",
@@ -336,7 +336,7 @@
       },
       "google": {
         "apiKey": {
-          "description": "Insira uma chave de API de sua conta oficial do Google AI (Gemini). **Observação:** Ao usar essa preferência, a chave de API do GOOGLE AI será armazenada em texto não criptografado no computador que estiver executando o Theia. Use a variável de ambiente `GOOGLE_API_KEY` para definir a chave com segurança."
+          "description": "Insira uma chave de API de sua conta oficial do Google AI (Gemini). **Observação:** Ao usar essa preferência, a chave de API do GOOGLE AI será armazenada em texto não criptografado no computador que estiver executando oWasomeCodeX. Use a variável de ambiente `GOOGLE_API_KEY` para definir a chave com segurança."
         },
         "maxRetriesOnErrors": {
           "description": "Número máximo de novas tentativas em caso de erros. Se for menor que 1, a lógica de nova tentativa será desativada"
@@ -396,7 +396,7 @@
       },
       "huggingFace": {
         "apiKey": {
-          "mdDescription": "Digite uma chave de API para sua conta Hugging Face. **Nota:** Ao usar essa preferência, a chave API da Hugging Face será armazenada em texto claro na máquina que estiver executando o Theia. Use a variável de ambiente `HUGGINGFACE_API_KEY` para definir a chave de forma segura."
+          "mdDescription": "Digite uma chave de API para sua conta Hugging Face. **Nota:** Ao usar essa preferência, a chave API da Hugging Face será armazenada em texto claro na máquina que estiver executando oWasomeCodeX. Use a variável de ambiente `HUGGINGFACE_API_KEY` para definir a chave de forma segura."
         },
         "models": {
           "description": "Modelos de Hugging Face para usar"
@@ -412,7 +412,7 @@
       },
       "llamaFile": {
         "prefs": {
-          "mdDescription": "Essa configuração permite que você configure e gerencie os modelos do LlamaFile no Theia IDE.            \n            Cada entrada requer um `nome` de fácil utilização, o `uri` do arquivo que aponta para o seu LlamaFile e a `porta` na qual ele será executado.            \n            Para iniciar um LlamaFile, use o comando \"Start LlamaFile\", que permite selecionar o modelo desejado.            \n            Se você editar uma entrada (por exemplo, alterar a porta), qualquer instância em execução será interrompida, e você precisará iniciá-la manualmente de novo.            \n            [Saiba mais sobre como configurar e gerenciar LlamaFiles na documentação do Theia IDE](https://theia-ide.org/docs/user_ai/#llamafile-models).",
+          "mdDescription": "Essa configuração permite que você configure e gerencie os modelos do LlamaFile noWasomeCodeX IDE.            \n            Cada entrada requer um `nome` de fácil utilização, o `uri` do arquivo que aponta para o seu LlamaFile e a `porta` na qual ele será executado.            \n            Para iniciar um LlamaFile, use o comando \"Start LlamaFile\", que permite selecionar o modelo desejado.            \n            Se você editar uma entrada (por exemplo, alterar a porta), qualquer instância em execução será interrompida, e você precisará iniciá-la manualmente de novo.            \n            [Saiba mais sobre como configurar e gerenciar LlamaFiles na documentação doWasomeCodeX IDE](https://theia-ide.org/docs/user_ai/#llamafile-models).",
           "name": {
             "description": "O nome do modelo a ser usado para esse Llamafile."
           },
@@ -517,7 +517,7 @@
       },
       "openai": {
         "apiKey": {
-          "mdDescription": "Digite uma chave de API de sua conta oficial do OpenAI. **Observação:** Ao usar essa preferência, a chave da API do Open AI será armazenada em texto não criptografado no computador que estiver executando o Theia. Use a variável de ambiente `OPENAI_API_KEY` para definir a chave com segurança."
+          "mdDescription": "Digite uma chave de API de sua conta oficial do OpenAI. **Observação:** Ao usar essa preferência, a chave da API do Open AI será armazenada em texto não criptografado no computador que estiver executando oWasomeCodeX. Use a variável de ambiente `OPENAI_API_KEY` para definir a chave com segurança."
         },
         "customEndpoints": {
           "apiKey": {
@@ -630,7 +630,7 @@
       },
       "vercelai": {
         "anthropicApiKey": {
-          "mdDescription": "Digite uma chave de API para modelos Anthropic. **Observação:** Ao usar essa preferência, a chave da API será armazenada em texto não criptografado no computador que estiver executando o Theia. Use a variável de ambiente `ANTHROPIC_API_KEY` para definir a chave de forma segura."
+          "mdDescription": "Digite uma chave de API para modelos Anthropic. **Observação:** Ao usar essa preferência, a chave da API será armazenada em texto não criptografado no computador que estiver executando oWasomeCodeX. Use a variável de ambiente `ANTHROPIC_API_KEY` para definir a chave de forma segura."
         },
         "customEndpoints": {
           "apiKey": {
@@ -669,12 +669,12 @@
           }
         },
         "openaiApiKey": {
-          "mdDescription": "Digite uma chave de API para modelos OpenAI. **Observação:** Ao usar essa preferência, a chave de API será armazenada em texto não criptografado no computador que estiver executando o Theia. Use a variável de ambiente `OPENAI_API_KEY` para definir a chave de forma segura."
+          "mdDescription": "Digite uma chave de API para modelos OpenAI. **Observação:** Ao usar essa preferência, a chave de API será armazenada em texto não criptografado no computador que estiver executando oWasomeCodeX. Use a variável de ambiente `OPENAI_API_KEY` para definir a chave de forma segura."
         }
       },
       "workspace": {
         "coderAgent": {
-          "description": "Um assistente de IA integrado ao Theia IDE, projetado para auxiliar os desenvolvedores de software. Esse agente pode acessar o espaço de trabalho do usuário, obter uma lista de todos os arquivos e pastas disponíveis e recuperar seu conteúdo. Além disso, ele pode sugerir modificações de arquivos para o usuário. Portanto, ele pode ajudar o usuário com tarefas de codificação ou outras tarefas que envolvam alterações de arquivos."
+          "description": "Um assistente de IA integrado aoWasomeCodeX IDE, projetado para auxiliar os desenvolvedores de software. Esse agente pode acessar o espaço de trabalho do usuário, obter uma lista de todos os arquivos e pastas disponíveis e recuperar seu conteúdo. Além disso, ele pode sugerir modificações de arquivos para o usuário. Portanto, ele pode ajudar o usuário com tarefas de codificação ou outras tarefas que envolvam alterações de arquivos."
         },
         "considerGitignore": {
           "description": "Se ativado, exclui arquivos/pastas especificados em um arquivo global .gitignore (o local esperado é a raiz do espaço de trabalho).",
@@ -689,7 +689,7 @@
           "title": "Resultados máximos de pesquisa"
         },
         "workspaceAgent": {
-          "description": "Um assistente de IA integrado ao Theia IDE, projetado para auxiliar os desenvolvedores de software. Esse agente pode acessar o espaço de trabalho do usuário, obter uma lista de todos os arquivos e pastas disponíveis e recuperar seu conteúdo. Ele não pode modificar arquivos. Portanto, ele pode responder a perguntas sobre o projeto atual, os arquivos do projeto e o código-fonte no espaço de trabalho, como, por exemplo, como criar o projeto, onde colocar o código-fonte, onde encontrar códigos ou configurações específicos etc."
+          "description": "Um assistente de IA integrado aoWasomeCodeX IDE, projetado para auxiliar os desenvolvedores de software. Esse agente pode acessar o espaço de trabalho do usuário, obter uma lista de todos os arquivos e pastas disponíveis e recuperar seu conteúdo. Ele não pode modificar arquivos. Portanto, ele pode responder a perguntas sobre o projeto atual, os arquivos do projeto e o código-fonte no espaço de trabalho, como, por exemplo, como criar o projeto, onde colocar o código-fonte, onde encontrar códigos ou configurações específicos etc."
         }
       }
     },
@@ -799,7 +799,7 @@
       },
       "navigator": {
         "clipboardWarn": "O acesso à área de transferência foi negado. Verifique a permissão de seu navegador.",
-        "clipboardWarnFirefox": "A API da área de transferência não está disponível. Ela pode ser ativada pela preferência '{0}' na página '{1}'. Em seguida, recarregue o Theia. Observe que isso permitirá que o FireFox obtenha acesso total à área de transferência do sistema."
+        "clipboardWarnFirefox": "A API da área de transferência não está disponível. Ela pode ser ativada pela preferência '{0}' na página '{1}'. Em seguida, recarregue oWasomeCodeX. Observe que isso permitirá que o FireFox obtenha acesso total à área de transferência do sistema."
       },
       "offline": "Offline",
       "pasteWarn": "Use o comando de colar ou o atalho do navegador.",
@@ -813,8 +813,8 @@
       "secondaryWindow": {
         "alwaysOnTop": "Quando ativada, a janela secundária fica acima de todas as outras janelas, inclusive as de aplicativos diferentes.",
         "description": "Define a posição inicial e o tamanho da janela secundária extraída.",
-        "fullSize": "A posição e o tamanho do widget extraído serão os mesmos do aplicativo Theia em execução.",
-        "halfWidth": "A posição e o tamanho do widget extraído terão a metade da largura do aplicativo Theia em execução.",
+        "fullSize": "A posição e o tamanho do widget extraído serão os mesmos do aplicativoWasomeCodeX em execução.",
+        "halfWidth": "A posição e o tamanho do widget extraído terão a metade da largura do aplicativoWasomeCodeX em execução.",
         "originalSize": "A posição e o tamanho do widget extraído serão os mesmos do widget original."
       },
       "silentNotifications": "Controla se devem ser suprimidas as popups de notificação.",
@@ -1084,7 +1084,7 @@
     "navigator": {
       "autoReveal": "Auto Revelação",
       "clipboardWarn": "O acesso à área de transferência foi negado. Verifique a permissão de seu navegador.",
-      "clipboardWarnFirefox": "A API da área de transferência não está disponível. Ela pode ser ativada pela preferência '{0}' na página '{1}'. Em seguida, recarregue o Theia. Observe que isso permitirá que o FireFox obtenha acesso total à área de transferência do sistema.",
+      "clipboardWarnFirefox": "A API da área de transferência não está disponível. Ela pode ser ativada pela preferência '{0}' na página '{1}'. Em seguida, recarregue oWasomeCodeX. Observe que isso permitirá que o FireFox obtenha acesso total à área de transferência do sistema.",
       "refresh": "Refrescar no Explorer",
       "reveal": "Revelar no Explorer",
       "systemEditor": "Editor de sistema",

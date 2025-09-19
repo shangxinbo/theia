@@ -2,7 +2,7 @@
   // Use IntelliSense to learn about possible Node.js debug attributes.
   // Hover to view descriptions of existing attributes.
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-  "version": "0.2.0",
+  "version": "2.0.0",
   "configurations": [
     {
       "name": "Playwright Tests",
@@ -110,6 +110,27 @@
       ]
     },
     {
+      "name": "Attach to Theia Plugin",
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "address": "localhost",
+      "restart": true,
+      "sourceMaps": true,
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/home/wasm/plc/WebIDE/code/vsc-extension",
+      "outFiles": [
+        "${workspaceFolder}/out/**/*.js"
+      ],
+      "skipFiles": [
+        "<node_internals>/**",
+        "**/node_modules/**"
+      ],
+      "sourceMapPathOverrides": {
+        "webpack:///*": "${workspaceFolder}/*"
+      }
+    },
+    {
       "type": "node",
       "request": "launch",
       "protocol": "inspector",
@@ -166,6 +187,25 @@
       "outFiles": [
         "${workspaceFolder}/../.js"
       ]
+    },
+    {
+      "name": "Theia Electron Main",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
+      "windows": {
+        "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron.cmd"
+      },
+      "args": [
+        "${workspaceFolder}/examples/electron/lib/electron-main.js",
+        "--plugins=local-dir:/home/wasm/plc/WebIDE/code/vsc-extension"
+      ],
+      "preLaunchTask": "Build Electron",
+      "outFiles": [
+        "${workspaceFolder}/examples/electron/lib/**/*.js",
+        "${workspaceFolder}/packages/*/lib/**/*.js"
+      ],
+      "sourceMaps": true
     }
   ],
   "compounds": [

@@ -52,7 +52,7 @@
       },
       "anthropic": {
         "apiKey": {
-          "description": "Resmi Anthropic Hesabınızın API Anahtarını girin. **Lütfen dikkat:** Bu tercihi kullanarak Anthropic API anahtarı Theia'yı çalıştıran makinede açık metin olarak saklanacaktır. Anahtarı güvenli bir şekilde ayarlamak için `ANTHROPIC_API_KEY` ortam değişkenini kullanın."
+          "description": "Resmi Anthropic Hesabınızın API Anahtarını girin. **Lütfen dikkat:** Bu tercihi kullanarak Anthropic API anahtarıWasomeCodeX'yı çalıştıran makinede açık metin olarak saklanacaktır. Anahtarı güvenli bir şekilde ayarlamak için `ANTHROPIC_API_KEY` ortam değişkenini kullanın."
         },
         "models": {
           "description": "Kullanılacak resmi Antropik modeller"
@@ -60,7 +60,7 @@
       },
       "chat": {
         "defaultAgent": {
-          "description": "İsteğe bağlı: Kullanıcı sorgusunda @<agent-name> ile açıkça bir aracı belirtilmemişse, çağrılacak Sohbet Aracısının <agent-name> adresi. Herhangi bir Varsayılan Aracı yapılandırılmamışsa, Theia'nın varsayılanları uygulanacaktır."
+          "description": "İsteğe bağlı: Kullanıcı sorgusunda @<agent-name> ile açıkça bir aracı belirtilmemişse, çağrılacak Sohbet Aracısının <agent-name> adresi. Herhangi bir Varsayılan Aracı yapılandırılmamışsa,WasomeCodeX'nın varsayılanları uygulanacaktır."
         },
         "pinChatAgent": {
           "description": "Bahsedilen bir sohbet temsilcisini istemler arasında otomatik olarak etkin tutmak için temsilci sabitlemeyi etkinleştirin ve tekrarlanan bahsetmenin gerekliliğini azaltın."
@@ -176,7 +176,7 @@
       },
       "completion": {
         "agent": {
-          "description": "Bu aracı, Theia IDE'deki kod düzenleyicide satır içi kod tamamlama sağlar."
+          "description": "Bu aracı,WasomeCodeX IDE'deki kod düzenleyicide satır içi kod tamamlama sağlar."
         },
         "automaticEnable": {
           "description": "Düzenleme sırasında herhangi bir (Monaco) düzenleyicide satır içi AI tamamlamalarını otomatik olarak tetikleyin.            \n            Alternatif olarak, \"Satır İçi Öneriyi Tetikle\" komutu veya varsayılan \"Ctrl+Alt+Space\" kısayolu aracılığıyla kodu manuel olarak tetikleyebilirsiniz."
@@ -336,7 +336,7 @@
       },
       "google": {
         "apiKey": {
-          "description": "Resmi Google AI (Gemini) Hesabınızın API Anahtarını girin. **Lütfen dikkat:** Bu tercihi kullanarak GOOGLE AI API anahtarı Theia'yı çalıştıran makinede açık metin olarak saklanacaktır. Anahtarı güvenli bir şekilde ayarlamak için `GOOGLE_API_KEY` ortam değişkenini kullanın."
+          "description": "Resmi Google AI (Gemini) Hesabınızın API Anahtarını girin. **Lütfen dikkat:** Bu tercihi kullanarak GOOGLE AI API anahtarıWasomeCodeX'yı çalıştıran makinede açık metin olarak saklanacaktır. Anahtarı güvenli bir şekilde ayarlamak için `GOOGLE_API_KEY` ortam değişkenini kullanın."
         },
         "maxRetriesOnErrors": {
           "description": "Hata durumunda maksimum yeniden deneme sayısı. 1'den küçükse, yeniden deneme mantığı devre dışı bırakılır"
@@ -396,7 +396,7 @@
       },
       "huggingFace": {
         "apiKey": {
-          "mdDescription": "Hugging Face Hesabınız için bir API Anahtarı girin. **Lütfen dikkat:** Bu tercihi kullanarak Hugging Face API anahtarı Theia'yı çalıştıran makinede açık metin olarak saklanacaktır. Anahtarı güvenli bir şekilde ayarlamak için `HUGGINGFACE_API_KEY` ortam değişkenini kullanın."
+          "mdDescription": "Hugging Face Hesabınız için bir API Anahtarı girin. **Lütfen dikkat:** Bu tercihi kullanarak Hugging Face API anahtarıWasomeCodeX'yı çalıştıran makinede açık metin olarak saklanacaktır. Anahtarı güvenli bir şekilde ayarlamak için `HUGGINGFACE_API_KEY` ortam değişkenini kullanın."
         },
         "models": {
           "description": "Kullanılacak Sarılan Yüz modelleri"
@@ -412,7 +412,7 @@
       },
       "llamaFile": {
         "prefs": {
-          "mdDescription": "Bu ayar, Theia IDE'de LlamaFile modellerini yapılandırmanıza ve yönetmenize olanak tanır.            \n            Her girdi kullanıcı dostu bir `isim`, LlamaFile'ınıza işaret eden `uri` dosyası ve çalışacağı `port` gerektirir.            \n            Bir LlamaFile başlatmak için, istediğiniz modeli seçmenizi sağlayan \"Start LlamaFile\" komutunu kullanın.            \n            Bir girişi düzenlerseniz (örneğin, bağlantı noktasını değiştirirseniz), çalışan herhangi bir örnek durur ve onu manuel olarak yeniden başlatmanız gerekir.            \n            [Theia IDE dokümantasyonunda LlamaFiles'ı yapılandırma ve yönetme hakkında daha fazla bilgi edinin](https://theia-ide.org/docs/user_ai/#llamafile-models).",
+          "mdDescription": "Bu ayar,WasomeCodeX IDE'de LlamaFile modellerini yapılandırmanıza ve yönetmenize olanak tanır.            \n            Her girdi kullanıcı dostu bir `isim`, LlamaFile'ınıza işaret eden `uri` dosyası ve çalışacağı `port` gerektirir.            \n            Bir LlamaFile başlatmak için, istediğiniz modeli seçmenizi sağlayan \"Start LlamaFile\" komutunu kullanın.            \n            Bir girişi düzenlerseniz (örneğin, bağlantı noktasını değiştirirseniz), çalışan herhangi bir örnek durur ve onu manuel olarak yeniden başlatmanız gerekir.            \n            [Theia IDE dokümantasyonunda LlamaFiles'ı yapılandırma ve yönetme hakkında daha fazla bilgi edinin](https://theia-ide.org/docs/user_ai/#llamafile-models).",
           "name": {
             "description": "Bu Llamafile için kullanılacak model adı."
           },
@@ -517,7 +517,7 @@
       },
       "openai": {
         "apiKey": {
-          "mdDescription": "Resmi OpenAI Hesabınızın API Anahtarını girin. **Lütfen dikkat:** Bu tercihi kullanarak Open AI API anahtarı Theia'yı çalıştıran makinede açık metin olarak saklanacaktır. Anahtarı güvenli bir şekilde ayarlamak için `OPENAI_API_KEY` ortam değişkenini kullanın."
+          "mdDescription": "Resmi OpenAI Hesabınızın API Anahtarını girin. **Lütfen dikkat:** Bu tercihi kullanarak Open AI API anahtarıWasomeCodeX'yı çalıştıran makinede açık metin olarak saklanacaktır. Anahtarı güvenli bir şekilde ayarlamak için `OPENAI_API_KEY` ortam değişkenini kullanın."
         },
         "customEndpoints": {
           "apiKey": {
@@ -630,7 +630,7 @@
       },
       "vercelai": {
         "anthropicApiKey": {
-          "mdDescription": "Antropik modeller için bir API Anahtarı girin. **Lütfen dikkat:** Bu tercihi kullanarak API anahtarı Theia'yı çalıştıran makinede açık metin olarak saklanacaktır. Anahtarı güvenli bir şekilde ayarlamak için `ANTHROPIC_API_KEY` ortam değişkenini kullanın."
+          "mdDescription": "Antropik modeller için bir API Anahtarı girin. **Lütfen dikkat:** Bu tercihi kullanarak API anahtarıWasomeCodeX'yı çalıştıran makinede açık metin olarak saklanacaktır. Anahtarı güvenli bir şekilde ayarlamak için `ANTHROPIC_API_KEY` ortam değişkenini kullanın."
         },
         "customEndpoints": {
           "apiKey": {
@@ -669,12 +669,12 @@
           }
         },
         "openaiApiKey": {
-          "mdDescription": "OpenAI modelleri için bir API Anahtarı girin. **Lütfen dikkat:** Bu tercihi kullanarak API anahtarı Theia'yı çalıştıran makinede açık metin olarak saklanacaktır. Anahtarı güvenli bir şekilde ayarlamak için `OPENAI_API_KEY` ortam değişkenini kullanın."
+          "mdDescription": "OpenAI modelleri için bir API Anahtarı girin. **Lütfen dikkat:** Bu tercihi kullanarak API anahtarıWasomeCodeX'yı çalıştıran makinede açık metin olarak saklanacaktır. Anahtarı güvenli bir şekilde ayarlamak için `OPENAI_API_KEY` ortam değişkenini kullanın."
         }
       },
       "workspace": {
         "coderAgent": {
-          "description": "Yazılım geliştiricilere yardımcı olmak için tasarlanmış, Theia IDE'ye entegre bir yapay zeka asistanı. Bu aracı, kullanıcıların çalışma alanına erişebilir, mevcut tüm dosya ve klasörlerin bir listesini alabilir ve içeriklerini alabilir. Ayrıca, kullanıcıya dosyalarda değişiklik yapılmasını önerebilir. Bu nedenle kullanıcıya kodlama görevlerinde veya dosya değişikliklerini içeren diğer görevlerde yardımcı olabilir."
+          "description": "Yazılım geliştiricilere yardımcı olmak için tasarlanmış,WasomeCodeX IDE'ye entegre bir yapay zeka asistanı. Bu aracı, kullanıcıların çalışma alanına erişebilir, mevcut tüm dosya ve klasörlerin bir listesini alabilir ve içeriklerini alabilir. Ayrıca, kullanıcıya dosyalarda değişiklik yapılmasını önerebilir. Bu nedenle kullanıcıya kodlama görevlerinde veya dosya değişikliklerini içeren diğer görevlerde yardımcı olabilir."
         },
         "considerGitignore": {
           "description": "Etkinleştirilirse, global bir .gitignore dosyasında belirtilen dosyaları/klasörleri hariç tutar (beklenen konum çalışma alanı köküdür).",
@@ -689,7 +689,7 @@
           "title": "Maksimum Arama Sonuçları"
         },
         "workspaceAgent": {
-          "description": "Yazılım geliştiricilere yardımcı olmak için tasarlanmış, Theia IDE'ye entegre bir yapay zeka asistanı. Bu aracı, kullanıcıların çalışma alanına erişebilir, mevcut tüm dosya ve klasörlerin bir listesini alabilir ve içeriklerini alabilir. Dosyaları değiştiremez. Bu nedenle, mevcut proje, proje dosyaları ve çalışma alanındaki kaynak kod hakkında, projenin nasıl oluşturulacağı, kaynak kodun nereye yerleştirileceği, belirli kod veya yapılandırmaların nerede bulunacağı gibi soruları yanıtlayabilir."
+          "description": "Yazılım geliştiricilere yardımcı olmak için tasarlanmış,WasomeCodeX IDE'ye entegre bir yapay zeka asistanı. Bu aracı, kullanıcıların çalışma alanına erişebilir, mevcut tüm dosya ve klasörlerin bir listesini alabilir ve içeriklerini alabilir. Dosyaları değiştiremez. Bu nedenle, mevcut proje, proje dosyaları ve çalışma alanındaki kaynak kod hakkında, projenin nasıl oluşturulacağı, kaynak kodun nereye yerleştirileceği, belirli kod veya yapılandırmaların nerede bulunacağı gibi soruları yanıtlayabilir."
         }
       }
     },
@@ -799,7 +799,7 @@
       },
       "navigator": {
         "clipboardWarn": "Panoya erişim reddedildi. Tarayıcınızın izinlerini kontrol edin.",
-        "clipboardWarnFirefox": "Pano API'si mevcut değildir. '{1}' sayfasındaki '{0}' tercihi ile etkinleştirilebilir. Ardından Theia'yı yeniden yükleyin. FireFox'un sistem panosuna tam erişim sağlamasına izin vereceğini unutmayın."
+        "clipboardWarnFirefox": "Pano API'si mevcut değildir. '{1}' sayfasındaki '{0}' tercihi ile etkinleştirilebilir. ArdındanWasomeCodeX'yı yeniden yükleyin. FireFox'un sistem panosuna tam erişim sağlamasına izin vereceğini unutmayın."
       },
       "offline": "Çevrimdışı",
       "pasteWarn": "Lütfen tarayıcının yapıştırma komutunu veya kısayolunu kullanın.",
@@ -813,8 +813,8 @@
       "secondaryWindow": {
         "alwaysOnTop": "Etkinleştirildiğinde, ikincil pencere farklı uygulamalarınkiler de dahil olmak üzere diğer tüm pencerelerin üzerinde kalır.",
         "description": "Çıkarılan ikincil pencerenin ilk konumunu ve boyutunu ayarlar.",
-        "fullSize": "Çıkarılan widget'ın konumu ve boyutu, çalışan Theia uygulamasıyla aynı olacaktır.",
-        "halfWidth": "Çıkarılan widget'ın konumu ve boyutu, çalışan Theia uygulamasının genişliğinin yarısı kadar olacaktır.",
+        "fullSize": "Çıkarılan widget'ın konumu ve boyutu, çalışanWasomeCodeX uygulamasıyla aynı olacaktır.",
+        "halfWidth": "Çıkarılan widget'ın konumu ve boyutu, çalışanWasomeCodeX uygulamasının genişliğinin yarısı kadar olacaktır.",
         "originalSize": "Çıkarılan widget'ın konumu ve boyutu orijinal widget ile aynı olacaktır."
       },
       "silentNotifications": "Bildirim açılır pencerelerinin bastırılıp bastırılmayacağını denetler.",
@@ -1084,7 +1084,7 @@
     "navigator": {
       "autoReveal": "Otomatik Gösterge",
       "clipboardWarn": "Panoya erişim reddedildi. Tarayıcınızın izinlerini kontrol edin.",
-      "clipboardWarnFirefox": "Pano API'si mevcut değildir. '{1}' sayfasındaki '{0}' tercihi ile etkinleştirilebilir. Ardından Theia'yı yeniden yükleyin. FireFox'un sistem panosuna tam erişim sağlamasına izin vereceğini unutmayın.",
+      "clipboardWarnFirefox": "Pano API'si mevcut değildir. '{1}' sayfasındaki '{0}' tercihi ile etkinleştirilebilir. ArdındanWasomeCodeX'yı yeniden yükleyin. FireFox'un sistem panosuna tam erişim sağlamasına izin vereceğini unutmayın.",
       "refresh": "Explorer'da Yenile",
       "reveal": "Explorer'da Göster",
       "systemEditor": "Sistem Editörü",

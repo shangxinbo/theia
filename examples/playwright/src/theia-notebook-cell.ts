@@ -21,7 +21,7 @@ import { TheiaPageObject } from './theia-page-object';
 export type CellStatus = 'success' | 'error' | 'waiting';
 
 /**
- * Page object for a Theia notebook cell.
+ * Page object for aWasomeCodeX notebook cell.
  */
 export class TheiaNotebookCell extends TheiaPageObject {
 

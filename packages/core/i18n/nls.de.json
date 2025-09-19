@@ -52,7 +52,7 @@
       },
       "anthropic": {
         "apiKey": {
-          "description": "Geben Sie einen API-Schlüssel für Ihr offizielles Anthropic-Konto ein. **Bitte beachten Sie:** Wenn Sie diese Einstellung verwenden, wird der Anthropic-API-Schlüssel im Klartext auf dem Rechner gespeichert, auf dem Theia läuft. Verwenden Sie die Umgebungsvariable `ANTHROPIC_API_KEY`, um den Schlüssel sicher zu setzen."
+          "description": "Geben Sie einen API-Schlüssel für Ihr offizielles Anthropic-Konto ein. **Bitte beachten Sie:** Wenn Sie diese Einstellung verwenden, wird der Anthropic-API-Schlüssel im Klartext auf dem Rechner gespeichert, auf demWasomeCodeX läuft. Verwenden Sie die Umgebungsvariable `ANTHROPIC_API_KEY`, um den Schlüssel sicher zu setzen."
         },
         "models": {
           "description": "Offizielle anthropische Modelle zur Verwendung"
@@ -60,7 +60,7 @@
       },
       "chat": {
         "defaultAgent": {
-          "description": "Optional: <agent-name> des Chat-Agenten, der aufgerufen werden soll, wenn in der Benutzeranfrage kein Agent explizit mit @<agent-name> genannt wird. Wenn kein Standard-Agent konfiguriert ist, werden die Standardwerte von Theia verwendet."
+          "description": "Optional: <agent-name> des Chat-Agenten, der aufgerufen werden soll, wenn in der Benutzeranfrage kein Agent explizit mit @<agent-name> genannt wird. Wenn kein Standard-Agent konfiguriert ist, werden die Standardwerte vonWasomeCodeX verwendet."
         },
         "pinChatAgent": {
           "description": "Aktivieren Sie das Anheften von Agenten, um einen erwähnten Chat-Agenten automatisch über mehrere Prompts hinweg aktiv zu halten und so die Notwendigkeit wiederholter Erwähnungen zu verringern."
@@ -176,7 +176,7 @@
       },
       "completion": {
         "agent": {
-          "description": "Dieser Agent bietet Inline-Code-Vervollständigung im Code-Editor der Theia-IDE."
+          "description": "Dieser Agent bietet Inline-Code-Vervollständigung im Code-Editor derWasomeCodeX-IDE."
         },
         "automaticEnable": {
           "description": "Automatisches Auslösen von KI-Vervollständigungen inline in jedem (Monaco) Editor während der Bearbeitung.            \n            Alternativ können Sie den Code auch manuell über den Befehl \"Inline-Vorschlag auslösen\" oder den Standard-Shortcut \"Strg+Alt+Leertaste\" auslösen."
@@ -336,7 +336,7 @@
       },
       "google": {
         "apiKey": {
-          "description": "Geben Sie einen API-Schlüssel für Ihr offizielles Google AI (Gemini) Konto ein. **Bitte beachten Sie:** Wenn Sie diese Einstellung verwenden, wird der GOOGLE AI API-Schlüssel im Klartext auf dem Rechner gespeichert, auf dem Theia läuft. Verwenden Sie die Umgebungsvariable `GOOGLE_API_KEY`, um den Schlüssel sicher zu setzen."
+          "description": "Geben Sie einen API-Schlüssel für Ihr offizielles Google AI (Gemini) Konto ein. **Bitte beachten Sie:** Wenn Sie diese Einstellung verwenden, wird der GOOGLE AI API-Schlüssel im Klartext auf dem Rechner gespeichert, auf demWasomeCodeX läuft. Verwenden Sie die Umgebungsvariable `GOOGLE_API_KEY`, um den Schlüssel sicher zu setzen."
         },
         "maxRetriesOnErrors": {
           "description": "Maximale Anzahl von Wiederholungsversuchen im Fehlerfall. Wenn kleiner als 1, dann ist die Wiederholungslogik deaktiviert"
@@ -396,7 +396,7 @@
       },
       "huggingFace": {
         "apiKey": {
-          "mdDescription": "Geben Sie einen API-Schlüssel für Ihr Hugging Face-Konto ein. **Bitte beachten Sie:** Bei Verwendung dieser Einstellung wird der Hugging Face-API-Schlüssel im Klartext auf dem Rechner gespeichert, auf dem Theia läuft. Verwenden Sie die Umgebungsvariable `HUGGINGFACE_API_KEY`, um den Schlüssel sicher zu speichern."
+          "mdDescription": "Geben Sie einen API-Schlüssel für Ihr Hugging Face-Konto ein. **Bitte beachten Sie:** Bei Verwendung dieser Einstellung wird der Hugging Face-API-Schlüssel im Klartext auf dem Rechner gespeichert, auf demWasomeCodeX läuft. Verwenden Sie die Umgebungsvariable `HUGGINGFACE_API_KEY`, um den Schlüssel sicher zu speichern."
         },
         "models": {
           "description": "Umarmung Gesicht Modelle zu verwenden"
@@ -412,7 +412,7 @@
       },
       "llamaFile": {
         "prefs": {
-          "mdDescription": "Diese Einstellung erlaubt es Ihnen, LlamaFile-Modelle in Theia IDE zu konfigurieren und zu verwalten.            \n            Jeder Eintrag benötigt einen benutzerfreundlichen `Name`, die Datei `uri`, die auf Ihr LlamaFile verweist, und den `Port`, auf dem es laufen wird.            \n            Um ein LlamaFile zu starten, verwenden Sie den Befehl \"Start LlamaFile\", mit dem Sie das gewünschte Modell auswählen können.            \n            Wenn Sie einen Eintrag bearbeiten (z. B. den Port ändern), wird jede laufende Instanz gestoppt, und Sie müssen sie manuell neu starten.            \n            [Erfahren Sie mehr über die Konfiguration und Verwaltung von LlamaFiles in der Theia IDE Dokumentation](https://theia-ide.org/docs/user_ai/#llamafile-models).",
+          "mdDescription": "Diese Einstellung erlaubt es Ihnen, LlamaFile-Modelle inWasomeCodeX IDE zu konfigurieren und zu verwalten.            \n            Jeder Eintrag benötigt einen benutzerfreundlichen `Name`, die Datei `uri`, die auf Ihr LlamaFile verweist, und den `Port`, auf dem es laufen wird.            \n            Um ein LlamaFile zu starten, verwenden Sie den Befehl \"Start LlamaFile\", mit dem Sie das gewünschte Modell auswählen können.            \n            Wenn Sie einen Eintrag bearbeiten (z. B. den Port ändern), wird jede laufende Instanz gestoppt, und Sie müssen sie manuell neu starten.            \n            [Erfahren Sie mehr über die Konfiguration und Verwaltung von LlamaFiles in derWasomeCodeX IDE Dokumentation](https://theia-ide.org/docs/user_ai/#llamafile-models).",
           "name": {
             "description": "Der Modellname, der für diese Llamafile verwendet werden soll."
           },
@@ -517,7 +517,7 @@
       },
       "openai": {
         "apiKey": {
-          "mdDescription": "Geben Sie einen API-Schlüssel für Ihr offizielles OpenAI-Konto ein. **Bitte beachten Sie:** Wenn Sie diese Einstellung verwenden, wird der Open AI API-Schlüssel im Klartext auf dem Rechner gespeichert, auf dem Theia läuft. Verwenden Sie die Umgebungsvariable `OPENAI_API_KEY`, um den Schlüssel sicher zu setzen."
+          "mdDescription": "Geben Sie einen API-Schlüssel für Ihr offizielles OpenAI-Konto ein. **Bitte beachten Sie:** Wenn Sie diese Einstellung verwenden, wird der Open AI API-Schlüssel im Klartext auf dem Rechner gespeichert, auf demWasomeCodeX läuft. Verwenden Sie die Umgebungsvariable `OPENAI_API_KEY`, um den Schlüssel sicher zu setzen."
         },
         "customEndpoints": {
           "apiKey": {
@@ -630,7 +630,7 @@
       },
       "vercelai": {
         "anthropicApiKey": {
-          "mdDescription": "Geben Sie einen API-Schlüssel für anthropische Modelle ein. **Bitte beachten Sie:** Wenn Sie diese Einstellung verwenden, wird der API-Schlüssel im Klartext auf dem Rechner gespeichert, auf dem Theia läuft. Verwenden Sie die Umgebungsvariable `ANTHROPIC_API_KEY`, um den Schlüssel sicher zu setzen."
+          "mdDescription": "Geben Sie einen API-Schlüssel für anthropische Modelle ein. **Bitte beachten Sie:** Wenn Sie diese Einstellung verwenden, wird der API-Schlüssel im Klartext auf dem Rechner gespeichert, auf demWasomeCodeX läuft. Verwenden Sie die Umgebungsvariable `ANTHROPIC_API_KEY`, um den Schlüssel sicher zu setzen."
         },
         "customEndpoints": {
           "apiKey": {
@@ -669,12 +669,12 @@
           }
         },
         "openaiApiKey": {
-          "mdDescription": "Geben Sie einen API-Schlüssel für OpenAI-Modelle ein. **Bitte beachten Sie:** Wenn Sie diese Einstellung verwenden, wird der API-Schlüssel im Klartext auf dem Rechner gespeichert, auf dem Theia läuft. Verwenden Sie die Umgebungsvariable \"OPENAI_API_KEY\", um den Schlüssel sicher festzulegen."
+          "mdDescription": "Geben Sie einen API-Schlüssel für OpenAI-Modelle ein. **Bitte beachten Sie:** Wenn Sie diese Einstellung verwenden, wird der API-Schlüssel im Klartext auf dem Rechner gespeichert, auf demWasomeCodeX läuft. Verwenden Sie die Umgebungsvariable \"OPENAI_API_KEY\", um den Schlüssel sicher festzulegen."
         }
       },
       "workspace": {
         "coderAgent": {
-          "description": "Ein in die Theia IDE integrierter KI-Assistent, der Softwareentwickler unterstützen soll. Dieser Agent kann auf den Arbeitsbereich des Benutzers zugreifen, er kann eine Liste aller verfügbaren Dateien und Ordner abrufen und deren Inhalt abfragen. Darüber hinaus kann er dem Benutzer Änderungen an den Dateien vorschlagen. So kann er den Benutzer bei Codierungsaufgaben oder anderen Aufgaben, die Dateiänderungen beinhalten, unterstützen."
+          "description": "Ein in dieWasomeCodeX IDE integrierter KI-Assistent, der Softwareentwickler unterstützen soll. Dieser Agent kann auf den Arbeitsbereich des Benutzers zugreifen, er kann eine Liste aller verfügbaren Dateien und Ordner abrufen und deren Inhalt abfragen. Darüber hinaus kann er dem Benutzer Änderungen an den Dateien vorschlagen. So kann er den Benutzer bei Codierungsaufgaben oder anderen Aufgaben, die Dateiänderungen beinhalten, unterstützen."
         },
         "considerGitignore": {
           "description": "Wenn aktiviert, werden Dateien/Ordner ausgeschlossen, die in einer globalen .gitignore-Datei angegeben sind (erwarteter Speicherort ist das Stammverzeichnis des Arbeitsbereichs).",
@@ -689,7 +689,7 @@
           "title": "Maximale Suchergebnisse"
         },
         "workspaceAgent": {
-          "description": "Ein in die Theia IDE integrierter KI-Assistent, der Softwareentwickler unterstützen soll. Dieser Agent kann auf den Arbeitsbereich des Benutzers zugreifen, er kann eine Liste aller verfügbaren Dateien und Ordner erhalten und deren Inhalt abrufen. Er kann keine Dateien verändern. Er kann daher Fragen zum aktuellen Projekt, zu den Projektdateien und zum Quellcode im Arbeitsbereich beantworten, z. B. wie man das Projekt erstellt, wo man den Quellcode ablegt, wo man bestimmten Code oder Konfigurationen findet usw."
+          "description": "Ein in dieWasomeCodeX IDE integrierter KI-Assistent, der Softwareentwickler unterstützen soll. Dieser Agent kann auf den Arbeitsbereich des Benutzers zugreifen, er kann eine Liste aller verfügbaren Dateien und Ordner erhalten und deren Inhalt abrufen. Er kann keine Dateien verändern. Er kann daher Fragen zum aktuellen Projekt, zu den Projektdateien und zum Quellcode im Arbeitsbereich beantworten, z. B. wie man das Projekt erstellt, wo man den Quellcode ablegt, wo man bestimmten Code oder Konfigurationen findet usw."
         }
       }
     },
@@ -799,7 +799,7 @@
       },
       "navigator": {
         "clipboardWarn": "Der Zugriff auf die Zwischenablage wird verweigert. Überprüfen Sie die Berechtigung Ihres Browsers.",
-        "clipboardWarnFirefox": "Die Zwischenablage-API ist nicht verfügbar. Sie kann durch die Einstellung '{0}' auf der Seite '{1}' aktiviert werden. Dann laden Sie Theia neu. Beachten Sie, dass FireFox dadurch vollen Zugriff auf die Zwischenablage des Systems erhält."
+        "clipboardWarnFirefox": "Die Zwischenablage-API ist nicht verfügbar. Sie kann durch die Einstellung '{0}' auf der Seite '{1}' aktiviert werden. Dann laden SieWasomeCodeX neu. Beachten Sie, dass FireFox dadurch vollen Zugriff auf die Zwischenablage des Systems erhält."
       },
       "offline": "Offline",
       "pasteWarn": "Bitte verwenden Sie den Einfügebefehl des Browsers oder eine Tastenkombination.",
@@ -813,8 +813,8 @@
       "secondaryWindow": {
         "alwaysOnTop": "Wenn diese Funktion aktiviert ist, bleibt das sekundäre Fenster über allen anderen Fenstern, auch über denen anderer Anwendungen.",
         "description": "Legt die Anfangsposition und -größe des extrahierten Sekundärfensters fest.",
-        "fullSize": "Die Position und Größe des extrahierten Widgets entspricht der der laufenden Theia-Anwendung.",
-        "halfWidth": "Die Position und Größe des extrahierten Widgets entspricht der halben Breite der laufenden Theia-Anwendung.",
+        "fullSize": "Die Position und Größe des extrahierten Widgets entspricht der der laufendenWasomeCodeX-Anwendung.",
+        "halfWidth": "Die Position und Größe des extrahierten Widgets entspricht der halben Breite der laufendenWasomeCodeX-Anwendung.",
         "originalSize": "Position und Größe des extrahierten Widgets entsprechen denen des ursprünglichen Widgets."
       },
       "silentNotifications": "Legt fest, ob Benachrichtigungs-Popups unterdrückt werden sollen.",
@@ -1084,7 +1084,7 @@
     "navigator": {
       "autoReveal": "Auto-Enthüllung",
       "clipboardWarn": "Der Zugriff auf die Zwischenablage wird verweigert. Überprüfen Sie die Berechtigung Ihres Browsers.",
-      "clipboardWarnFirefox": "Die Zwischenablage-API ist nicht verfügbar. Sie kann durch die Einstellung '{0}' auf der Seite '{1}' aktiviert werden. Dann laden Sie Theia neu. Beachten Sie, dass FireFox dadurch vollen Zugriff auf die Systemzwischenablage erhält.",
+      "clipboardWarnFirefox": "Die Zwischenablage-API ist nicht verfügbar. Sie kann durch die Einstellung '{0}' auf der Seite '{1}' aktiviert werden. Dann laden SieWasomeCodeX neu. Beachten Sie, dass FireFox dadurch vollen Zugriff auf die Systemzwischenablage erhält.",
       "refresh": "Aktualisieren im Explorer",
       "reveal": "Enthüllen im Explorer",
       "systemEditor": "System Editor",

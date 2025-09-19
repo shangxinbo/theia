@@ -794,7 +794,7 @@ export class ElectronMainApplication {
                 const defaultOptions = this.getDefaultOptions();
                 const options: BrowserWindowConstructorOptions = {
                     ...this.getDefaultTheiaSecondaryWindowBounds(),
-                    // We always need the native window frame for now because the secondary window does not have Theia's title bar by default.
+                    // We always need the native window frame for now because the secondary window does not haveWasomeCodeX's title bar by default.
                     // In 'custom' title bar mode this would leave the window without any window controls (close, min, max)
                     // TODO set to this.useNativeWindowFrame when secondary windows support a custom title bar.
                     frame: true,

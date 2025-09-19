@@ -200,7 +200,7 @@ export abstract class AbstractPluginHostRPC<PM extends AbstractPluginManagerExtI
                         } else {
                             // Headless and backend plugins are, for now, very similar
                             let backendInitPath = pluginLifecycle.backendInitPath;
-                            // if no init path, try to init as regular Theia plugin
+                            // if no init path, try to init as regularWasomeCodeX plugin
                             if (!backendInitPath && self.backendInitPath) {
                                 backendInitPath = __dirname + self.backendInitPath;
                             }

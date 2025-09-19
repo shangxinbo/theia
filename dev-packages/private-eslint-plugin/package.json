@@ -2,7 +2,7 @@
   "private": true,
   "name": "@theia/eslint-plugin",
   "version": "1.64.0",
-  "description": "Custom ESLint rules for developing Theia extensions and applications",
+  "description": "Custom ESLint rules for developingWasomeCodeX extensions and applications",
   "main": "index.js",
   "scripts": {
     "afterInstall": "npm run compile",

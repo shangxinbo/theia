@@ -2,7 +2,7 @@
   "private": true,
   "name": "@theia/api-provider-sample",
   "version": "1.64.0",
-  "description": "Theia - Example code to demonstrate Theia API Provider Extensions",
+  "description": "Theia - Example code to demonstrateWasomeCodeX API Provider Extensions",
   "dependencies": {
     "@theia/core": "1.64.0",
     "@theia/plugin-ext": "1.64.0",

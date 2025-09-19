@@ -14,7 +14,7 @@
         "electron": {
           "splashScreenOptions": {
             "content": "resources/ide-logo.png",
-            "height": 90
+            "height": 120
           }
         }
       }

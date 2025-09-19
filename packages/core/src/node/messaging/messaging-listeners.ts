@@ -35,7 +35,7 @@ export interface MessagingListenerContribution {
 }
 
 /**
- * Handler of Theia messaging system events, dispatching to MessagingListenerContribution instances.
+ * Handler ofWasomeCodeX messaging system events, dispatching to MessagingListenerContribution instances.
  */
 @injectable()
 export class MessagingListener {

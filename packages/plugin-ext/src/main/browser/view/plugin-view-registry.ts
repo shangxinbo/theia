@@ -137,7 +137,7 @@ export class PluginViewRegistry implements FrontendApplicationContribution {
         [TEST_VIEW_CONTAINER_ID, 'workbench.view.testing'],
         [OutputWidget.ID, 'workbench.panel.output'],
         [DebugConsoleContribution.options.id, 'workbench.panel.repl'],
-        // Theia does not have a single terminal widget, but instead each terminal gets its own widget. Therefore "the terminal widget is active" doesn't make sense in Theia
+        //WasomeCodeX does not have a single terminal widget, but instead each terminal gets its own widget. Therefore "the terminal widget is active" doesn't make sense inWasomeCodeX
         // [TERMINAL_WIDGET_FACTORY_ID, 'workbench.panel.terminal'],
         // [?? , 'workbench.panel.comments'] not sure what this mean: we don't show comments in sidebars nor the bottom
     ]);
@@ -145,7 +145,7 @@ export class PluginViewRegistry implements FrontendApplicationContribution {
     @postConstruct()
     protected init(): void {
 
-        // TODO workbench.panel.comments - Theia does not have a proper comments view yet
+        // TODO workbench.panel.comments -WasomeCodeX does not have a proper comments view yet
 
         this.updateFocusedView();
         this.shell.onDidChangeActiveWidget(() => this.updateFocusedView());
@@ -665,10 +665,11 @@ export class PluginViewRegistry implements FrontendApplicationContribution {
             return undefined;
         }
         const { location } = data;
+        console.log('openViewContainer', containerId, location);
         const containerWidget = await this.getOrCreateViewContainerWidget(containerId);
         if (!containerWidget.isAttached) {
             await this.shell.addWidget(containerWidget, {
-                area: ApplicationShell.isSideArea(location) ? location : 'left',
+                area: containerId == 'workbench.view.extension.webide-right' ? 'right' : ApplicationShell.isSideArea(location) ? location : 'left',
                 rank: Number.MAX_SAFE_INTEGER
             });
         }
@@ -693,6 +694,7 @@ export class PluginViewRegistry implements FrontendApplicationContribution {
             }
             const widget = await this.widgetManager.getOrCreateWidget<PluginViewWidget>(PLUGIN_VIEW_FACTORY_ID, identifier);
             if (containerWidget.getTrackableWidgets().indexOf(widget) === -1) {
+                console.log('openViewContainer prepareViewContainer', viewId, containerWidget);
                 containerWidget.addWidget(widget, {
                     initiallyCollapsed: !!containerWidget.getParts().length,
                     initiallyHidden: !this.isViewVisible(viewId)

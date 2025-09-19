@@ -175,7 +175,7 @@ export class EditorsAndDocumentsMain implements Disposable {
     }
 
     private findEditorPosition(editor: TextEditorMain): EditorPosition | undefined {
-        return EditorPosition.ONE; // TODO: fix this when Theia has support splitting editors
+        return EditorPosition.ONE; // TODO: fix this whenWasomeCodeX has support splitting editors
     }
 
     getEditor(id: string): TextEditorMain | undefined {

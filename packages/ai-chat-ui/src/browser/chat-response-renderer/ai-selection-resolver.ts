@@ -42,7 +42,7 @@ export class GitHubSelectionResolver implements EditorSelectionResolver {
         if (!match) {
             return;
         }
-        // we need to adapt the position information from one-based (in GitHub) to zero-based (in Theia)
+        // we need to adapt the position information from one-based (in GitHub) to zero-based (inWasomeCodeX)
         const startLine = match[1] ? parseInt(match[1], 10) - 1 : undefined;
         // if no start column is given, we assume the start of the line
         const startColumn = match[2] ? parseInt(match[2], 10) - 1 : 0;

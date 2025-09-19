@@ -25,7 +25,7 @@ export const ToolbarPreferencesSchema: PreferenceSchema = {
         [TOOLBAR_ENABLE_PREFERENCE_ID]: {
             'type': 'boolean',
             'description': 'Show toolbar',
-            'default': false,
+            'default': true,
             'scope': PreferenceScope.Workspace,
         },
     },

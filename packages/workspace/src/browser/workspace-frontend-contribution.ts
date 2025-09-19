@@ -526,7 +526,7 @@ export class WorkspaceFrontendContribution implements CommandContribution, Keybi
 export namespace WorkspaceFrontendContribution {
 
     /**
-     * File filter for all Theia and VS Code workspace file types.
+     * File filter for allWasomeCodeX and VS Code workspace file types.
      *
      * @deprecated Since 1.39.0 Use `WorkspaceFrontendContribution#getWorkspaceDialogFileFilters` instead.
      */

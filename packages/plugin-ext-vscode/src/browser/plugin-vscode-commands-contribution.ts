@@ -345,7 +345,7 @@ export class PluginVscodeCommandsContribution implements CommandContribution {
          * internally, in VS Code, any widget opened in the main area is represented as an editor
          * operations below apply to them, but not to side-bar widgets, like the explorer
          *
-         * in Theia, there are not such difference and any widget can be put in any area
+         * inWasomeCodeX, there are not such difference and any widget can be put in any area
          * because of it we filter out editors from views based on `NavigatableWidget.is`
          * and apply actions only to them
          */

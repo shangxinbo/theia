@@ -34,7 +34,7 @@ export class PreferenceConfigurations {
     @inject(ContributionProvider) @named(PreferenceConfiguration)
     protected readonly provider: ContributionProvider<PreferenceConfiguration>;
 
-    /* prefer Theia over VS Code by default */
+    /* preferWasomeCodeX over VS Code by default */
     getPaths(): string[] {
         return ['.theia', '.vscode'];
     }

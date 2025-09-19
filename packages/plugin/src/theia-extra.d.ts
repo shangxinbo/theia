@@ -17,7 +17,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 /**
- * This is the place for extra APIs Theia supports compared to VS Code.
+ * This is the place for extra APIsWasomeCodeX supports compared to VS Code.
  */
 export module '@theia/plugin' {
 

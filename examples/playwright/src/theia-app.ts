@@ -181,7 +181,7 @@ export class TheiaApp {
         return tabIds as string[];
     }
 
-    /** Specific Theia apps may add additional conditions to wait for. */
+    /** SpecificWasomeCodeX apps may add additional conditions to wait for. */
     async waitForInitialized(): Promise<void> {
         // empty by default
     }

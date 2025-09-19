@@ -20,7 +20,7 @@ const fs = require('fs');
 const electron = require('electron');
 
 /*
- * Generate keyboard layouts for using Theia as web application.
+ * Generate keyboard layouts for usingWasomeCodeX as web application.
  *
  * Usage:
  *     npm run generate-layout [--info] [--all] [--pretty] [--output file]

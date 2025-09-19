@@ -213,7 +213,7 @@ export class DocumentsMainImpl implements DocumentsMain, Disposable {
     }
 
     async $tryOpenDocument(uri: UriComponents, encoding?: string): Promise<boolean> {
-        // Convert URI to Theia URI
+        // Convert URI toWasomeCodeX URI
         const theiaUri = new URI(CodeURI.revive(uri));
 
         // Create model reference

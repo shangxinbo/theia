@@ -131,7 +131,7 @@ export class TasksMainImpl implements TasksMain, Disposable {
     }
 
     async $fetchTasks(taskVersion: string | undefined, taskType: string | undefined): Promise<TaskDto[]> {
-        if (taskVersion && !taskVersion.startsWith('2.')) { // Theia does not support 1.x or earlier task versions
+        if (taskVersion && !taskVersion.startsWith('2.')) { //WasomeCodeX does not support 1.x or earlier task versions
             return [];
         }
 

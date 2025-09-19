@@ -60,7 +60,7 @@ export class DebugServiceImpl implements DebugService {
     }
 
     async provideDebuggerVariables(debugType: string): Promise<CommandIdVariables> {
-        // TODO: Support resolution of variables map through Theia extensions?
+        // TODO: Support resolution of variables map throughWasomeCodeX extensions?
         return {};
     }
 
@@ -68,11 +68,11 @@ export class DebugServiceImpl implements DebugService {
         return this.registry.provideDebugConfigurations(debugType, workspaceFolderUri);
     }
     async provideDynamicDebugConfigurations(): Promise<Record<string, DebugConfiguration[]>> {
-        // TODO: Support dynamic debug configurations through Theia extensions?
+        // TODO: Support dynamic debug configurations throughWasomeCodeX extensions?
         return {};
     }
     fetchDynamicDebugConfiguration(name: string, type: string, folder?: string): Promise<DebugConfiguration | undefined> {
-        // TODO: Support dynamic debug configurations through Theia extensions?
+        // TODO: Support dynamic debug configurations throughWasomeCodeX extensions?
         return Promise.resolve(undefined);
     }
     async resolveDebugConfiguration(config: DebugConfiguration, workspaceFolderUri?: string): Promise<DebugConfiguration> {

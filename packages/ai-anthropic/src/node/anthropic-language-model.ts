@@ -85,7 +85,7 @@ function isNonThinkingParam(
 }
 
 /**
- * Transforms Theia language model messages to Anthropic API format
+ * TransformsWasomeCodeX language model messages to Anthropic API format
  * @param messages Array of LanguageModelRequestMessage to transform
  * @returns Object containing transformed messages and optional system message
  */
@@ -144,7 +144,7 @@ function addCacheControlToLastMessage(messages: Anthropic.Messages.MessageParam[
 export const AnthropicModelIdentifier = Symbol('AnthropicModelIdentifier');
 
 /**
- * Converts Theia message actor to Anthropic role
+ * ConvertsWasomeCodeX message actor to Anthropic role
  * @param message The message to convert
  * @returns Anthropic role ('user' or 'assistant')
  */
@@ -182,7 +182,7 @@ function formatToolCallResult(result: ToolCallResult): ToolResultBlockParam['con
 }
 
 /**
- * Implements the Anthropic language model integration for Theia
+ * Implements the Anthropic language model integration forWasomeCodeX
  */
 export class AnthropicModel implements LanguageModel {
 

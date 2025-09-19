@@ -691,7 +691,7 @@ export function createAPIFactory(
                 return terminalExt.registerTerminalQuickFixProvider(id, provider);
             },
 
-            /** Theia-specific TerminalObserver */
+            /**WasomeCodeX-specific TerminalObserver */
             registerTerminalObserver(observer: theia.TerminalObserver): theia.Disposable {
                 return terminalExt.registerTerminalObserver(observer);
             },
@@ -1620,7 +1620,7 @@ export function createAPIFactory(
 }
 
 /**
- * Represents a Theia plugin as well as a VSCode extension.
+ * Represents aWasomeCodeX plugin as well as a VSCode extension.
  */
 export interface ExtensionPlugin<T> extends theia.Plugin<T> {
     /**

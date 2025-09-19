@@ -52,7 +52,7 @@
       },
       "anthropic": {
         "apiKey": {
-          "description": "Introduzca la clave API de su cuenta oficial de Anthropic. **Nota:** Al utilizar esta opción, la clave de la API de Anthropic se almacenará en texto claro en la máquina que ejecuta Theia. Utilice la variable de entorno `ANTHROPIC_API_KEY` para establecer la clave de forma segura."
+          "description": "Introduzca la clave API de su cuenta oficial de Anthropic. **Nota:** Al utilizar esta opción, la clave de la API de Anthropic se almacenará en texto claro en la máquina que ejecutaWasomeCodeX. Utilice la variable de entorno `ANTHROPIC_API_KEY` para establecer la clave de forma segura."
         },
         "models": {
           "description": "Modelos antrópicos oficiales"
@@ -60,7 +60,7 @@
       },
       "chat": {
         "defaultAgent": {
-          "description": "Opcional: <agent-name> del Agente de Chat que se invocará, si no se menciona explícitamente ningún agente con @<agent-name> en la consulta del usuario. Si no se configura ningún Agente predeterminado, se aplicarán los valores predeterminados de Theia."
+          "description": "Opcional: <agent-name> del Agente de Chat que se invocará, si no se menciona explícitamente ningún agente con @<agent-name> en la consulta del usuario. Si no se configura ningún Agente predeterminado, se aplicarán los valores predeterminados deWasomeCodeX."
         },
         "pinChatAgent": {
           "description": "Habilite la vinculación de agentes para mantener activo automáticamente un agente de chat mencionado a lo largo de las solicitudes, reduciendo la necesidad de menciones repetidas."
@@ -176,7 +176,7 @@
       },
       "completion": {
         "agent": {
-          "description": "Este agente proporciona completado de código en línea en el editor de código en el IDE Theia."
+          "description": "Este agente proporciona completado de código en línea en el editor de código en el IDEWasomeCodeX."
         },
         "automaticEnable": {
           "description": "Activar automáticamente las finalizaciones de IA en línea dentro de cualquier editor (Mónaco) durante la edición.            \n            Como alternativa, puede activar manualmente el código mediante el comando \"Activar sugerencia en línea\" o el atajo de teclado predeterminado \"Ctrl+Alt+Espacio\"."
@@ -311,7 +311,7 @@
           "description": "Carpeta para almacenar plantillas de avisos personalizadas. Si no se personalizan, se utiliza el directorio de configuración del usuario. Por favor, considere el uso de una carpeta, que está bajo control de versiones para gestionar sus variantes de plantillas de aviso."
         },
         "prompts": {
-          "category": "Plantillas Theia AI Prompt"
+          "category": "PlantillasWasomeCodeX AI Prompt"
         },
         "requestSettings": {
           "mdDescription": "Permite especificar configuraciones de solicitud personalizadas para múltiples modelos.\n            Cada objeto representa la configuración para un modelo específico. El campo `modelId` especifica el ID del modelo, `requestSettings` define la configuración específica del modelo.\n            El campo `providerId` es opcional y permite aplicar la configuración a un proveedor específico. Si no se define, la configuración se aplicará a todos los proveedores.\n            Ejemplo de providerIds: huggingface, openai, ollama, llamafile.\n            Consulte [nuestra documentación](https://theia-ide.org/docs/user_ai/#custom-request-settings) para obtener más información.",
@@ -336,7 +336,7 @@
       },
       "google": {
         "apiKey": {
-          "description": "Introduzca una clave API de su cuenta oficial de Google AI (Gemini). **Tenga en cuenta:** Al utilizar esta preferencia, la clave API de GOOGLE AI se almacenará en texto claro en la máquina que ejecuta Theia. Utiliza la variable de entorno `GOOGLE_API_KEY` para establecer la clave de forma segura."
+          "description": "Introduzca una clave API de su cuenta oficial de Google AI (Gemini). **Tenga en cuenta:** Al utilizar esta preferencia, la clave API de GOOGLE AI se almacenará en texto claro en la máquina que ejecutaWasomeCodeX. Utiliza la variable de entorno `GOOGLE_API_KEY` para establecer la clave de forma segura."
         },
         "maxRetriesOnErrors": {
           "description": "Número máximo de reintentos en caso de error. Si es menor que 1, la lógica de reintentos está desactivada."
@@ -396,7 +396,7 @@
       },
       "huggingFace": {
         "apiKey": {
-          "mdDescription": "Introduzca una clave API para su cuenta de Hugging Face. **Tenga en cuenta:** Al utilizar esta preferencia, la clave API de Hugging Face se almacenará en texto claro en la máquina que ejecuta Theia. Utilice la variable de entorno `HUGGINGFACE_API_KEY` para establecer la clave de forma segura."
+          "mdDescription": "Introduzca una clave API para su cuenta de Hugging Face. **Tenga en cuenta:** Al utilizar esta preferencia, la clave API de Hugging Face se almacenará en texto claro en la máquina que ejecutaWasomeCodeX. Utilice la variable de entorno `HUGGINGFACE_API_KEY` para establecer la clave de forma segura."
         },
         "models": {
           "description": "Modelos de Cara de Abrazo para usar"
@@ -412,7 +412,7 @@
       },
       "llamaFile": {
         "prefs": {
-          "mdDescription": "Este ajuste le permite configurar y gestionar modelos LlamaFile en Theia IDE.            \n            Cada entrada requiere un `nombre` fácil de usar, el archivo `uri` que apunta a su LlamaFile, y el `puerto` en el que se ejecutará.            \n            Para iniciar un LlamaFile, utilice el comando \"Start LlamaFile\", que le permite seleccionar el modelo deseado.            \n            Si edita una entrada (por ejemplo, cambiando el puerto), cualquier instancia en ejecución se detendrá y tendrá que iniciarla manualmente de nuevo.            \n            [Más información sobre la configuración y gestión de LlamaFiles en la documentación de Theia IDE](https://theia-ide.org/docs/user_ai/#llamafile-models).",
+          "mdDescription": "Este ajuste le permite configurar y gestionar modelos LlamaFile enWasomeCodeX IDE.            \n            Cada entrada requiere un `nombre` fácil de usar, el archivo `uri` que apunta a su LlamaFile, y el `puerto` en el que se ejecutará.            \n            Para iniciar un LlamaFile, utilice el comando \"Start LlamaFile\", que le permite seleccionar el modelo deseado.            \n            Si edita una entrada (por ejemplo, cambiando el puerto), cualquier instancia en ejecución se detendrá y tendrá que iniciarla manualmente de nuevo.            \n            [Más información sobre la configuración y gestión de LlamaFiles en la documentación deWasomeCodeX IDE](https://theia-ide.org/docs/user_ai/#llamafile-models).",
           "name": {
             "description": "El nombre del modelo a utilizar para este Llamafile."
           },
@@ -517,7 +517,7 @@
       },
       "openai": {
         "apiKey": {
-          "mdDescription": "Introduzca una clave API de su cuenta oficial OpenAI. **Tenga en cuenta:** Al utilizar esta preferencia, la clave API de Open AI se almacenará en texto claro en la máquina que ejecuta Theia. Utilice la variable de entorno `OPENAI_API_KEY` para establecer la clave de forma segura."
+          "mdDescription": "Introduzca una clave API de su cuenta oficial OpenAI. **Tenga en cuenta:** Al utilizar esta preferencia, la clave API de Open AI se almacenará en texto claro en la máquina que ejecutaWasomeCodeX. Utilice la variable de entorno `OPENAI_API_KEY` para establecer la clave de forma segura."
         },
         "customEndpoints": {
           "apiKey": {
@@ -630,7 +630,7 @@
       },
       "vercelai": {
         "anthropicApiKey": {
-          "mdDescription": "Introduzca una clave API para los modelos antrópicos. **Tenga en cuenta que la clave API se almacena en texto claro en la máquina que ejecuta Theia. Utilice la variable de entorno `ANTHROPIC_API_KEY` para establecer la clave de forma segura."
+          "mdDescription": "Introduzca una clave API para los modelos antrópicos. **Tenga en cuenta que la clave API se almacena en texto claro en la máquina que ejecutaWasomeCodeX. Utilice la variable de entorno `ANTHROPIC_API_KEY` para establecer la clave de forma segura."
         },
         "customEndpoints": {
           "apiKey": {
@@ -669,12 +669,12 @@
           }
         },
         "openaiApiKey": {
-          "mdDescription": "Introduzca una clave API para modelos OpenAI. **Por favor tenga en cuenta:** Al utilizar esta preferencia la clave API se almacenará en texto claro en la máquina que ejecuta Theia. Utilice la variable de entorno `OPENAI_API_KEY` para establecer la clave de forma segura."
+          "mdDescription": "Introduzca una clave API para modelos OpenAI. **Por favor tenga en cuenta:** Al utilizar esta preferencia la clave API se almacenará en texto claro en la máquina que ejecutaWasomeCodeX. Utilice la variable de entorno `OPENAI_API_KEY` para establecer la clave de forma segura."
         }
       },
       "workspace": {
         "coderAgent": {
-          "description": "Un asistente de IA integrado en Theia IDE, diseñado para ayudar a los desarrolladores de software. Este agente puede acceder al espacio de trabajo del usuario, puede obtener una lista de todos los archivos y carpetas disponibles y recuperar su contenido. Además, puede sugerir al usuario modificaciones de archivos. Por lo tanto, puede ayudar al usuario con tareas de codificación u otras tareas que impliquen cambios en los archivos."
+          "description": "Un asistente de IA integrado enWasomeCodeX IDE, diseñado para ayudar a los desarrolladores de software. Este agente puede acceder al espacio de trabajo del usuario, puede obtener una lista de todos los archivos y carpetas disponibles y recuperar su contenido. Además, puede sugerir al usuario modificaciones de archivos. Por lo tanto, puede ayudar al usuario con tareas de codificación u otras tareas que impliquen cambios en los archivos."
         },
         "considerGitignore": {
           "description": "Si se activa, excluye los archivos/carpetas especificados en un archivo global .gitignore (la ubicación esperada es la raíz del espacio de trabajo).",
@@ -689,7 +689,7 @@
           "title": "Máximos resultados de búsqueda"
         },
         "workspaceAgent": {
-          "description": "Un asistente de IA integrado en Theia IDE, diseñado para ayudar a los desarrolladores de software. Este agente puede acceder al espacio de trabajo del usuario, puede obtener una lista de todos los archivos y carpetas disponibles y recuperar su contenido. No puede modificar archivos. Por lo tanto, puede responder a preguntas sobre el proyecto actual, los archivos del proyecto y el código fuente en el espacio de trabajo, como por ejemplo cómo construir el proyecto, dónde colocar el código fuente, dónde encontrar código o configuraciones específicas, etc."
+          "description": "Un asistente de IA integrado enWasomeCodeX IDE, diseñado para ayudar a los desarrolladores de software. Este agente puede acceder al espacio de trabajo del usuario, puede obtener una lista de todos los archivos y carpetas disponibles y recuperar su contenido. No puede modificar archivos. Por lo tanto, puede responder a preguntas sobre el proyecto actual, los archivos del proyecto y el código fuente en el espacio de trabajo, como por ejemplo cómo construir el proyecto, dónde colocar el código fuente, dónde encontrar código o configuraciones específicas, etc."
         }
       }
     },
@@ -799,7 +799,7 @@
       },
       "navigator": {
         "clipboardWarn": "El acceso al portapapeles está denegado. Comprueba los permisos de tu navegador.",
-        "clipboardWarnFirefox": "La API del portapapeles no está disponible. Se puede activar mediante la preferencia '{0}' en la página '{1}'. A continuación, vuelva a cargar Theia. Tenga en cuenta que esto permitirá a FireFox tener acceso completo al portapapeles del sistema."
+        "clipboardWarnFirefox": "La API del portapapeles no está disponible. Se puede activar mediante la preferencia '{0}' en la página '{1}'. A continuación, vuelva a cargarWasomeCodeX. Tenga en cuenta que esto permitirá a FireFox tener acceso completo al portapapeles del sistema."
       },
       "offline": "Fuera de línea",
       "pasteWarn": "Por favor, utilice el comando de pegar o el atajo de teclado del navegador.",
@@ -813,8 +813,8 @@
       "secondaryWindow": {
         "alwaysOnTop": "Cuando está activada, la ventana secundaria se mantiene por encima de todas las demás ventanas, incluidas las de distintas aplicaciones.",
         "description": "Establece la posición inicial y el tamaño de la ventana secundaria extraída.",
-        "fullSize": "La posición y el tamaño del widget extraído serán los mismos que los de la aplicación Theia en ejecución.",
-        "halfWidth": "La posición y el tamaño del widget extraído serán la mitad de la anchura de la aplicación Theia en ejecución.",
+        "fullSize": "La posición y el tamaño del widget extraído serán los mismos que los de la aplicaciónWasomeCodeX en ejecución.",
+        "halfWidth": "La posición y el tamaño del widget extraído serán la mitad de la anchura de la aplicaciónWasomeCodeX en ejecución.",
         "originalSize": "La posición y el tamaño del widget extraído serán los mismos que los del widget original."
       },
       "silentNotifications": "Controla si se suprimen las ventanas emergentes de notificación.",
@@ -1084,7 +1084,7 @@
     "navigator": {
       "autoReveal": "Auto Reveal",
       "clipboardWarn": "El acceso al portapapeles está denegado. Comprueba los permisos de tu navegador.",
-      "clipboardWarnFirefox": "La API del portapapeles no está disponible. Se puede activar mediante la preferencia '{0}' en la página '{1}'. A continuación, vuelva a cargar Theia. Tenga en cuenta que esto permitirá a FireFox tener acceso completo al portapapeles del sistema.",
+      "clipboardWarnFirefox": "La API del portapapeles no está disponible. Se puede activar mediante la preferencia '{0}' en la página '{1}'. A continuación, vuelva a cargarWasomeCodeX. Tenga en cuenta que esto permitirá a FireFox tener acceso completo al portapapeles del sistema.",
       "refresh": "Actualizar en el Explorador",
       "reveal": "Revelar en el Explorador",
       "systemEditor": "Editor del sistema",

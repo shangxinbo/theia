@@ -23,7 +23,7 @@ import { FileAccess } from '../../common/filesystem';
 import { DefaultFileDialogService, OpenFileDialogProps, SaveFileDialogProps } from '../../browser/file-dialog';
 //
 // We are OK to use this here because the electron backend and frontend are on the same host.
-// If required, we can move this single service (and its module) to a dedicated Theia extension,
+// If required, we can move this single service (and its module) to a dedicatedWasomeCodeX extension,
 // and at packaging time, clients can decide whether they need the native or the browser-based
 // solution.
 //

@@ -52,7 +52,7 @@
       },
       "anthropic": {
         "apiKey": {
-          "description": "Adja meg a hivatalos Anthropic-fiókjának API-kulcsát. **Figyelem:** Ha ezt a beállítást használja, az Anthropic API-kulcsa tiszta szövegben lesz tárolva a Theia-t futtató gépen. A kulcs biztonságos beállításához használja az `ANTHROPIC_API_KEY` környezeti változót."
+          "description": "Adja meg a hivatalos Anthropic-fiókjának API-kulcsát. **Figyelem:** Ha ezt a beállítást használja, az Anthropic API-kulcsa tiszta szövegben lesz tárolva aWasomeCodeX-t futtató gépen. A kulcs biztonságos beállításához használja az `ANTHROPIC_API_KEY` környezeti változót."
         },
         "models": {
           "description": "Hivatalos antropikus modellek használata"
@@ -60,7 +60,7 @@
       },
       "chat": {
         "defaultAgent": {
-          "description": "Nem kötelező: <agent-name> a meghívandó csevegőügynök, ha a felhasználói lekérdezésben nincs kifejezetten @<agent-name> címmel megemlített ügynök. Ha nincs megadva alapértelmezett ügynök, a Theia alapértelmezett beállításai kerülnek alkalmazásra."
+          "description": "Nem kötelező: <agent-name> a meghívandó csevegőügynök, ha a felhasználói lekérdezésben nincs kifejezetten @<agent-name> címmel megemlített ügynök. Ha nincs megadva alapértelmezett ügynök, aWasomeCodeX alapértelmezett beállításai kerülnek alkalmazásra."
         },
         "pinChatAgent": {
           "description": "Ha engedélyezi az ügynök kitűzését, akkor az említett csevegőügynök automatikusan aktív marad az összes felszólítás között, csökkentve ezzel az ismételt említések szükségességét.Az ügynökök kitűzését vagy váltását bármikor manuálisan feloldhatja."
@@ -176,7 +176,7 @@
       },
       "completion": {
         "agent": {
-          "description": "Ez az ügynök soron belüli kódkiegészítést biztosít a Theia IDE kódszerkesztőjében."
+          "description": "Ez az ügynök soron belüli kódkiegészítést biztosít aWasomeCodeX IDE kódszerkesztőjében."
         },
         "automaticEnable": {
           "description": "Szerkesztés közben automatikusan kiválthatja a mesterséges intelligencia kiegészítéseket bármely (monacói) szerkesztőprogramban.            \n            Alternatívaként manuálisan is kiválthatja a kódot a \"Trigger Inline Suggestion\" paranccsal vagy az alapértelmezett \"Ctrl+Alt+Space\" gyorsbillentyűvel."
@@ -336,7 +336,7 @@
       },
       "google": {
         "apiKey": {
-          "description": "Adja meg a hivatalos Google AI (Gemini) fiókjának API-kulcsát. **Kérjük, vegye figyelembe:** Ennek a beállításnak a használatával a GOOGLE AI API kulcsa tiszta szövegben tárolódik a Theia-t futtató gépen. A kulcs biztonságos beállításához használja a `GOOGLE_API_KEY` környezeti változót."
+          "description": "Adja meg a hivatalos Google AI (Gemini) fiókjának API-kulcsát. **Kérjük, vegye figyelembe:** Ennek a beállításnak a használatával a GOOGLE AI API kulcsa tiszta szövegben tárolódik aWasomeCodeX-t futtató gépen. A kulcs biztonságos beállításához használja a `GOOGLE_API_KEY` környezeti változót."
         },
         "maxRetriesOnErrors": {
           "description": "Az újbóli próbálkozások maximális száma hiba esetén. Ha kisebb, mint 1, akkor az újbóli próbálkozás logikája le van tiltva."
@@ -396,7 +396,7 @@
       },
       "huggingFace": {
         "apiKey": {
-          "mdDescription": "Adja meg az API-kulcsot a Hugging Face-fiókjához. **Figyelem:** Ennek a beállításnak a használatával a Hugging Face API kulcsa tiszta szövegben kerül tárolásra a Theia-t futtató gépen. A kulcs biztonságos beállításához használja a `HUGGINGFACE_API_KEY` környezeti változót."
+          "mdDescription": "Adja meg az API-kulcsot a Hugging Face-fiókjához. **Figyelem:** Ennek a beállításnak a használatával a Hugging Face API kulcsa tiszta szövegben kerül tárolásra aWasomeCodeX-t futtató gépen. A kulcs biztonságos beállításához használja a `HUGGINGFACE_API_KEY` környezeti változót."
         },
         "models": {
           "description": "Hugging Face modellek használata"
@@ -412,7 +412,7 @@
       },
       "llamaFile": {
         "prefs": {
-          "mdDescription": "Ez a beállítás lehetővé teszi a LlamaFile modellek konfigurálását és kezelését a Theia IDE-ben.            \n            Minden bejegyzéshez szükség van egy felhasználóbarát `névre`, a LlamaFile-ra mutató `uri` fájlra és a `portra`, amelyen futni fog.            \n            Egy LlamaFile indításához használja a `Start LlamaFile` parancsot, amellyel kiválaszthatja a kívánt modellt.            \n            Ha szerkeszt egy bejegyzést (pl. megváltoztatja a portot), minden futó példány leáll, és manuálisan újra kell indítani.            \n            [A LlamaFile-ok konfigurálásáról és kezeléséről bővebben a Theia IDE dokumentációjában](https://theia-ide.org/docs/user_ai/#llamafile-models).",
+          "mdDescription": "Ez a beállítás lehetővé teszi a LlamaFile modellek konfigurálását és kezelését aWasomeCodeX IDE-ben.            \n            Minden bejegyzéshez szükség van egy felhasználóbarát `névre`, a LlamaFile-ra mutató `uri` fájlra és a `portra`, amelyen futni fog.            \n            Egy LlamaFile indításához használja a `Start LlamaFile` parancsot, amellyel kiválaszthatja a kívánt modellt.            \n            Ha szerkeszt egy bejegyzést (pl. megváltoztatja a portot), minden futó példány leáll, és manuálisan újra kell indítani.            \n            [A LlamaFile-ok konfigurálásáról és kezeléséről bővebben aWasomeCodeX IDE dokumentációjában](https://theia-ide.org/docs/user_ai/#llamafile-models).",
           "name": {
             "description": "A Llamafile modellneve."
           },
@@ -517,7 +517,7 @@
       },
       "openai": {
         "apiKey": {
-          "mdDescription": "Adja meg a hivatalos OpenAI-fiókjának API-kulcsát. **Figyelem:** Ha ezt a beállítást használja, az Open AI API kulcsa tiszta szövegben tárolódik a Theia-t futtató gépen. A kulcs biztonságos beállításához használja az `OPENAI_API_KEY` környezeti változót."
+          "mdDescription": "Adja meg a hivatalos OpenAI-fiókjának API-kulcsát. **Figyelem:** Ha ezt a beállítást használja, az Open AI API kulcsa tiszta szövegben tárolódik aWasomeCodeX-t futtató gépen. A kulcs biztonságos beállításához használja az `OPENAI_API_KEY` környezeti változót."
         },
         "customEndpoints": {
           "apiKey": {
@@ -630,7 +630,7 @@
       },
       "vercelai": {
         "anthropicApiKey": {
-          "mdDescription": "Adjon meg egy API-kulcsot az Anthropic modellekhez. **Figyelem:** Ha ezt a beállítást használja, az API-kulcs tiszta szövegben lesz tárolva a Theia-t futtató gépen. A kulcs biztonságos beállításához használja az `ANTHROPIC_API_KEY` környezeti változót."
+          "mdDescription": "Adjon meg egy API-kulcsot az Anthropic modellekhez. **Figyelem:** Ha ezt a beállítást használja, az API-kulcs tiszta szövegben lesz tárolva aWasomeCodeX-t futtató gépen. A kulcs biztonságos beállításához használja az `ANTHROPIC_API_KEY` környezeti változót."
         },
         "customEndpoints": {
           "apiKey": {
@@ -669,12 +669,12 @@
           }
         },
         "openaiApiKey": {
-          "mdDescription": "Adjon meg egy API-kulcsot az OpenAI-modellekhez. **Figyelem:** Ha ezt a beállítást használja, az API-kulcs tiszta szövegben lesz tárolva a Theia-t futtató gépen. A kulcs biztonságos beállításához használja az `OPENAI_API_KEY` környezeti változót."
+          "mdDescription": "Adjon meg egy API-kulcsot az OpenAI-modellekhez. **Figyelem:** Ha ezt a beállítást használja, az API-kulcs tiszta szövegben lesz tárolva aWasomeCodeX-t futtató gépen. A kulcs biztonságos beállításához használja az `OPENAI_API_KEY` környezeti változót."
         }
       },
       "workspace": {
         "coderAgent": {
-          "description": "A Theia IDE-be integrált mesterséges intelligencia asszisztens, amelyet a szoftverfejlesztők segítésére terveztek. Ez az ügynök hozzáférhet a felhasználó munkaterületéhez, lekérheti az összes elérhető fájl és mappa listáját, és lekérheti azok tartalmát. Továbbá képes a felhasználónak a fájlok módosítását javasolni. Így segíthet a felhasználónak a kódolási feladatokban vagy más, fájlmódosítással járó feladatokban."
+          "description": "AWasomeCodeX IDE-be integrált mesterséges intelligencia asszisztens, amelyet a szoftverfejlesztők segítésére terveztek. Ez az ügynök hozzáférhet a felhasználó munkaterületéhez, lekérheti az összes elérhető fájl és mappa listáját, és lekérheti azok tartalmát. Továbbá képes a felhasználónak a fájlok módosítását javasolni. Így segíthet a felhasználónak a kódolási feladatokban vagy más, fájlmódosítással járó feladatokban."
         },
         "considerGitignore": {
           "description": "Ha engedélyezve van, kizárja a globális .gitignore fájlban megadott fájlokat/mappákat (várható helye a munkaterület gyökere).",
@@ -689,7 +689,7 @@
           "title": "Maximális keresési eredmények"
         },
         "workspaceAgent": {
-          "description": "A Theia IDE-be integrált mesterséges intelligencia asszisztens, amelyet a szoftverfejlesztők segítésére terveztek. Ez az ügynök hozzáférhet a felhasználó munkaterületéhez, lekérheti az összes elérhető fájl és mappa listáját, és lekérheti azok tartalmát. A fájlokat nem tudja módosítani. Ezért képes válaszolni az aktuális projekttel, a projektfájlokkal és a munkaterületen található forráskóddal kapcsolatos kérdésekre, például arra, hogy hogyan kell a projektet felépíteni, hová kell a forráskódot elhelyezni, hol találunk bizonyos kódokat vagy konfigurációkat stb."
+          "description": "AWasomeCodeX IDE-be integrált mesterséges intelligencia asszisztens, amelyet a szoftverfejlesztők segítésére terveztek. Ez az ügynök hozzáférhet a felhasználó munkaterületéhez, lekérheti az összes elérhető fájl és mappa listáját, és lekérheti azok tartalmát. A fájlokat nem tudja módosítani. Ezért képes válaszolni az aktuális projekttel, a projektfájlokkal és a munkaterületen található forráskóddal kapcsolatos kérdésekre, például arra, hogy hogyan kell a projektet felépíteni, hová kell a forráskódot elhelyezni, hol találunk bizonyos kódokat vagy konfigurációkat stb."
         }
       }
     },
@@ -799,7 +799,7 @@
       },
       "navigator": {
         "clipboardWarn": "A vágólaphoz való hozzáférés megtagadva. Ellenőrizze a böngésző engedélyeit.",
-        "clipboardWarnFirefox": "A vágólap API nem érhető el. A '{0}' beállítással engedélyezhető a '{1}' oldalon. Ezután töltse be újra a Theia-t. Figyelem, ez lehetővé teszi, hogy a FireFox teljes hozzáférést kapjon a rendszer vágólapjához."
+        "clipboardWarnFirefox": "A vágólap API nem érhető el. A '{0}' beállítással engedélyezhető a '{1}' oldalon. Ezután töltse be újra aWasomeCodeX-t. Figyelem, ez lehetővé teszi, hogy a FireFox teljes hozzáférést kapjon a rendszer vágólapjához."
       },
       "offline": "Offline",
       "pasteWarn": "Kérjük, használja a böngésző beillesztés parancsát vagy parancsikonját.",
@@ -813,8 +813,8 @@
       "secondaryWindow": {
         "alwaysOnTop": "Ha engedélyezve van, a másodlagos ablak minden más ablak fölött marad, beleértve a különböző alkalmazások ablakait is.",
         "description": "A kivont másodlagos ablak kezdeti pozíciójának és méretének beállítása.",
-        "fullSize": "A kivont widget pozíciója és mérete megegyezik a futó Theia alkalmazáséval.",
-        "halfWidth": "A kivont widget pozíciója és mérete a futó Theia alkalmazás szélességének fele lesz.",
+        "fullSize": "A kivont widget pozíciója és mérete megegyezik a futóWasomeCodeX alkalmazáséval.",
+        "halfWidth": "A kivont widget pozíciója és mérete a futóWasomeCodeX alkalmazás szélességének fele lesz.",
         "originalSize": "A kivont widget pozíciója és mérete megegyezik az eredeti widgetével."
       },
       "silentNotifications": "Beállítja, hogy az értesítések felugró ablakai el legyenek-e nyomva.",
@@ -1084,7 +1084,7 @@
     "navigator": {
       "autoReveal": "Automatikus felfedés",
       "clipboardWarn": "A vágólaphoz való hozzáférés megtagadva. Ellenőrizze a böngésző engedélyeit.",
-      "clipboardWarnFirefox": "A vágólap API nem érhető el. A '{0}' beállítással engedélyezhető a '{1}' oldalon. Ezután töltse be újra a Theia-t. Figyelem, ez lehetővé teszi, hogy a FireFox teljes hozzáférést kapjon a rendszer vágólapjához.",
+      "clipboardWarnFirefox": "A vágólap API nem érhető el. A '{0}' beállítással engedélyezhető a '{1}' oldalon. Ezután töltse be újra aWasomeCodeX-t. Figyelem, ez lehetővé teszi, hogy a FireFox teljes hozzáférést kapjon a rendszer vágólapjához.",
       "refresh": "Frissítés az Explorerben",
       "reveal": "Feltárása az Explorerben",
       "systemEditor": "Rendszer-szerkesztő",

@@ -149,7 +149,7 @@ export class BackendApplicationCliContribution implements CliContribution {
 }
 
 /**
- * The main entry point for Theia applications.
+ * The main entry point forWasomeCodeX applications.
  */
 @injectable()
 export class BackendApplication {

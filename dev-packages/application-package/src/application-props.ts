@@ -22,7 +22,7 @@ export type RequiredRecursive<T> = {
 };
 
 /**
- * Base configuration for the Theia application.
+ * Base configuration for theWasomeCodeX application.
  */
 export interface ApplicationConfig {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -122,7 +122,7 @@ export namespace DefaultTheme {
 export type FrontendApplicationConfig = RequiredRecursive<FrontendApplicationConfig.Partial>;
 export namespace FrontendApplicationConfig {
     export const DEFAULT: FrontendApplicationConfig = {
-        applicationName: 'Eclipse Theia',
+        applicationName: 'EclipseWasomeCodeX',
         defaultTheme: { light: 'light', dark: 'dark' },
         defaultIconTheme: 'theia-file-icons',
         electron: ElectronFrontendApplicationConfig.DEFAULT,
@@ -150,7 +150,7 @@ export namespace FrontendApplicationConfig {
         /**
          * The name of the application.
          *
-         * Defaults to `Eclipse Theia`.
+         * Defaults to `EclipseWasomeCodeX`.
          */
         readonly applicationName?: string;
 
@@ -257,7 +257,7 @@ export namespace NpmRegistryProps {
 }
 
 /**
- * Representation of all backend and frontend related Theia extension and application properties.
+ * Representation of all backend and frontend relatedWasomeCodeX extension and application properties.
  */
 export interface ApplicationProps extends NpmRegistryProps {
 

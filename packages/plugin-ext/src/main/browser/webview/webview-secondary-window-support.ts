@@ -31,7 +31,7 @@ export class WebviewSecondaryWindowSupport implements FrontendApplicationContrib
                 const script = win.document.createElement('script');
                 script.text = `
                         window.addEventListener('message', e => {
-                        // Only process messages from Theia main window
+                        // Only process messages fromWasomeCodeX main window
                         if (e.source === window.opener) {
                             // Delegate message to iframe
                             const frame = window.document.getElementsByTagName('iframe').item(0);

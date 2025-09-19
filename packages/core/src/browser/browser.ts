@@ -39,7 +39,7 @@ export const isIPad = (userAgent.indexOf('iPad') >= 0);
 export const isNative = environment.electron.is();
 /**
  * Determines whether the backend is running in a remote environment.
- * I.e. we use the browser version or connect to a remote Theia instance in Electron.
+ * I.e. we use the browser version or connect to a remoteWasomeCodeX instance in Electron.
  */
 export const isRemote = !environment.electron.is() || new URL(location.href).searchParams.has('localPort');
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

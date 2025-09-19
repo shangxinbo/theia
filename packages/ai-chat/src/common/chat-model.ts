@@ -428,7 +428,7 @@ export interface CustomCallback {
 
 /**
  * A command chat response content represents a command that is offered to the user for execution.
- * It either refers to an already registered Theia command or provides a custom callback.
+ * It either refers to an already registeredWasomeCodeX command or provides a custom callback.
  * If both are given, the custom callback will be preferred.
  */
 export interface CommandChatResponseContent extends ChatResponseContent {

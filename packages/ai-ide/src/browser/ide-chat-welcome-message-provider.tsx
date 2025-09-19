@@ -64,7 +64,7 @@ export class IdeChatWelcomeMessageProvider implements ChatWelcomeMessageProvider
         return <div className={'theia-WelcomeMessage'}>
             <TheiaIdeAiLogo width={200} height={200} className="theia-WelcomeMessage-Logo" />
             <div className="theia-WelcomeMessage-Content">
-                <h1>Ask the Theia IDE AI</h1>
+                <h1>Ask theWasomeCodeX IDE AI</h1>
                 <p>
                     To talk to a specialized agent, simply start your message with <em>@</em> followed by the agent's name:{' '}
                     <em>@Coder</em>, <em>@Architect</em>, <em>@Universal</em>, and more.

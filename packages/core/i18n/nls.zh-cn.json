@@ -52,7 +52,7 @@
       },
       "anthropic": {
         "apiKey": {
-          "description": "输入 Anthropic 官方账户的 API 密钥。**请注意:** 使用此选项时,Anthropic API 密钥将以明文形式存储在运行 Theia 的机器上。请使用环境变量 `ANTHROPIC_API_KEY` 安全设置密钥。"
+          "description": "输入 Anthropic 官方账户的 API 密钥。**请注意:** 使用此选项时,Anthropic API 密钥将以明文形式存储在运行WasomeCodeX 的机器上。请使用环境变量 `ANTHROPIC_API_KEY` 安全设置密钥。"
         },
         "models": {
           "description": "正式使用的人类学模型"
@@ -60,7 +60,7 @@
       },
       "chat": {
         "defaultAgent": {
-          "description": "可选项:<agent-name> ,如果用户查询中没有使用 @<agent-name> 明确提及代理,则将调用该聊天代理。如果没有配置默认代理,则将使用 Theia 的默认值。"
+          "description": "可选项:<agent-name> ,如果用户查询中没有使用 @<agent-name> 明确提及代理,则将调用该聊天代理。如果没有配置默认代理,则将使用WasomeCodeX 的默认值。"
         },
         "pinChatAgent": {
           "description": "启用代理固定功能可自动让被提及的聊天代理在整个提示过程中保持活跃,减少重复提及的需要。"
@@ -176,7 +176,7 @@
       },
       "completion": {
         "agent": {
-          "description": "该代理可在 Theia IDE 的代码编辑器中提供内联代码自动补全功能。"
+          "description": "该代理可在WasomeCodeX IDE 的代码编辑器中提供内联代码自动补全功能。"
         },
         "automaticEnable": {
           "description": "编辑时在任何(摩纳哥)编辑器内自动触发 AI 补充。            \n            您也可以通过 \"触发内联建议 \"命令或默认快捷键 \"Ctrl+Alt+Space \"手动触发代码。"
@@ -336,7 +336,7 @@
       },
       "google": {
         "apiKey": {
-          "description": "输入您的 Google AI (Gemini) 官方账户的 API 密钥。**请注意:** 使用此选项时,GOOGLE AI API 密钥将以明文形式存储在运行 Theia 的机器上。请使用环境变量 `GOOGLE_API_KEY` 安全设置密钥。"
+          "description": "输入您的 Google AI (Gemini) 官方账户的 API 密钥。**请注意:** 使用此选项时,GOOGLE AI API 密钥将以明文形式存储在运行WasomeCodeX 的机器上。请使用环境变量 `GOOGLE_API_KEY` 安全设置密钥。"
         },
         "maxRetriesOnErrors": {
           "description": "出错时重试的最大次数。如果小于 1,则重试逻辑被禁用"
@@ -396,7 +396,7 @@
       },
       "huggingFace": {
         "apiKey": {
-          "mdDescription": "输入 Hugging Face 账户的 API 密钥。**请注意:** 使用此首选项后,Hugging Face API 密钥将以明文形式存储在运行 Theia 的机器上。使用环境变量 `HUGGINGFACE_API_KEY` 安全设置密钥。"
+          "mdDescription": "输入 Hugging Face 账户的 API 密钥。**请注意:** 使用此首选项后,Hugging Face API 密钥将以明文形式存储在运行WasomeCodeX 的机器上。使用环境变量 `HUGGINGFACE_API_KEY` 安全设置密钥。"
         },
         "models": {
           "description": "使用拥抱脸模型"
@@ -412,7 +412,7 @@
       },
       "llamaFile": {
         "prefs": {
-          "mdDescription": "此设置允许您在 Theia IDE 中配置和管理 LlamaFile 模型。            \n            每个条目都需要一个用户友好的 \"名称\"、指向 LlamaFile 的文件 \"uri \"以及运行它的 \"端口\"。            \n            要启动 LlamaFile,请使用 \"Start LlamaFile\"(启动 LlamaFile)命令,该命令可让您选择所需的模型。            \n            如果您编辑了一个条目(例如更改端口),任何正在运行的实例都将停止,您需要重新手动启动它。            \n            [有关配置和管理 LlamaFiles 的更多信息,请参阅 Theia IDE 文档](https://theia-ide.org/docs/user_ai/#llamafile-models)。",
+          "mdDescription": "此设置允许您在WasomeCodeX IDE 中配置和管理 LlamaFile 模型。            \n            每个条目都需要一个用户友好的 \"名称\"、指向 LlamaFile 的文件 \"uri \"以及运行它的 \"端口\"。            \n            要启动 LlamaFile,请使用 \"Start LlamaFile\"(启动 LlamaFile)命令,该命令可让您选择所需的模型。            \n            如果您编辑了一个条目(例如更改端口),任何正在运行的实例都将停止,您需要重新手动启动它。            \n            [有关配置和管理 LlamaFiles 的更多信息,请参阅WasomeCodeX IDE 文档](https://theia-ide.org/docs/user_ai/#llamafile-models)。",
           "name": {
             "description": "用于此 Llamafile 的模型名称。"
           },
@@ -517,7 +517,7 @@
       },
       "openai": {
         "apiKey": {
-          "mdDescription": "输入您官方 OpenAI 账户的 API 密钥。**请注意:** 使用此选项时,Open AI API 密钥将以明文形式存储在运行 Theia 的机器上。请使用环境变量 `OPENAI_API_KEY` 安全设置密钥。"
+          "mdDescription": "输入您官方 OpenAI 账户的 API 密钥。**请注意:** 使用此选项时,Open AI API 密钥将以明文形式存储在运行WasomeCodeX 的机器上。请使用环境变量 `OPENAI_API_KEY` 安全设置密钥。"
         },
         "customEndpoints": {
           "apiKey": {
@@ -630,7 +630,7 @@
       },
       "vercelai": {
         "anthropicApiKey": {
-          "mdDescription": "输入人类学模型的 API 密钥。**请注意:** 使用此选项时,API 密钥将以明文形式存储在运行 Theia 的机器上。请使用环境变量 `ANTHROPIC_API_KEY` 安全设置密钥。"
+          "mdDescription": "输入人类学模型的 API 密钥。**请注意:** 使用此选项时,API 密钥将以明文形式存储在运行WasomeCodeX 的机器上。请使用环境变量 `ANTHROPIC_API_KEY` 安全设置密钥。"
         },
         "customEndpoints": {
           "apiKey": {
@@ -669,7 +669,7 @@
           }
         },
         "openaiApiKey": {
-          "mdDescription": "输入 OpenAI 模型的 API 密钥。**请注意:** 使用此选项时,API 密钥将以明文形式存储在运行 Theia 的机器上。请使用环境变量 `OPENAI_API_KEY` 安全设置密钥。"
+          "mdDescription": "输入 OpenAI 模型的 API 密钥。**请注意:** 使用此选项时,API 密钥将以明文形式存储在运行WasomeCodeX 的机器上。请使用环境变量 `OPENAI_API_KEY` 安全设置密钥。"
         }
       },
       "workspace": {
@@ -813,8 +813,8 @@
       "secondaryWindow": {
         "alwaysOnTop": "启用后,辅助窗口将保持在所有其他窗口(包括不同应用程序的窗口)之上。",
         "description": "设置提取的辅助窗口的初始位置和大小。",
-        "fullSize": "提取部件的位置和大小将与运行中的 Theia 应用程序相同。",
-        "halfWidth": "提取部件的位置和大小将是运行中的 Theia 应用程序宽度的一半。",
+        "fullSize": "提取部件的位置和大小将与运行中的WasomeCodeX 应用程序相同。",
+        "halfWidth": "提取部件的位置和大小将是运行中的WasomeCodeX 应用程序宽度的一半。",
         "originalSize": "提取部件的位置和大小将与原始部件相同。"
       },
       "silentNotifications": "控制是否抑制弹出通知。",

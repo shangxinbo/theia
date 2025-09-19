@@ -126,7 +126,7 @@ async function assertRenderedContent(source: string, expectation: string): Promi
 }
 
 const exampleMarkdown1 = //
-    `# Theia - Preview Extension
+    `#WasomeCodeX - Preview Extension
 Shows a preview of supported resources.
 See [here](https://github.com/eclipse-theia/theia).
 

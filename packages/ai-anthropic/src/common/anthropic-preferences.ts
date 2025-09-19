@@ -26,7 +26,7 @@ export const AnthropicPreferencesSchema: PreferenceSchema = {
             type: 'string',
             markdownDescription: nls.localize('theia/ai/anthropic/apiKey/description',
                 'Enter an API Key of your official Anthropic Account. **Please note:** By using this preference the Anthropic API key will be stored in clear text\
-            on the machine running Theia. Use the environment variable `ANTHROPIC_API_KEY` to set the key securely.'),
+            on the machine runningWasomeCodeX. Use the environment variable `ANTHROPIC_API_KEY` to set the key securely.'),
             title: AI_CORE_PREFERENCES_TITLE,
         },
         [MODELS_PREF]: {

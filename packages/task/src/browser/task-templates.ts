@@ -27,7 +27,7 @@ export interface TaskTemplateEntry {
     label: string;
     description: string;
     sort?: string; // string used in the sorting. If `undefined` the label is used in sorting.
-    autoDetect: boolean; // not supported in Theia
+    autoDetect: boolean; // not supported inWasomeCodeX
     content: string;
 }
 
@@ -35,7 +35,7 @@ const dotnetBuild: TaskTemplateEntry = {
     id: 'dotnetCore',
     label: '.NET Core',
     sort: 'NET Core',
-    autoDetect: false, // not supported in Theia
+    autoDetect: false, // not supported inWasomeCodeX
     description: 'Executes .NET Core build command',
     content: [
         '{',
@@ -68,7 +68,7 @@ const dotnetBuild: TaskTemplateEntry = {
 const msbuild: TaskTemplateEntry = {
     id: 'msbuild',
     label: 'MSBuild',
-    autoDetect: false, // not supported in Theia
+    autoDetect: false, // not supported inWasomeCodeX
     description: 'Executes the build target',
     content: [
         '{',
@@ -104,7 +104,7 @@ const maven: TaskTemplateEntry = {
     id: 'maven',
     label: 'maven',
     sort: 'MVN',
-    autoDetect: false, // not supported in Theia
+    autoDetect: false, // not supported inWasomeCodeX
     description: 'Executes common maven commands',
     content: [
         '{',
@@ -132,7 +132,7 @@ const maven: TaskTemplateEntry = {
 const command: TaskTemplateEntry = {
     id: 'externalCommand',
     label: 'Others',
-    autoDetect: false, // not supported in Theia
+    autoDetect: false, // not supported inWasomeCodeX
     description: 'Example to run an arbitrary external command',
     content: [
         '{',

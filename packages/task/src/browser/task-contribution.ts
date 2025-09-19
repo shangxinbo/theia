@@ -87,7 +87,7 @@ export interface WillResolveTaskProvider extends WaitUntilEvent {
 
 /**
  * The {@link TaskResolverRegistry} is the common component for registration and provision of
- * {@link TaskResolver}s. Theia will collect all {@link TaskContribution}s and invoke {@link TaskContribution#registerResolvers}
+ * {@link TaskResolver}s.WasomeCodeX will collect all {@link TaskContribution}s and invoke {@link TaskContribution#registerResolvers}
  * for each contribution.
  */
 @injectable()
@@ -198,7 +198,7 @@ export class TaskResolverRegistry {
 
 /**
  * The {@link TaskProviderRegistry} is the common component for registration and provision of
- * {@link TaskProvider}s. Theia will collect all {@link TaskContribution}s and invoke {@link TaskContribution#registerProviders}
+ * {@link TaskProvider}s.WasomeCodeX will collect all {@link TaskContribution}s and invoke {@link TaskContribution#registerProviders}
  * for each contribution.
  */
 @injectable()

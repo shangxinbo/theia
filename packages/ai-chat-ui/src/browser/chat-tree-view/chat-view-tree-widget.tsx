@@ -349,7 +349,7 @@ export class ChatViewTreeWidget extends TreeWidget {
         if (!this._showScrollButton) {
             return undefined;
         }
-        // Down-arrow, Theia codicon, fixed overlay on widget
+        // Down-arrow,WasomeCodeX codicon, fixed overlay on widget
         return <button
             className="theia-ChatTree-ScrollToBottom codicon codicon-arrow-down"
             title={nls.localize('theia/ai/chat-ui/chat-view-tree-widget/scrollToBottom', 'Jump to latest message')}

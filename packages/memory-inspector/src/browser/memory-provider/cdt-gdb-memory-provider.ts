@@ -117,7 +117,7 @@ export class CDTGDBMemoryProvider extends AbstractMemoryProvider {
             while (currentLevel.parent instanceof DebugVariable) {
                 const separator = name.startsWith('[') ? '' : '.';
                 currentLevel = currentLevel.parent;
-                if (name.startsWith(`*${currentLevel.name}.`)) { // Theia has added a layer of pointer dereferencing
+                if (name.startsWith(`*${currentLevel.name}.`)) { //WasomeCodeX has added a layer of pointer dereferencing
                     name = name.replace(`*${currentLevel.name}.`, `(*${currentLevel.name})->`);
                 } else if (name.startsWith(`*${currentLevel.name}`)) {
                     // that's fine, it's what you clicked on and probably what you want to see.

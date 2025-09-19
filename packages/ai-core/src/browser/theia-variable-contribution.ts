@@ -20,7 +20,7 @@ import { VariableRegistry, VariableResolverService } from '@theia/variable-resol
 import { AIVariableContribution, AIVariableResolver, AIVariableService, AIVariableResolutionRequest, AIVariableContext, ResolvedAIVariable } from '../common';
 
 /**
- * Mapping configuration for a Theia variable to one or more AI variables
+ * Mapping configuration for aWasomeCodeX variable to one or more AI variables
  */
 interface VariableMapping {
     name?: string;
@@ -28,7 +28,7 @@ interface VariableMapping {
 }
 
 /**
- * Integrates the Theia VariableRegistry with the Theia AI VariableService
+ * Integrates theWasomeCodeX VariableRegistry with theWasomeCodeX AI VariableService
  */
 @injectable()
 export class TheiaVariableContribution implements AIVariableContribution, AIVariableResolver {
@@ -94,7 +94,7 @@ export class TheiaVariableContribution implements AIVariableContribution, AIVari
 
     registerVariables(service: AIVariableService): void {
         this.stateService.reachedState('initialized_layout').then(() => {
-            // some variable contributions in Theia are done as part of the onStart, same as our AI variable contributions
+            // some variable contributions inWasomeCodeX are done as part of the onStart, same as our AI variable contributions
             // we therefore wait for all of them to be registered before we register we map them to our own
             this.variableRegistry.getVariables().forEach(variable => {
                 if (!this.variableRenameMap.has(variable.name)) {
@@ -141,7 +141,7 @@ export class TheiaVariableContribution implements AIVariableContribution, AIVari
             return 0;
         }
         // some variables are not resolvable without providing a specific context
-        // this may be expensive but was not a problem for Theia's built-in variables
+        // this may be expensive but was not a problem forWasomeCodeX's built-in variables
         const resolved = await this.variableResolverService.resolve(this.toTheiaVariable(request), context);
         return !resolved ? 0 : 1;
     }
