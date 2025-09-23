@@ -87,6 +87,7 @@ export class GettingStartedWidget extends ReactWidget {
     protected readonly theiaAIDocUrl = 'https://theia-ide.org/docs/theia_ai/';
     protected readonly dataUsageTelemetryUrl = 'https://theia-ide.org/docs/data_usage_telemetry/';
     protected readonly ghProjectUrl = 'https://github.com/eclipse-theia/theia/issues/new/choose';
+    protected readonly iframeUrl = 'http://www.wansheng-intelli.com/';
 
     @inject(ApplicationServer)
     protected readonly appServer: ApplicationServer;
@@ -206,35 +207,55 @@ export class GettingStartedWidget extends ReactWidget {
     protected renderStart(): React.ReactNode {
         const requireSingleOpen = isOSX || !environment.electron.is();
 
-        const createFile = <div className='gs-action-container'>
+        // const createFile = <div className='gs-action-container'>
+        //     <a
+        //         role={'button'}
+        //         tabIndex={0}
+        //         onClick={this.doCreateFile}
+        //         onKeyDown={this.doCreateFileEnter}>
+        //         {nls.localizeByDefault('New File...')}
+        //     </a>
+        // </div>;
+
+        const newProject = <div className='gs-action-container'>
             <a
                 role={'button'}
                 tabIndex={0}
-                onClick={this.doCreateFile}
-                onKeyDown={this.doCreateFileEnter}>
-                {nls.localizeByDefault('New File...')}
+                onClick={this.newProject}
+                onKeyDown={this.newProjectEnter}>
+                {nls.localizeByDefault('新建项目')}
             </a>
         </div>;
 
-        const open = requireSingleOpen && <div className='gs-action-container'>
+        const projectHome = <div className='gs-action-container'>
             <a
                 role={'button'}
                 tabIndex={0}
-                onClick={this.doOpen}
-                onKeyDown={this.doOpenEnter}>
-                {nls.localizeByDefault('Open')}
+                onClick={this.projectHome}
+                onKeyDown={this.projectHomeEnter}>
+                {nls.localizeByDefault('项目信息')}
             </a>
         </div>;
 
-        const openFile = !requireSingleOpen && <div className='gs-action-container'>
-            <a
-                role={'button'}
-                tabIndex={0}
-                onClick={this.doOpenFile}
-                onKeyDown={this.doOpenFileEnter}>
-                {nls.localizeByDefault('Open File')}
-            </a>
-        </div>;
+        // const open = requireSingleOpen && <div className='gs-action-container'>
+        //     <a
+        //         role={'button'}
+        //         tabIndex={0}
+        //         onClick={this.doOpen}
+        //         onKeyDown={this.doOpenEnter}>
+        //         {nls.localizeByDefault('Open')}
+        //     </a>
+        // </div>;
+
+        // const openFile = !requireSingleOpen && <div className='gs-action-container'>
+        //     <a
+        //         role={'button'}
+        //         tabIndex={0}
+        //         onClick={this.doOpenFile}
+        //         onKeyDown={this.doOpenFileEnter}>
+        //         {nls.localizeByDefault('Open File')}
+        //     </a>
+        // </div>;
 
         const openFolder = !requireSingleOpen && <div className='gs-action-container'>
             <a
@@ -242,27 +263,28 @@ export class GettingStartedWidget extends ReactWidget {
                 tabIndex={0}
                 onClick={this.doOpenFolder}
                 onKeyDown={this.doOpenFolderEnter}>
-                {nls.localizeByDefault('Open Folder')}
+                {nls.localizeByDefault('打开项目')}
             </a>
         </div>;
 
-        const openWorkspace = (
-            <a
-                role={'button'}
-                tabIndex={0}
-                onClick={this.doOpenWorkspace}
-                onKeyDown={this.doOpenWorkspaceEnter}>
-                {nls.localizeByDefault('Open Workspace')}
-            </a>
-        );
+        // const openWorkspace = (
+        //     <a
+        //         role={'button'}
+        //         tabIndex={0}
+        //         onClick={this.doOpenWorkspace}
+        //         onKeyDown={this.doOpenWorkspaceEnter}>
+        //         {nls.localizeByDefault('Open Workspace')}
+        //     </a>
+        // );
 
         return <div className='gs-section'>
-            <h3 className='gs-section-header'><i className={codicon('folder-opened')}></i>{nls.localizeByDefault('Start')}</h3>
-            {createFile}
-            {open}
-            {openFile}
+            <h3 className='gs-section-header'><i className={codicon('folder-opened')}></i>{nls.localizeByDefault('开始')}</h3>
+            {projectHome}
+            {newProject}
+            {/* {open} */}
+            {/* {openFile} */}
             {openFolder}
-            {openWorkspace}
+            {/* {openWorkspace} */}
         </div>;
     }
 
@@ -293,23 +315,23 @@ export class GettingStartedWidget extends ReactWidget {
                 tabIndex={0}
                 onClick={this.doOpenRecentWorkspace}
                 onKeyDown={this.doOpenRecentWorkspaceEnter}>
-                {nls.localizeByDefault('More...')}
+                {nls.localizeByDefault('更多...')}
             </a>
         </div>;
         return <div className='gs-section'>
             <h3 className='gs-section-header'>
-                <i className={codicon('history')}></i>{nls.localizeByDefault('Recent')}
+                <i className={codicon('history')}></i>{nls.localizeByDefault('最近项目')}
             </h3>
             {items.length > 0 ? content : <p className='gs-no-recent'>
-                {nls.localizeByDefault('You have no recent folders,') + ' '}
+                {nls.localizeByDefault('您最近没有打开过项目,') + ' '}
                 <a
                     role={'button'}
                     tabIndex={0}
                     onClick={this.doOpenFolder}
                     onKeyDown={this.doOpenFolderEnter}>
-                    {nls.localizeByDefault('open a folder')}
+                    {nls.localizeByDefault('打开项目')}
                 </a>
-                {' ' + nls.localizeByDefault('to start.')}
+                {' ' + nls.localizeByDefault('。')}
             </p>}
             {more}
         </div>;
@@ -323,7 +345,7 @@ export class GettingStartedWidget extends ReactWidget {
         return <div className='gs-section'>
             <h3 className='gs-section-header'>
                 <i className={codicon('settings-gear')}></i>
-                {nls.localizeByDefault('Settings')}
+                {nls.localizeByDefault('设置')}
             </h3>
             <div className='gs-action-container'>
                 <a
@@ -331,10 +353,11 @@ export class GettingStartedWidget extends ReactWidget {
                     tabIndex={0}
                     onClick={this.doOpenPreferences}
                     onKeyDown={this.doOpenPreferencesEnter}>
-                    {nls.localizeByDefault('Open Settings')}
+                    {nls.localizeByDefault('打开设置')}
                 </a>
             </div>
-            <div className='gs-action-container'>
+            {/* 快捷键窗口 */}
+            {/* <div className='gs-action-container'>
                 <a
                     role={'button'}
                     tabIndex={0}
@@ -342,7 +365,7 @@ export class GettingStartedWidget extends ReactWidget {
                     onKeyDown={this.doOpenKeyboardShortcutsEnter}>
                     {nls.localizeByDefault('Open Keyboard Shortcuts')}
                 </a>
-            </div>
+            </div> */}
         </div>;
     }
 
@@ -353,24 +376,24 @@ export class GettingStartedWidget extends ReactWidget {
         return <div className='gs-section'>
             <h3 className='gs-section-header'>
                 <i className={codicon('question')}></i>
-                {nls.localizeByDefault('Help')}
+                {nls.localizeByDefault('帮助')}
             </h3>
             <div className='gs-action-container'>
                 <a
                     role={'button'}
                     tabIndex={0}
-                    onClick={() => this.doOpenExternalLink(this.documentationUrl)}
-                    onKeyDown={(e: React.KeyboardEvent) => this.doOpenExternalLinkEnter(e, this.documentationUrl)}>
-                    {nls.localizeByDefault('Web Documentation')}
+                    onClick={() => this.openHelp()}
+                    onKeyDown={this.doOpenHelpEnter}>
+                    {nls.localizeByDefault('打开帮助')}
                 </a>
             </div>
             <div className='gs-action-container'>
                 <a
                     role={'button'}
                     tabIndex={0}
-                    onClick={() => this.openHelp()}
-                >
-                    {nls.localizeByDefault('Documentation')}
+                    onClick={() => this.doOpenExternalLink(this.documentationUrl)}
+                    onKeyDown={(e: React.KeyboardEvent) => this.doOpenExternalLinkEnter(e, this.documentationUrl)}>
+                    {nls.localizeByDefault('在浏览器中打开文档')}
                 </a>
             </div>
             {/* <div className='gs-action-container'>
@@ -432,7 +455,7 @@ export class GettingStartedWidget extends ReactWidget {
 
     protected renderNews(): React.ReactNode {
         return <div className='gs-section'>
-            <h3 className='gs-section-header'>🚀 AI Support in the WasomeCodeX IDE is available (Beta Version)! ✨</h3>
+            <h3 className='gs-section-header'>🚀 WasomeCodeX IDE中的AI支持可用! ✨</h3>
             <div className='gs-action-container'>
                 <a
                     role={'button'}
@@ -440,21 +463,22 @@ export class GettingStartedWidget extends ReactWidget {
                     tabIndex={0}
                     onClick={() => this.doOpenAIChatView()}
                     onKeyDown={(e: React.KeyboardEvent) => this.doOpenAIChatViewEnter(e)}>
-                    {'Open the AI Chat View now to learn how to start! ✨'}
+                    {'立即打开AI聊天视图，了解如何开始！ ✨'}
                 </a>
             </div>
         </div>;
     }
 
     protected renderAIBanner(): React.ReactNode {
-        // return <></>
+        return <></>
         // 样式很好看的一个悬浮弹框
         return <div className='gs-container gs-aifeature-container'>
+            <iframe width={'100%'} src={this.iframeUrl} frameBorder={0}></iframe>
             {/* <div className='flex-grid'>
                 <div className='col'>
                     <h3 className='gs-section-header'> 🚀 AI Support in the WasomeCodeX IDE is available (Beta Version)! ✨</h3>
                     <div className='gs-action-container'>
-                      WasomeCodeX IDE now contains AI support, which offers early access to cutting-edge AI capabilities within your IDE.
+                        WasomeCodeX IDE now contains AI support, which offers early access to cutting-edge AI capabilities within your IDE.
                         <br />
                         Please note that these features are disabled by default, ensuring that users can opt-in at their discretion.
                         For those who choose to enable AI support, it is important to be aware that these may generate continuous
@@ -539,6 +563,20 @@ export class GettingStartedWidget extends ReactWidget {
         }
     };
 
+    protected projectHome = () => this.commandRegistry.executeCommand(CommonCommands.PROJECT_HOME.id);
+    protected projectHomeEnter = (e: React.KeyboardEvent) => {
+        if (this.isEnterKey(e)) {
+            this.projectHome();
+        }
+    };
+
+    protected newProject = () => this.commandRegistry.executeCommand(CommonCommands.NEW_PROJECT.id);
+    protected newProjectEnter = (e: React.KeyboardEvent) => {
+        if (this.isEnterKey(e)) {
+            this.newProject();
+        }
+    };
+
     /**
      * Trigger the open command.
      */
@@ -593,11 +631,17 @@ export class GettingStartedWidget extends ReactWidget {
      * Trigger the open preferences command.
      * Used to open the preferences widget.
      */
-    protected doOpenPreferences = () => this.commandRegistry.executeCommand(CommonCommands.OPEN_PREFERENCES.id);
-    protected openHelp = () => this.commandRegistry.executeCommand(CommonCommands.OPEN_HELP.id);
+    protected doOpenPreferences = () => this.commandRegistry.executeCommand(CommonCommands.OPEN_WEBIDE_SETTING.id);
     protected doOpenPreferencesEnter = (e: React.KeyboardEvent) => {
         if (this.isEnterKey(e)) {
             this.doOpenPreferences();
+        }
+    };
+
+    protected openHelp = () => this.commandRegistry.executeCommand(CommonCommands.OPEN_HELP.id);
+    protected doOpenHelpEnter = (e: React.KeyboardEvent) => {
+        if (this.isEnterKey(e)) {
+            this.openHelp();
         }
     };
 
@@ -670,7 +714,7 @@ function WelcomePreferences(props: PreferencesProps): JSX.Element {
                 checked={startupEditor === 'welcomePage' || startupEditor === 'welcomePageInEmptyWorkbench'}
             />
             <label htmlFor="startupEditor">
-                {nls.localizeByDefault('Show welcome page on startup')}
+                {nls.localizeByDefault('启动时显示欢迎页')}
             </label>
         </div>
     );

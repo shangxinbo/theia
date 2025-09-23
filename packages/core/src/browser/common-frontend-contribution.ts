@@ -352,10 +352,28 @@ export namespace CommonCommands {
         label: 'Open Settings (UI)',
     });
 
+    export const OPEN_WEBIDE_SETTING = Command.toDefaultLocalizedCommand({
+        id: 'webide.setting',
+        category: PREFERENCES_CATEGORY,
+        label: 'Open Settings',
+    });
+
     export const OPEN_HELP = Command.toDefaultLocalizedCommand({
         id: 'webide.project.showHelpPage',
         category: PREFERENCES_CATEGORY,
         label: 'Open Help',
+    });
+
+    export const PROJECT_HOME = Command.toDefaultLocalizedCommand({
+        id: 'webide.project.home',
+        category: PREFERENCES_CATEGORY,
+        label: 'Open Project',
+    });
+
+    export const NEW_PROJECT = Command.toDefaultLocalizedCommand({
+        id: 'webide.project.new',
+        category: PREFERENCES_CATEGORY,
+        label: 'New Project',
     });
 
     export const SELECT_COLOR_THEME = Command.toDefaultLocalizedCommand({
