@@ -32,7 +32,7 @@ import { PluginContainerModule } from '@theia/plugin-ext/lib/plugin/node/plugin-
 type Gotd = typeof gotd;
 const GotdApiFactory = Symbol('GotdApiFactory');
 
-// Retrieved byWasomeCodeX to configure the Inversify DI container when the plugin is initialized.
+// Retrieved by WasomeCodeX to configure the Inversify DI container when the plugin is initialized.
 // This is called when the plugin-host process is forked.
 export const containerModule = PluginContainerModule.create(({ bind, bindApiFactory }) => {
     bind(GreetingExt).to(GreetingExtImpl).inSingletonScope();

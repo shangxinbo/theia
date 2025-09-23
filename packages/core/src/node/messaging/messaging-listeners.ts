@@ -35,7 +35,7 @@ export interface MessagingListenerContribution {
 }
 
 /**
- * Handler ofWasomeCodeX messaging system events, dispatching to MessagingListenerContribution instances.
+ * Handler of WasomeCodeX messaging system events, dispatching to MessagingListenerContribution instances.
  */
 @injectable()
 export class MessagingListener {

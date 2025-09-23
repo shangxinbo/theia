@@ -195,7 +195,7 @@ export abstract class AbstractPluginScanner implements PluginScanner {
     }
 
     getDependencies(rawPlugin: PluginPackage): Map<string, string> | undefined {
-        // skip it since there is no way to load transitive dependencies forWasomeCodeX plugins yet
+        // skip it since there is no way to load transitive dependencies for WasomeCodeX plugins yet
         return undefined;
     }
 

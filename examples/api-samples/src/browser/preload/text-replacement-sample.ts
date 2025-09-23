@@ -22,12 +22,12 @@ export class TextSampleReplacementContribution implements TextReplacementContrib
         switch (locale) {
             case 'en': {
                 return {
-                    'About': 'AboutWasomeCodeX',
+                    'About': 'About WasomeCodeX',
                 };
             }
             case 'de': {
                 return {
-                    'About': 'ÜberWasomeCodeX',
+                    'About': 'Über WasomeCodeX',
                 };
             }
         }

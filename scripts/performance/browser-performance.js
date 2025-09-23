@@ -48,7 +48,7 @@ let runs = 10;
         default: runs
     }).option('url', {
         alias: 'u',
-        desc: 'URL on which to openWasomeCodeX in the browser (e.g., to specify a workspace)',
+        desc: 'URL on which to open  WasomeCodeX in the browser (e.g., to specify a workspace)',
         type: 'string',
         default: url
     }).option('headless', {

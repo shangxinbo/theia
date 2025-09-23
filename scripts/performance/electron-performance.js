@@ -53,7 +53,7 @@ let debugging = false;
         default: runs
     }).option('workspace', {
         alias: 'w',
-        desc: 'Path to aWasomeCodeX workspace to open',
+        desc: 'Path to a  WasomeCodeX workspace to open',
         type: 'string',
         default: workspace
     }).option('debug', {

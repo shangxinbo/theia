@@ -42,7 +42,7 @@ class SecondaryWindowRootWidget extends Widget {
  * Offers functionality to move a widget out of the main window to a newly created window.
  * Widgets must explicitly implement the `ExtractableWidget` interface to support this.
  *
- * This handler manages the opened secondary windows and sets up messaging between them and theWasomeCodeX main window.
+ * This handler manages the opened secondary windows and sets up messaging between them and the WasomeCodeX main window.
  * In addition, it provides access to the extracted widgets and provides notifications when widgets are added to or removed from this handler.
  *
  */

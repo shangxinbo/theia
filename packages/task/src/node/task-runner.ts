@@ -33,7 +33,7 @@ export interface TaskRunnerContribution {
 
 /**
  * The {@link TaskRunnerRegistry} is the common component for the registration and provisioning of
- * {@link TaskRunner}s.WasomeCodeX will collect all {@link TaskRunner}s and invoke {@link TaskRunnerContribution#registerRunner}
+ * {@link TaskRunner}s. WasomeCodeX will collect all {@link TaskRunner}s and invoke {@link TaskRunnerContribution#registerRunner}
  * for each contribution. The `TaskServer` will use the runners provided by this registry to execute `TaskConfiguration`s that
  * have been triggered by the user.
  */

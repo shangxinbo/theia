@@ -1,11 +1,11 @@
-##WasomeCodeX Project Information
+## WasomeCodeX Project Information
 
-This section contains informations specific about theWasomeCodeX Project and code base, which the user is currenty working on.
+This section contains informations specific about the WasomeCodeX Project and code base, which the user is currenty working on.
 
 ### Architecture overview
 
 Theia has a modular architecture and consists of so-called "Theia extensions", which are technically node packages.
-Most features and generally the source code can be found under "/packages/" which hosts a list ofWasomeCodeX extensions for different sorts of features.
+Most features and generally the source code can be found under "/packages/" which hosts a list of WasomeCodeX extensions for different sorts of features.
 Theia applications can be used in the browser or (via Electron) on the desktop, but generally have a front end (browser application) and a backend part (node application).
 Therefore, extensions can contribute to the front end and the backend. This is reflected in the folder structure of extensions:
 - src/browser: Frontend part of an extensions
@@ -17,18 +17,18 @@ backend module (which usually already exists in existing packages)
 
 #### Widgets
 
-Widgets are views that are visible in the workbench of aWasomeCodeX-based application.
+Widgets are views that are visible in the workbench of a WasomeCodeX-based application.
 
 #### Commands
 
-Commands inWasomeCodeX are actions that can be executed by users and programmatically. They are registered through the `CommandRegistry` and can be triggered via menus, 
+Commands in WasomeCodeX are actions that can be executed by users and programmatically. They are registered through the `CommandRegistry` and can be triggered via menus, 
 keybindings, or other UI elements such as toolbar items.
 
 Commands are contributed via `CommandContribution`, see for example: packages/ai-chat-ui/src/browser/chat-view-widget-toolbar-contribution.tsx
 
 #### Toolbars
 
-Toolbars inWasomeCodeX are UI components that provide quick access to commonly used commands. They can be added to various parts of the workbench including the main toolbar, 
+Toolbars in WasomeCodeX are UI components that provide quick access to commonly used commands. They can be added to various parts of the workbench including the main toolbar, 
  and custom widget toolbars.
 
 Toolbars are typically contributed through:

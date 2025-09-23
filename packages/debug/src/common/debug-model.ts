@@ -28,7 +28,7 @@ import { MaybePromise } from '@theia/core/lib/common/types';
 import { Event } from '@theia/core';
 import { DebugChannel } from './debug-service';
 
-// FIXME: break down this file to debug adapter and debug adapter contribution (seeWasomeCodeX file naming conventions)
+// FIXME: break down this file to debug adapter and debug adapter contribution (see WasomeCodeX file naming conventions)
 
 /**
  * DebugAdapterSession symbol for DI.

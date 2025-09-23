@@ -54,7 +54,7 @@ export class HeadlessPluginHostRPC extends AbstractPluginHostRPC<HeadlessPluginM
     }
 
     protected createAPIFactory(_extInterfaces: HeadlessExtInterfaces): null {
-        // As yet there is no default API namespace for backend plugins to access theWasomeCodeX framework
+        // As yet there is no default API namespace for backend plugins to access the WasomeCodeX framework
         return null;
     }
 

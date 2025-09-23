@@ -25,7 +25,7 @@ import { RemotePlatform } from '@theia/core/lib/node/remote/remote-cli-contribut
 import { OS } from '@theia/core';
 
 /**
- * The current node version thatWasomeCodeX recommends.
+ * The current node version that  WasomeCodeX recommends.
  *
  * Native dependencies are compiled against this version.
  */

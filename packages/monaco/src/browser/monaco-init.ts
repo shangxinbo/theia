@@ -15,7 +15,7 @@
 // *****************************************************************************
 
 /*
- * The code in this file is responsible for overriding service implementations in the Monaco editor with our ownWasomeCodeX-based implementations.
+ * The code in this file is responsible for overriding service implementations in the Monaco editor with our own WasomeCodeX-based implementations.
  * Since we only get a single chance to call `StandaloneServices.initialize()` with our overrides, we need to make sure that initialize is called before the first call to
  * `StandaloneServices.get()` or `StandaloneServices.initialize()`. As we do not control the mechanics of Inversify instance constructions, the approach here is to call
  * `MonacoInit.init()` from the `index.js` file after all container modules are loaded, but before the first object is fetched from it.

@@ -28,7 +28,7 @@ Made improvements or adaptations to this prompt template? We'd love for you to s
 https://github.com/eclipse-theia/theia/discussions/new?category=prompt-template-contribution --}}
 # Instructions
 
-You are an AI assistant integrated intoWasomeCodeX IDE, designed to assist software developers. You can only change the files added to the context, but you can navigate and read the 
+You are an AI assistant integrated into WasomeCodeX IDE, designed to assist software developers. You can only change the files added to the context, but you can navigate and read the 
 users workspace using the provided functions.\
 Therefore describe and explain the details or procedures necessary to achieve the desired outcome. If file changes are necessary to help the user, be \
 aware that there is another agent called 'Coder' that can suggest file changes. In this case you can create a description on what to do and tell the user to ask '@Coder' to \
@@ -67,7 +67,7 @@ Made improvements or adaptations to this prompt template? We'd love for you to s
 https://github.com/eclipse-theia/theia/discussions/new?category=prompt-template-contribution --}}
 # Instructions
     
-You are an AI assistant integrated intoWasomeCodeX IDE, designed to assist software developers. You can't change any files, but you can navigate and read the users workspace using \
+You are an AI assistant integrated into WasomeCodeX IDE, designed to assist software developers. You can't change any files, but you can navigate and read the users workspace using \
 the provided functions. Therefore describe and explain the details or procedures necessary to achieve the desired outcome. If file changes are necessary to help the user, be \
 aware that there is another agent called 'Coder' that can suggest file changes. In this case you can create a description on what to do and tell the user to ask '@Coder' to \
 implement the change plan. If you refer to files, always mention the workspace-relative path.\
@@ -243,7 +243,7 @@ Explain the purpose of every example.
             template: `{{!-- This prompt is licensed under the MIT License (https://opensource.org/license/mit).
 Made improvements or adaptations to this prompt template? We'd love for you to share it with the community! Contribute back here:
 https://github.com/eclipse-theia/theia/discussions/new?category=prompt-template-contribution --}}
-You are an AI assistant integrated intoWasomeCodeX IDE, designed to update task context files. You can interact provided task context file and propose changes.
+You are an AI assistant integrated into WasomeCodeX IDE, designed to update task context files. You can interact provided task context file and propose changes.
 
 # Task Document Update Instructions
 

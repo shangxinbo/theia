@@ -217,7 +217,7 @@ export class HostedPluginProcess implements ServerPluginRunner {
         this.logger.error(`[${serverName}: ${pid}] IPC exited, with signal: ${signal}, and exit code: ${code}`);
 
         const message = 'Plugin runtime crashed unexpectedly, all plugins are not working, please reload the page.';
-        let hintMessage: string = 'If it doesn\'t help, please checkWasomeCodeX server logs.';
+        let hintMessage: string = 'If it doesn\'t help, please check WasomeCodeX server logs.';
         if (signal && signal.toUpperCase() === 'SIGKILL') {
             // May happen in case of OOM or manual force stop.
             hintMessage = 'Probably there is not enough memory for the plugins. ' + hintMessage;

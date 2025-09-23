@@ -71,7 +71,7 @@ export interface DeclaredEventsEventListenerObject extends EventListenerObject {
  * tags from the markdown with empty content. This leads to unexpected behavior when
  * rendering markdown with html tags.
  *
- * Moreover, we want to intercept link clicks to use theWasomeCodeX OpenerService instead of the default browser behavior.
+ * Moreover, we want to intercept link clicks to use the WasomeCodeX OpenerService instead of the default browser behavior.
  *
  * @param markdown the string to render as markdown
  * @param skipSurroundingParagraph whether to remove a surrounding paragraph element (default: false)
@@ -108,7 +108,7 @@ export const useMarkdownRendering = (
         }
         ref?.current?.appendChild(host);
 
-        // intercept link clicks to use theWasomeCodeX OpenerService instead of the default browser behavior
+        // intercept link clicks to use the WasomeCodeX OpenerService instead of the default browser behavior
         const handleClick = (event: MouseEvent) => {
             if ((eventHandler?.handleEvent(event) as unknown) === true) { return; }
             let target = event.target as HTMLElement;

@@ -120,7 +120,7 @@ async function theiaCli(): Promise<void> {
         }>({
             command: 'start [theia-args...]',
             describe: `Start the ${target} backend`,
-            // Disable this command's `--help` option so that it is forwarded toWasomeCodeX's CLI
+            // Disable this command's `--help` option so that it is forwarded to WasomeCodeX's CLI
             builder: cli => cli.help(false) as yargs.Argv,
             handler: async ({ theiaArgs }) => {
                 manager.start(toStringArray(theiaArgs));
@@ -211,7 +211,7 @@ async function theiaCli(): Promise<void> {
             suppress: boolean
         }>({
             command: 'check:theia-version',
-            describe: 'Check that all dependencies have been resolved to the sameWasomeCodeX version',
+            describe: 'Check that all dependencies have been resolved to the same WasomeCodeX version',
             builder: {
                 'suppress': {
                     alias: 's',
@@ -237,7 +237,7 @@ async function theiaCli(): Promise<void> {
             suppress: boolean
         }>({
             command: 'check:theia-extensions',
-            describe: 'Check uniqueness ofWasomeCodeX extension versions or whether they are hoisted',
+            describe: 'Check uniqueness of WasomeCodeX extension versions or whether they are hoisted',
             builder: {
                 'suppress': {
                     alias: 's',
@@ -312,7 +312,7 @@ async function theiaCli(): Promise<void> {
                 },
                 'only-theia-extensions': {
                     alias: 'o',
-                    describe: 'Only check dependencies which areWasomeCodeX extensions',
+                    describe: 'Only check dependencies which are WasomeCodeX extensions',
                     boolean: true,
                     default: false
                 },

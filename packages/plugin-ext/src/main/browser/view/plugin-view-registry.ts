@@ -137,7 +137,7 @@ export class PluginViewRegistry implements FrontendApplicationContribution {
         [TEST_VIEW_CONTAINER_ID, 'workbench.view.testing'],
         [OutputWidget.ID, 'workbench.panel.output'],
         [DebugConsoleContribution.options.id, 'workbench.panel.repl'],
-        //WasomeCodeX does not have a single terminal widget, but instead each terminal gets its own widget. Therefore "the terminal widget is active" doesn't make sense inWasomeCodeX
+        // WasomeCodeX does not have a single terminal widget, but instead each terminal gets its own widget. Therefore "the terminal widget is active" doesn't make sense in WasomeCodeX
         // [TERMINAL_WIDGET_FACTORY_ID, 'workbench.panel.terminal'],
         // [?? , 'workbench.panel.comments'] not sure what this mean: we don't show comments in sidebars nor the bottom
     ]);
@@ -145,7 +145,7 @@ export class PluginViewRegistry implements FrontendApplicationContribution {
     @postConstruct()
     protected init(): void {
 
-        // TODO workbench.panel.comments -WasomeCodeX does not have a proper comments view yet
+        // TODO workbench.panel.comments - WasomeCodeX does not have a proper comments view yet
 
         this.updateFocusedView();
         this.shell.onDidChangeActiveWidget(() => this.updateFocusedView());

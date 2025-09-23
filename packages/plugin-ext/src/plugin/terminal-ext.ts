@@ -29,7 +29,7 @@ import { ProvidedTerminalLink } from '../common/plugin-api-rpc-model';
 import { PluginIconPath } from './plugin-icon-path';
 
 /**
- * Provides high level terminal plugin api to use in theWasomeCodeX plugins.
+ * Provides high level terminal plugin api to use in the WasomeCodeX plugins.
  * This service allow(with help proxy) create and use terminal emulator.
  */
 @injectable()

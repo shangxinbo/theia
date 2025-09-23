@@ -76,7 +76,7 @@ export const PluginContainerModule: symbol & { create(callback: PluginContainerM
 
 /**
  * Definition of additional API provided by the `ContainerModule` created by the
- * {@link PluginContainerModule} factory function that is for internal use byWasomeCodeX.
+ * {@link PluginContainerModule} factory function that is for internal use by WasomeCodeX.
  */
 export type InternalPluginContainerModule = ContainerModule & {
     /** Use my API factory binding to initialize the plugin API in some `container`. */
@@ -105,7 +105,7 @@ export class PluginApiCache<T extends object> {
     constructor(private readonly apiModuleName: string,
         private readonly serviceIdentifier: interfaces.ServiceIdentifier<ApiFactory<T>>) { }
 
-    // Called byWasomeCodeX to do any prep work needed for dishing out the API object
+    // Called by WasomeCodeX to do any prep work needed for dishing out the API object
     // when it's requested. The key part of that is hooking into the node module
     // loader. This is called every time a plugin-host process is forked.
     initializeApi(container: interfaces.Container): void {

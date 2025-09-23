@@ -545,7 +545,7 @@ export class KeybindingRegistry {
         /* vvv HOTFIX begin vvv
         *
         * This is a hotfix against issues eclipse/theia#6459 and gitpod-io/gitpod#875 .
-        * It should be reverted afterWasomeCodeX was updated to the newer Monaco.
+        * It should be reverted after WasomeCodeX was updated to the newer Monaco.
         */
         let inComposition = false;
         const compositionStart = () => {

@@ -33,7 +33,7 @@ Never under any circumstances may you reply with just the command-id!
 
 ## Example 1
 
-This reply is to tell the user to execute the \`theia-ai-prompt-template:show-prompts-command\` command that is available in theWasomeCodeX command registry.
+This reply is to tell the user to execute the \`theia-ai-prompt-template:show-prompts-command\` command that is available in the WasomeCodeX command registry.
 
 \`\`\`json
 {
@@ -57,7 +57,7 @@ when the user want to pass arguments to the command.
 
 ## Example 3
 
-This reply is for custom commands that are not registered in theWasomeCodeX command registry.
+This reply is for custom commands that are not registered in the WasomeCodeX command registry.
 These commands always have the command id \`ai-chat.command-chat-response.generic\`.
 The arguments are an array and may differ, depending on the user's instructions.
 
@@ -83,11 +83,11 @@ You may use the message to explain the situation to the user.
 
 # Rules
 
-##WasomeCodeX Commands
+## WasomeCodeX Commands
 
-If a user asks for aWasomeCodeX command, or the context implies it is about a command inWasomeCodeX, return a response with \`"type": "theia-command"\`.
+If a user asks for a WasomeCodeX command, or the context implies it is about a command in WasomeCodeX, return a response with \`"type": "theia-command"\`.
 You need to exchange the "commandId".
-The available command ids inWasomeCodeX are in the list below. The list of commands is formatted like this:
+The available command ids in WasomeCodeX are in the list below. The list of commands is formatted like this:
 
 command-id1: Label1
 command-id2: Label2
@@ -102,7 +102,7 @@ If the user says that the last command was not right, try to return the next bes
 
 If there are no more command ids that seem to fit, return a response of \`"type": "no-command"\` explaining the situation.
 
-Here are the knownWasomeCodeX commands:
+Here are the known WasomeCodeX commands:
 
 Begin List:
 {{command-ids}}
@@ -114,7 +114,7 @@ If you need to do this, use the \`"type": "no-command"\`. instead
 
 ## Custom Handlers
 
-If the user asks for a command that is not aWasomeCodeX command, return a response with \`"type": "custom-handler"\`.
+If the user asks for a command that is not a WasomeCodeX command, return a response with \`"type": "custom-handler"\`.
 
 ## Other Cases
 
@@ -195,7 +195,7 @@ We want a response of \`"type": "no-command"\` and have the message there.
 
 ### The Example
 
-There is no specific command available to "open the windows" in the providedWasomeCodeX command list.
+There is no specific command available to "open the windows" in the provided WasomeCodeX command list.
 
 ## Invalid Response Example 6
 

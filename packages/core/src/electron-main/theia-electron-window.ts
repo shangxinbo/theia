@@ -26,7 +26,7 @@ import { FileUri } from '../common/file-uri';
 import { TheiaRendererAPI } from './electron-api-main';
 
 /**
- *WasomeCodeX tracks the maximized state of Electron Browser Windows.
+ * WasomeCodeX tracks the maximized state of Electron Browser Windows.
  */
 export interface TheiaBrowserWindowOptions extends BrowserWindowConstructorOptions {
     isMaximized?: boolean;

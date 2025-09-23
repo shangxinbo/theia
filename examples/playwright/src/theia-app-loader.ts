@@ -25,7 +25,7 @@ export interface TheiaAppFactory<T extends TheiaApp> {
 // TODO this is just a sketch, we need a proper way to configure tests and pass this configuration to the `TheiaAppLoader`:
 export interface TheiaPlaywrightTestConfig {
     useElectron?: {
-        /** Path to theWasomeCodeX Electron app package (absolute or relative to this package). */
+        /** Path to the  WasomeCodeX Electron app package (absolute or relative to this package). */
         electronAppPath?: string,
         /** Path to the folder containing the plugins to load (absolute or relative to this package). */
         pluginsPath?: string,
@@ -75,7 +75,7 @@ namespace TheiaBrowserAppLoader {
             const wasLoadedAlready = await app.isShellVisible();
             await app.page.goto(url);
             if (wasLoadedAlready) {
-                //WasomeCodeX doesn't refresh on URL change only
+                //  WasomeCodeX doesn't refresh on URL change only
                 // So we need to reload if the app was already loaded before
                 await app.page.reload();
             }
@@ -96,7 +96,7 @@ namespace TheiaElectronAppLoader {
             pluginsPath: '../../plugins'
         };
         if (electronConfig === undefined || electronConfig.launchOptions === undefined && electronConfig.electronAppPath === undefined) {
-            throw Error('TheWasomeCodeX Playwright configuration must either specify `useElectron.electronAppPath` or `useElectron.launchOptions`');
+            throw Error('The  WasomeCodeX Playwright configuration must either specify `useElectron.electronAppPath` or `useElectron.launchOptions`');
         }
         const appPath = electronConfig.electronAppPath!;
         const pluginsPath = electronConfig.pluginsPath;

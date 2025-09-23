@@ -52,7 +52,7 @@ import './theia.proposed.timeline';
 export module '@theia/plugin' {
 
     /**
-     * The version of theWasomeCodeX API.
+     * The version of the WasomeCodeX API.
      */
     export const version: string;
 
@@ -4675,7 +4675,7 @@ export module '@theia/plugin' {
          *
          * Normally the webview panel's html context is created when the panel becomes visible
          * and destroyed when it is is hidden. Extensions that have complex state
-         * or UI can set the `retainContextWhenHidden` to makeWasomeCodeX keep the webview
+         * or UI can set the `retainContextWhenHidden` to make WasomeCodeX keep the webview
          * context around, even when the webview moves to a background tab. When a webview using
          * `retainContextWhenHidden` becomes hidden, its scripts and other dynamic content are suspended.
          * When the panel becomes visible again, the context is automatically restored
@@ -4819,7 +4819,7 @@ export module '@theia/plugin' {
      * There are two types of webview persistence:
      *
      * - Persistence within a session.
-     * - Persistence across sessions (across restarts ofWasomeCodeX).
+     * - Persistence across sessions (across restarts of WasomeCodeX).
      *
      * A `WebviewPanelSerializer` is only required for the second case: persisting a webview across sessions.
      *
@@ -4839,8 +4839,8 @@ export module '@theia/plugin' {
      * setState({ value: oldState.value + 1 })
      * ```
      *
-     * A `WebviewPanelSerializer` extends this persistence across restarts ofWasomeCodeX. When the editor is shutdown,
-     *WasomeCodeX will save off the state from `setState` of all webviews that have a serializer. When the
+     * A `WebviewPanelSerializer` extends this persistence across restarts of WasomeCodeX. When the editor is shutdown,
+     * WasomeCodeX will save off the state from `setState` of all webviews that have a serializer. When the
      * webview first becomes visible after the restart, this state is passed to `deserializeWebviewPanel`.
      * The extension can then restore the old `WebviewPanel` from this state.
      */
@@ -4912,7 +4912,7 @@ export module '@theia/plugin' {
      * Provider for text based custom editors.
      *
      * Text based custom editors use a [`TextDocument`](#TextDocument) as their data model. This considerably simplifies
-     * implementing a custom editor as it allowsWasomeCodeX to handle many common operations such as
+     * implementing a custom editor as it allows WasomeCodeX to handle many common operations such as
      * undo and backup. The provider is responsible for synchronizing text changes between the webview and the `TextDocument`.
      */
     export interface CustomTextEditorProvider {
@@ -4943,7 +4943,7 @@ export module '@theia/plugin' {
      * Represents a custom document used by a [`CustomEditorProvider`](#CustomEditorProvider).
      *
      * Custom documents are only used within a given `CustomEditorProvider`. The lifecycle of a `CustomDocument` is
-     * managed byWasomeCodeX. When no more references remain to a `CustomDocument`, it is disposed of.
+     * managed by WasomeCodeX. When no more references remain to a `CustomDocument`, it is disposed of.
      */
     interface CustomDocument {
         /**
@@ -4954,7 +4954,7 @@ export module '@theia/plugin' {
         /**
          * Dispose of the custom document.
          *
-         * This is invoked byWasomeCodeX when there are no more references to a given `CustomDocument` (for example when
+         * This is invoked by WasomeCodeX when there are no more references to a given `CustomDocument` (for example when
          * all editors associated with the document have been closed.)
          */
         dispose(): void;
@@ -4975,18 +4975,18 @@ export module '@theia/plugin' {
         /**
          * Undo the edit operation.
          *
-         * This is invoked byWasomeCodeX when the user undoes this edit. To implement `undo`, your
+         * This is invoked by WasomeCodeX when the user undoes this edit. To implement `undo`, your
          * extension should restore the document and editor to the state they were in just before this
-         * edit was added toWasomeCodeX's internal edit stack by `onDidChangeCustomDocument`.
+         * edit was added to WasomeCodeX's internal edit stack by `onDidChangeCustomDocument`.
          */
         undo(): Thenable<void> | void;
 
         /**
          * Redo the edit operation.
          *
-         * This is invoked byWasomeCodeX when the user redoes this edit. To implement `redo`, your
+         * This is invoked by WasomeCodeX when the user redoes this edit. To implement `redo`, your
          * extension should restore the document and editor to the state they were in just after this
-         * edit was added toWasomeCodeX's internal edit stack by `onDidChangeCustomDocument`.
+         * edit was added to WasomeCodeX's internal edit stack by `onDidChangeCustomDocument`.
          */
         redo(): Thenable<void> | void;
 
@@ -4999,7 +4999,7 @@ export module '@theia/plugin' {
     }
 
     /**
-     * Event triggered by extensions to signal toWasomeCodeX that the content of a [`CustomDocument`](#CustomDocument)
+     * Event triggered by extensions to signal to WasomeCodeX that the content of a [`CustomDocument`](#CustomDocument)
      * has changed.
      *
      * @see {@link CustomEditorProvider.onDidChangeCustomDocument}.
@@ -5135,14 +5135,14 @@ export module '@theia/plugin' {
          * anything from changing some text, to cropping an image, to reordering a list. Your extension is free to
          * define what an edit is and what data is stored on each edit.
          *
-         * Firing `onDidChange` causesWasomeCodeX to mark the editors as being dirty. This is cleared when the user either
+         * Firing `onDidChange` causes WasomeCodeX to mark the editors as being dirty. This is cleared when the user either
          * saves or reverts the file.
          *
          * Editors that support undo/redo must fire a `CustomDocumentEditEvent` whenever an edit happens. This allows
-         * users to undo and redo the edit usingWasomeCodeX's standardWasomeCodeX keyboard shortcuts.WasomeCodeX will also mark
+         * users to undo and redo the edit using WasomeCodeX's standard WasomeCodeX keyboard shortcuts. WasomeCodeX will also mark
          * the editor as no longer being dirty if the user undoes all edits to the last saved state.
          *
-         * Editors that support editing but cannot useWasomeCodeX's standard undo/redo mechanism must fire a `CustomDocumentContentChangeEvent`.
+         * Editors that support editing but cannot use WasomeCodeX's standard undo/redo mechanism must fire a `CustomDocumentContentChangeEvent`.
          * The only way for a user to clear the dirty state of an editor that does not support undo/redo is to either
          * `save` or `revert` the file.
          *
@@ -5153,7 +5153,7 @@ export module '@theia/plugin' {
         /**
          * Save a custom document.
          *
-         * This method is invoked byWasomeCodeX when the user saves a custom editor. This can happen when the user
+         * This method is invoked by WasomeCodeX when the user saves a custom editor. This can happen when the user
          * triggers save while the custom editor is active, by commands such as `save all`, or by auto save if enabled.
          *
          * To implement `save`, the implementer must persist the custom editor. This usually means writing the
@@ -5170,7 +5170,7 @@ export module '@theia/plugin' {
         /**
          * Save a custom document to a different location.
          *
-         * This method is invoked byWasomeCodeX when the user triggers 'save as' on a custom editor. The implementer must
+         * This method is invoked by WasomeCodeX when the user triggers 'save as' on a custom editor. The implementer must
          * persist the custom editor to `destination`.
          *
          * When the user accepts save as, the current editor is be replaced by an non-dirty editor for the newly saved file.
@@ -5186,8 +5186,8 @@ export module '@theia/plugin' {
         /**
          * Revert a custom document to its last saved state.
          *
-         * This method is invoked byWasomeCodeX when the user triggers `File: Revert File` in a custom editor. (Note that
-         * this is only used usingWasomeCodeX's `File: Revert File` command and not on a `git revert` of the file).
+         * This method is invoked by WasomeCodeX when the user triggers `File: Revert File` in a custom editor. (Note that
+         * this is only used using WasomeCodeX's `File: Revert File` command and not on a `git revert` of the file).
          *
          * To implement `revert`, the implementer must make sure all editor instances (webviews) for `document`
          * are displaying the document in the same state is saved in. This usually means reloading the file from the
@@ -5773,7 +5773,7 @@ export module '@theia/plugin' {
         /**
          * Register a provider for custom editors for the `viewType` contributed by the `customEditors` extension point.
          *
-         * When a custom editor is opened,WasomeCodeX fires an `onCustomEditor:viewType` activation event. Your extension
+         * When a custom editor is opened, WasomeCodeX fires an `onCustomEditor:viewType` activation event. Your extension
          * must register a [`CustomTextEditorProvider`](#CustomTextEditorProvider), [`CustomReadonlyEditorProvider`](#CustomReadonlyEditorProvider),
          * [`CustomEditorProvider`](#CustomEditorProvider)for `viewType` as part of activation.
          *
@@ -5796,7 +5796,7 @@ export module '@theia/plugin' {
              * Indicates that the provider allows multiple editor instances to be open at the same time for
              * the same resource.
              *
-             * By default,WasomeCodeX only allows one editor instance to be open at a time for each resource. If the
+             * By default, WasomeCodeX only allows one editor instance to be open at a time for each resource. If the
              * user tries to open a second editor instance for the resource, the first one is instead moved to where
              * the second one was to be opened.
              *
@@ -6810,7 +6810,7 @@ export module '@theia/plugin' {
          * In order to focus, set the option `focus` to `true`.
          * In order to expand the revealed element, set the option `expand` to `true`. To expand recursively set `expand` to the number of levels to expand.
          *
-         * * *NOTE:* In VS Code, you can expand only to 3 levels maximum. This is not the case inWasomeCodeX, there are no limits to expansion level.
+         * * *NOTE:* In VS Code, you can expand only to 3 levels maximum. This is not the case in WasomeCodeX, there are no limits to expansion level.
          * * *NOTE:* The {@link TreeDataProvider} that the `TreeView` {@link window.createTreeView is registered with} with must implement {@link TreeDataProvider.getParent getParent} method to access this API.
          */
         reveal(element: T, options?: {
@@ -8378,7 +8378,7 @@ export module '@theia/plugin' {
         export function getQueryParameters(): { [key: string]: string | string[] } | undefined;
 
         /**
-         * The application name of the editor, like 'EclipseWasomeCodeX'.
+         * The application name of the editor, like 'Eclipse WasomeCodeX'.
          */
         export const appName: string;
 

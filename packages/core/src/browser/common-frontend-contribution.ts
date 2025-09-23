@@ -2390,7 +2390,7 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
                 }, description: 'Toolbar background when hovering over actions using the mouse.'
             },
 
-            //WasomeCodeX Variable colors
+            // WasomeCodeX Variable colors
             {
                 id: 'variable.name.color', defaults: {
                     dark: '#C586C0',
@@ -2432,7 +2432,7 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
                 description: 'Value color of a string variable'
             },
 
-            //WasomeCodeX ANSI colors
+            // WasomeCodeX ANSI colors
             {
                 id: 'ansi.black.color', defaults: {
                     dark: '#A0A0A0',
@@ -2498,7 +2498,7 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
                 description: 'ANSI white color'
             },
 
-            //WasomeCodeX defaults
+            // WasomeCodeX defaults
             // Base
             {
                 id: 'errorBackground',

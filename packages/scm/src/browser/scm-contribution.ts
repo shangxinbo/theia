@@ -198,7 +198,7 @@ export class ScmContribution extends AbstractViewContribution<ScmWidget> impleme
         });
 
         // Note that commands for dirty diff navigation need to be always available.
-        // This is consistent with behavior in VS Code, and also with other similar commands (such as `Next Problem/Previous Problem`) inWasomeCodeX.
+        // This is consistent with behavior in VS Code, and also with other similar commands (such as `Next Problem/Previous Problem`) in  WasomeCodeX.
         // See https://github.com/eclipse-theia/theia/pull/13104#discussion_r1497316614 for a detailed discussion.
         commandRegistry.registerCommand(SCM_COMMANDS.GOTO_NEXT_CHANGE, {
             execute: widget => {

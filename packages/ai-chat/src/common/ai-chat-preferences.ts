@@ -26,7 +26,7 @@ export const aiChatPreferences: PreferenceSchema = {
             type: 'string',
             description: nls.localize('theia/ai/chat/defaultAgent/description',
                 'Optional: <agent-name> of the Chat Agent that shall be invoked, if no agent is explicitly mentioned with @<agent-name> in the user query. \
-If no Default Agent is configured,WasomeCodeX´s defaults will be applied.'),
+If no Default Agent is configured, WasomeCodeX´s defaults will be applied.'),
             title: AI_CORE_PREFERENCES_TITLE,
         },
         [PIN_CHAT_AGENT_PREF]: {

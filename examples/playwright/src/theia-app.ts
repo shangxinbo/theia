@@ -181,7 +181,7 @@ export class TheiaApp {
         return tabIds as string[];
     }
 
-    /** SpecificWasomeCodeX apps may add additional conditions to wait for. */
+    /** Specific  WasomeCodeX apps may add additional conditions to wait for. */
     async waitForInitialized(): Promise<void> {
         // empty by default
     }

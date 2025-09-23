@@ -29,7 +29,7 @@ export const GooglePreferencesSchema: PreferenceSchema = {
             type: 'string',
             markdownDescription: nls.localize('theia/ai/google/apiKey/description',
                 'Enter an API Key of your official Google AI (Gemini) Account. **Please note:** By using this preference the GOOGLE AI API key will be stored in clear text\
-            on the machine runningWasomeCodeX. Use the environment variable `GOOGLE_API_KEY` to set the key securely.'),
+            on the machine running WasomeCodeX. Use the environment variable `GOOGLE_API_KEY` to set the key securely.'),
             title: AI_CORE_PREFERENCES_TITLE,
         },
         [MODELS_PREF]: {

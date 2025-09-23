@@ -45,12 +45,13 @@
         "--app-project-path=${workspaceFolder}/examples/electron",
         "--remote-debugging-port=9222",
         "--no-app-auto-install",
-        "--plugins=local-dir:../../plugins",
+        "--plugins=local-dir:${workspaceFolder}/plugins",
         "--ovsx-router-config=${workspaceFolder}/examples/ovsx-router-config.json"
       ],
       "env": {
         "NODE_ENV": "development"
       },
+      "stopOnEntry": false,
       "sourceMaps": true,
       "outFiles": [
         "${workspaceFolder}/examples/electron/lib/backend/electron-main.js",
@@ -58,7 +59,8 @@
         "${workspaceFolder}/examples/electron/lib/**/*.js",
         "${workspaceFolder}/examples/api-samples/lib/**/*.js",
         "${workspaceFolder}/packages/*/lib/**/*.js",
-        "${workspaceFolder}/dev-packages/*/lib/**/*.js"
+        "${workspaceFolder}/dev-packages/*/lib/**/*.js",
+        "${workspaceFolder}/plugins/vsc-extension/out/**/*.js"
       ],
       "smartStep": true,
       "internalConsoleOptions": "openOnSessionStart",
@@ -108,27 +110,6 @@
         "${workspaceFolder}/packages/plugin-ext/lib/**/*.js",
         "${workspaceFolder}/plugins/**/*.js"
       ]
-    },
-    {
-      "name": "Attach to Theia Plugin",
-      "type": "node",
-      "request": "attach",
-      "port": 9229,
-      "address": "localhost",
-      "restart": true,
-      "sourceMaps": true,
-      "localRoot": "${workspaceFolder}",
-      "remoteRoot": "/home/wasm/plc/WebIDE/code/vsc-extension",
-      "outFiles": [
-        "${workspaceFolder}/out/**/*.js"
-      ],
-      "skipFiles": [
-        "<node_internals>/**",
-        "**/node_modules/**"
-      ],
-      "sourceMapPathOverrides": {
-        "webpack:///*": "${workspaceFolder}/*"
-      }
     },
     {
       "type": "node",
@@ -187,25 +168,6 @@
       "outFiles": [
         "${workspaceFolder}/../.js"
       ]
-    },
-    {
-      "name": "Theia Electron Main",
-      "type": "node",
-      "request": "launch",
-      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
-      "windows": {
-        "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron.cmd"
-      },
-      "args": [
-        "${workspaceFolder}/examples/electron/lib/electron-main.js",
-        "--plugins=local-dir:/home/wasm/plc/WebIDE/code/vsc-extension"
-      ],
-      "preLaunchTask": "Build Electron",
-      "outFiles": [
-        "${workspaceFolder}/examples/electron/lib/**/*.js",
-        "${workspaceFolder}/packages/*/lib/**/*.js"
-      ],
-      "sourceMaps": true
     }
   ],
   "compounds": [

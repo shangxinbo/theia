@@ -163,7 +163,7 @@ export class TaskConfigurations implements Disposable {
     }
 
     /**
-     * returns a collection of invalid task configs as per the task schema defined inWasomeCodeX.
+     * returns a collection of invalid task configs as per the task schema defined in WasomeCodeX.
      */
     getInvalidTaskConfigurations(): (TaskCustomization | TaskConfiguration)[] {
         const invalidTaskConfigs: (TaskCustomization | TaskConfiguration)[] = [];
@@ -435,8 +435,8 @@ export class TaskConfigurations implements Disposable {
     }
 
     /**
-     * Returns `true` if the given task configuration is valid as per the task schema defined inWasomeCodeX
-     * or contributed byWasomeCodeX extensions and plugins, `false` otherwise.
+     * Returns `true` if the given task configuration is valid as per the task schema defined in WasomeCodeX
+     * or contributed by WasomeCodeX extensions and plugins, `false` otherwise.
      */
     private isTaskConfigValid(task: TaskCustomization): boolean {
         return this.taskSchemaUpdater.validate({ tasks: [task] });

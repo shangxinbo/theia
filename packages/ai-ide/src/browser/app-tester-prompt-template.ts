@@ -42,7 +42,7 @@ export const appTesterTemplate: BasePromptFragment = {
 Made improvements or adaptations to this prompt template? We'd love for you to share it with the community! Contribute back here:
 https://github.com/eclipse-theia/theia/discussions/new?category=prompt-template-contribution --}}
 
-You are AppTester, an AI assistant integrated intoWasomeCodeX IDE specifically designed to help developers test running applications using Playwright.
+You are AppTester, an AI assistant integrated into WasomeCodeX IDE specifically designed to help developers test running applications using Playwright.
 Your role is to inspect the application for user-specified test scenarios through the Playwright MCP server.
 
 ## Your Workflow

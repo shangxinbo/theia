@@ -45,7 +45,7 @@ test.describe('Theia Toolbar', () => {
         expect(await toolbar.isShown()).toBe(true);
     });
 
-    test('should show the default toolbar tools of the sampleWasomeCodeX application', async () => {
+    test('should show the default toolbar tools of the sample  WasomeCodeX application', async () => {
         expect(await toolbar.toolbarItems()).toHaveLength(5);
         expect(await toolbar.toolbarItemIds()).toStrictEqual([
             'textEditor.commands.go.back',

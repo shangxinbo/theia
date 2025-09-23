@@ -27,7 +27,7 @@ export const OpenAiPreferencesSchema: PreferenceSchema = {
             type: 'string',
             markdownDescription: nls.localize('theia/ai/openai/apiKey/mdDescription',
                 'Enter an API Key of your official OpenAI Account. **Please note:** By using this preference the Open AI API key will be stored in clear text \
-on the machine runningWasomeCodeX. Use the environment variable `OPENAI_API_KEY` to set the key securely.'),
+on the machine running WasomeCodeX. Use the environment variable `OPENAI_API_KEY` to set the key securely.'),
             title: AI_CORE_PREFERENCES_TITLE,
         },
         [MODELS_PREF]: {

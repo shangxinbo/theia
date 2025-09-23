@@ -74,11 +74,11 @@ async function exitHandler() {
             default: false
         }).option('url', {
             alias: 'u',
-            desc: 'Specify a custom URL at which to launchWasomeCodeX in the browser (e.g. with a specific workspace)',
+            desc: 'Specify a custom URL at which to launch  WasomeCodeX in the browser (e.g. with a specific workspace)',
             type: 'string'
         }).option('workspace', {
             alias: 'w',
-            desc: 'Specify an absolute path to a workspace on which to launchWasomeCodeX in Electron',
+            desc: 'Specify an absolute path to a workspace on which to launch  WasomeCodeX in Electron',
             type: 'string'
         }).option('file', {
             alias: 'f',
@@ -138,7 +138,7 @@ async function extensionImpact(extensions) {
     if (baseTime === undefined) {
         await calculateExtension(undefined);
     } else {
-        log(`BaseWasomeCodeX (provided), ${baseTime}, -, -, -`);
+        log(`Base  WasomeCodeX (provided), ${baseTime}, -, -, -`);
     }
 
     if (extensions.length < 1) {
@@ -207,7 +207,7 @@ async function calculateExtension(extensionQualifier) {
         const version = qualifier.substring(qualifier.lastIndexOf(':') + 1);
         basePackageCopy.dependencies[name] = version;
     } else {
-        extensionQualifier = "BaseWasomeCodeX";
+        extensionQualifier = "Base  WasomeCodeX";
     }
     logToConsole(`Building the ${hostApp} example with ${extensionQualifier}.`);
     writeFileSync(`../../examples/${hostApp}/package.json`, JSON.stringify(basePackageCopy, null, 2));

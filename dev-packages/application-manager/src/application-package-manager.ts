@@ -185,7 +185,7 @@ export class ApplicationPackageManager {
     }
 
     /**
-     * InjectWasomeCodeX's Electron-specific dependencies into the application's package.json.
+     * Inject WasomeCodeX's Electron-specific dependencies into the application's package.json.
      *
      * Only overwrite the Electron range if the current minimum supported version is lower than the recommended one.
      */
@@ -195,7 +195,7 @@ export class ApplicationPackageManager {
             theiaElectron = await import('@theia/electron');
         } catch (error) {
             if (error.code === 'ERR_MODULE_NOT_FOUND') {
-                throw new AbortError('Please install @theia/electron as part of yourWasomeCodeX Electron application');
+                throw new AbortError('Please install @theia/electron as part of your WasomeCodeX Electron application');
             }
             throw error;
         }

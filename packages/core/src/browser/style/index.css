@@ -29,22 +29,18 @@
 
     /* UI fonts: Family, size and color (bright to dark)
      ---------------------------------------------------
-     The UI font CSS variables are used for the typography all of theWasomeCodeX
+     The UI font CSS variables are used for the typography all of the WasomeCodeX
      user interface elements that are not directly user-generated content.
    */
 
     --theia-ui-font-scale-factor: 1.2;
-  --theia-ui-font-size0: calc(
-    var(--theia-ui-font-size1) / var(--theia-ui-font-scale-factor)
-  );
-  --theia-ui-font-size1: 13px; /* Base font size */
-  --theia-ui-font-size2: calc(
-    var(--theia-ui-font-size1) * var(--theia-ui-font-scale-factor)
-  );
-  --theia-ui-font-size3: calc(
-    var(--theia-ui-font-size2) * var(--theia-ui-font-scale-factor)
-  );
-  --theia-ui-icon-font-size: 14px; /* Ensures px perfect FontAwesome icons */
+    --theia-ui-font-size0: calc(var(--theia-ui-font-size1) / var(--theia-ui-font-scale-factor));
+    --theia-ui-font-size1: 13px;
+    /* Base font size */
+    --theia-ui-font-size2: calc(var(--theia-ui-font-size1) * var(--theia-ui-font-scale-factor));
+    --theia-ui-font-size3: calc(var(--theia-ui-font-size2) * var(--theia-ui-font-scale-factor));
+    --theia-ui-icon-font-size: 14px;
+    /* Ensures px perfect FontAwesome icons */
     --theia-ui-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
     /* Content fonts: Family, size and color (bright to dark)
@@ -177,8 +173,10 @@ blockquote {
 
 .theia-preload::after {
     animation: 1s theia-preload-rotate infinite;
-  color: #777; /* color works on both light and dark themes */
-  content: "\eb19"; /* codicon-load */
+    color: #777;
+    /* color works on both light and dark themes */
+    content: "\eb19";
+    /* codicon-load */
     font: normal normal normal 72px/1 codicon;
 }
 
@@ -186,6 +184,7 @@ blockquote {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -225,12 +224,18 @@ blockquote {
 
 .noselect,
 .no-select {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
     -o-user-select: none;
 }

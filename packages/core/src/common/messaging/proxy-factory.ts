@@ -67,7 +67,7 @@ const defaultRpcProtocolFactory: RpcProtocolFactory = (channel, requestHandler) 
  * Factory for RPC proxy objects.
  *
  * A RPC proxy exposes the programmatic interface of an object through
- *WasomeCodeX's RPC protocol. This allows remote programs to call methods of this objects by
+ * WasomeCodeX's RPC protocol. This allows remote programs to call methods of this objects by
  * sending RPC requests. This takes place over a bi-directional stream,
  * where both ends can expose an object and both can call methods on each other'
  * exposed object.

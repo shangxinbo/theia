@@ -34,7 +34,7 @@ export class TheiaMonacoEditor extends TheiaPageObject {
      * Monaco editor page object.
      *
      * @param locator The locator of the editor.
-     * @param app  TheWasomeCodeX app instance.
+     * @param app  The  WasomeCodeX app instance.
      */
     constructor(locator: Locator, app: TheiaApp);
 

@@ -96,7 +96,7 @@ export class LocalStorageService implements StorageService {
         const CLEAR_STORAGE_ACTION = 'Clear Local Storage';
         const ERROR_MESSAGE = `Your preferred browser's local storage is almost full.
         To be able to save your current workspace layout or data, you may need to free up some space.
-        You can refer toWasomeCodeX's documentation page for instructions on how to manually clean
+        You can refer to WasomeCodeX's documentation page for instructions on how to manually clean
         your browser's local storage or choose to clear all.`;
         this.messageService.warn(ERROR_MESSAGE, READ_INSTRUCTIONS_ACTION, CLEAR_STORAGE_ACTION).then(async selected => {
             if (READ_INSTRUCTIONS_ACTION === selected) {

@@ -48,7 +48,7 @@ export namespace WidgetDecoration {
      *
      * For more details, see: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value.
      *
-     * Note, it is highly recommended to use one of the predefined colors ofWasomeCodeX, so the desired color will
+     * Note, it is highly recommended to use one of the predefined colors of WasomeCodeX, so the desired color will
      * look nice with both the `light` and the `dark` theme too.
      */
     export type Color = string;

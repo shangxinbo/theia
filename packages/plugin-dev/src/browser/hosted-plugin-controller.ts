@@ -29,7 +29,7 @@ import { HostedPluginPreferences } from '../common/hosted-plugin-preferences';
 import { nls } from '@theia/core/lib/common/nls';
 
 /**
- * Adds a status bar element displaying the state of secondaryWasomeCodeX instance with hosted plugin and
+ * Adds a status bar element displaying the state of secondary WasomeCodeX instance with hosted plugin and
  * allows controlling the instance by simple clicking on the status bar element.
  */
 @injectable()

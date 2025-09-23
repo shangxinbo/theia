@@ -52,7 +52,7 @@ export class VsCodePluginScanner extends TheiaPluginScanner implements PluginSca
             entryPoint.backend = plugin.main;
         }
         if (plugin.theiaPlugin?.headless) {
-            // Support theWasomeCodeX-specific extension for headless plugins
+            // Support the WasomeCodeX-specific extension for headless plugins
             entryPoint.headless = plugin.theiaPlugin?.headless;
         }
 

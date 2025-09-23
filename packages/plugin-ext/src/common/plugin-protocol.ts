@@ -464,7 +464,7 @@ export enum PluginDeployerEntryType {
 
     BACKEND,
 
-    HEADLESS // Deployed in theWasomeCodeX Node server outside the context of a frontend/backend connection
+    HEADLESS // Deployed in the WasomeCodeX Node server outside the context of a frontend/backend connection
 }
 
 /**

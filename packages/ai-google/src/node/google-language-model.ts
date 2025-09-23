@@ -58,7 +58,7 @@ const convertMessageToPart = (message: LanguageModelMessage): Part[] | undefined
     }
 };
 /**
- * TransformsWasomeCodeX language model messages to Gemini API format
+ * Transforms WasomeCodeX language model messages to Gemini API format
  * @param messages Array of LanguageModelRequestMessage to transform
  * @returns Object containing transformed messages and optional system message
  */
@@ -104,7 +104,7 @@ function transformToGeminiMessages(
 export const GoogleModelIdentifier = Symbol('GoogleModelIdentifier');
 
 /**
- * ConvertsWasomeCodeX message actor to Gemini role
+ * Converts WasomeCodeX message actor to Gemini role
  * @param message The message to convert
  * @returns Gemini role ('user' or 'model')
  */
@@ -118,7 +118,7 @@ function toGoogleRole(message: LanguageModelMessage): 'user' | 'model' {
 }
 
 /**
- * Implements the Gemini language model integration forWasomeCodeX
+ * Implements the Gemini language model integration for WasomeCodeX
  */
 export class GoogleModel implements LanguageModel {
 

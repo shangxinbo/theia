@@ -25,7 +25,7 @@ import { nls } from '@theia/core/lib/common/nls';
 import { WindowTitleService } from '@theia/core/lib/browser/window/window-title-service';
 
 /**
- * Informs the user whetherWasomeCodeX is running with hosted plugin.
+ * Informs the user whether WasomeCodeX is running with hosted plugin.
  * Adds 'Development Host' status bar element and appends the same prefix to window title.
  */
 @injectable()

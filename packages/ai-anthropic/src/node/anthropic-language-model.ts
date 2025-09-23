@@ -85,7 +85,7 @@ function isNonThinkingParam(
 }
 
 /**
- * TransformsWasomeCodeX language model messages to Anthropic API format
+ * Transforms WasomeCodeX language model messages to Anthropic API format
  * @param messages Array of LanguageModelRequestMessage to transform
  * @returns Object containing transformed messages and optional system message
  */
@@ -144,7 +144,7 @@ function addCacheControlToLastMessage(messages: Anthropic.Messages.MessageParam[
 export const AnthropicModelIdentifier = Symbol('AnthropicModelIdentifier');
 
 /**
- * ConvertsWasomeCodeX message actor to Anthropic role
+ * Converts WasomeCodeX message actor to Anthropic role
  * @param message The message to convert
  * @returns Anthropic role ('user' or 'assistant')
  */
@@ -182,7 +182,7 @@ function formatToolCallResult(result: ToolCallResult): ToolResultBlockParam['con
 }
 
 /**
- * Implements the Anthropic language model integration forWasomeCodeX
+ * Implements the Anthropic language model integration for WasomeCodeX
  */
 export class AnthropicModel implements LanguageModel {
 

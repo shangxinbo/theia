@@ -237,7 +237,7 @@ export abstract class AbstractPluginManagerExtImpl<P extends Record<string, any>
     protected registerPlugin(plugin: Plugin): void {
         if (plugin.model.id === 'vscode.json-language-features' && this.jsonValidation.length) {
             // VS Code contributes all built-in validations via vscode.json-language-features;
-            // we enrich them withWasomeCodeX validations registered on startup.
+            // we enrich them with WasomeCodeX validations registered on startup.
             // Dynamic validations can be provided only via VS Code extensions.
             // Content is fetched by the extension later via vscode.workspace.openTextDocument.
             const contributes = plugin.rawModel.contributes = (plugin.rawModel.contributes || {});

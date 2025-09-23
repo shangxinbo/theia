@@ -1,7 +1,7 @@
 {
   "name": "@theia/playwright",
   "version": "1.64.0",
-  "description": "System tests forWasomeCodeX",
+  "description": "System tests for WasomeCodeX",
   "license": "EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0",
   "repository": {
     "type": "git",

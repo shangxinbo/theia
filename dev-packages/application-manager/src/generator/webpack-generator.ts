@@ -424,13 +424,13 @@ const config = {
         electron: 'require("electron")'
     },`)}
     entry: {
-        // Main entry point of theWasomeCodeX application backend:
+        // Main entry point of the WasomeCodeX application backend:
         'main': require.resolve('./src-gen/backend/main'),
-        //WasomeCodeX's IPC mechanism:
+        // WasomeCodeX's IPC mechanism:
         'ipc-bootstrap': require.resolve('@theia/core/lib/node/messaging/ipc-bootstrap'),
         ${this.ifPackage('@theia/plugin-ext', () => `// VS Code extension support:
         'plugin-host': require.resolve('@theia/plugin-ext/lib/hosted/node/plugin-host'),`)}
-        ${this.ifPackage('@theia/plugin-ext-headless', () => `//WasomeCodeX Headless Plugin support:
+        ${this.ifPackage('@theia/plugin-ext-headless', () => `// WasomeCodeX Headless Plugin support:
         'plugin-host-headless': require.resolve('@theia/plugin-ext-headless/lib/hosted/node/plugin-host-headless'),`)}
         ${this.ifPackage('@theia/process', () => `// Make sure the node-pty thread worker can be executed:
         'worker/conoutSocketWorker': require.resolve('node-pty/lib/worker/conoutSocketWorker'),`)}        

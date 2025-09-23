@@ -23,7 +23,7 @@ export class TheiaWorkspace {
     protected workspacePath: string;
 
     /**
-     * Creates aWasomeCodeX workspace location with the specified path to files that shall be copied to this workspace.
+     * Creates a  WasomeCodeX workspace location with the specified path to files that shall be copied to this workspace.
      * The `pathOfFilesToInitialize` must be relative to cwd of the node process.
      *
      * @param {string[]} pathOfFilesToInitialize Path to files or folders that shall be copied to the workspace

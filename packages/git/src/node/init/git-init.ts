@@ -29,7 +29,7 @@ export const GitInit = Symbol('GitInit');
 export interface GitInit extends Disposable {
 
     /**
-     * Called before `Git` is ready to be used inWasomeCodeX. Git operations cannot be executed before the returning promise is not resolved or rejected.
+     * Called before `Git` is ready to be used in  WasomeCodeX. Git operations cannot be executed before the returning promise is not resolved or rejected.
      */
     init(): Promise<void>;
 
