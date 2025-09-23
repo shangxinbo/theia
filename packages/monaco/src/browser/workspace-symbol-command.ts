@@ -56,10 +56,10 @@ export class WorkspaceSymbolCommand implements QuickAccessProvider, CommandContr
     }
 
     registerMenus(menus: MenuModelRegistry): void {
-        menus.registerMenuAction(EditorMainMenu.WORKSPACE_GROUP, {
-            commandId: this.command.id,
-            order: '2'
-        });
+        // menus.registerMenuAction(EditorMainMenu.WORKSPACE_GROUP, {
+        //     commandId: this.command.id,
+        //     order: '2'
+        // });
     }
 
     private isElectron(): boolean {

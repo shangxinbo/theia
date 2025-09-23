@@ -53,11 +53,11 @@ export class QuickFileOpenFrontendContribution implements QuickAccessContributio
     }
 
     registerMenus(menus: MenuModelRegistry): void {
-        menus.registerMenuAction(EditorMainMenu.WORKSPACE_GROUP, {
-            commandId: quickFileOpen.id,
-            label: nls.localizeByDefault('Go to File...'),
-            order: '1',
-        });
+        // menus.registerMenuAction(EditorMainMenu.WORKSPACE_GROUP, {
+        //     commandId: quickFileOpen.id,
+        //     label: nls.localizeByDefault('Go to File...'),
+        //     order: '1',
+        // });
     }
 
     registerQuickAccessProvider(): void {

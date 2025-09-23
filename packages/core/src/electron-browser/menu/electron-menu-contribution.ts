@@ -42,7 +42,7 @@ export namespace ElectronCommands {
     });
     export const RELOAD = Command.toDefaultLocalizedCommand({
         id: 'view.reload',
-        label: 'Reload Window'
+        label: '重新加载窗口'
     });
     export const ZOOM_IN = Command.toDefaultLocalizedCommand({
         id: 'view.zoomIn',
@@ -58,7 +58,7 @@ export namespace ElectronCommands {
     });
     export const CLOSE_WINDOW = Command.toDefaultLocalizedCommand({
         id: 'close.window',
-        label: 'Close Window'
+        label: '关闭窗口'
     });
     export const TOGGLE_FULL_SCREEN = Command.toDefaultLocalizedCommand({
         id: 'workbench.action.toggleFullScreen',
@@ -68,8 +68,8 @@ export namespace ElectronCommands {
 }
 
 export namespace ElectronMenus {
-    export const VIEW_WINDOW = [...CommonMenus.VIEW, 'window'];
-    export const VIEW_ZOOM = [...CommonMenus.VIEW_APPEARANCE_SUBMENU, '4_appearance_submenu_zoom'];
+    export const VIEW_WINDOW = [...CommonMenus.FILE_CLOSE, 'window'];
+    // export const VIEW_ZOOM = [...CommonMenus.VIEW_APPEARANCE_SUBMENU, '4_appearance_submenu_zoom'];
 }
 
 export namespace ElectronMenus {
@@ -374,7 +374,8 @@ export class ElectronMenuContribution extends BrowserMenuBarContribution impleme
 
     registerMenus(registry: MenuModelRegistry): void {
         registry.registerMenuAction(ElectronMenus.HELP_TOGGLE, {
-            commandId: ElectronCommands.TOGGLE_DEVELOPER_TOOLS.id
+            commandId: ElectronCommands.TOGGLE_DEVELOPER_TOOLS.id,
+            label: nls.localizeByDefault('开发人员工具'),
         });
 
         registry.registerMenuAction(ElectronMenus.VIEW_WINDOW, {
@@ -382,26 +383,26 @@ export class ElectronMenuContribution extends BrowserMenuBarContribution impleme
             order: 'z0'
         });
 
-        registry.registerMenuAction(ElectronMenus.VIEW_ZOOM, {
-            commandId: ElectronCommands.ZOOM_IN.id,
-            order: 'z1'
-        });
-        registry.registerMenuAction(ElectronMenus.VIEW_ZOOM, {
-            commandId: ElectronCommands.ZOOM_OUT.id,
-            order: 'z2'
-        });
-        registry.registerMenuAction(ElectronMenus.VIEW_ZOOM, {
-            commandId: ElectronCommands.RESET_ZOOM.id,
-            order: 'z3'
-        });
+        // registry.registerMenuAction(ElectronMenus.VIEW_ZOOM, {
+        //     commandId: ElectronCommands.ZOOM_IN.id,
+        //     order: 'z1'
+        // });
+        // registry.registerMenuAction(ElectronMenus.VIEW_ZOOM, {
+        //     commandId: ElectronCommands.ZOOM_OUT.id,
+        //     order: 'z2'
+        // });
+        // registry.registerMenuAction(ElectronMenus.VIEW_ZOOM, {
+        //     commandId: ElectronCommands.RESET_ZOOM.id,
+        //     order: 'z3'
+        // });
         registry.registerMenuAction(ElectronMenus.FILE_CLOSE, {
             commandId: ElectronCommands.CLOSE_WINDOW.id,
         });
-        registry.registerMenuAction(CommonMenus.VIEW_APPEARANCE_SUBMENU_SCREEN, {
-            commandId: ElectronCommands.TOGGLE_FULL_SCREEN.id,
-            label: nls.localizeByDefault('Full Screen'),
-            order: '0'
-        });
+        // registry.registerMenuAction(CommonMenus.VIEW_APPEARANCE_SUBMENU_SCREEN, {
+        //     commandId: ElectronCommands.TOGGLE_FULL_SCREEN.id,
+        //     label: nls.localizeByDefault('Full Screen'),
+        //     order: '0'
+        // });
     }
 
     protected toggleFullScreen(): void {

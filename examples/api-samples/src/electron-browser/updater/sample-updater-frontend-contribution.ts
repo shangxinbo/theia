@@ -62,7 +62,7 @@ export namespace SampleUpdaterCommands {
 }
 
 export namespace SampleUpdaterMenu {
-    export const MENU_PATH: MenuPath = [...CommonMenus.FILE_SETTINGS_SUBMENU, '3_settings_submenu_update'];
+    // export const MENU_PATH: MenuPath = [...CommonMenus.FILE_SETTINGS_SUBMENU, '3_settings_submenu_update'];
 }
 
 @injectable()
@@ -158,12 +158,12 @@ export class SampleUpdaterFrontendContribution implements CommandContribution, M
     }
 
     registerMenus(registry: MenuModelRegistry): void {
-        registry.registerMenuAction(SampleUpdaterMenu.MENU_PATH, {
-            commandId: SampleUpdaterCommands.CHECK_FOR_UPDATES.id
-        });
-        registry.registerMenuAction(SampleUpdaterMenu.MENU_PATH, {
-            commandId: SampleUpdaterCommands.RESTART_TO_UPDATE.id
-        });
+        // registry.registerMenuAction(SampleUpdaterMenu.MENU_PATH, {
+        //     commandId: SampleUpdaterCommands.CHECK_FOR_UPDATES.id
+        // });
+        // registry.registerMenuAction(SampleUpdaterMenu.MENU_PATH, {
+        //     commandId: SampleUpdaterCommands.RESTART_TO_UPDATE.id
+        // });
     }
 
     protected async handleUpdatesAvailable(): Promise<void> {

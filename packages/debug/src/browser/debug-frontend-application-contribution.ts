@@ -60,14 +60,14 @@ import { DebugExceptionBreakpoint } from './view/debug-exception-breakpoint';
 import { DebugToolBar } from './view/debug-toolbar-widget';
 
 export namespace DebugMenus {
-    export const DEBUG = [...MAIN_MENU_BAR, '6_debug'];
-    export const DEBUG_CONTROLS = [...DEBUG, 'a_controls'];
-    export const DEBUG_CONFIGURATION = [...DEBUG, 'b_configuration'];
-    export const DEBUG_THREADS = [...DEBUG, 'c_threads'];
-    export const DEBUG_SESSIONS = [...DEBUG, 'd_sessions'];
-    export const DEBUG_BREAKPOINT = [...DEBUG, 'e_breakpoint'];
-    export const DEBUG_NEW_BREAKPOINT = [...DEBUG_BREAKPOINT, 'a_new_breakpoint'];
-    export const DEBUG_BREAKPOINTS = [...DEBUG, 'f_breakpoints'];
+    // export const DEBUG = [...MAIN_MENU_BAR, '6_debug'];
+    // export const DEBUG_CONTROLS = [...DEBUG, 'a_controls'];
+    // export const DEBUG_CONFIGURATION = [...DEBUG, 'b_configuration'];
+    // export const DEBUG_THREADS = [...DEBUG, 'c_threads'];
+    // export const DEBUG_SESSIONS = [...DEBUG, 'd_sessions'];
+    // export const DEBUG_BREAKPOINT = [...DEBUG, 'e_breakpoint'];
+    // export const DEBUG_NEW_BREAKPOINT = [...DEBUG_BREAKPOINT, 'a_new_breakpoint'];
+    // export const DEBUG_BREAKPOINTS = [...DEBUG, 'f_breakpoints'];
 }
 
 function nlsEditBreakpoint(breakpoint: string): string {
@@ -563,43 +563,43 @@ export class DebugFrontendApplicationContribution extends AbstractViewContributi
             }
         };
 
-        menus.registerSubmenu(DebugMenus.DEBUG, nls.localizeByDefault('Wasome Run'));
-        registerMenuActions(DebugMenus.DEBUG_CONTROLS,
-            DebugCommands.START,
-            DebugCommands.START_NO_DEBUG,
-            DebugCommands.STOP,
-            DebugCommands.RESTART
-        );
-        registerMenuActions(DebugMenus.DEBUG_CONFIGURATION,
-            DebugCommands.OPEN_CONFIGURATIONS,
-            DebugCommands.ADD_CONFIGURATION
-        );
-        registerMenuActions(DebugMenus.DEBUG_THREADS,
-            DebugCommands.CONTINUE,
-            DebugCommands.STEP_OVER,
-            DebugCommands.STEP_INTO,
-            DebugCommands.STEP_OUT,
-            DebugCommands.PAUSE
-        );
-        registerMenuActions(DebugMenus.DEBUG_SESSIONS,
-            DebugCommands.CONTINUE_ALL,
-            DebugCommands.PAUSE_ALL
-        );
-        registerMenuActions(DebugMenus.DEBUG_BREAKPOINT,
-            DebugCommands.TOGGLE_BREAKPOINT
-        );
-        menus.registerSubmenu(DebugMenus.DEBUG_NEW_BREAKPOINT, nls.localizeByDefault('New Breakpoint'));
-        registerMenuActions(DebugMenus.DEBUG_NEW_BREAKPOINT,
-            DebugCommands.ADD_CONDITIONAL_BREAKPOINT,
-            DebugCommands.INLINE_BREAKPOINT,
-            DebugCommands.ADD_FUNCTION_BREAKPOINT,
-            DebugCommands.ADD_LOGPOINT,
-        );
-        registerMenuActions(DebugMenus.DEBUG_BREAKPOINTS,
-            DebugCommands.ENABLE_ALL_BREAKPOINTS,
-            DebugCommands.DISABLE_ALL_BREAKPOINTS,
-            DebugCommands.REMOVE_ALL_BREAKPOINTS
-        );
+        // menus.registerSubmenu(DebugMenus.DEBUG, nls.localizeByDefault('Wasome Run'));
+        // registerMenuActions(DebugMenus.DEBUG_CONTROLS,
+        //     DebugCommands.START,
+        //     DebugCommands.START_NO_DEBUG,
+        //     DebugCommands.STOP,
+        //     DebugCommands.RESTART
+        // );
+        // registerMenuActions(DebugMenus.DEBUG_CONFIGURATION,
+        //     DebugCommands.OPEN_CONFIGURATIONS,
+        //     DebugCommands.ADD_CONFIGURATION
+        // );
+        // registerMenuActions(DebugMenus.DEBUG_THREADS,
+        //     DebugCommands.CONTINUE,
+        //     DebugCommands.STEP_OVER,
+        //     DebugCommands.STEP_INTO,
+        //     DebugCommands.STEP_OUT,
+        //     DebugCommands.PAUSE
+        // );
+        // registerMenuActions(DebugMenus.DEBUG_SESSIONS,
+        //     DebugCommands.CONTINUE_ALL,
+        //     DebugCommands.PAUSE_ALL
+        // );
+        // registerMenuActions(DebugMenus.DEBUG_BREAKPOINT,
+        //     DebugCommands.TOGGLE_BREAKPOINT
+        // );
+        // menus.registerSubmenu(DebugMenus.DEBUG_NEW_BREAKPOINT, nls.localizeByDefault('New Breakpoint'));
+        // registerMenuActions(DebugMenus.DEBUG_NEW_BREAKPOINT,
+        //     DebugCommands.ADD_CONDITIONAL_BREAKPOINT,
+        //     DebugCommands.INLINE_BREAKPOINT,
+        //     DebugCommands.ADD_FUNCTION_BREAKPOINT,
+        //     DebugCommands.ADD_LOGPOINT,
+        // );
+        // registerMenuActions(DebugMenus.DEBUG_BREAKPOINTS,
+        //     DebugCommands.ENABLE_ALL_BREAKPOINTS,
+        //     DebugCommands.DISABLE_ALL_BREAKPOINTS,
+        //     DebugCommands.REMOVE_ALL_BREAKPOINTS
+        // );
 
         registerMenuActions(DebugThreadsWidget.CONTROL_MENU,
             { ...DebugCommands.PAUSE, ...DebugThreadContextCommands.PAUSE },

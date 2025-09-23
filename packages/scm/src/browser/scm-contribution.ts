@@ -56,7 +56,7 @@ export const SCM_VIEW_CONTAINER_TITLE_OPTIONS: ViewContainerTitleOptions = {
 };
 
 export namespace ScmMenus {
-    export const CHANGES_GROUP = [...EditorMainMenu.GO, '6_changes_group'];
+    // export const CHANGES_GROUP = [...EditorMainMenu.GO, '6_changes_group'];
 }
 
 export namespace SCM_COMMANDS {
@@ -245,16 +245,16 @@ export class ScmContribution extends AbstractViewContribution<ScmWidget> impleme
 
     override registerMenus(menus: MenuModelRegistry): void {
         super.registerMenus(menus);
-        menus.registerMenuAction(ScmMenus.CHANGES_GROUP, {
-            commandId: SCM_COMMANDS.SHOW_NEXT_CHANGE.id,
-            label: nls.localizeByDefault('Next Change'),
-            order: '1'
-        });
-        menus.registerMenuAction(ScmMenus.CHANGES_GROUP, {
-            commandId: SCM_COMMANDS.SHOW_PREVIOUS_CHANGE.id,
-            label: nls.localizeByDefault('Previous Change'),
-            order: '2'
-        });
+        // menus.registerMenuAction(ScmMenus.CHANGES_GROUP, {
+        //     commandId: SCM_COMMANDS.SHOW_NEXT_CHANGE.id,
+        //     label: nls.localizeByDefault('Next Change'),
+        //     order: '1'
+        // });
+        // menus.registerMenuAction(ScmMenus.CHANGES_GROUP, {
+        //     commandId: SCM_COMMANDS.SHOW_PREVIOUS_CHANGE.id,
+        //     label: nls.localizeByDefault('Previous Change'),
+        //     order: '2'
+        // });
     }
 
     registerToolbarItems(registry: TabBarToolbarRegistry): void {

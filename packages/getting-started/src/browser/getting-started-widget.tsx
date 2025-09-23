@@ -47,7 +47,7 @@ export class GettingStartedWidget extends ReactWidget {
     /**
      * The widget `label` which is used for display purposes.
      */
-    static readonly LABEL = nls.localizeByDefault('Welcome');
+    static readonly LABEL = nls.localizeByDefault('欢迎');
 
     /**
      * The `ApplicationInfo` for the application if available.
@@ -393,7 +393,7 @@ export class GettingStartedWidget extends ReactWidget {
                     tabIndex={0}
                     onClick={() => this.doOpenExternalLink(this.documentationUrl)}
                     onKeyDown={(e: React.KeyboardEvent) => this.doOpenExternalLinkEnter(e, this.documentationUrl)}>
-                    {nls.localizeByDefault('在浏览器中打开文档')}
+                    {nls.localizeByDefault('在浏览器中打开帮助')}
                 </a>
             </div>
             {/* <div className='gs-action-container'>

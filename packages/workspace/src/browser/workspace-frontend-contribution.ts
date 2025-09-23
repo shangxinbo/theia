@@ -58,7 +58,7 @@ export type WorkspaceState = keyof typeof WorkspaceStates;
 export type WorkbenchState = keyof typeof WorkspaceStates;
 
 /** Create the workspace section after open {@link CommonMenus.FILE_OPEN}. */
-export const FILE_WORKSPACE = [...CommonMenus.FILE, '2_workspace'];
+// export const FILE_WORKSPACE = [...CommonMenus.FILE, '2_workspace'];
 
 @injectable()
 export class WorkspaceFrontendContribution implements CommandContribution, KeybindingContribution, MenuContribution, FrontendApplicationContribution {
@@ -171,48 +171,48 @@ export class WorkspaceFrontendContribution implements CommandContribution, Keybi
 
     registerMenus(menus: MenuModelRegistry): void {
         if (isOSX || !this.isElectron()) {
-            menus.registerMenuAction(CommonMenus.FILE_OPEN, {
-                commandId: WorkspaceCommands.OPEN.id,
-                order: 'a00'
-            });
+            // menus.registerMenuAction(CommonMenus.FILE_OPEN, {
+            //     commandId: WorkspaceCommands.OPEN.id,
+            //     order: 'a00'
+            // });
         }
         if (!isOSX && this.isElectron()) {
-            menus.registerMenuAction(CommonMenus.FILE_OPEN, {
-                commandId: WorkspaceCommands.OPEN_FILE.id,
-                label: `${WorkspaceCommands.OPEN_FILE.dialogLabel}...`,
-                order: 'a01'
-            });
-            menus.registerMenuAction(CommonMenus.FILE_OPEN, {
-                commandId: WorkspaceCommands.OPEN_FOLDER.id,
-                label: `${WorkspaceCommands.OPEN_FOLDER.dialogLabel}...`,
-                order: 'a02'
-            });
+            // menus.registerMenuAction(CommonMenus.FILE_OPEN, {
+            //     commandId: WorkspaceCommands.OPEN_FILE.id,
+            //     label: `${WorkspaceCommands.OPEN_FILE.dialogLabel}...`,
+            //     order: 'a01'
+            // });
+            // menus.registerMenuAction(CommonMenus.FILE_OPEN, {
+            //     commandId: WorkspaceCommands.OPEN_FOLDER.id,
+            //     label: `${WorkspaceCommands.OPEN_FOLDER.dialogLabel}...`,
+            //     order: 'a02'
+            // });
         }
-        menus.registerMenuAction(CommonMenus.FILE_OPEN, {
-            commandId: WorkspaceCommands.OPEN_WORKSPACE.id,
-            order: 'a10'
-        });
-        menus.registerMenuAction(CommonMenus.FILE_OPEN, {
-            commandId: WorkspaceCommands.OPEN_RECENT_WORKSPACE.id,
-            order: 'a20'
-        });
+        // menus.registerMenuAction(CommonMenus.FILE_OPEN, {
+        //     commandId: WorkspaceCommands.OPEN_WORKSPACE.id,
+        //     order: 'a10'
+        // });
+        // menus.registerMenuAction(CommonMenus.FILE_OPEN, {
+        //     commandId: WorkspaceCommands.OPEN_RECENT_WORKSPACE.id,
+        //     order: 'a20'
+        // });
 
-        menus.registerMenuAction(FILE_WORKSPACE, {
-            commandId: WorkspaceCommands.ADD_FOLDER.id,
-            order: 'a10'
-        });
-        menus.registerMenuAction(FILE_WORKSPACE, {
-            commandId: WorkspaceCommands.SAVE_WORKSPACE_AS.id,
-            order: 'a20'
-        });
+        // menus.registerMenuAction(FILE_WORKSPACE, {
+        //     commandId: WorkspaceCommands.ADD_FOLDER.id,
+        //     order: 'a10'
+        // });
+        // menus.registerMenuAction(FILE_WORKSPACE, {
+        //     commandId: WorkspaceCommands.SAVE_WORKSPACE_AS.id,
+        //     order: 'a20'
+        // });
 
         menus.registerMenuAction(CommonMenus.FILE_CLOSE, {
             commandId: WorkspaceCommands.CLOSE.id
         });
 
-        menus.registerMenuAction(CommonMenus.FILE_SAVE, {
-            commandId: WorkspaceCommands.SAVE_AS.id,
-        });
+        // menus.registerMenuAction(CommonMenus.FILE_SAVE, {
+        //     commandId: WorkspaceCommands.SAVE_AS.id,
+        // });
 
         menus.registerMenuAction(SHELL_TABBAR_CONTEXT_COPY, {
             commandId: WorkspaceCommands.COPY_RELATIVE_FILE_PATH.id,

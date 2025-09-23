@@ -27,9 +27,9 @@ export interface MonacoActionGroup {
     actions: string[];
 }
 export namespace MonacoMenus {
-    export const SELECTION = [...MAIN_MENU_BAR, '6_debug', '3_selection'];
-    export const PEEK_CONTEXT_SUBMENU: MenuPath = [...EDITOR_CONTEXT_MENU, 'navigation', 'peek_submenu'];
-    export const MARKERS_GROUP = [...EditorMainMenu.GO, '5_markers_group'];
+    // export const SELECTION = [...MAIN_MENU_BAR, '6_debug', '3_selection'];
+    // export const PEEK_CONTEXT_SUBMENU: MenuPath = [...EDITOR_CONTEXT_MENU, 'navigation', 'peek_submenu'];
+    // export const MARKERS_GROUP = [...EditorMainMenu.GO, '5_markers_group'];
 }
 
 @injectable()
@@ -58,81 +58,81 @@ export class MonacoEditorMenuContribution implements MenuContribution {
 
         this.registerPeekSubmenu(registry);
 
-        registry.registerSubmenu(MonacoMenus.SELECTION, nls.localizeByDefault('Selection'));
-        for (const item of MenuRegistry.getMenuItems(MenuId.MenubarSelectionMenu)) {
-            if (!isIMenuItem(item)) {
-                continue;
-            }
-            const commandId = this.commands.validate(item.command.id);
-            if (commandId) {
-                const menuPath = [...MonacoMenus.SELECTION, (item.group || '')];
-                registry.registerMenuAction(menuPath, this.buildMenuAction(commandId, item));
-            }
-        }
+        // registry.registerSubmenu(MonacoMenus.SELECTION, nls.localizeByDefault('Selection'));
+        // for (const item of MenuRegistry.getMenuItems(MenuId.MenubarSelectionMenu)) {
+        //     if (!isIMenuItem(item)) {
+        //         continue;
+        //     }
+        //     const commandId = this.commands.validate(item.command.id);
+        //     if (commandId) {
+        //         const menuPath = [...MonacoMenus.SELECTION, (item.group || '')];
+        //         registry.registerMenuAction(menuPath, this.buildMenuAction(commandId, item));
+        //     }
+        // }
 
-        // Builtin monaco language features commands.
-        registry.registerMenuAction(EditorMainMenu.LANGUAGE_FEATURES_GROUP, {
-            commandId: 'editor.action.quickOutline',
-            label: nls.localizeByDefault('Go to Symbol in Editor...'),
-            order: '1'
-        });
-        registry.registerMenuAction(EditorMainMenu.LANGUAGE_FEATURES_GROUP, {
-            commandId: 'editor.action.revealDefinition',
-            label: nls.localizeByDefault('Go to Definition'),
-            order: '2'
-        });
-        registry.registerMenuAction(EditorMainMenu.LANGUAGE_FEATURES_GROUP, {
-            commandId: 'editor.action.revealDeclaration',
-            label: nls.localizeByDefault('Go to Declaration'),
-            order: '3'
-        });
-        registry.registerMenuAction(EditorMainMenu.LANGUAGE_FEATURES_GROUP, {
-            commandId: 'editor.action.goToTypeDefinition',
-            label: nls.localizeByDefault('Go to Type Definition'),
-            order: '4'
-        });
-        registry.registerMenuAction(EditorMainMenu.LANGUAGE_FEATURES_GROUP, {
-            commandId: 'editor.action.goToImplementation',
-            label: nls.localizeByDefault('Go to Implementations'),
-            order: '5'
-        });
-        registry.registerMenuAction(EditorMainMenu.LANGUAGE_FEATURES_GROUP, {
-            commandId: 'editor.action.goToReferences',
-            label: nls.localizeByDefault('Go to References'),
-            order: '6'
-        });
+        // // Builtin monaco language features commands.
+        // registry.registerMenuAction(EditorMainMenu.LANGUAGE_FEATURES_GROUP, {
+        //     commandId: 'editor.action.quickOutline',
+        //     label: nls.localizeByDefault('Go to Symbol in Editor...'),
+        //     order: '1'
+        // });
+        // registry.registerMenuAction(EditorMainMenu.LANGUAGE_FEATURES_GROUP, {
+        //     commandId: 'editor.action.revealDefinition',
+        //     label: nls.localizeByDefault('Go to Definition'),
+        //     order: '2'
+        // });
+        // registry.registerMenuAction(EditorMainMenu.LANGUAGE_FEATURES_GROUP, {
+        //     commandId: 'editor.action.revealDeclaration',
+        //     label: nls.localizeByDefault('Go to Declaration'),
+        //     order: '3'
+        // });
+        // registry.registerMenuAction(EditorMainMenu.LANGUAGE_FEATURES_GROUP, {
+        //     commandId: 'editor.action.goToTypeDefinition',
+        //     label: nls.localizeByDefault('Go to Type Definition'),
+        //     order: '4'
+        // });
+        // registry.registerMenuAction(EditorMainMenu.LANGUAGE_FEATURES_GROUP, {
+        //     commandId: 'editor.action.goToImplementation',
+        //     label: nls.localizeByDefault('Go to Implementations'),
+        //     order: '5'
+        // });
+        // registry.registerMenuAction(EditorMainMenu.LANGUAGE_FEATURES_GROUP, {
+        //     commandId: 'editor.action.goToReferences',
+        //     label: nls.localizeByDefault('Go to References'),
+        //     order: '6'
+        // });
 
-        registry.registerMenuAction(EditorMainMenu.LOCATION_GROUP, {
-            commandId: 'editor.action.jumpToBracket',
-            label: nls.localizeByDefault('Go to Bracket'),
-            order: '2'
-        });
+        // registry.registerMenuAction(EditorMainMenu.LOCATION_GROUP, {
+        //     commandId: 'editor.action.jumpToBracket',
+        //     label: nls.localizeByDefault('Go to Bracket'),
+        //     order: '2'
+        // });
 
-        // Builtin monaco problem commands.
-        registry.registerMenuAction(MonacoMenus.MARKERS_GROUP, {
-            commandId: 'editor.action.marker.nextInFiles',
-            label: nls.localizeByDefault('Next Problem'),
-            order: '1'
-        });
-        registry.registerMenuAction(MonacoMenus.MARKERS_GROUP, {
-            commandId: 'editor.action.marker.prevInFiles',
-            label: nls.localizeByDefault('Previous Problem'),
-            order: '2'
-        });
+        // // Builtin monaco problem commands.
+        // registry.registerMenuAction(MonacoMenus.MARKERS_GROUP, {
+        //     commandId: 'editor.action.marker.nextInFiles',
+        //     label: nls.localizeByDefault('Next Problem'),
+        //     order: '1'
+        // });
+        // registry.registerMenuAction(MonacoMenus.MARKERS_GROUP, {
+        //     commandId: 'editor.action.marker.prevInFiles',
+        //     label: nls.localizeByDefault('Previous Problem'),
+        //     order: '2'
+        // });
     }
 
     protected registerPeekSubmenu(registry: MenuModelRegistry): void {
-        registry.registerSubmenu(MonacoMenus.PEEK_CONTEXT_SUBMENU, nls.localizeByDefault('Peek'));
+        // registry.registerSubmenu(MonacoMenus.PEEK_CONTEXT_SUBMENU, nls.localizeByDefault('Peek'));
 
-        for (const item of MenuRegistry.getMenuItems(MenuId.EditorContextPeek)) {
-            if (!isIMenuItem(item)) {
-                continue;
-            }
-            const commandId = this.commands.validate(item.command.id);
-            if (commandId) {
-                registry.registerMenuAction([...MonacoMenus.PEEK_CONTEXT_SUBMENU, item.group || ''], this.buildMenuAction(commandId, item));
-            }
-        }
+        // for (const item of MenuRegistry.getMenuItems(MenuId.EditorContextPeek)) {
+        //     if (!isIMenuItem(item)) {
+        //         continue;
+        //     }
+        //     const commandId = this.commands.validate(item.command.id);
+        //     if (commandId) {
+        //         registry.registerMenuAction([...MonacoMenus.PEEK_CONTEXT_SUBMENU, item.group || ''], this.buildMenuAction(commandId, item));
+        //     }
+        // }
     }
 
     protected buildMenuAction(commandId: string, item: IMenuItem): MenuAction {

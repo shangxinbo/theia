@@ -87,7 +87,7 @@ export class TerminalWidgetImpl extends TerminalWidget implements StatefulWidget
     secondaryWindow: Window | undefined;
     location: TerminalLocationOptions;
 
-    static LABEL = nls.localizeByDefault('Terminal');
+    static LABEL = nls.localizeByDefault('终端');
 
     exitStatus: TerminalExitStatus | undefined;
 

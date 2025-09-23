@@ -55,10 +55,10 @@ export class QuickCommandFrontendContribution implements CommandContribution, Ke
     }
 
     registerMenus(menus: MenuModelRegistry): void {
-        menus.registerMenuAction(CommonMenus.VIEW_PRIMARY, {
-            commandId: quickCommand.id,
-            label: nls.localizeByDefault('Command Palette...')
-        });
+        // menus.registerMenuAction(CommonMenus.VIEW_PRIMARY, {
+        //     commandId: quickCommand.id,
+        //     label: nls.localizeByDefault('Command Palette...')
+        // });
         menus.registerMenuAction(CommonMenus.MANAGE_GENERAL, {
             commandId: quickCommand.id,
             label: nls.localizeByDefault('Command Palette...'),

@@ -86,7 +86,7 @@ export namespace WorkspaceCommands {
     export const CLOSE = Command.toDefaultLocalizedCommand({
         id: 'workspace:close',
         category: WORKSPACE_CATEGORY,
-        label: 'Close Workspace'
+        label: '关闭当前工作区'
     });
     export const NEW_FILE = Command.toDefaultLocalizedCommand({
         id: 'file.newFile',
@@ -154,10 +154,10 @@ export namespace WorkspaceCommands {
 export class FileMenuContribution implements MenuContribution {
 
     registerMenus(registry: MenuModelRegistry): void {
-        registry.registerMenuAction(CommonMenus.FILE_NEW_TEXT, {
-            commandId: WorkspaceCommands.NEW_FOLDER.id,
-            order: 'b'
-        });
+        // registry.registerMenuAction(CommonMenus.FILE_NEW_TEXT, {
+        //     commandId: WorkspaceCommands.NEW_FOLDER.id,
+        //     order: 'b'
+        // });
         const downloadUploadMenu = [...CommonMenus.FILE, '4_downloadupload'];
         registry.registerMenuAction(downloadUploadMenu, {
             commandId: FileSystemCommands.UPLOAD.id,
@@ -175,10 +175,10 @@ export class FileMenuContribution implements MenuContribution {
 export class EditMenuContribution implements MenuContribution {
 
     registerMenus(registry: MenuModelRegistry): void {
-        registry.registerMenuAction(CommonMenus.EDIT_CLIPBOARD, {
-            commandId: FileDownloadCommands.COPY_DOWNLOAD_LINK.id,
-            order: '9999'
-        });
+        // registry.registerMenuAction(CommonMenus.EDIT_CLIPBOARD, {
+        //     commandId: FileDownloadCommands.COPY_DOWNLOAD_LINK.id,
+        //     order: '9999'
+        // });
     }
 
 }

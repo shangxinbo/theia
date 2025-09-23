@@ -186,11 +186,11 @@ export class KeymapsFrontendContribution extends AbstractViewContribution<Keybin
     }
 
     override registerMenus(menus: MenuModelRegistry): void {
-        menus.registerMenuAction(CommonMenus.FILE_SETTINGS_SUBMENU_OPEN, {
-            commandId: KeymapsCommands.OPEN_KEYMAPS.id,
-            label: nls.localizeByDefault('Keyboard Shortcuts'),
-            order: 'a20'
-        });
+        // menus.registerMenuAction(CommonMenus.FILE_SETTINGS_SUBMENU_OPEN, {
+        //     commandId: KeymapsCommands.OPEN_KEYMAPS.id,
+        //     label: nls.localizeByDefault('Keyboard Shortcuts'),
+        //     order: 'a20'
+        // });
         menus.registerMenuAction(CommonMenus.MANAGE_SETTINGS, {
             commandId: KeymapsCommands.OPEN_KEYMAPS.id,
             label: nls.localizeByDefault('Keyboard Shortcuts'),

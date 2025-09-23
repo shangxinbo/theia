@@ -134,11 +134,11 @@ export class PreferencesContribution extends AbstractViewContribution<Preference
     }
 
     override registerMenus(menus: MenuModelRegistry): void {
-        menus.registerMenuAction(CommonMenus.FILE_SETTINGS_SUBMENU_OPEN, {
-            commandId: CommonCommands.OPEN_PREFERENCES.id,
-            label: nls.localizeByDefault('Settings'),
-            order: 'a10',
-        });
+        // menus.registerMenuAction(CommonMenus.FILE_SETTINGS_SUBMENU_OPEN, {
+        //     commandId: CommonCommands.OPEN_PREFERENCES.id,
+        //     label: nls.localizeByDefault('Settings'),
+        //     order: 'a10',
+        // });
         menus.registerMenuAction(CommonMenus.MANAGE_SETTINGS, {
             commandId: CommonCommands.OPEN_PREFERENCES.id,
             label: nls.localizeByDefault('Settings'),

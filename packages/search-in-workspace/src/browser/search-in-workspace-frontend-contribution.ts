@@ -407,14 +407,14 @@ export class SearchInWorkspaceFrontendContribution extends AbstractViewContribut
             commandId: SearchInWorkspaceCommands.FIND_IN_FOLDER.id,
             when: 'explorerResourceIsFolder'
         });
-        menus.registerMenuAction(CommonMenus.EDIT_FIND, {
-            commandId: SearchInWorkspaceCommands.OPEN_SIW_WIDGET.id,
-            order: '2'
-        });
-        menus.registerMenuAction(CommonMenus.EDIT_FIND, {
-            commandId: SearchInWorkspaceCommands.REPLACE_IN_FILES.id,
-            order: '3'
-        });
+        // menus.registerMenuAction(CommonMenus.EDIT_FIND, {
+        //     commandId: SearchInWorkspaceCommands.OPEN_SIW_WIDGET.id,
+        //     order: '2'
+        // });
+        // menus.registerMenuAction(CommonMenus.EDIT_FIND, {
+        //     commandId: SearchInWorkspaceCommands.REPLACE_IN_FILES.id,
+        //     order: '3'
+        // });
         menus.registerMenuAction(SearchInWorkspaceResultTreeWidget.Menus.INTERNAL, {
             commandId: SearchInWorkspaceCommands.REPLACE_RESULT.id,
             label: nls.localizeByDefault('Replace'),

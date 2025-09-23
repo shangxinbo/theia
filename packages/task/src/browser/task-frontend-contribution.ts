@@ -328,58 +328,58 @@ export class TaskFrontendContribution implements CommandContribution, MenuContri
     }
 
     registerMenus(menus: MenuModelRegistry): void {
-        menus.registerMenuAction(TerminalMenus.TERMINAL_TASKS, {
-            commandId: TaskCommands.TASK_RUN.id,
-            order: '0'
-        });
+        // menus.registerMenuAction(TerminalMenus.TERMINAL_TASKS, {
+        //     commandId: TaskCommands.TASK_RUN.id,
+        //     order: '0'
+        // });
 
-        menus.registerMenuAction(TerminalMenus.TERMINAL_TASKS, {
-            commandId: TaskCommands.TASK_RUN_BUILD.id,
-            order: '1'
-        });
+        // menus.registerMenuAction(TerminalMenus.TERMINAL_TASKS, {
+        //     commandId: TaskCommands.TASK_RUN_BUILD.id,
+        //     order: '1'
+        // });
 
-        menus.registerMenuAction(TerminalMenus.TERMINAL_TASKS, {
-            commandId: TaskCommands.TASK_RUN_TEST.id,
-            order: '2'
-        });
+        // menus.registerMenuAction(TerminalMenus.TERMINAL_TASKS, {
+        //     commandId: TaskCommands.TASK_RUN_TEST.id,
+        //     order: '2'
+        // });
 
-        menus.registerMenuAction(TerminalMenus.TERMINAL_TASKS, {
-            commandId: TaskCommands.TASK_RUN_LAST.id,
-            order: '3'
-        });
+        // menus.registerMenuAction(TerminalMenus.TERMINAL_TASKS, {
+        //     commandId: TaskCommands.TASK_RUN_LAST.id,
+        //     order: '3'
+        // });
 
-        menus.registerMenuAction(TerminalMenus.TERMINAL_TASKS, {
-            commandId: TaskCommands.TASK_ATTACH.id,
-            order: '4'
-        });
+        // menus.registerMenuAction(TerminalMenus.TERMINAL_TASKS, {
+        //     commandId: TaskCommands.TASK_ATTACH.id,
+        //     order: '4'
+        // });
 
-        menus.registerMenuAction(TerminalMenus.TERMINAL_TASKS, {
-            commandId: TaskCommands.TASK_RUN_TEXT.id,
-            order: '5'
-        });
+        // menus.registerMenuAction(TerminalMenus.TERMINAL_TASKS, {
+        //     commandId: TaskCommands.TASK_RUN_TEXT.id,
+        //     order: '5'
+        // });
 
-        menus.registerMenuAction(TerminalMenus.TERMINAL_TASKS_INFO, {
-            commandId: TaskCommands.TASK_SHOW_RUNNING.id,
-            label: TaskCommands.TASK_SHOW_RUNNING.label + '...',
-            order: '0'
-        });
+        // menus.registerMenuAction(TerminalMenus.TERMINAL_TASKS_INFO, {
+        //     commandId: TaskCommands.TASK_SHOW_RUNNING.id,
+        //     label: TaskCommands.TASK_SHOW_RUNNING.label + '...',
+        //     order: '0'
+        // });
 
-        menus.registerMenuAction(TerminalMenus.TERMINAL_TASKS_INFO, {
-            commandId: TaskCommands.TASK_RESTART_RUNNING.id,
-            label: TaskCommands.TASK_RESTART_RUNNING.label,
-            order: '1'
-        });
+        // menus.registerMenuAction(TerminalMenus.TERMINAL_TASKS_INFO, {
+        //     commandId: TaskCommands.TASK_RESTART_RUNNING.id,
+        //     label: TaskCommands.TASK_RESTART_RUNNING.label,
+        //     order: '1'
+        // });
 
-        menus.registerMenuAction(TerminalMenus.TERMINAL_TASKS_INFO, {
-            commandId: TaskCommands.TASK_TERMINATE.id,
-            label: TaskCommands.TASK_TERMINATE.label + '...',
-            order: '2'
-        });
+        // menus.registerMenuAction(TerminalMenus.TERMINAL_TASKS_INFO, {
+        //     commandId: TaskCommands.TASK_TERMINATE.id,
+        //     label: TaskCommands.TASK_TERMINATE.label + '...',
+        //     order: '2'
+        // });
 
-        menus.registerMenuAction(TerminalMenus.TERMINAL_TASKS_CONFIG, {
-            commandId: TaskCommands.TASK_CONFIGURE.id,
-            order: '0'
-        });
+        // menus.registerMenuAction(TerminalMenus.TERMINAL_TASKS_CONFIG, {
+        //     commandId: TaskCommands.TASK_CONFIGURE.id,
+        //     order: '0'
+        // });
 
         menus.registerMenuAction(CommonMenus.MANAGE_SETTINGS, {
             commandId: TaskCommands.TASK_OPEN_USER.id,
