@@ -149,7 +149,7 @@ export class TestViewContribution extends AbstractViewContribution<TestTreeWidge
             widgetId: TestTreeWidget.ID,
             widgetName: nls.localizeByDefault('Test Explorer'),
             defaultWidgetOptions: {
-                area: 'left',
+                area: 'main',
                 rank: 600,
             }
         });

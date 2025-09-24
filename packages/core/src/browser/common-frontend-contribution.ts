@@ -56,7 +56,7 @@ import { QuickInputService, QuickPickItem, QuickPickItemOrSeparator, QuickPickSe
 import { AsyncLocalizationProvider } from '../common/i18n/localization';
 import { nls } from '../common/nls';
 import { CurrentWidgetCommandAdapter } from './shell/current-widget-command-adapter';
-import { ConfirmDialog, confirmExit, ConfirmSaveDialog, Dialog } from './dialogs';
+import { ConfirmDialog, confirmExit, ConfirmSaveDialog, Dialog, SingleTextInputDialog } from './dialogs';
 import { WindowService } from './window/window-service';
 import { FrontendApplicationConfigProvider } from './frontend-application-config-provider';
 import { DecorationStyle } from './decoration-style';
@@ -125,6 +125,11 @@ export namespace CommonCommands {
     export const FILE_CATEGORY_KEY = nls.getDefaultKey(FILE_CATEGORY);
     export const VIEW_CATEGORY_KEY = nls.getDefaultKey(VIEW_CATEGORY);
     export const PREFERENCES_CATEGORY_KEY = nls.getDefaultKey(PREFERENCES_CATEGORY);
+
+    export const OPEN_DIALOG = Command.toDefaultLocalizedCommand({
+        id: 'core.openDialog',
+        label: 'Open Dialog'
+    });
 
     export const OPEN: Command = {
         id: 'core.open',
@@ -823,6 +828,29 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
     }
 
     registerCommands(commandRegistry: CommandRegistry): void {
+        commandRegistry.registerCommand(CommonCommands.OPEN_DIALOG, {
+            execute: async (title: string, initialValue?: string, placeholder?: string, validate?: (newName: string, mode: any) => any) => {
+                const dialog = new SingleTextInputDialog({
+                    title: nls.localizeByDefault(title),
+                    maxWidth: 600,
+                    placeholder: nls.localizeByDefault(placeholder || '请输入'),
+                    initialValue: initialValue,
+                    validate: async (newName, mode) => {
+                        if (validate) {
+                            return validate(newName, mode);
+                        }
+                        return true;
+                    }
+                });
+                const inputRet = await dialog.open();
+                if (inputRet) {
+                    return inputRet;
+                };
+                return undefined;
+            },
+            isVisible: () => true,
+            isEnabled: () => true,
+        });
         commandRegistry.registerCommand(CommonCommands.OPEN, UriAwareCommandHandler.MultiSelect(this.selectionService, {
             execute: uris => uris.map(uri => open(this.openerService, uri)),
         }));
