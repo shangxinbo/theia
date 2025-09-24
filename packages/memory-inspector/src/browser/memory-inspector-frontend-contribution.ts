@@ -59,7 +59,7 @@ export class DebugFrontendContribution extends AbstractViewContribution<MemoryLa
             widgetId: MemoryLayoutWidget.ID,
             widgetName: MemoryLayoutWidget.LABEL,
             defaultWidgetOptions: {
-                area: 'right',
+                area: 'main',
             },
             toggleCommandId: MemoryCommand.id,
         });

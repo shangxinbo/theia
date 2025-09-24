@@ -57,11 +57,11 @@ export class AIViewContribution<T extends Widget> extends AbstractViewContributi
 
     override registerMenus(menus: MenuModelRegistry): void {
         if (this.toggleCommand) {
-            menus.registerMenuAction(CommonMenus.VIEW_VIEWS, {
-                commandId: this.toggleCommand.id,
-                when: ENABLE_AI_CONTEXT_KEY,
-                label: this.viewLabel
-            });
+            // menus.registerMenuAction(CommonMenus.VIEW_VIEWS, {
+            //     commandId: this.toggleCommand.id,
+            //     when: ENABLE_AI_CONTEXT_KEY,
+            //     label: this.viewLabel
+            // });
         }
     }
     override registerKeybindings(keybindings: KeybindingRegistry): void {

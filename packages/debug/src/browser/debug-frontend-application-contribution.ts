@@ -470,8 +470,8 @@ export class DebugFrontendApplicationContribution extends AbstractViewContributi
             widgetId: DebugWidget.ID,
             widgetName: DebugWidget.LABEL,
             defaultWidgetOptions: {
-                area: 'left',
-                rank: 400
+                area: 'right',
+                rank: 40
             },
             toggleCommandId: 'debug:toggle',
             toggleKeybinding: 'ctrlcmd+shift+d'

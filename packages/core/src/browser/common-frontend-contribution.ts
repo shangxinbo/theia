@@ -100,7 +100,7 @@ export namespace CommonMenus {
     // export const FILE_SETTINGS_SUBMENU_OPEN = [...FILE_SETTINGS_SUBMENU, '1_settings_submenu_open'];
     // export const FILE_SETTINGS_SUBMENU_THEME = [...FILE_SETTINGS_SUBMENU, '2_settings_submenu_theme'];
     */
-    // export const VIEW_VIEWS = [...VIEW, '2_views'];
+    export const VIEW_VIEWS = [...VIEW, '2_views'];
     export const VIEW_PROJECT = [...VIEW, '1_project'];
     export const VIEW_LAYOUT = [...VIEW, '3_layout'];
     // export const VIEW_TOGGLE = [...VIEW, '4_toggle'];

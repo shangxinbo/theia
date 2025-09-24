@@ -160,10 +160,10 @@ export abstract class AbstractViewContribution<T extends Widget> implements Comm
 
     registerMenus(menus: MenuModelRegistry): void {
         if (this.toggleCommand) {
-            menus.registerMenuAction(CommonMenus.VIEW_VIEWS, {
-                commandId: this.toggleCommand.id,
-                label: this.viewLabel
-            });
+            // menus.registerMenuAction(CommonMenus.VIEW_VIEWS, {
+            //     commandId: this.toggleCommand.id,
+            //     label: this.viewLabel
+            // });
         }
     }
 

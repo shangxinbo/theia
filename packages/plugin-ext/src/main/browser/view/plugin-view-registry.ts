@@ -346,10 +346,11 @@ export class PluginViewRegistry implements FrontendApplicationContribution {
             }, {
                 execute: () => this.toggleViewContainer(id)
             }));
-            toDispose.push(this.menus.registerMenuAction(CommonMenus.VIEW_VIEWS, {
-                commandId: toggleCommandId,
-                label: options.label
-            }));
+            console.log('register view container menu action', toggleCommandId, options.label);
+            // toDispose.push(this.menus.registerMenuAction(CommonMenus.VIEW_VIEWS, {
+            //     commandId: toggleCommandId,
+            //     label: options.label
+            // }));
             toDispose.push(this.quickView?.registerItem({
                 label: options.label,
                 open: async () => {
