@@ -86,7 +86,7 @@ export namespace WorkspaceCommands {
     export const CLOSE = Command.toDefaultLocalizedCommand({
         id: 'workspace:close',
         category: WORKSPACE_CATEGORY,
-        label: '关闭当前工作区'
+        label: '关闭当前项目'
     });
     export const NEW_FILE = Command.toDefaultLocalizedCommand({
         id: 'file.newFile',

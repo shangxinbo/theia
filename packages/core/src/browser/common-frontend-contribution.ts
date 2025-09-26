@@ -56,7 +56,7 @@ import { QuickInputService, QuickPickItem, QuickPickItemOrSeparator, QuickPickSe
 import { AsyncLocalizationProvider } from '../common/i18n/localization';
 import { nls } from '../common/nls';
 import { CurrentWidgetCommandAdapter } from './shell/current-widget-command-adapter';
-import { ConfirmDialog, confirmExit, ConfirmSaveDialog, Dialog, SingleTextInputDialog } from './dialogs';
+import { ConfirmDialog, confirmExit, ConfirmSaveDialog, Dialog, FormDialog, FormDialogField, SingleTextInputDialog } from './dialogs';
 import { WindowService } from './window/window-service';
 import { FrontendApplicationConfigProvider } from './frontend-application-config-provider';
 import { DecorationStyle } from './decoration-style';
@@ -68,6 +68,7 @@ import { LanguageQuickPickService } from './i18n/language-quick-pick-service';
 import { SidebarMenu } from './shell/sidebar-menu-widget';
 import { UndoRedoHandlerService } from './undo-redo-handler';
 import { timeout } from '../common/promise-util';
+import { start } from 'repl';
 
 export namespace CommonMenus {
 
@@ -102,6 +103,8 @@ export namespace CommonMenus {
     */
     export const VIEW_VIEWS = [...VIEW, '2_views'];
     export const VIEW_PROJECT = [...VIEW, '1_project'];
+    export const VIEW_BUILD = [...VIEW, '2_build'];
+    export const VIEW_DEBUG = [...VIEW, '3_debug'];
     export const VIEW_LAYOUT = [...VIEW, '3_layout'];
     // export const VIEW_TOGGLE = [...VIEW, '4_toggle'];
 
@@ -112,6 +115,67 @@ export namespace CommonMenus {
     // last menu item
     export const HELP = [...MAIN_MENU_BAR, '9_help'];
     export const TO_HELP = [...MAIN_MENU_BAR, '9_help', '1_help'];
+
+    export const QUICK_NAVIGATION = [...MAIN_MENU_BAR, '2_quick_navigation'];
+    /**
+     * 1. POU
+     *  1.1 新增程序（PRG）
+     *  1.2 新增程序（全ST）
+     *  1.2 新增函数（FUN）
+     *  1.3 新增功能块（FB）
+     * 2. 全局变量
+     *  2.1 新建全局变量组
+     *  2.2 导入全局变量
+     * 3. IO通道与组网
+     * 4. 变量与监视
+     *  4.1 变量全景图
+     *  4.2 新建变量监视组
+     * 5. 任务配置
+     * 6. 变量跟踪（示波器）
+     *  6.1 新建跟踪任务
+     *  6.2 离线查看跟踪缓存数据
+     * 6. 新建系统事件
+     * 7. 上位机配置
+     * 8. 系统库管理
+     * 9. 新增用户库
+     * 
+     */
+    export const POU = [...QUICK_NAVIGATION, '1_pou'];
+    export const POU_NEW_PRG = [...POU, '1_new_prg'];
+    export const POU_NEW_ST = [...POU, '2_new_st'];
+    export const POU_NEW_FUNC = [...POU, '3_new_fun'];
+    export const POU_NEW_FB = [...POU, '4_new_fb'];
+
+
+    export const GLOBAL_VARIABLE = [...QUICK_NAVIGATION, '2_global_variable'];
+    export const GLOBAL_VARIABLE_NEW_GROUP = [...GLOBAL_VARIABLE, '1_new_group'];
+    export const GLOBAL_VARIABLE_IMPORT = [...GLOBAL_VARIABLE, '2_import'];
+
+
+    export const IO_CHANNEL = [...QUICK_NAVIGATION, '3_io_channel'];
+
+
+    export const VARIABLE = [...QUICK_NAVIGATION, '4_variable'];
+    export const VARIABLE_PANORAMA = [...VARIABLE, '1_panorama'];
+    export const VARIABLE_NEW_WATCH_GROUP = [...VARIABLE, '2_new_watch_group'];
+
+
+    export const TASK = [...QUICK_NAVIGATION, '5_task'];
+    export const TRACE = [...QUICK_NAVIGATION, '6_trace'];
+    export const TRACE_NEW_TASK = [...TRACE, '1_new_task'];
+    export const TRACE_OFFLINE_VIEW = [...TRACE, '2_offline_view'];
+
+
+    export const EVENT = [...QUICK_NAVIGATION, '6_new_event'];
+
+
+    export const UPPER_MACHINE = [...QUICK_NAVIGATION, '7_upper_machine'];
+
+
+    export const SYSTEM_LIBRARY = [...QUICK_NAVIGATION, '8_system_library'];
+
+
+    export const USER_LIBRARY = [...QUICK_NAVIGATION, '9_user_library'];
 
 }
 
@@ -129,6 +193,11 @@ export namespace CommonCommands {
     export const OPEN_DIALOG = Command.toDefaultLocalizedCommand({
         id: 'core.openDialog',
         label: 'Open Dialog'
+    });
+
+    export const FORM_DIALOG = Command.toDefaultLocalizedCommand({
+        id: 'core.formDialog',
+        label: 'Form Dialog'
     });
 
     export const OPEN: Command = {
@@ -405,6 +474,41 @@ export namespace CommonCommands {
         label: 'Toggle Breadcrumbs',
         category: VIEW_CATEGORY
     });
+
+    export const POU_NEW_PRG = Command.toDefaultLocalizedCommand({
+        id: 'webide.pou.newPrg',
+        category: CREATE_CATEGORY,
+        label: '新增程序（PRG）',
+    });
+
+    export const POU_NEW_FB = Command.toDefaultLocalizedCommand({
+        id: 'webide.pou.newFb',
+        category: CREATE_CATEGORY,
+        label: '新增功能块（FB）',
+    });
+    export const POU_NEW_ST = Command.toDefaultLocalizedCommand({
+        id: 'webide.pou.newSt',
+        category: CREATE_CATEGORY,
+        label: '新增程序（全ST）',
+    });
+    export const POU_NEW_FUNC = Command.toDefaultLocalizedCommand({
+        id: 'webide.pou.newFunc',
+        category: CREATE_CATEGORY,
+        label: '新增函数（FUNC）',
+    });
+
+    export const EVENT_NEW = Command.toDefaultLocalizedCommand({
+        id: 'webide.event.new',
+        category: CREATE_CATEGORY,
+        label: '新增系统事件',
+    });
+
+    export const POU_NEW_LIB = Command.toDefaultLocalizedCommand({
+        id: 'webide.pou.newLib',
+        category: CREATE_CATEGORY,
+        label: '新增用户库',
+    });
+
 }
 
 export const supportCut = environment.electron.is() || document.queryCommandSupported('cut');
@@ -652,7 +756,141 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
         // 移除Edit和View菜单的注册
         // registry.registerSubmenu(CommonMenus.EDIT, nls.localizeByDefault('Edit'));
         registry.registerSubmenu(CommonMenus.VIEW, nls.localizeByDefault('项目'), { sortString: "1" });
+        registry.registerMenuAction(CommonMenus.VIEW_VIEWS, {
+            commandId: "webide.project.home",
+            label: nls.localizeByDefault('项目信息'),
+            order: '1'
+        });
+        registry.registerMenuAction(CommonMenus.VIEW_VIEWS, {
+            commandId: "webide.project.new",
+            label: nls.localizeByDefault('新建项目'),
+            order: '2'
+        });
+        registry.registerMenuAction(CommonMenus.VIEW_VIEWS, {
+            commandId: "workspace:openFolder",
+            label: nls.localizeByDefault('打开项目'),
+            order: '3'
+        });
+        registry.registerMenuAction(CommonMenus.VIEW_VIEWS, {
+            commandId: "webide.project.exportProject",
+            label: nls.localizeByDefault('导出项目'),
+            order: '4'
+        });
+        registry.registerMenuAction(CommonMenus.VIEW_VIEWS, {
+            commandId: "webide.project.importProject",
+            label: nls.localizeByDefault('导入项目'),
+            order: '5'
+        });
+        registry.registerMenuAction(CommonMenus.VIEW_BUILD, {
+            commandId: "webide.project.compile",
+            label: nls.localizeByDefault('编译'),
+            order: '1'
+        });
+        registry.registerMenuAction(CommonMenus.VIEW_DEBUG, {
+            commandId: "webide.project.debug",
+            label: nls.localizeByDefault('调试'),
+            order: '1'
+        });
+
+
         registry.registerSubmenu(CommonMenus.HELP, nls.localizeByDefault('帮助'));
+        registry.registerSubmenu(CommonMenus.QUICK_NAVIGATION, nls.localizeByDefault('快速导航'));
+
+        registry.registerSubmenu(CommonMenus.QUICK_NAVIGATION, nls.localizeByDefault('快速导航'));
+        registry.registerSubmenu(CommonMenus.POU, nls.localizeByDefault('POU'));
+        registry.registerMenuAction(CommonMenus.POU_NEW_PRG, {
+            commandId: CommonCommands.POU_NEW_PRG.id,
+            label: nls.localizeByDefault('新增程序（PRG）'),
+            order: '0'
+        });
+        registry.registerMenuAction(CommonMenus.POU_NEW_ST, {
+            commandId: CommonCommands.POU_NEW_ST.id,
+            label: nls.localizeByDefault('新增程序（全ST）'),
+            order: '1'
+        });
+        registry.registerMenuAction(CommonMenus.POU_NEW_FUNC, {
+            commandId: CommonCommands.POU_NEW_FUNC.id,
+            label: nls.localizeByDefault('新增函数（FUN）'),
+            order: '2'
+        });
+        registry.registerMenuAction(CommonMenus.POU_NEW_FB, {
+            commandId: CommonCommands.POU_NEW_FB.id,
+            label: nls.localizeByDefault('新增函数块（FB）'),
+            order: '3'
+        });
+
+        registry.registerSubmenu(CommonMenus.GLOBAL_VARIABLE, nls.localizeByDefault('全局变量'));
+        registry.registerMenuAction(CommonMenus.GLOBAL_VARIABLE_NEW_GROUP, {
+            commandId: "webide.gvar.addNewGroup",
+            label: nls.localizeByDefault('新增全局变量组'),
+            order: '1'
+        });
+        registry.registerMenuAction(CommonMenus.GLOBAL_VARIABLE_IMPORT, {
+            commandId: "webide.gvar.showGlobalVarImport",
+            label: nls.localizeByDefault('导入全局变量'),
+            order: '2'
+        });
+
+        registry.registerMenuAction(CommonMenus.IO_CHANNEL, {
+            commandId: "webide.app.showIO",
+            label: nls.localizeByDefault('IO通道与组网'), // 定制客户需求，label 改变
+            // order: '3'
+        });
+
+        registry.registerSubmenu(CommonMenus.VARIABLE, nls.localizeByDefault('变量与监视'));
+        registry.registerMenuAction(CommonMenus.VARIABLE_PANORAMA, {
+            commandId: "webide.app.showMonitor",
+            label: nls.localizeByDefault('变量全景视图'),
+            order: '1'
+        });
+        registry.registerMenuAction(CommonMenus.VARIABLE_NEW_WATCH_GROUP, {
+            commandId: "webide.monitor.addNewGroup",
+            label: nls.localizeByDefault('新增监视组'),
+            order: '2'
+        });
+
+        registry.registerMenuAction(CommonMenus.TASK, {
+            commandId: "webide.app.showResources",
+            label: nls.localizeByDefault('任务配置'),
+            // order: '2'
+        });
+
+        registry.registerSubmenu(CommonMenus.TRACE, nls.localizeByDefault('变量跟踪（示波器）'));
+        registry.registerMenuAction(CommonMenus.TRACE_NEW_TASK, {
+            commandId: "webide.trace.createNewTask",
+            label: nls.localizeByDefault('新建跟踪任务'),
+            order: '1'
+        });
+        registry.registerMenuAction(CommonMenus.TRACE_OFFLINE_VIEW, {
+            commandId: "webide.trace.importData",
+            label: nls.localizeByDefault('离线查看跟踪缓存数据'),
+            order: '2'
+        });
+
+        registry.registerMenuAction(CommonMenus.EVENT, {
+            commandId: CommonCommands.EVENT_NEW.id,
+            label: nls.localizeByDefault('新建系统事件'),
+            // order: '1'
+        });
+
+        registry.registerMenuAction(CommonMenus.UPPER_MACHINE, {
+            commandId: "webide.app.showHmi",
+            label: nls.localizeByDefault('上位机配置'),
+            // order: '2'
+        });
+
+        registry.registerMenuAction(CommonMenus.SYSTEM_LIBRARY, {
+            commandId: "webide.libManage",
+            label: nls.localizeByDefault('系统库管理'),
+            // order: '3'
+        });
+
+        registry.registerMenuAction(CommonMenus.USER_LIBRARY, {
+            commandId: CommonCommands.POU_NEW_LIB.id,
+            label: nls.localizeByDefault('新增用户库'),
+            // order: '4'
+        });
+
 
         // For plugins contributing create new file commands/menu-actions
         registry.registerSubmenu(CommonMenus.FILE_NEW_CONTRIBUTIONS, nls.localizeByDefault('New File...'));
@@ -829,18 +1067,18 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
 
     registerCommands(commandRegistry: CommandRegistry): void {
         commandRegistry.registerCommand(CommonCommands.OPEN_DIALOG, {
-            execute: async (title: string, initialValue?: string, placeholder?: string, validate?: (newName: string, mode: any) => any) => {
+            execute: async (title: string, initialValue?: string, placeholder?: string, valueSelection?: [number, number]) => {
+                const initialSelectionRange = valueSelection ? {
+                    start: valueSelection[0],
+                    end: valueSelection[1],
+                } : undefined;
+
                 const dialog = new SingleTextInputDialog({
                     title: nls.localizeByDefault(title),
                     maxWidth: 600,
                     placeholder: nls.localizeByDefault(placeholder || '请输入'),
                     initialValue: initialValue,
-                    validate: async (newName, mode) => {
-                        if (validate) {
-                            return validate(newName, mode);
-                        }
-                        return true;
-                    }
+                    initialSelectionRange: initialSelectionRange
                 });
                 const inputRet = await dialog.open();
                 if (inputRet) {
@@ -851,6 +1089,23 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
             isVisible: () => true,
             isEnabled: () => true,
         });
+
+        commandRegistry.registerCommand(CommonCommands.FORM_DIALOG, {
+            execute: async (title: string, fields: FormDialogField[]) => {
+                const dialog = new FormDialog({
+                    title: nls.localizeByDefault(title),
+                    fields: fields,
+                    ok: '确定',
+                    cancel: '取消'
+                });
+                const result = await dialog.open();
+                console.log(result);
+                return result;
+            },
+            isVisible: () => true,
+            isEnabled: () => true,
+        });
+
         commandRegistry.registerCommand(CommonCommands.OPEN, UriAwareCommandHandler.MultiSelect(this.selectionService, {
             execute: uris => uris.map(uri => open(this.openerService, uri)),
         }));
@@ -1137,6 +1392,27 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
             execute: async () => this.showNewFilePicker()
         });
 
+        commandRegistry.registerCommand(CommonCommands.POU_NEW_PRG, {
+            execute: () => this.webideCreate("PRG")
+        });
+        commandRegistry.registerCommand(CommonCommands.POU_NEW_FB, {
+            execute: () => this.webideCreate("FB")
+        });
+        commandRegistry.registerCommand(CommonCommands.POU_NEW_FUNC, {
+            execute: () => this.webideCreate("FUNC")
+        });
+        commandRegistry.registerCommand(CommonCommands.POU_NEW_ST, {
+            execute: () => this.webideCreate("ST")
+        });
+
+        commandRegistry.registerCommand(CommonCommands.EVENT_NEW, {
+            execute: () => this.webideCreate("EVENT")
+        });
+
+        commandRegistry.registerCommand(CommonCommands.POU_NEW_LIB, {
+            execute: () => this.webideCreate("LIB")
+        });
+
         for (const [index, ordinal] of this.getOrdinalNumbers().entries()) {
             commandRegistry.registerCommand({ id: `workbench.action.focus${ordinal}EditorGroup`, label: index === 0 ? nls.localizeByDefault('Focus First Editor Group') : '', category: nls.localize(CommonCommands.VIEW_CATEGORY_KEY, CommonCommands.VIEW_CATEGORY) }, {
                 isEnabled: () => this.shell.mainAreaTabBars.length > index,
@@ -1148,6 +1424,22 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
                 }
             });
         }
+    }
+
+    protected webideCreate(type: string): void {
+        let valueMap = new Map([
+            ["PRG", "POU_PRGs"],
+            ["FB", "POU_FBs"],
+            ["FUNC", "POU_FUNCs"],
+            ["ST", "POU_FULL_ST"],
+            ["EVENT", "CateCallbacks"],
+            ["LIB", "CateModules"],
+        ])
+        let node = {
+            // contextValue: "AppItemFolder",
+            contextValue: valueMap.get(type) || ""
+        }
+        this.commandRegistry.executeCommand("webide.app.addNew", node);
     }
 
     protected getOrdinalNumbers(): readonly string[] {

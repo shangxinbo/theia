@@ -19,6 +19,7 @@ import { Disposable, MaybePromise, CancellationTokenSource, nls } from '../commo
 import { Key } from './keyboard/keys';
 import { Widget, BaseWidget, Message, addKeyListener, codiconArray } from './widgets/widget';
 import { FrontendApplicationContribution } from './frontend-application-contribution';
+import { SelectOption } from './widgets/select-component';
 
 @injectable()
 export class DialogProps {
@@ -561,4 +562,194 @@ export class SingleTextInputDialog extends AbstractDialog<string> {
         return false;
     }
 
+}
+export interface FormDialogField {
+    label: string;
+    name: string;
+    elementType?: "input" | "select" | "textarea" | "tags";
+    type?: 'text' | 'number' | 'password' | 'email' | 'checkbox';
+    options?: SelectOption[];
+    disabled?: boolean;
+    value?: string | boolean | any;
+    placeholder?: string;
+    multiple?: boolean; // tags用
+}
+
+export interface FormDialogProps extends DialogProps {
+    fields: FormDialogField[];
+    ok?: string;
+    cancel?: string;
+}
+
+export class FormDialog extends AbstractDialog<Record<string, string>> {
+    protected readonly inputs: { [key: string]: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | HTMLDivElement } = {};
+    protected readonly tagSelections: { [key: string]: Set<string> } = {};
+
+    constructor(
+        protected override readonly props: FormDialogProps
+    ) {
+        super(props);
+
+        const formNode = this.node.ownerDocument.createElement('table');
+        formNode.style.width = '100%';
+
+        for (const field of props.fields) {
+            const row = this.node.ownerDocument.createElement('tr');
+            const labelCell = this.node.ownerDocument.createElement('td');
+            labelCell.textContent = field.label;
+            const inputCell = this.node.ownerDocument.createElement('td');
+            let input: any = this.node.ownerDocument.createElement('input');
+
+            if (field.elementType === 'tags') {
+                // 标签区域整体样式
+                const tagsDiv = this.node.ownerDocument.createElement('div');
+                tagsDiv.style.display = 'block';
+                tagsDiv.style.border = '1px dashed #bbb'; // 虚线边框
+                tagsDiv.style.background = '#fafbfc';     // 浅灰背景
+                tagsDiv.style.padding = '10px 8px';
+                tagsDiv.style.margin = '2px 0';
+                tagsDiv.style.borderRadius = '8px';
+                tagsDiv.style.boxShadow = '0 2px 8px rgba(0,0,0,0.04)';
+
+                this.tagSelections[field.name] = new Set<string>();
+                if (field.options) {
+                    for (const option of field.options) {
+                        const tagRow = this.node.ownerDocument.createElement('div');
+                        tagRow.style.marginBottom = '8px';
+                        tagRow.style.width = '100%';
+
+                        const tagBtn = this.node.ownerDocument.createElement('button');
+                        tagBtn.type = 'button';
+                        tagBtn.textContent = option.label || option.value || '';
+                        tagBtn.style.marginLeft = "0px";
+                        tagBtn.className = 'theia-button theia-tag-btn';
+                        tagBtn.style.borderRadius = '12px';
+                        tagBtn.style.padding = '4px 0';
+                        tagBtn.style.background = '#f5f5f5';
+                        tagBtn.style.border = '1px solid #ccc';
+                        tagBtn.style.cursor = 'pointer';
+                        tagBtn.style.color = '#444'; // 未选中黑灰色
+                        tagBtn.style.fontWeight = 'normal';
+                        tagBtn.style.width = '100%';
+                        tagBtn.style.textAlign = 'center';
+                        tagBtn.style.boxSizing = 'border-box';
+
+                        tagBtn.dataset.value = option.value || '';
+
+                        if (field.value && (field.multiple
+                            ? field.value.split(',').includes(option.value || '')
+                            : field.value === option.value)) {
+                            tagBtn.classList.add('selected');
+                            tagBtn.style.background = '#007acc';
+                            tagBtn.style.color = '#fff';
+                            tagBtn.style.fontWeight = 'bold';
+                        }
+
+                        tagBtn.onclick = () => {
+                            if (field.multiple) {
+                                if (this.tagSelections[field.name].has(option.value || '')) {
+                                    this.tagSelections[field.name].delete(option.value || '');
+                                    tagBtn.classList.remove('selected');
+                                    tagBtn.style.background = '#f5f5f5';
+                                    tagBtn.style.color = '#444';
+                                    tagBtn.style.fontWeight = 'normal';
+                                } else {
+                                    this.tagSelections[field.name].add(option.value || '');
+                                    tagBtn.classList.add('selected');
+                                    tagBtn.style.background = '#007acc';
+                                    tagBtn.style.color = '#fff';
+                                    tagBtn.style.fontWeight = 'bold';
+                                }
+                            } else {
+                                this.tagSelections[field.name].clear();
+                                this.tagSelections[field.name].add(option.value || '');
+                                tagsDiv.querySelectorAll('button').forEach(btn => {
+                                    btn.classList.remove('selected');
+                                    (btn as HTMLButtonElement).style.background = '#f5f5f5';
+                                    (btn as HTMLButtonElement).style.color = '#444';
+                                    (btn as HTMLButtonElement).style.fontWeight = 'normal';
+                                });
+                                tagBtn.classList.add('selected');
+                                tagBtn.style.background = '#007acc';
+                                tagBtn.style.color = '#fff';
+                                tagBtn.style.fontWeight = 'bold';
+                            }
+                        };
+
+                        tagRow.appendChild(tagBtn);
+                        tagsDiv.appendChild(tagRow);
+                    }
+                }
+                input = tagsDiv;
+            } else if (field.elementType === 'select') {
+                const select = this.node.ownerDocument.createElement('select');
+                select.name = field.name;
+                select.className = 'theia-input';
+                select.ariaPlaceholder = field.placeholder || '';
+                select.value = field.value || "";
+                select.style.paddingLeft = '5px'
+                if (field.options) {
+                    for (const option of field.options) {
+                        if (option.value == undefined) {
+                            continue;
+                        }
+                        const optionElement = this.node.ownerDocument.createElement('option');
+                        optionElement.value = option.value;
+                        optionElement.textContent = option.label || option.value;
+                        select.appendChild(optionElement);
+                    }
+                }
+                input = select;
+            } else if (field.elementType === 'textarea') {
+                const textarea = this.node.ownerDocument.createElement('textarea');
+                textarea.name = field.name;
+                textarea.value = field.value || '';
+                textarea.placeholder = field.placeholder || '';
+                textarea.className = 'theia-input';
+                input = textarea;
+            } else {
+                input.type = field.type || 'text';
+                input.name = field.name;
+                input.value = field.value || '';
+                input.placeholder = field.placeholder || '';
+                if (field.type === 'checkbox') {
+                    input.type = 'checkbox';
+                    input.checked = field.value || false;
+                }
+                input.className = 'theia-input';
+            }
+            if (field.elementType !== 'tags' && field.type !== 'checkbox') {
+                input.style.width = '100%';
+            };
+            if (field.disabled) {
+                input.disabled = true;
+            }
+            inputCell.appendChild(input);
+            row.appendChild(labelCell);
+            row.appendChild(inputCell);
+            formNode.appendChild(row);
+            this.inputs[field.name] = input;
+        }
+
+        this.contentNode.appendChild(formNode);
+        this.appendCloseButton(props.cancel);
+        this.appendAcceptButton(props.ok);
+    }
+
+    get value(): Record<string, string> {
+        const result: Record<string, any> = {};
+        for (const name in this.inputs) {
+            const input = this.inputs[name];
+            if (input instanceof HTMLDivElement && this.tagSelections[name]) {
+                result[name] = Array.from(this.tagSelections[name]).join(',');
+            } else if (input instanceof HTMLSelectElement) {
+                result[name] = input.value;
+            } else if (input instanceof HTMLInputElement && input.type === 'checkbox') {
+                result[name] = input.checked ? true : false;
+            } else {
+                result[name] = (input as any).value;
+            }
+        }
+        return result;
+    }
 }
