@@ -5,6 +5,32 @@
   "engines": {
     "node": ">=20"
   },
+  "build": {
+    "appId": "com.yourcompany.yourtheiaapp",
+    "productName": "Your Theia App",
+    "directories": {
+      "output": "dist"
+    },
+    "asar": false,
+    "files": [
+      "lib/**/*",
+      "plugins/**/*",
+      "src-gen/**/*",
+      "package.json",
+      "!**/*.map"
+    ],
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Development"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    }
+  },
   "overrides": {
     "perfect-scrollbar": "1.5.5",
     "@types/express": "^4.17.21"
@@ -60,6 +86,9 @@
   "scripts": {
     "all": "npm -s install && npm run -s lint && npm run -s build",
     "build": "npm run compile && npm run build:applications",
+    "pack:linux": "electron-builder --linux",
+    "pack:win": "electron-builder --win",
+    "pack:all": "electron-builder --linux --win",
     "build:applications": "npm run build:browser && npm run build:browser-only && npm run build:electron",
     "build:browser": "cd examples/browser && npm run build",
     "build:browser-only": "cd examples/browser-only && npm run build",
@@ -67,6 +96,8 @@
     "build:tools": "lerna run compile --scope \"@theia/{re-exports,eslint-plugin}\"",
     "clean": "npm run -s rebuild:clean && npm run -s lint:clean && lerna run clean",
     "compile": "lerna run compile",
+    "package": "lerna run --scope=\"@theia/example-electron\" package --concurrency 1",
+    "package:applications:preview": "lerna run --scope=\"@theia/example-electron\" package:preview --concurrency 1",
     "compute-references": "node scripts/compile-references.js",
     "docs": "npm run -s update-typedoc-refs && rimraf gh-pages/docs/next && typedoc --tsconfig typedoc.tsconfig.json --plugin typedoc-plugin-external-module-map --options configs/typedoc.json .",
     "update-typedoc-refs": "node scripts/update-typedoc-references.js",

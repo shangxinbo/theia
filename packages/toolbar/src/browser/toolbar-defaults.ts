@@ -23,34 +23,49 @@ export const ToolbarDefaultsFactory = Symbol('ToolbarDefaultsFactory');
 export const ToolbarDefaults: () => DeflatedToolbarTree = () => ({
     items: {
         [ToolbarAlignment.LEFT]: [
+            // 新增文件操作组
             [
                 {
-                    id: 'textEditor.commands.go.back',
-                    command: 'textEditor.commands.go.back',
-                    icon: 'codicon codicon-arrow-left',
+                    id: 'webide.project.home',
+                    command: 'webide.project.home',
+                    icon: 'codicon codicon-home',
+                    tooltip: '项目',
                 },
                 {
-                    id: 'textEditor.commands.go.forward',
-                    command: 'textEditor.commands.go.forward',
-                    icon: 'codicon codicon-arrow-right',
+                    id: 'webide.project.debug',
+                    command: 'webide.project.debug',
+                    icon: 'codicon codicon-debug',
+                    tooltip: '调试',
                 },
-            ],
-            [
                 {
-                    id: 'workbench.action.splitEditorRight',
-                    command: 'workbench.action.splitEditorRight',
-                    icon: 'codicon codicon-split-horizontal',
+                    id: 'webide.project.compile',
+                    command: 'webide.project.compile',
+                    icon: 'codicon codicon-combine',
+                    tooltip: '编译',
+                },
+                {
+                    id: 'webide.project.showHelpPage',
+                    command: 'webide.project.showHelpPage',
+                    icon: 'codicon codicon-briefcase',
+                    tooltip: '帮助',
                 },
             ],
         ],
-        [ToolbarAlignment.CENTER]: [[]],
+        [ToolbarAlignment.CENTER]: [
+            [
+                {
+                    id: 'theia-sample-toolbar-contribution',
+                    group: 'contributed'
+                }
+            ]
+        ],
         [ToolbarAlignment.RIGHT]: [
             [
                 {
                     id: 'workbench.action.showCommands',
                     command: 'workbench.action.showCommands',
                     icon: 'codicon codicon-terminal',
-                    tooltip: nls.localizeByDefault('Command Palette'),
+                    tooltip: 'Command Palette',
                 },
             ]
         ]
