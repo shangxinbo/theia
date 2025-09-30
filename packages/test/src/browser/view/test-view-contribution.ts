@@ -149,14 +149,14 @@ export class TestViewContribution extends AbstractViewContribution<TestTreeWidge
             widgetId: TestTreeWidget.ID,
             widgetName: nls.localizeByDefault('Test Explorer'),
             defaultWidgetOptions: {
-                area: 'secondaryWindow',
+                area: 'main',
                 rank: 600,
             }
         });
     }
 
     async initializeLayout(): Promise<void> {
-        await this.openView({ activate: false });
+        // await this.openView({ activate: false });
     }
 
     override registerCommands(commands: CommandRegistry): void {

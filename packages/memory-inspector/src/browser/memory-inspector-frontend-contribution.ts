@@ -78,7 +78,7 @@ export class DebugFrontendContribution extends AbstractViewContribution<MemoryLa
     }
 
     async initializeLayout(): Promise<void> {
-        await this.openView({ activate: false });
+        // await this.openView({ activate: false });
     }
 
     override registerCommands(registry: CommandRegistry): void {

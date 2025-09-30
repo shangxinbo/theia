@@ -165,7 +165,7 @@ export class ScmContribution extends AbstractViewContribution<ScmWidget> impleme
     }
 
     async initializeLayout(): Promise<void> {
-        await this.openView();
+        // await this.openView();
     }
 
     onStart(): void {
