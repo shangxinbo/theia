@@ -795,8 +795,6 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
 
         registry.registerSubmenu(CommonMenus.HELP, nls.localizeByDefault('帮助'));
         registry.registerSubmenu(CommonMenus.QUICK_NAVIGATION, nls.localizeByDefault('快速导航'));
-
-        registry.registerSubmenu(CommonMenus.QUICK_NAVIGATION, nls.localizeByDefault('快速导航'));
         registry.registerSubmenu(CommonMenus.POU, nls.localizeByDefault('POU'));
         registry.registerMenuAction(CommonMenus.POU_NEW_PRG, {
             commandId: CommonCommands.POU_NEW_PRG.id,

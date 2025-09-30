@@ -158,6 +158,7 @@
     "webide.webide"
   ],
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.18.1"
+    "@modelcontextprotocol/sdk": "^1.18.1",
+    "electron": "^37.2.1"
   }
 }

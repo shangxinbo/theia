@@ -168,7 +168,7 @@ export class MemoryWidgetManager implements Disposable {
         if (!tabBar) {
             // The widget is not attached yet, so add it to the shell
             const widgetArgs: OpenViewArguments = {
-                area: 'main',
+                area: 'secondaryWindow',
             };
             await this.shell.addWidget(widget, widgetArgs);
         }
