@@ -685,23 +685,23 @@ export class TerminalFrontendContribution implements FrontendApplicationContribu
     }
 
     registerMenus(menus: MenuModelRegistry): void {
-        menus.registerSubmenu(TerminalMenus.TERMINAL, TerminalWidgetImpl.LABEL);
-        menus.registerMenuAction(TerminalMenus.TERMINAL_NEW, {
-            commandId: TerminalCommands.NEW.id,
-            label: nls.localizeByDefault('新建终端'),
-            order: '0'
-        });
+        // menus.registerSubmenu(TerminalMenus.TERMINAL, TerminalWidgetImpl.LABEL);
+        // menus.registerMenuAction(TerminalMenus.TERMINAL_NEW, {
+        //     commandId: TerminalCommands.NEW.id,
+        //     label: nls.localizeByDefault('新建终端'),
+        //     order: '0'
+        // });
         // menus.registerMenuAction(TerminalMenus.TERMINAL_NEW, {
         //     commandId: TerminalCommands.PROFILE_NEW.id,
         //     label: nls.localizeByDefault('新建终端（带配置）...'),
         //     order: '1'
         // });
 
-        menus.registerMenuAction(TerminalMenus.TERMINAL_NEW, {
-            commandId: "output:toggle",
-            label: nls.localizeByDefault('打开项目输出'),
-            order: '1'
-        });
+        // menus.registerMenuAction(TerminalMenus.TERMINAL_NEW, {
+        //     commandId: "output:toggle",
+        //     label: nls.localizeByDefault('打开项目输出'),
+        //     order: '1'
+        // });
         menus.registerMenuAction(TerminalMenus.TERMINAL_NEW, {
             commandId: TerminalCommands.SPLIT.id,
             order: '3'

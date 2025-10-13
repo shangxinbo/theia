@@ -47,14 +47,7 @@ export const SampleToolbarDefaultsOverride: () => DeflatedToolbarTree = () => ({
                 },
             ],
         ],
-        [ToolbarAlignment.CENTER]: [
-            [
-                {
-                    id: 'theia-sample-toolbar-contribution',
-                    group: 'contributed'
-                }
-            ]
-        ],
+        [ToolbarAlignment.CENTER]: [],
         [ToolbarAlignment.RIGHT]: [
             [
                 {

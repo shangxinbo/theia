@@ -127,25 +127,25 @@ export class SampleToolbarContribution extends AbstractToolbarContribution
     }
 
     registerMenus(registry: MenuModelRegistry): void {
-        registry.registerMenuAction(ToolbarMenus.SEARCH_WIDGET_DROPDOWN_MENU, {
-            commandId: quickCommand.id,
-            label: 'Find a Command',
-            order: 'a',
-        });
-        registry.registerMenuAction(ToolbarMenus.SEARCH_WIDGET_DROPDOWN_MENU, {
-            commandId: quickFileOpen.id,
-            order: 'b',
-            label: 'Search for a file'
-        });
-        registry.registerMenuAction(ToolbarMenus.SEARCH_WIDGET_DROPDOWN_MENU, {
-            commandId: SearchInWorkspaceCommands.OPEN_SIW_WIDGET.id,
-            label: 'Search Entire Workspace for Text',
-            order: 'c',
-        });
-        registry.registerMenuAction(ToolbarMenus.SEARCH_WIDGET_DROPDOWN_MENU, {
-            commandId: FIND_IN_WORKSPACE_ROOT.id,
-            order: 'd',
-        });
+        // registry.registerMenuAction(ToolbarMenus.SEARCH_WIDGET_DROPDOWN_MENU, {
+        //     commandId: quickCommand.id,
+        //     label: 'Find a Command',
+        //     order: 'a',
+        // });
+        // registry.registerMenuAction(ToolbarMenus.SEARCH_WIDGET_DROPDOWN_MENU, {
+        //     commandId: quickFileOpen.id,
+        //     order: 'b',
+        //     label: '基于文件搜索'
+        // });
+        // registry.registerMenuAction(ToolbarMenus.SEARCH_WIDGET_DROPDOWN_MENU, {
+        //     commandId: SearchInWorkspaceCommands.OPEN_SIW_WIDGET.id,
+        //     label: '基于项目搜索',
+        //     order: 'c',
+        // });
+        // registry.registerMenuAction(ToolbarMenus.SEARCH_WIDGET_DROPDOWN_MENU, {
+        //     commandId: FIND_IN_WORKSPACE_ROOT.id,
+        //     order: 'd',
+        // });
     }
 }
 

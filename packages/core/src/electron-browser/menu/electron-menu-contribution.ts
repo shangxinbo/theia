@@ -378,10 +378,10 @@ export class ElectronMenuContribution extends BrowserMenuBarContribution impleme
             label: nls.localizeByDefault('开发人员工具'),
         });
 
-        registry.registerMenuAction(ElectronMenus.VIEW_WINDOW, {
-            commandId: ElectronCommands.RELOAD.id,
-            order: 'z0'
-        });
+        // registry.registerMenuAction(ElectronMenus.VIEW_WINDOW, {
+        //     commandId: ElectronCommands.RELOAD.id,
+        //     order: 'z0'
+        // });
 
         // registry.registerMenuAction(ElectronMenus.VIEW_ZOOM, {
         //     commandId: ElectronCommands.ZOOM_IN.id,
@@ -395,9 +395,9 @@ export class ElectronMenuContribution extends BrowserMenuBarContribution impleme
         //     commandId: ElectronCommands.RESET_ZOOM.id,
         //     order: 'z3'
         // });
-        registry.registerMenuAction(ElectronMenus.FILE_CLOSE, {
-            commandId: ElectronCommands.CLOSE_WINDOW.id,
-        });
+        // registry.registerMenuAction(ElectronMenus.FILE_CLOSE, {
+        //     commandId: ElectronCommands.CLOSE_WINDOW.id,
+        // });
         // registry.registerMenuAction(CommonMenus.VIEW_APPEARANCE_SUBMENU_SCREEN, {
         //     commandId: ElectronCommands.TOGGLE_FULL_SCREEN.id,
         //     label: nls.localizeByDefault('Full Screen'),

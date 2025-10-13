@@ -180,11 +180,11 @@ export class EditorMenuContribution implements MenuContribution {
         //     commandId: EditorCommands.TOGGLE_STICKY_SCROLL.id,
         //     order: '4'
         // });
-        registry.registerMenuAction(CommonMenus.FILE_CLOSE, {
-            commandId: CommonCommands.CLOSE_MAIN_TAB.id,
-            label: nls.localizeByDefault('关闭当前编辑器'),
-            order: '1'
-        });
+        // registry.registerMenuAction(CommonMenus.FILE_CLOSE, {
+        //     commandId: CommonCommands.CLOSE_MAIN_TAB.id,
+        //     label: nls.localizeByDefault('关闭当前编辑器'),
+        //     order: '1'
+        // });
         //     registry.registerMenuAction(CommonMenus.VIEW_EDITOR_SUBMENU_SPLIT, {
         //         commandId: EditorCommands.SPLIT_EDITOR_RIGHT.id,
         //         label: nls.localizeByDefault('Split Editor Right'),

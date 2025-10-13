@@ -206,9 +206,9 @@ export class WorkspaceFrontendContribution implements CommandContribution, Keybi
         //     order: 'a20'
         // });
 
-        menus.registerMenuAction(CommonMenus.FILE_CLOSE, {
-            commandId: WorkspaceCommands.CLOSE.id
-        });
+        // menus.registerMenuAction(CommonMenus.FILE_CLOSE, {
+        //     commandId: WorkspaceCommands.CLOSE.id
+        // });
 
         // menus.registerMenuAction(CommonMenus.FILE_SAVE, {
         //     commandId: WorkspaceCommands.SAVE_AS.id,

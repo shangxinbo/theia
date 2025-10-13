@@ -127,10 +127,10 @@ export class ToolbarCommandContribution implements CommandContribution, Keybindi
     }
 
     registerMenus(registry: MenuModelRegistry): void {
-        registry.registerMenuAction(CommonMenus.VIEW_LAYOUT, {
-            commandId: ToolbarCommands.TOGGLE_TOOLBAR.id,
-            order: 'z',
-        });
+        // registry.registerMenuAction(CommonMenus.VIEW_LAYOUT, {
+        //     commandId: ToolbarCommands.TOGGLE_TOOLBAR.id,
+        //     order: 'z',
+        // });
 
         registry.registerMenuAction(ToolbarMenus.TOOLBAR_ITEM_CONTEXT_MENU, {
             commandId: ToolbarCommands.ADD_COMMAND_TO_TOOLBAR.id,

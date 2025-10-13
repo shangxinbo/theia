@@ -127,25 +127,36 @@ export class SampleToolbarContribution extends AbstractToolbarContribution
     }
 
     registerMenus(registry: MenuModelRegistry): void {
+        // registry.registerMenuAction(ToolbarMenus.SEARCH_WIDGET_DROPDOWN_MENU, {
+        //     commandId: quickCommand.id,
+        //     label: 'Find a Command',
+        //     order: 'a',
+        // });
         registry.registerMenuAction(ToolbarMenus.SEARCH_WIDGET_DROPDOWN_MENU, {
-            commandId: quickCommand.id,
-            label: 'Find a Command',
-            order: 'a',
+            commandId: "core.find",
+            order: 'b',
+            label: '查找(基于文本)'
         });
         registry.registerMenuAction(ToolbarMenus.SEARCH_WIDGET_DROPDOWN_MENU, {
-            commandId: quickFileOpen.id,
+            commandId: "core.replace",
             order: 'b',
-            label: 'Search for a file'
+            label: '替换(基于文本)'
         });
         registry.registerMenuAction(ToolbarMenus.SEARCH_WIDGET_DROPDOWN_MENU, {
             commandId: SearchInWorkspaceCommands.OPEN_SIW_WIDGET.id,
-            label: 'Search Entire Workspace for Text',
+            label: '基于项目查找',
             order: 'c',
         });
         registry.registerMenuAction(ToolbarMenus.SEARCH_WIDGET_DROPDOWN_MENU, {
-            commandId: FIND_IN_WORKSPACE_ROOT.id,
+            commandId: SearchInWorkspaceCommands.REPLACE_IN_FILES.id,
+            label: '基于项目替换',
             order: 'd',
         });
+
+        // registry.registerMenuAction(ToolbarMenus.SEARCH_WIDGET_DROPDOWN_MENU, {
+        //     commandId: FIND_IN_WORKSPACE_ROOT.id,
+        //     order: 'd',
+        // });
     }
 }
 
