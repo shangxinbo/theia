@@ -14,52 +14,20 @@
 // SPDX-License-Identifier: EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0
 // *****************************************************************************
 
-import { CommonMenus, ConfirmDialog, Dialog, FormDialog, QuickInputService } from '@theia/core/lib/browser';
+import { CommonMenus, ConfirmDialog, Dialog, QuickInputService, SingleTextInputDialog, FormDialog, FormDialogField } from '@theia/core/lib/browser';
 import { ReactDialog } from '@theia/core/lib/browser/dialogs/react-dialog';
 import { SelectComponent } from '@theia/core/lib/browser/widgets/select-component';
 import {
     Command, CommandContribution, CommandMenu, CommandRegistry, ContextExpressionMatcher, MAIN_MENU_BAR,
-    MenuContribution, MenuModelRegistry, MenuPath, MessageService
+    MenuContribution, MenuModelRegistry, MenuPath, MessageService,
+    nls
 } from '@theia/core/lib/common';
 import { OutputChannelManager, OutputChannelSeverity } from '@theia/output/lib/browser/output-channel';
 
 import { inject, injectable, interfaces } from '@theia/core/shared/inversify';
 import * as React from '@theia/core/shared/react';
 import { ReactNode } from '@theia/core/shared/react';
-
-const SampleCommand: Command = {
-    id: 'sample-command',
-    label: 'Sample Command'
-};
-const SampleCommand2: Command = {
-    id: 'sample-command2',
-    label: 'Sample Command2'
-};
-const SampleCommandConfirmDialog: Command = {
-    id: 'sample-command-confirm-dialog',
-    label: 'Sample Confirm Dialog'
-};
-const SampleComplexCommandConfirmDialog: Command = {
-    id: 'sample-command-complex-confirm-dialog',
-    label: 'Sample Complex Confirm Dialog'
-};
-const SampleCommandWithProgressMessage: Command = {
-    id: 'sample-command-with-progress',
-    label: 'Sample Command With Progress Message'
-};
-const SampleCommandWithIndeterminateProgressMessage: Command = {
-    id: 'sample-command-with-indeterminate-progress',
-    label: 'Sample Command With Indeterminate Progress Message'
-};
-const SampleQuickInputCommand: Command = {
-    id: 'sample-quick-input-command',
-    category: 'Quick Input',
-    label: 'Test Positive Integer'
-};
-const SampleSelectDialog: Command = {
-    id: 'sample-command-select-dialog',
-    label: 'Sample Select Component Dialog'
-};
+// import { FormDialog, FormDialogField } from "../dialogs";
 
 const SampleSelectInputDialog: Command = {
     id: 'sample-command-select-input-dialog',
@@ -124,6 +92,16 @@ export namespace WasomeCommands {
         id: 'webide.pou.newLib',
         category: 'Create',
         label: '新增用户库',
+    });
+
+    export const OPEN_DIALOG = Command.toDefaultLocalizedCommand({
+        id: 'core.openDialog',
+        label: 'Open Dialog'
+    });
+
+    export const FORM_DIALOG = Command.toDefaultLocalizedCommand({
+        id: 'core.formDialog',
+        label: 'Form Dialog'
     });
 }
 
@@ -338,6 +316,46 @@ export class SampleCommandContribution implements CommandContribution {
         commands.registerCommand(WasomeCommands.POU_NEW_LIB, {
             execute: () => this.webideCreate("LIB")
         });
+
+        commands.registerCommand(WasomeCommands.FORM_DIALOG, {
+            execute: async (title: string, fields: FormDialogField[]) => {
+                const dialog = new FormDialog({
+                    title: nls.localizeByDefault(title),
+                    fields: fields,
+                    ok: '确定',
+                    cancel: '取消'
+                });
+                const result = await dialog.open();
+                console.log(result);
+                return result;
+            }
+        });
+
+        commands.registerCommand(WasomeCommands.OPEN_DIALOG, {
+            execute: async (title: string, initialValue?: string, placeholder?: string, valueSelection?: [number, number]) => {
+                const initialSelectionRange = valueSelection ? {
+                    start: valueSelection[0],
+                    end: valueSelection[1],
+                } : undefined;
+
+                const dialog = new SingleTextInputDialog({
+                    title: nls.localizeByDefault(title),
+                    maxWidth: 600,
+                    placeholder: nls.localizeByDefault(placeholder || '请输入'),
+                    initialValue: initialValue,
+                    initialSelectionRange: initialSelectionRange
+                });
+                const inputRet = await dialog.open();
+                if (inputRet) {
+                    return inputRet;
+                };
+                return undefined;
+            },
+            isVisible: () => true,
+            isEnabled: () => true,
+        });
+
+
     }
 
     protected webideCreate(type: string): void {

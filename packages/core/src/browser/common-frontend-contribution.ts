@@ -56,7 +56,7 @@ import { QuickInputService, QuickPickItem, QuickPickItemOrSeparator, QuickPickSe
 import { AsyncLocalizationProvider } from '../common/i18n/localization';
 import { nls } from '../common/nls';
 import { CurrentWidgetCommandAdapter } from './shell/current-widget-command-adapter';
-import { ConfirmDialog, confirmExit, ConfirmSaveDialog, Dialog, FormDialog, FormDialogField, SingleTextInputDialog } from './dialogs';
+import { ConfirmDialog, confirmExit, ConfirmSaveDialog, Dialog, SingleTextInputDialog } from './dialogs';
 import { WindowService } from './window/window-service';
 import { FrontendApplicationConfigProvider } from './frontend-application-config-provider';
 import { DecorationStyle } from './decoration-style';
@@ -125,16 +125,6 @@ export namespace CommonCommands {
     export const FILE_CATEGORY_KEY = nls.getDefaultKey(FILE_CATEGORY);
     export const VIEW_CATEGORY_KEY = nls.getDefaultKey(VIEW_CATEGORY);
     export const PREFERENCES_CATEGORY_KEY = nls.getDefaultKey(PREFERENCES_CATEGORY);
-
-    export const OPEN_DIALOG = Command.toDefaultLocalizedCommand({
-        id: 'core.openDialog',
-        label: 'Open Dialog'
-    });
-
-    export const FORM_DIALOG = Command.toDefaultLocalizedCommand({
-        id: 'core.formDialog',
-        label: 'Form Dialog'
-    });
 
     export const OPEN: Command = {
         id: 'core.open',
@@ -805,45 +795,6 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
     }
 
     registerCommands(commandRegistry: CommandRegistry): void {
-        commandRegistry.registerCommand(CommonCommands.OPEN_DIALOG, {
-            execute: async (title: string, initialValue?: string, placeholder?: string, valueSelection?: [number, number]) => {
-                const initialSelectionRange = valueSelection ? {
-                    start: valueSelection[0],
-                    end: valueSelection[1],
-                } : undefined;
-
-                const dialog = new SingleTextInputDialog({
-                    title: nls.localizeByDefault(title),
-                    maxWidth: 600,
-                    placeholder: nls.localizeByDefault(placeholder || '请输入'),
-                    initialValue: initialValue,
-                    initialSelectionRange: initialSelectionRange
-                });
-                const inputRet = await dialog.open();
-                if (inputRet) {
-                    return inputRet;
-                };
-                return undefined;
-            },
-            isVisible: () => true,
-            isEnabled: () => true,
-        });
-
-        commandRegistry.registerCommand(CommonCommands.FORM_DIALOG, {
-            execute: async (title: string, fields: FormDialogField[]) => {
-                const dialog = new FormDialog({
-                    title: nls.localizeByDefault(title),
-                    fields: fields,
-                    ok: '确定',
-                    cancel: '取消'
-                });
-                const result = await dialog.open();
-                console.log(result);
-                return result;
-            },
-            isVisible: () => true,
-            isEnabled: () => true,
-        });
 
         commandRegistry.registerCommand(CommonCommands.OPEN, UriAwareCommandHandler.MultiSelect(this.selectionService, {
             execute: uris => uris.map(uri => open(this.openerService, uri)),

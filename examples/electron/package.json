@@ -18,8 +18,8 @@
         "reloadOnReconnect": true,
         "electron": {
           "splashScreenOptions": {
-            "content": "resources/ide-logo.png",
-            "height": 120
+            "content": "resources/ide-logo.svg",
+            "height": 310
           }
         }
       }

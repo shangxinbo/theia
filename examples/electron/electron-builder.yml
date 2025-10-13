@@ -20,6 +20,7 @@ files:
   - src-gen
   - lib
   - resources/ide-logo.png
+  - resources/ide-logo.svg
   - resources/icons/WindowIcon/512-512.svg
   - resources/icons/WindowIcon/512-512.png
   - resources/TheiaIDESplash.svg
