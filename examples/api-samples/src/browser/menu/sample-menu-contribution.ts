@@ -14,7 +14,7 @@
 // SPDX-License-Identifier: EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0
 // *****************************************************************************
 
-import { ConfirmDialog, Dialog, FormDialog, QuickInputService } from '@theia/core/lib/browser';
+import { ConfirmDialog, Dialog, QuickInputService } from '@theia/core/lib/browser';
 import { ReactDialog } from '@theia/core/lib/browser/dialogs/react-dialog';
 import { SelectComponent } from '@theia/core/lib/browser/widgets/select-component';
 import {
@@ -109,111 +109,6 @@ export class SampleCommandContribution implements CommandContribution {
                         .join('')
                 }).open();
                 this.messageService.info(`Sample confirm dialog returned with: \`${JSON.stringify(choice)}\``);
-            }
-        });
-        commands.registerCommand(SampleSelectInputDialog, {
-            execute: async () => {
-                // const mainDiv = document.createElement('div');
-                // 创建主容器
-                // 1. 创建并添加样式表到文档头部
-                // const style = document.createElement('style');
-                // style.textContent = `
-                //     .form-container {
-                //         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
-                //         max-width: 400px;
-                //         margin: 20px;
-                //         padding: 25px;
-                //         border-radius: 12px;
-                //         background-color: #ffffff;
-                //         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                //         border: 1px solid #e0e0e0;
-                //     }
-
-                //     .form-group {
-                //         margin-bottom: 20px;
-                //     }
-
-                //     .form-label {
-                //         display: block;
-                //         margin-bottom: 8px;
-                //         font-weight: 500;
-                //         color: #333;
-                //         font-size: 14px;
-                //     }
-
-                //     .form-select, .form-input {
-                //         width: 100%;
-                //         padding: 12px 15px;
-                //         border: 1px solid #ddd;
-                //         border-radius: 6px;
-                //         font-size: 15px;
-                //         box-sizing: border-box;
-                //         transition: all 0.2s ease;
-                //         background-color: #fff;
-                //     }
-
-                //     .form-select {
-                //         appearance: none;
-                //         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-                //         background-repeat: no-repeat;
-                //         background-position: right 12px center;
-                //         padding-right: 40px;
-                //     }
-
-                //     .form-select:focus, .form-input:focus {
-                //         outline: none;
-                //         border-color: #4a90e2;
-                //         box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
-                //     }
-
-                //     .form-select:hover, .form-input:hover {
-                //         border-color: #c0c0c0;
-                //     }
-                // `;
-                // document.head.appendChild(style);
-
-                const options = [
-                    { value: '', label: '请选择一个选项' },
-                    { value: 'opt1', label: '选项一' },
-                    { value: 'opt2', label: '选项二' },
-                    { value: 'opt3', label: '选项三' },
-                    { value: 'opt4', label: '选项四' },
-                    { value: 'opt5', label: '选项五' }
-                ];
-
-                const channel = this.outputChannelManager.getChannel('API Sample: my test channel');
-                const dialog = new FormDialog({
-                    title: 'Form Dialog',
-                    fields: [
-                        { label: '用户名', name: 'username', type: 'text', placeholder: '请输入用户名' },
-                        { label: '密码', name: 'password', type: 'password', placeholder: '请输入密码' },
-                        { label: '邮箱', name: 'email', type: 'email', placeholder: '请输入邮箱' },
-                        { label: '复选框', name: 'checkbox', type: 'checkbox', placeholder: '请选择' },
-                        { label: '选择选项', name: 'select', elementType: 'select', options: options, placeholder: '请选择一个选项' },
-                        { label: 'textarea', name: 'textarea', elementType: 'textarea', placeholder: '请输入内容' },
-                        {
-                            label: '多选tag',
-                            name: 'tag1',
-                            elementType: 'tags',
-                            options: options,
-                            multiple: true,
-                            value: ''
-                        },
-                        {
-                            label: '单选tag',
-                            name: 'tag2',
-                            elementType: 'tags',
-                            options: options,
-                            multiple: false,
-                            value: ''
-                        }
-                    ],
-                    ok: '确定',
-                    cancel: '取消'
-                });
-                const result = await dialog.open();
-                console.log(result);
-                channel.appendLine(`Form Dialog returned with: \`${JSON.stringify(result)}\``, OutputChannelSeverity.Warning);
             }
         });
         commands.registerCommand(SampleComplexCommandConfirmDialog, {

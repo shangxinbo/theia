@@ -16,9 +16,7 @@
 
 import { ContainerModule, interfaces } from '@theia/core/shared/inversify';
 import { bindDynamicLabelProvider } from './label/sample-dynamic-label-provider-command-contribution';
-import { bindSampleFilteredCommandContribution } from './contribution-filter/sample-filtered-command-contribution';
 import { bindSampleUnclosableView } from './view/sample-unclosable-view-contribution';
-import { bindSampleOutputChannelWithSeverity } from './output/sample-output-channel-with-severity';
 import { bindSampleMenu } from './menu/sample-menu-contribution';
 import { bindSampleFileWatching } from './file-watching/sample-file-watching-contribution';
 import { bindVSXCommand } from './vsx/sample-vsx-command-contribution';
@@ -28,14 +26,10 @@ import '../../src/browser/style/branding.css';
 import { bindMonacoPreferenceExtractor } from './monaco-editor-preferences/monaco-editor-preference-extractor';
 import { rebindOVSXClientFactory } from '../common/vsx/sample-ovsx-client-factory';
 import { bindSampleAppInfo } from './vsx/sample-frontend-app-info';
-import { bindTestSample } from './test/sample-test-contribution';
-import { bindSampleFileSystemCapabilitiesCommands } from './file-system/sample-file-system-capabilities';
 import { bindChatNodeToolbarActionContribution } from './chat/chat-node-toolbar-action-contribution';
 import { bindAskAndContinueChatAgentContribution } from './chat/ask-and-continue-chat-agent-contribution';
 import { bindChangeSetChatAgentContribution } from './chat/change-set-chat-agent-contribution';
 import { bindOriginalStateTestAgentContribution } from './chat/original-state-test-agent-contribution';
-import { bindSampleCodeCompletionVariableContribution } from './ai-code-completion/sample-code-completion-variable-contribution';
-import { bindSamplePreferenceContribution } from './preferences/sample-preferences-contribution';
 
 export default new ContainerModule((
     bind: interfaces.Bind,
@@ -44,23 +38,21 @@ export default new ContainerModule((
     rebind: interfaces.Rebind,
 ) => {
     // TODO 新增IDE命令贡献，移除旧命令贡献
-    bindAskAndContinueChatAgentContribution(bind);
-    bindChangeSetChatAgentContribution(bind);
-    bindOriginalStateTestAgentContribution(bind);
-    bindChatNodeToolbarActionContribution(bind);
-    bindDynamicLabelProvider(bind);
-    bindSampleUnclosableView(bind);
-    bindSampleOutputChannelWithSeverity(bind);
+    // bindAskAndContinueChatAgentContribution(bind);
+    // bindChangeSetChatAgentContribution(bind);
+    // bindOriginalStateTestAgentContribution(bind);
+    // bindChatNodeToolbarActionContribution(bind);
+    // bindDynamicLabelProvider(bind);
+    // bindSampleUnclosableView(bind);
+    // bindSampleOutputChannelWithSeverity(bind);
     bindSampleMenu(bind);
-    bindSampleFileWatching(bind);
-    bindVSXCommand(bind);
-    bindSampleFilteredCommandContribution(bind);
-    // bindSampleToolbarContribution(bind, rebind);
-    bindMonacoPreferenceExtractor(bind);
-    bindSampleAppInfo(bind);
-    bindTestSample(bind);
-    bindSampleFileSystemCapabilitiesCommands(bind);
-    rebindOVSXClientFactory(rebind);
-    bindSampleCodeCompletionVariableContribution(bind);
-    bindSamplePreferenceContribution(bind);
+    // bindSampleFileWatching(bind);
+    // bindVSXCommand(bind);
+    // bindSampleFilteredCommandContribution(bind);
+    bindSampleToolbarContribution(bind, rebind);
+    // bindMonacoPreferenceExtractor(bind);
+    // bindSampleAppInfo(bind);
+    // bindSampleFileSystemCapabilitiesCommands(bind);
+    // rebindOVSXClientFactory(rebind);
+    // bindSampleCodeCompletionVariableContribution(bind);
 });

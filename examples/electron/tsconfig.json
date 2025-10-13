@@ -72,6 +72,9 @@
       "path": "../../packages/ai-vercel-ai"
     },
     {
+      "path": "../../packages/api-wasomeCodeX"
+    },
+    {
       "path": "../../packages/bulk-edit"
     },
     {

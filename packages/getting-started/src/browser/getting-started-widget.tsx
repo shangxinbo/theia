@@ -26,6 +26,7 @@ import { inject, injectable, postConstruct } from '@theia/core/shared/inversify'
 import * as React from '@theia/core/shared/react';
 import { KeymapsCommands } from '@theia/keymaps/lib/browser';
 import { WorkspaceCommands, WorkspaceService } from '@theia/workspace/lib/browser';
+// import { WasomeCommands } from 'api-wasome/lib/browser';
 
 /**
  * Default implementation of the `GettingStartedWidget`.
@@ -563,14 +564,14 @@ export class GettingStartedWidget extends ReactWidget {
         }
     };
 
-    protected projectHome = () => this.commandRegistry.executeCommand(CommonCommands.PROJECT_HOME.id);
+    protected projectHome = () => this.commandRegistry.executeCommand("webide.project.home");
     protected projectHomeEnter = (e: React.KeyboardEvent) => {
         if (this.isEnterKey(e)) {
             this.projectHome();
         }
     };
 
-    protected newProject = () => this.commandRegistry.executeCommand(CommonCommands.NEW_PROJECT.id);
+    protected newProject = () => this.commandRegistry.executeCommand("webide.project.new");
     protected newProjectEnter = (e: React.KeyboardEvent) => {
         if (this.isEnterKey(e)) {
             this.newProject();
@@ -631,14 +632,14 @@ export class GettingStartedWidget extends ReactWidget {
      * Trigger the open preferences command.
      * Used to open the preferences widget.
      */
-    protected doOpenPreferences = () => this.commandRegistry.executeCommand(CommonCommands.OPEN_WEBIDE_SETTING.id);
+    protected doOpenPreferences = () => this.commandRegistry.executeCommand("webide.setting");
     protected doOpenPreferencesEnter = (e: React.KeyboardEvent) => {
         if (this.isEnterKey(e)) {
             this.doOpenPreferences();
         }
     };
 
-    protected openHelp = () => this.commandRegistry.executeCommand(CommonCommands.OPEN_HELP.id);
+    protected openHelp = () => this.commandRegistry.executeCommand("webide.project.showHelpPage");
     protected doOpenHelpEnter = (e: React.KeyboardEvent) => {
         if (this.isEnterKey(e)) {
             this.openHelp();
