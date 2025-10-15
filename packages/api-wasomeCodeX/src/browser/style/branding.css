@@ -16,14 +16,14 @@
 
 .theia-icon {
   /* TODO 替换图标 */
-  /* background-image: url("../icons/theia.png"); */
+  background-image: url("../icons/ide.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 #theia-main-content-panel {
-  /* background-image: url("../icons/theia.png"); */
+  background-image: url("../icons/ide.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 15%;

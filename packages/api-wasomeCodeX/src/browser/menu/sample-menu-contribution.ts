@@ -119,9 +119,21 @@ export namespace WasomeCommands {
     });
 
     export const CONNECT = Command.toDefaultLocalizedCommand({
-        id: 'webide.connect2',
+        id: 'webide.connect.start',
         category: 'Preferences',
         label: '连接控制器',
+    });
+
+    export const LIB_MANAGE = Command.toDefaultLocalizedCommand({
+        id: 'webide.libManage.start',
+        category: 'Preferences',
+        label: '系统库管理',
+    });
+
+    export const IMPORT_START = Command.toDefaultLocalizedCommand({
+        id: 'webide.project.importProject.start',
+        category: 'Preferences',
+        label: '导入项目',
     });
 
 }
@@ -445,20 +457,28 @@ export class SampleCommandContribution implements CommandContribution {
                 // if (this.enabled) {
                 //     this.enabled = false;
                 // }
-                if (this.visible) {
-                    this.visible = false;
-                }
+                // if (this.visible) {
+                //     this.visible = false;
+                // }
                 // this.contextKeyService.setContext('selectedModeHost2', true);
             },
-            isEnabled: () => {
-                return this.contextKeyService.match('webideProjectReady') && !this.contextKeyService.match('selectedModeHost');
-            },
-            isVisible: () => this.visible
+            // isEnabled: () => {
+            //     return this.contextKeyService.match('webideProjectReady') && !this.contextKeyService.match('selectedModeHost');
+            // },
+            // isVisible: () => this.visible
             // isVisible: () => {
             //     // return !this.contextKeyService.match('selectedModeHost');
             //     return false;
             //     // return this.contextKeyService.match('webideProjectReady');
             // },
+        })
+
+        commands.registerCommand(WasomeCommands.LIB_MANAGE, {
+            execute: () => this.commandRegistry.executeCommand("webide.libManage"),
+        })
+
+        commands.registerCommand(WasomeCommands.IMPORT_START, {
+            execute: () => this.commandRegistry.executeCommand("webide.project.importProject"),
         })
 
     }
@@ -706,7 +726,7 @@ export class SampleMenuContribution implements MenuContribution {
             menus.registerSubmenu(WasomeMenus.LIBRARY, '库管理');
             menus.registerSubmenu(WasomeMenus.LIBRARY_DEVICE, '设备库');
             menus.registerMenuAction(WasomeMenus.LIBRARY_SYSTEM, {
-                commandId: "webide.libManage",
+                commandId: WasomeCommands.LIB_MANAGE.id,
                 label: '系统库'
             });
 
@@ -759,7 +779,7 @@ export class SampleMenuContribution implements MenuContribution {
             });
 
             menus.registerMenuAction(WasomeMenus.ONLINE, {
-                commandId: "webide.connect",
+                commandId: WasomeCommands.CONNECT.id,
                 label: '连接控制器',
                 order: '1',
                 // when: 'webideProjectReady' // 可以通过when访问上下文键，但访问vscode的上下文键时，没有访问到
@@ -803,7 +823,7 @@ export class SampleMenuContribution implements MenuContribution {
             });
 
             menus.registerMenuAction(WasomeMenus.IMPORT_PROJECT, {
-                commandId: "webide.project.importProject",
+                commandId: WasomeCommands.IMPORT_START.id,
                 label: '导入项目'
             });
 

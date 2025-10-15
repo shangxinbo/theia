@@ -1584,10 +1584,10 @@
     zod "^3.23.8"
     zod-to-json-schema "^3.24.1"
 
-"@msgpackr-extract/msgpackr-extract-linux-x64@3.0.3":
+"@msgpackr-extract/msgpackr-extract-win32-x64@3.0.3":
   version "3.0.3"
-  resolved "https://registry.npmjs.org/@msgpackr-extract/msgpackr-extract-linux-x64/-/msgpackr-extract-linux-x64-3.0.3.tgz"
-  integrity sha512-cvwNfbP07pKUfq1uH+S6KJ7dT9K8WOE4ZiAcsrSes+UY55E/0jLYc+vq+DO7jlmqRb5zAggExKm0H7O/CBaesg==
+  resolved "https://registry.npmjs.org/@msgpackr-extract/msgpackr-extract-win32-x64/-/msgpackr-extract-win32-x64-3.0.3.tgz"
+  integrity sha512-x0fWaQtYp4E6sktbsdAqnehxDgEc/VwM7uLsRCYWaiGu0ykYdZPiS8zCWdnjHwyiumousxfBm4SO31eXqwEZhQ==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -1724,15 +1724,10 @@
     tmp "~0.2.1"
     tslib "^2.3.0"
 
-"@nx/nx-linux-x64-gnu@16.10.0":
+"@nx/nx-win32-x64-msvc@16.10.0":
   version "16.10.0"
-  resolved "https://registry.npmjs.org/@nx/nx-linux-x64-gnu/-/nx-linux-x64-gnu-16.10.0.tgz"
-  integrity sha512-134PW/u/arNFAQKpqMJniC7irbChMPz+W+qtyKPAUXE0XFKPa7c1GtlI/wK2dvP9qJDZ6bKf0KtA0U/m2HMUOA==
-
-"@nx/nx-linux-x64-musl@16.10.0":
-  version "16.10.0"
-  resolved "https://registry.npmjs.org/@nx/nx-linux-x64-musl/-/nx-linux-x64-musl-16.10.0.tgz"
-  integrity sha512-q8sINYLdIJxK/iUx9vRk5jWAWb/2O0PAbOJFwv4qkxBv4rLoN7y+otgCZ5v0xfx/zztFgk/oNY4lg5xYjIso2Q==
+  resolved "https://registry.npmjs.org/@nx/nx-win32-x64-msvc/-/nx-win32-x64-msvc-16.10.0.tgz"
+  integrity sha512-5iV2NKZnzxJwZZ4DM5JVbRG/nkhAbzEskKaLBB82PmYGKzaDHuMHP1lcPoD/rtYMlowZgNA/RQndfKvPBPwmXA==
 
 "@octokit/auth-token@^3.0.0":
   version "3.0.4"
@@ -1855,15 +1850,10 @@
   resolved "https://registry.npmjs.org/@opentelemetry/api/-/api-1.9.0.tgz"
   integrity sha512-3giAOQvZiH5F9bMlMiv8+GSPMeqg0dbaeo58/0SlA9sxSqZhnUtxzX9/2FzyhS9sWQf5S0GJE0AKBrFqjpeYcg==
 
-"@parcel/watcher-linux-x64-glibc@2.5.1":
+"@parcel/watcher-win32-x64@2.5.1":
   version "2.5.1"
-  resolved "https://registry.npmjs.org/@parcel/watcher-linux-x64-glibc/-/watcher-linux-x64-glibc-2.5.1.tgz"
-  integrity sha512-GcESn8NZySmfwlTsIur+49yDqSny2IhPeZfXunQi48DMugKeZ7uy1FX83pO0X22sHntJ4Ub+9k34XQCX+oHt2A==
-
-"@parcel/watcher-linux-x64-musl@2.5.1":
-  version "2.5.1"
-  resolved "https://registry.npmjs.org/@parcel/watcher-linux-x64-musl/-/watcher-linux-x64-musl-2.5.1.tgz"
-  integrity sha512-n0E2EQbatQ3bXhcH2D1XIAANAcTZkQICBPVaxMeaCVBtOpBZpWJuf7LwyWPSBDITb7In8mqQgJ7gH8CILCURXg==
+  resolved "https://registry.npmjs.org/@parcel/watcher-win32-x64/-/watcher-win32-x64-2.5.1.tgz"
+  integrity sha512-9lHBdJITeNR++EvSQVUcaZoWupyHfXe1jZvGZ06O/5MflPcuPLtEphScIBL+AiCWBO46tDSHzWyD0uDmmZqsgA==
 
 "@parcel/watcher@^2.5.0":
   version "2.5.1"
@@ -2109,7 +2099,7 @@
   resolved "https://registry.npmmirror.com/@testim/chrome-version/-/chrome-version-1.1.4.tgz"
   integrity sha512-kIhULpw9TrGYnHp/8VfdcneIcxKnLixmADtukQRtJUmsVlMg0niMkwV0xZmi8hqa57xqilIHjWFA0GKvEjVU5g==
 
-"@theia/ai-anthropic@1.64.0", "@theia/ai-anthropic@file:/home/wasm/plc/theia/packages/ai-anthropic":
+"@theia/ai-anthropic@1.64.0", "@theia/ai-anthropic@file:E:\\gits\\theia\\packages\\ai-anthropic":
   version "1.64.0"
   resolved "file:packages/ai-anthropic"
   dependencies:
@@ -2117,7 +2107,7 @@
     "@theia/ai-core" "1.64.0"
     "@theia/core" "1.64.0"
 
-"@theia/ai-chat-ui@1.64.0", "@theia/ai-chat-ui@file:/home/wasm/plc/theia/packages/ai-chat-ui":
+"@theia/ai-chat-ui@1.64.0", "@theia/ai-chat-ui@file:E:\\gits\\theia\\packages\\ai-chat-ui":
   version "1.64.0"
   resolved "file:packages/ai-chat-ui"
   dependencies:
@@ -2135,7 +2125,7 @@
     tslib "^2.6.2"
     uuid "^9.0.1"
 
-"@theia/ai-chat@1.64.0", "@theia/ai-chat@file:/home/wasm/plc/theia/packages/ai-chat":
+"@theia/ai-chat@1.64.0", "@theia/ai-chat@file:E:\\gits\\theia\\packages\\ai-chat":
   version "1.64.0"
   resolved "file:packages/ai-chat"
   dependencies:
@@ -2151,7 +2141,7 @@
     minimatch "^5.1.0"
     tslib "^2.6.2"
 
-"@theia/ai-code-completion@1.64.0", "@theia/ai-code-completion@file:/home/wasm/plc/theia/packages/ai-code-completion":
+"@theia/ai-code-completion@1.64.0", "@theia/ai-code-completion@file:E:\\gits\\theia\\packages\\ai-code-completion":
   version "1.64.0"
   resolved "file:packages/ai-code-completion"
   dependencies:
@@ -2164,7 +2154,7 @@
     minimatch "^5.1.0"
     tslib "^2.6.2"
 
-"@theia/ai-core-ui@1.64.0", "@theia/ai-core-ui@file:/home/wasm/plc/theia/packages/ai-core-ui":
+"@theia/ai-core-ui@1.64.0", "@theia/ai-core-ui@file:E:\\gits\\theia\\packages\\ai-core-ui":
   version "1.64.0"
   resolved "file:packages/ai-core-ui"
   dependencies:
@@ -2172,7 +2162,7 @@
     "@theia/core" "1.64.0"
     tslib "^2.6.2"
 
-"@theia/ai-core@1.64.0", "@theia/ai-core@file:/home/wasm/plc/theia/packages/ai-core":
+"@theia/ai-core@1.64.0", "@theia/ai-core@file:E:\\gits\\theia\\packages\\ai-core":
   version "1.64.0"
   resolved "file:packages/ai-core"
   dependencies:
@@ -2190,7 +2180,7 @@
     minimatch "^5.1.0"
     tslib "^2.6.2"
 
-"@theia/ai-editor@1.64.0", "@theia/ai-editor@file:/home/wasm/plc/theia/packages/ai-editor":
+"@theia/ai-editor@1.64.0", "@theia/ai-editor@file:E:\\gits\\theia\\packages\\ai-editor":
   version "1.64.0"
   resolved "file:packages/ai-editor"
   dependencies:
@@ -2204,7 +2194,7 @@
     "@theia/monaco-editor-core" "1.96.302"
     "@theia/workspace" "1.64.0"
 
-"@theia/ai-google@1.64.0", "@theia/ai-google@file:/home/wasm/plc/theia/packages/ai-google":
+"@theia/ai-google@1.64.0", "@theia/ai-google@file:E:\\gits\\theia\\packages\\ai-google":
   version "1.64.0"
   resolved "file:packages/ai-google"
   dependencies:
@@ -2212,7 +2202,7 @@
     "@theia/ai-core" "1.64.0"
     "@theia/core" "1.64.0"
 
-"@theia/ai-history@1.64.0", "@theia/ai-history@file:/home/wasm/plc/theia/packages/ai-history":
+"@theia/ai-history@1.64.0", "@theia/ai-history@file:E:\\gits\\theia\\packages\\ai-history":
   version "1.64.0"
   resolved "file:packages/ai-history"
   dependencies:
@@ -2225,7 +2215,7 @@
     minimatch "^5.1.0"
     tslib "^2.6.2"
 
-"@theia/ai-huggingface@1.64.0", "@theia/ai-huggingface@file:/home/wasm/plc/theia/packages/ai-hugging-face":
+"@theia/ai-huggingface@1.64.0", "@theia/ai-huggingface@file:E:\\gits\\theia\\packages\\ai-hugging-face":
   version "1.64.0"
   resolved "file:packages/ai-hugging-face"
   dependencies:
@@ -2233,7 +2223,7 @@
     "@theia/ai-core" "1.64.0"
     "@theia/core" "1.64.0"
 
-"@theia/ai-ide@1.64.0", "@theia/ai-ide@file:/home/wasm/plc/theia/packages/ai-ide":
+"@theia/ai-ide@1.64.0", "@theia/ai-ide@file:E:\\gits\\theia\\packages\\ai-ide":
   version "1.64.0"
   resolved "file:packages/ai-ide"
   dependencies:
@@ -2257,7 +2247,7 @@
     minimatch "^9.0.0"
     puppeteer-core "^24.10.0"
 
-"@theia/ai-llamafile@1.64.0", "@theia/ai-llamafile@file:/home/wasm/plc/theia/packages/ai-llamafile":
+"@theia/ai-llamafile@1.64.0", "@theia/ai-llamafile@file:E:\\gits\\theia\\packages\\ai-llamafile":
   version "1.64.0"
   resolved "file:packages/ai-llamafile"
   dependencies:
@@ -2266,7 +2256,7 @@
     "@theia/output" "1.64.0"
     tslib "^2.6.2"
 
-"@theia/ai-mcp-ui@1.64.0", "@theia/ai-mcp-ui@file:/home/wasm/plc/theia/packages/ai-mcp-ui":
+"@theia/ai-mcp-ui@1.64.0", "@theia/ai-mcp-ui@file:E:\\gits\\theia\\packages\\ai-mcp-ui":
   version "1.64.0"
   resolved "file:packages/ai-mcp-ui"
   dependencies:
@@ -2274,7 +2264,7 @@
     "@theia/ai-mcp" "1.64.0"
     "@theia/core" "1.64.0"
 
-"@theia/ai-mcp@1.64.0", "@theia/ai-mcp@file:/home/wasm/plc/theia/packages/ai-mcp":
+"@theia/ai-mcp@1.64.0", "@theia/ai-mcp@file:E:\\gits\\theia\\packages\\ai-mcp":
   version "1.64.0"
   resolved "file:packages/ai-mcp"
   dependencies:
@@ -2282,7 +2272,7 @@
     "@theia/ai-core" "1.64.0"
     "@theia/core" "1.64.0"
 
-"@theia/ai-ollama@1.64.0", "@theia/ai-ollama@file:/home/wasm/plc/theia/packages/ai-ollama":
+"@theia/ai-ollama@1.64.0", "@theia/ai-ollama@file:E:\\gits\\theia\\packages\\ai-ollama":
   version "1.64.0"
   resolved "file:packages/ai-ollama"
   dependencies:
@@ -2294,7 +2284,7 @@
     ollama "^0.5.16"
     tslib "^2.6.2"
 
-"@theia/ai-openai@1.64.0", "@theia/ai-openai@file:/home/wasm/plc/theia/packages/ai-openai":
+"@theia/ai-openai@1.64.0", "@theia/ai-openai@file:E:\\gits\\theia\\packages\\ai-openai":
   version "1.64.0"
   resolved "file:packages/ai-openai"
   dependencies:
@@ -2306,7 +2296,7 @@
     openai "^5.0.1"
     tslib "^2.6.2"
 
-"@theia/ai-scanoss@1.64.0", "@theia/ai-scanoss@file:/home/wasm/plc/theia/packages/ai-scanoss":
+"@theia/ai-scanoss@1.64.0", "@theia/ai-scanoss@file:E:\\gits\\theia\\packages\\ai-scanoss":
   version "1.64.0"
   resolved "file:packages/ai-scanoss"
   dependencies:
@@ -2318,7 +2308,7 @@
     "@theia/monaco-editor-core" "1.96.302"
     "@theia/scanoss" "1.64.0"
 
-"@theia/ai-terminal@1.64.0", "@theia/ai-terminal@file:/home/wasm/plc/theia/packages/ai-terminal":
+"@theia/ai-terminal@1.64.0", "@theia/ai-terminal@file:E:\\gits\\theia\\packages\\ai-terminal":
   version "1.64.0"
   resolved "file:packages/ai-terminal"
   dependencies:
@@ -2329,7 +2319,7 @@
     zod "^3.23.8"
     zod-to-json-schema "^3.23.2"
 
-"@theia/ai-vercel-ai@1.64.0", "@theia/ai-vercel-ai@file:/home/wasm/plc/theia/packages/ai-vercel-ai":
+"@theia/ai-vercel-ai@1.64.0", "@theia/ai-vercel-ai@file:E:\\gits\\theia\\packages\\ai-vercel-ai":
   version "1.64.0"
   resolved "file:packages/ai-vercel-ai"
   dependencies:
@@ -2343,7 +2333,7 @@
     ai "^4.3.13"
     tslib "^2.6.2"
 
-"@theia/api-provider-sample@1.64.0", "@theia/api-provider-sample@file:/home/wasm/plc/theia/examples/api-provider-sample":
+"@theia/api-provider-sample@1.64.0", "@theia/api-provider-sample@file:E:\\gits\\theia\\examples\\api-provider-sample":
   version "1.64.0"
   resolved "file:examples/api-provider-sample"
   dependencies:
@@ -2351,7 +2341,7 @@
     "@theia/plugin-ext" "1.64.0"
     "@theia/plugin-ext-headless" "1.64.0"
 
-"@theia/api-samples@1.64.0", "@theia/api-samples@file:/home/wasm/plc/theia/examples/api-samples":
+"@theia/api-samples@1.64.0", "@theia/api-samples@file:E:\\gits\\theia\\examples\\api-samples":
   version "1.64.0"
   resolved "file:examples/api-samples"
   dependencies:
@@ -2372,13 +2362,13 @@
     "@theia/vsx-registry" "1.64.0"
     "@theia/workspace" "1.64.0"
 
-"@theia/api-tests@file:/home/wasm/plc/theia/examples/api-tests":
+"@theia/api-tests@file:E:\\gits\\theia\\examples\\api-tests":
   version "1.64.0"
   resolved "file:examples/api-tests"
   dependencies:
     "@theia/core" "1.64.0"
 
-"@theia/application-manager@1.64.0", "@theia/application-manager@file:/home/wasm/plc/theia/dev-packages/application-manager":
+"@theia/application-manager@1.64.0", "@theia/application-manager@file:E:\\gits\\theia\\dev-packages\\application-manager":
   version "1.64.0"
   resolved "file:dev-packages/application-manager"
   dependencies:
@@ -2416,7 +2406,7 @@
     worker-loader "^3.0.8"
     yargs "^15.3.1"
 
-"@theia/application-package@1.64.0", "@theia/application-package@file:/home/wasm/plc/theia/dev-packages/application-package":
+"@theia/application-package@1.64.0", "@theia/application-package@file:E:\\gits\\theia\\dev-packages\\application-package":
   version "1.64.0"
   resolved "file:dev-packages/application-package"
   dependencies:
@@ -2433,7 +2423,7 @@
     tslib "^2.6.2"
     write-json-file "^2.2.0"
 
-"@theia/bulk-edit@1.64.0", "@theia/bulk-edit@file:/home/wasm/plc/theia/packages/bulk-edit":
+"@theia/bulk-edit@1.64.0", "@theia/bulk-edit@file:E:\\gits\\theia\\packages\\bulk-edit":
   version "1.64.0"
   resolved "file:packages/bulk-edit"
   dependencies:
@@ -2445,7 +2435,7 @@
     "@theia/workspace" "1.64.0"
     tslib "^2.6.2"
 
-"@theia/callhierarchy@1.64.0", "@theia/callhierarchy@file:/home/wasm/plc/theia/packages/callhierarchy":
+"@theia/callhierarchy@1.64.0", "@theia/callhierarchy@file:E:\\gits\\theia\\packages\\callhierarchy":
   version "1.64.0"
   resolved "file:packages/callhierarchy"
   dependencies:
@@ -2454,7 +2444,7 @@
     ts-md5 "^1.2.2"
     tslib "^2.6.2"
 
-"@theia/cli@1.64.0", "@theia/cli@file:/home/wasm/plc/theia/dev-packages/cli":
+"@theia/cli@1.64.0", "@theia/cli@file:E:\\gits\\theia\\dev-packages\\cli":
   version "1.64.0"
   resolved "file:dev-packages/cli"
   dependencies:
@@ -2484,7 +2474,7 @@
     tslib "^2.6.2"
     yargs "^15.3.1"
 
-"@theia/collaboration@1.64.0", "@theia/collaboration@file:/home/wasm/plc/theia/packages/collaboration":
+"@theia/collaboration@1.64.0", "@theia/collaboration@file:E:\\gits\\theia\\packages\\collaboration":
   version "1.64.0"
   resolved "file:packages/collaboration"
   dependencies:
@@ -2501,7 +2491,7 @@
     y-protocols "^1.0.6"
     yjs "^13.6.7"
 
-"@theia/console@1.64.0", "@theia/console@file:/home/wasm/plc/theia/packages/console":
+"@theia/console@1.64.0", "@theia/console@file:E:\\gits\\theia\\packages\\console":
   version "1.64.0"
   resolved "file:packages/console"
   dependencies:
@@ -2512,7 +2502,7 @@
     anser "^2.0.1"
     tslib "^2.6.2"
 
-"@theia/core@1.64.0", "@theia/core@file:/home/wasm/plc/theia/packages/core":
+"@theia/core@1.64.0", "@theia/core@file:E:\\gits\\theia\\packages\\core":
   version "1.64.0"
   resolved "file:packages/core"
   dependencies:
@@ -2584,7 +2574,7 @@
     ws "^8.17.1"
     yargs "^15.3.1"
 
-"@theia/debug@1.64.0", "@theia/debug@file:/home/wasm/plc/theia/packages/debug":
+"@theia/debug@1.64.0", "@theia/debug@file:E:\\gits\\theia\\packages\\debug":
   version "1.64.0"
   resolved "file:packages/debug"
   dependencies:
@@ -2608,7 +2598,7 @@
     p-debounce "^2.1.0"
     tslib "^2.6.2"
 
-"@theia/dev-container@1.64.0", "@theia/dev-container@file:/home/wasm/plc/theia/packages/dev-container":
+"@theia/dev-container@1.64.0", "@theia/dev-container@file:E:\\gits\\theia\\packages\\dev-container":
   version "1.64.0"
   resolved "file:packages/dev-container"
   dependencies:
@@ -2620,7 +2610,7 @@
     jsonc-parser "^2.2.0"
     uuid "^8.0.0"
 
-"@theia/editor-preview@1.64.0", "@theia/editor-preview@file:/home/wasm/plc/theia/packages/editor-preview":
+"@theia/editor-preview@1.64.0", "@theia/editor-preview@file:E:\\gits\\theia\\packages\\editor-preview":
   version "1.64.0"
   resolved "file:packages/editor-preview"
   dependencies:
@@ -2629,7 +2619,7 @@
     "@theia/navigator" "1.64.0"
     tslib "^2.6.2"
 
-"@theia/editor@1.64.0", "@theia/editor@file:/home/wasm/plc/theia/packages/editor":
+"@theia/editor@1.64.0", "@theia/editor@file:E:\\gits\\theia\\packages\\editor":
   version "1.64.0"
   resolved "file:packages/editor"
   dependencies:
@@ -2637,7 +2627,7 @@
     "@theia/variable-resolver" "1.64.0"
     tslib "^2.6.2"
 
-"@theia/electron@*", "@theia/electron@1.64.0", "@theia/electron@file:/home/wasm/plc/theia/packages/electron":
+"@theia/electron@*", "@theia/electron@1.64.0", "@theia/electron@file:E:\\gits\\theia\\packages\\electron":
   version "1.64.0"
   resolved "file:packages/electron"
   dependencies:
@@ -2645,7 +2635,7 @@
     fix-path "^4.0.0"
     native-keymap "^2.2.1"
 
-"@theia/eslint-plugin@file:/home/wasm/plc/theia/dev-packages/private-eslint-plugin":
+"@theia/eslint-plugin@file:E:\\gits\\theia\\dev-packages\\private-eslint-plugin":
   version "1.64.0"
   resolved "file:dev-packages/private-eslint-plugin"
   dependencies:
@@ -2653,7 +2643,7 @@
     "@theia/re-exports" "1.64.0"
     js-levenshtein "^1.1.6"
 
-"@theia/example-browser-only@file:/home/wasm/plc/theia/examples/browser-only":
+"@theia/example-browser-only@file:E:\\gits\\theia\\examples\\browser-only":
   version "1.64.0"
   resolved "file:examples/browser-only"
   dependencies:
@@ -2712,7 +2702,7 @@
     "@theia/vsx-registry" "1.64.0"
     "@theia/workspace" "1.64.0"
 
-"@theia/example-browser@file:/home/wasm/plc/theia/examples/browser":
+"@theia/example-browser@file:E:\\gits\\theia\\examples\\browser":
   version "1.64.0"
   resolved "file:examples/browser"
   dependencies:
@@ -2786,7 +2776,7 @@
     "@theia/vsx-registry" "1.64.0"
     "@theia/workspace" "1.64.0"
 
-"@theia/example-electron@file:/home/wasm/plc/theia/examples/electron":
+"@theia/example-electron@file:E:\\gits\\theia\\examples\\electron":
   version "1.64.0"
   resolved "file:examples/electron"
   dependencies:
@@ -2859,13 +2849,13 @@
     "@theia/variable-resolver" "1.64.0"
     "@theia/vsx-registry" "1.64.0"
     "@theia/workspace" "1.64.0"
-    wasome "file:../../examples/api-wasome"
+    wasomecodex "file:../../examples/api-wasomeCodeX"
 
-"@theia/ext-scripts@1.64.0", "@theia/ext-scripts@file:/home/wasm/plc/theia/dev-packages/private-ext-scripts":
+"@theia/ext-scripts@1.64.0", "@theia/ext-scripts@file:E:\\gits\\theia\\dev-packages\\private-ext-scripts":
   version "1.64.0"
   resolved "file:dev-packages/private-ext-scripts"
 
-"@theia/external-terminal@1.64.0", "@theia/external-terminal@file:/home/wasm/plc/theia/packages/external-terminal":
+"@theia/external-terminal@1.64.0", "@theia/external-terminal@file:E:\\gits\\theia\\packages\\external-terminal":
   version "1.64.0"
   resolved "file:packages/external-terminal"
   dependencies:
@@ -2874,7 +2864,7 @@
     "@theia/workspace" "1.64.0"
     tslib "^2.6.2"
 
-"@theia/ffmpeg@1.64.0", "@theia/ffmpeg@file:/home/wasm/plc/theia/dev-packages/ffmpeg":
+"@theia/ffmpeg@1.64.0", "@theia/ffmpeg@file:E:\\gits\\theia\\dev-packages\\ffmpeg":
   version "1.64.0"
   resolved "file:dev-packages/ffmpeg"
   dependencies:
@@ -2882,7 +2872,7 @@
     tslib "^2.6.2"
     unzipper "^0.9.11"
 
-"@theia/file-search@1.64.0", "@theia/file-search@file:/home/wasm/plc/theia/packages/file-search":
+"@theia/file-search@1.64.0", "@theia/file-search@file:E:\\gits\\theia\\packages\\file-search":
   version "1.64.0"
   resolved "file:packages/file-search"
   dependencies:
@@ -2894,7 +2884,7 @@
     "@vscode/ripgrep" "^1.14.2"
     tslib "^2.6.2"
 
-"@theia/filesystem@1.64.0", "@theia/filesystem@file:/home/wasm/plc/theia/packages/filesystem":
+"@theia/filesystem@1.64.0", "@theia/filesystem@file:E:\\gits\\theia\\packages\\filesystem":
   version "1.64.0"
   resolved "file:packages/filesystem"
   dependencies:
@@ -2914,7 +2904,7 @@
     tslib "^2.6.2"
     vscode-languageserver-textdocument "^1.0.1"
 
-"@theia/getting-started@1.64.0", "@theia/getting-started@file:/home/wasm/plc/theia/packages/getting-started":
+"@theia/getting-started@1.64.0", "@theia/getting-started@file:E:\\gits\\theia\\packages\\getting-started":
   version "1.64.0"
   resolved "file:packages/getting-started"
   dependencies:
@@ -2926,7 +2916,7 @@
     "@theia/workspace" "1.64.0"
     tslib "^2.6.2"
 
-"@theia/git@1.64.0", "@theia/git@file:/home/wasm/plc/theia/packages/git":
+"@theia/git@1.64.0", "@theia/git@file:E:\\gits\\theia\\packages\\git":
   version "1.64.0"
   resolved "file:packages/git"
   dependencies:
@@ -2950,7 +2940,7 @@
     ts-md5 "^1.2.2"
     tslib "^2.6.2"
 
-"@theia/keymaps@1.64.0", "@theia/keymaps@file:/home/wasm/plc/theia/packages/keymaps":
+"@theia/keymaps@1.64.0", "@theia/keymaps@file:E:\\gits\\theia\\packages\\keymaps":
   version "1.64.0"
   resolved "file:packages/keymaps"
   dependencies:
@@ -2962,7 +2952,7 @@
     jsonc-parser "^2.2.0"
     tslib "^2.6.2"
 
-"@theia/localization-manager@1.64.0", "@theia/localization-manager@file:/home/wasm/plc/theia/dev-packages/localization-manager":
+"@theia/localization-manager@1.64.0", "@theia/localization-manager@file:E:\\gits\\theia\\dev-packages\\localization-manager":
   version "1.64.0"
   resolved "file:dev-packages/localization-manager"
   dependencies:
@@ -2977,7 +2967,7 @@
     tslib "^2.6.2"
     typescript "~5.4.5"
 
-"@theia/markers@1.64.0", "@theia/markers@file:/home/wasm/plc/theia/packages/markers":
+"@theia/markers@1.64.0", "@theia/markers@file:E:\\gits\\theia\\packages\\markers":
   version "1.64.0"
   resolved "file:packages/markers"
   dependencies:
@@ -2986,7 +2976,7 @@
     "@theia/workspace" "1.64.0"
     tslib "^2.6.2"
 
-"@theia/memory-inspector@1.64.0", "@theia/memory-inspector@file:/home/wasm/plc/theia/packages/memory-inspector":
+"@theia/memory-inspector@1.64.0", "@theia/memory-inspector@file:E:\\gits\\theia\\packages\\memory-inspector":
   version "1.64.0"
   resolved "file:packages/memory-inspector"
   dependencies:
@@ -2996,7 +2986,7 @@
     long "^4.0.0"
     tslib "^2.6.2"
 
-"@theia/messages@1.64.0", "@theia/messages@file:/home/wasm/plc/theia/packages/messages":
+"@theia/messages@1.64.0", "@theia/messages@file:E:\\gits\\theia\\packages\\messages":
   version "1.64.0"
   resolved "file:packages/messages"
   dependencies:
@@ -3005,7 +2995,7 @@
     ts-md5 "^1.2.2"
     tslib "^2.6.2"
 
-"@theia/metrics@1.64.0", "@theia/metrics@file:/home/wasm/plc/theia/packages/metrics":
+"@theia/metrics@1.64.0", "@theia/metrics@file:E:\\gits\\theia\\packages\\metrics":
   version "1.64.0"
   resolved "file:packages/metrics"
   dependencies:
@@ -3013,7 +3003,7 @@
     prom-client "^10.2.0"
     tslib "^2.6.2"
 
-"@theia/mini-browser@1.64.0", "@theia/mini-browser@file:/home/wasm/plc/theia/packages/mini-browser":
+"@theia/mini-browser@1.64.0", "@theia/mini-browser@file:E:\\gits\\theia\\packages\\mini-browser":
   version "1.64.0"
   resolved "file:packages/mini-browser"
   dependencies:
@@ -3030,7 +3020,7 @@
   resolved "https://registry.npmjs.org/@theia/monaco-editor-core/-/monaco-editor-core-1.96.302.tgz"
   integrity sha512-1np9/dI/cVmAE2KFi/13fK29jQOM9syyK6KaElaQ5nR8DVHsG49WK50Yd4yjwaqH2y4NHDeiZR8GoOJi8L9z4A==
 
-"@theia/monaco@1.64.0", "@theia/monaco@file:/home/wasm/plc/theia/packages/monaco":
+"@theia/monaco@1.64.0", "@theia/monaco@file:E:\\gits\\theia\\packages\\monaco":
   version "1.64.0"
   resolved "file:packages/monaco"
   dependencies:
@@ -3048,7 +3038,7 @@
     vscode-oniguruma "2.0.1"
     vscode-textmate "^9.2.0"
 
-"@theia/native-webpack-plugin@1.64.0", "@theia/native-webpack-plugin@file:/home/wasm/plc/theia/dev-packages/native-webpack-plugin":
+"@theia/native-webpack-plugin@1.64.0", "@theia/native-webpack-plugin@file:E:\\gits\\theia\\dev-packages\\native-webpack-plugin":
   version "1.64.0"
   resolved "file:dev-packages/native-webpack-plugin"
   dependencies:
@@ -3056,7 +3046,7 @@
     tslib "^2.6.2"
     webpack "^5.76.0"
 
-"@theia/navigator@1.64.0", "@theia/navigator@file:/home/wasm/plc/theia/packages/navigator":
+"@theia/navigator@1.64.0", "@theia/navigator@file:E:\\gits\\theia\\packages\\navigator":
   version "1.64.0"
   resolved "file:packages/navigator"
   dependencies:
@@ -3066,7 +3056,7 @@
     minimatch "^5.1.0"
     tslib "^2.6.2"
 
-"@theia/notebook@1.64.0", "@theia/notebook@file:/home/wasm/plc/theia/packages/notebook":
+"@theia/notebook@1.64.0", "@theia/notebook@file:E:\\gits\\theia\\packages\\notebook":
   version "1.64.0"
   resolved "file:packages/notebook"
   dependencies:
@@ -3080,14 +3070,14 @@
     react-perfect-scrollbar "^1.5.8"
     tslib "^2.6.2"
 
-"@theia/outline-view@1.64.0", "@theia/outline-view@file:/home/wasm/plc/theia/packages/outline-view":
+"@theia/outline-view@1.64.0", "@theia/outline-view@file:E:\\gits\\theia\\packages\\outline-view":
   version "1.64.0"
   resolved "file:packages/outline-view"
   dependencies:
     "@theia/core" "1.64.0"
     tslib "^2.6.2"
 
-"@theia/output@1.64.0", "@theia/output@file:/home/wasm/plc/theia/packages/output":
+"@theia/output@1.64.0", "@theia/output@file:E:\\gits\\theia\\packages\\output":
   version "1.64.0"
   resolved "file:packages/output"
   dependencies:
@@ -3098,7 +3088,7 @@
     p-queue "^8.0.1"
     tslib "^2.6.2"
 
-"@theia/ovsx-client@1.64.0", "@theia/ovsx-client@file:/home/wasm/plc/theia/dev-packages/ovsx-client":
+"@theia/ovsx-client@1.64.0", "@theia/ovsx-client@file:E:\\gits\\theia\\dev-packages\\ovsx-client":
   version "1.64.0"
   resolved "file:dev-packages/ovsx-client"
   dependencies:
@@ -3107,14 +3097,14 @@
     semver "^7.5.4"
     tslib "^2.6.2"
 
-"@theia/playwright@file:/home/wasm/plc/theia/examples/playwright":
+"@theia/playwright@file:E:\\gits\\theia\\examples\\playwright":
   version "1.64.0"
   resolved "file:examples/playwright"
   dependencies:
     "@playwright/test" "^1.47.0"
     fs-extra "^9.0.8"
 
-"@theia/plugin-dev@1.64.0", "@theia/plugin-dev@file:/home/wasm/plc/theia/packages/plugin-dev":
+"@theia/plugin-dev@1.64.0", "@theia/plugin-dev@file:E:\\gits\\theia\\packages\\plugin-dev":
   version "1.64.0"
   resolved "file:packages/plugin-dev"
   dependencies:
@@ -3127,7 +3117,7 @@
     ps-tree "^1.2.0"
     tslib "^2.6.2"
 
-"@theia/plugin-ext-headless@1.64.0", "@theia/plugin-ext-headless@file:/home/wasm/plc/theia/packages/plugin-ext-headless":
+"@theia/plugin-ext-headless@1.64.0", "@theia/plugin-ext-headless@file:E:\\gits\\theia\\packages\\plugin-ext-headless":
   version "1.64.0"
   resolved "file:packages/plugin-ext-headless"
   dependencies:
@@ -3136,7 +3126,7 @@
     "@theia/terminal" "1.64.0"
     tslib "^2.6.2"
 
-"@theia/plugin-ext-vscode@1.64.0", "@theia/plugin-ext-vscode@file:/home/wasm/plc/theia/packages/plugin-ext-vscode":
+"@theia/plugin-ext-vscode@1.64.0", "@theia/plugin-ext-vscode@file:E:\\gits\\theia\\packages\\plugin-ext-vscode":
   version "1.64.0"
   resolved "file:packages/plugin-ext-vscode"
   dependencies:
@@ -3159,7 +3149,7 @@
     filenamify "^4.1.0"
     tslib "^2.6.2"
 
-"@theia/plugin-ext@1.64.0", "@theia/plugin-ext@file:/home/wasm/plc/theia/packages/plugin-ext":
+"@theia/plugin-ext@1.64.0", "@theia/plugin-ext@file:E:\\gits\\theia\\packages\\plugin-ext":
   version "1.64.0"
   resolved "file:packages/plugin-ext"
   dependencies:
@@ -3210,7 +3200,7 @@
     vhost "^3.0.2"
     vscode-textmate "^9.2.0"
 
-"@theia/plugin-metrics@1.64.0", "@theia/plugin-metrics@file:/home/wasm/plc/theia/packages/plugin-metrics":
+"@theia/plugin-metrics@1.64.0", "@theia/plugin-metrics@file:E:\\gits\\theia\\packages\\plugin-metrics":
   version "1.64.0"
   resolved "file:packages/plugin-metrics"
   dependencies:
@@ -3221,11 +3211,11 @@
     "@theia/plugin-ext" "1.64.0"
     tslib "^2.6.2"
 
-"@theia/plugin@1.64.0", "@theia/plugin@file:/home/wasm/plc/theia/packages/plugin":
+"@theia/plugin@1.64.0", "@theia/plugin@file:E:\\gits\\theia\\packages\\plugin":
   version "1.64.0"
   resolved "file:packages/plugin"
 
-"@theia/preferences@1.64.0", "@theia/preferences@file:/home/wasm/plc/theia/packages/preferences":
+"@theia/preferences@1.64.0", "@theia/preferences@file:E:\\gits\\theia\\packages\\preferences":
   version "1.64.0"
   resolved "file:packages/preferences"
   dependencies:
@@ -3242,7 +3232,7 @@
     p-debounce "^2.1.0"
     tslib "^2.6.2"
 
-"@theia/preview@1.64.0", "@theia/preview@file:/home/wasm/plc/theia/packages/preview":
+"@theia/preview@1.64.0", "@theia/preview@file:E:\\gits\\theia\\packages\\preview":
   version "1.64.0"
   resolved "file:packages/preview"
   dependencies:
@@ -3255,7 +3245,7 @@
     markdown-it-anchor "~5.0.0"
     tslib "^2.6.2"
 
-"@theia/process@1.64.0", "@theia/process@file:/home/wasm/plc/theia/packages/process":
+"@theia/process@1.64.0", "@theia/process@file:E:\\gits\\theia\\packages\\process":
   version "1.64.0"
   resolved "file:packages/process"
   dependencies:
@@ -3264,7 +3254,7 @@
     string-argv "^0.1.1"
     tslib "^2.6.2"
 
-"@theia/property-view@1.64.0", "@theia/property-view@file:/home/wasm/plc/theia/packages/property-view":
+"@theia/property-view@1.64.0", "@theia/property-view@file:E:\\gits\\theia\\packages\\property-view":
   version "1.64.0"
   resolved "file:packages/property-view"
   dependencies:
@@ -3272,7 +3262,7 @@
     "@theia/filesystem" "1.64.0"
     tslib "^2.6.2"
 
-"@theia/re-exports@1.64.0", "@theia/re-exports@file:/home/wasm/plc/theia/dev-packages/private-re-exports":
+"@theia/re-exports@1.64.0", "@theia/re-exports@file:E:\\gits\\theia\\dev-packages\\private-re-exports":
   version "1.64.0"
   resolved "file:dev-packages/private-re-exports"
   dependencies:
@@ -3281,7 +3271,7 @@
     tslib "^2.6.2"
     yargs "^15.3.1"
 
-"@theia/remote-wsl@1.64.0", "@theia/remote-wsl@file:/home/wasm/plc/theia/packages/remote-wsl":
+"@theia/remote-wsl@1.64.0", "@theia/remote-wsl@file:E:\\gits\\theia\\packages\\remote-wsl":
   version "1.64.0"
   resolved "file:packages/remote-wsl"
   dependencies:
@@ -3290,7 +3280,7 @@
     "@theia/workspace" "1.64.0"
     tslib "^2.6.2"
 
-"@theia/remote@1.64.0", "@theia/remote@file:/home/wasm/plc/theia/packages/remote":
+"@theia/remote@1.64.0", "@theia/remote@file:E:\\gits\\theia\\packages\\remote":
   version "1.64.0"
   resolved "file:packages/remote"
   dependencies:
@@ -3312,7 +3302,7 @@
     ssh2-sftp-client "^9.1.0"
     tslib "^2.6.2"
 
-"@theia/request@1.64.0", "@theia/request@file:/home/wasm/plc/theia/dev-packages/request":
+"@theia/request@1.64.0", "@theia/request@file:E:\\gits\\theia\\dev-packages\\request":
   version "1.64.0"
   resolved "file:dev-packages/request"
   dependencies:
@@ -3320,14 +3310,14 @@
     https-proxy-agent "^5.0.0"
     tslib "^2.6.2"
 
-"@theia/scanoss@1.64.0", "@theia/scanoss@file:/home/wasm/plc/theia/packages/scanoss":
+"@theia/scanoss@1.64.0", "@theia/scanoss@file:E:\\gits\\theia\\packages\\scanoss":
   version "1.64.0"
   resolved "file:packages/scanoss"
   dependencies:
     "@theia/core" "1.64.0"
     scanoss "^0.15.2"
 
-"@theia/scm-extra@1.64.0", "@theia/scm-extra@file:/home/wasm/plc/theia/packages/scm-extra":
+"@theia/scm-extra@1.64.0", "@theia/scm-extra@file:E:\\gits\\theia\\packages\\scm-extra":
   version "1.64.0"
   resolved "file:packages/scm-extra"
   dependencies:
@@ -3338,7 +3328,7 @@
     "@theia/scm" "1.64.0"
     tslib "^2.6.2"
 
-"@theia/scm@1.64.0", "@theia/scm@file:/home/wasm/plc/theia/packages/scm":
+"@theia/scm@1.64.0", "@theia/scm@file:E:\\gits\\theia\\packages\\scm":
   version "1.64.0"
   resolved "file:packages/scm"
   dependencies:
@@ -3354,7 +3344,7 @@
     ts-md5 "^1.2.2"
     tslib "^2.6.2"
 
-"@theia/search-in-workspace@1.64.0", "@theia/search-in-workspace@file:/home/wasm/plc/theia/packages/search-in-workspace":
+"@theia/search-in-workspace@1.64.0", "@theia/search-in-workspace@file:E:\\gits\\theia\\packages\\search-in-workspace":
   version "1.64.0"
   resolved "file:packages/search-in-workspace"
   dependencies:
@@ -3369,14 +3359,14 @@
     react-textarea-autosize "^8.5.5"
     tslib "^2.6.2"
 
-"@theia/secondary-window@1.64.0", "@theia/secondary-window@file:/home/wasm/plc/theia/packages/secondary-window":
+"@theia/secondary-window@1.64.0", "@theia/secondary-window@file:E:\\gits\\theia\\packages\\secondary-window":
   version "1.64.0"
   resolved "file:packages/secondary-window"
   dependencies:
     "@theia/core" "1.64.0"
     tslib "^2.6.2"
 
-"@theia/task@1.64.0", "@theia/task@file:/home/wasm/plc/theia/packages/task":
+"@theia/task@1.64.0", "@theia/task@file:E:\\gits\\theia\\packages\\task":
   version "1.64.0"
   resolved "file:packages/task"
   dependencies:
@@ -3396,7 +3386,7 @@
     p-debounce "^2.1.0"
     tslib "^2.6.2"
 
-"@theia/terminal@1.64.0", "@theia/terminal@file:/home/wasm/plc/theia/packages/terminal":
+"@theia/terminal@1.64.0", "@theia/terminal@file:E:\\gits\\theia\\packages\\terminal":
   version "1.64.0"
   resolved "file:packages/terminal"
   dependencies:
@@ -3412,11 +3402,11 @@
     xterm-addon-fit "^0.8.0"
     xterm-addon-search "^0.13.0"
 
-"@theia/test-setup@file:/home/wasm/plc/theia/dev-packages/private-test-setup":
+"@theia/test-setup@file:E:\\gits\\theia\\dev-packages\\private-test-setup":
   version "1.64.0"
   resolved "file:dev-packages/private-test-setup"
 
-"@theia/test@1.64.0", "@theia/test@file:/home/wasm/plc/theia/packages/test":
+"@theia/test@1.64.0", "@theia/test@file:E:\\gits\\theia\\packages\\test":
   version "1.64.0"
   resolved "file:packages/test"
   dependencies:
@@ -3428,7 +3418,7 @@
     xterm "^5.3.0"
     xterm-addon-fit "^0.8.0"
 
-"@theia/timeline@1.64.0", "@theia/timeline@file:/home/wasm/plc/theia/packages/timeline":
+"@theia/timeline@1.64.0", "@theia/timeline@file:E:\\gits\\theia\\packages\\timeline":
   version "1.64.0"
   resolved "file:packages/timeline"
   dependencies:
@@ -3436,7 +3426,7 @@
     "@theia/navigator" "1.64.0"
     tslib "^2.6.2"
 
-"@theia/toolbar@1.64.0", "@theia/toolbar@file:/home/wasm/plc/theia/packages/toolbar":
+"@theia/toolbar@1.64.0", "@theia/toolbar@file:E:\\gits\\theia\\packages\\toolbar":
   version "1.64.0"
   resolved "file:packages/toolbar"
   dependencies:
@@ -3454,7 +3444,7 @@
     perfect-scrollbar "1.5.5"
     tslib "^2.6.2"
 
-"@theia/typehierarchy@1.64.0", "@theia/typehierarchy@file:/home/wasm/plc/theia/packages/typehierarchy":
+"@theia/typehierarchy@1.64.0", "@theia/typehierarchy@file:E:\\gits\\theia\\packages\\typehierarchy":
   version "1.64.0"
   resolved "file:packages/typehierarchy"
   dependencies:
@@ -3462,7 +3452,7 @@
     "@theia/editor" "1.64.0"
     tslib "^2.6.2"
 
-"@theia/userstorage@1.64.0", "@theia/userstorage@file:/home/wasm/plc/theia/packages/userstorage":
+"@theia/userstorage@1.64.0", "@theia/userstorage@file:E:\\gits\\theia\\packages\\userstorage":
   version "1.64.0"
   resolved "file:packages/userstorage"
   dependencies:
@@ -3470,14 +3460,14 @@
     "@theia/filesystem" "1.64.0"
     tslib "^2.6.2"
 
-"@theia/variable-resolver@1.64.0", "@theia/variable-resolver@file:/home/wasm/plc/theia/packages/variable-resolver":
+"@theia/variable-resolver@1.64.0", "@theia/variable-resolver@file:E:\\gits\\theia\\packages\\variable-resolver":
   version "1.64.0"
   resolved "file:packages/variable-resolver"
   dependencies:
     "@theia/core" "1.64.0"
     tslib "^2.6.2"
 
-"@theia/vsx-registry@1.64.0", "@theia/vsx-registry@file:/home/wasm/plc/theia/packages/vsx-registry":
+"@theia/vsx-registry@1.64.0", "@theia/vsx-registry@file:E:\\gits\\theia\\packages\\vsx-registry":
   version "1.64.0"
   resolved "file:packages/vsx-registry"
   dependencies:
@@ -3495,7 +3485,7 @@
     semver "^7.5.4"
     tslib "^2.6.2"
 
-"@theia/workspace@1.64.0", "@theia/workspace@file:/home/wasm/plc/theia/packages/workspace":
+"@theia/workspace@1.64.0", "@theia/workspace@file:E:\\gits\\theia\\packages\\workspace":
   version "1.64.0"
   resolved "file:packages/workspace"
   dependencies:
@@ -4475,10 +4465,10 @@
     proxy-from-env "^1.1.0"
     yauzl "^2.9.2"
 
-"@vscode/vsce-sign-linux-x64@2.0.2":
+"@vscode/vsce-sign-win32-x64@2.0.2":
   version "2.0.2"
-  resolved "https://registry.npmjs.org/@vscode/vsce-sign-linux-x64/-/vsce-sign-linux-x64-2.0.2.tgz"
-  integrity sha512-NsPPFVtLaTlVJKOiTnO8Cl78LZNWy0Q8iAg+LlBiCDEgC12Gt4WXOSs2pmcIjDYzj2kY4NwdeN1mBTaujYZaPg==
+  resolved "https://registry.npmjs.org/@vscode/vsce-sign-win32-x64/-/vsce-sign-win32-x64-2.0.2.tgz"
+  integrity sha512-pAiRN6qSAhDM5SVOIxgx+2xnoVUePHbRNC7OD2aOR3WltTKxxF25OfpK8h8UQ7A0BuRkSgREbB59DBlFk4iAeg==
 
 "@vscode/vsce-sign@^2.0.0":
   version "2.0.5"
@@ -4526,6 +4516,13 @@
     yazl "^2.2.2"
   optionalDependencies:
     keytar "^7.7.0"
+
+"@vscode/windows-ca-certs@^0.3.1":
+  version "0.3.3"
+  resolved "https://registry.npmjs.org/@vscode/windows-ca-certs/-/windows-ca-certs-0.3.3.tgz"
+  integrity sha512-C0Iq5RcH+H31GUZ8bsMORsX3LySVkGAqe4kQfUSVcCqJ0QOhXkhgwUMU7oCiqYLXaQWyXFp6Fj6eMdt05uK7VA==
+  dependencies:
+    node-addon-api "^8.2.0"
 
 "@wdio/cli@^6.0.0", "@wdio/cli@^6.0.1", "@wdio/cli@^6.10.2":
   version "6.12.1"
@@ -12592,6 +12589,11 @@ node-addon-api@^8.0.0:
   resolved "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.3.1.tgz"
   integrity sha512-lytcDEdxKjGJPTLEfW4mYMigRezMlyJY8W4wxJK8zE533Jlb8L8dRuObJFWg2P+AuOIxoCgKF+2Oq4d4Zd0OUA==
 
+node-addon-api@^8.2.0:
+  version "8.3.1"
+  resolved "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.3.1.tgz"
+  integrity sha512-lytcDEdxKjGJPTLEfW4mYMigRezMlyJY8W4wxJK8zE533Jlb8L8dRuObJFWg2P+AuOIxoCgKF+2Oq4d4Zd0OUA==
+
 node-api-version@^0.2.0:
   version "0.2.1"
   resolved "https://registry.npmmirror.com/node-api-version/-/node-api-version-0.2.1.tgz"
@@ -13768,15 +13770,15 @@ plist@^3.0.1, plist@^3.0.5, plist@^3.1.0, plist@3.1.0:
     base64-js "^1.5.1"
     xmlbuilder "^15.1.1"
 
-"plugin-a@file:/home/wasm/plc/theia/sample-plugins/sample-namespace/plugin-a":
+"plugin-a@file:E:\\gits\\theia\\sample-plugins\\sample-namespace\\plugin-a":
   version "1.64.0"
   resolved "file:sample-plugins/sample-namespace/plugin-a"
 
-"plugin-b@file:/home/wasm/plc/theia/sample-plugins/sample-namespace/plugin-b":
+"plugin-b@file:E:\\gits\\theia\\sample-plugins\\sample-namespace\\plugin-b":
   version "1.64.0"
   resolved "file:sample-plugins/sample-namespace/plugin-b"
 
-"plugin-gotd@file:/home/wasm/plc/theia/sample-plugins/sample-namespace/plugin-gotd":
+"plugin-gotd@file:E:\\gits\\theia\\sample-plugins\\sample-namespace\\plugin-gotd":
   version "1.64.0"
   resolved "file:sample-plugins/sample-namespace/plugin-gotd"
 
@@ -17085,16 +17087,10 @@ w3c-xmlserializer@^4.0.0:
   dependencies:
     xml-name-validator "^4.0.0"
 
-"wasome@file:/home/wasm/plc/theia/packages/api-wasome":
-  version "1.0.1"
-  resolved "file:packages/api-wasome"
-  dependencies:
-    "@theia/core" "1.64.0"
-
 "wasomecodex@file:../../examples/api-wasomeCodeX":
   resolved "file:examples/api-wasomeCodeX"
 
-"wasomecodex@file:/home/wasm/plc/theia/packages/api-wasomeCodeX":
+"wasomecodex@file:E:\\gits\\theia\\packages\\api-wasomeCodeX":
   version "0.0.1"
   resolved "file:packages/api-wasomeCodeX"
   dependencies:
