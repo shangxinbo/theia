@@ -14,7 +14,7 @@
 // SPDX-License-Identifier: EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0
 // *****************************************************************************
 
-import { CommonMenus, ConfirmDialog, Dialog, QuickInputService, SingleTextInputDialog, FormDialog, FormDialogField, CommonCommands } from '@theia/core/lib/browser';
+import { CommonMenus, ConfirmDialog, Dialog, QuickInputService, SingleTextInputDialog, FormDialog, FormDialogField, CommonCommands, ContextMenu } from '@theia/core/lib/browser';
 import { ReactDialog } from '@theia/core/lib/browser/dialogs/react-dialog';
 import { SelectComponent } from '@theia/core/lib/browser/widgets/select-component';
 import {
@@ -23,9 +23,11 @@ import {
     nls
 } from '@theia/core/lib/common';
 import { OutputChannelManager, OutputChannelSeverity } from '@theia/output/lib/browser/output-channel';
+import { DebugCommands } from '@theia/debug/lib/browser/debug-frontend-application-contribution';
 
 import { inject, injectable, interfaces } from '@theia/core/shared/inversify';
 import { SearchInWorkspaceCommands } from '@theia/search-in-workspace/lib/browser/search-in-workspace-frontend-contribution';
+import { ContextKey, ContextKeyService } from '@theia/core/lib/browser/context-key-service';
 // import { WorkspaceCommands } from '@theia/workspace/src/browser';
 // import { FormDialog, FormDialogField } from "../dialogs";
 
@@ -116,6 +118,12 @@ export namespace WasomeCommands {
         label: '项目输出',
     });
 
+    export const CONNECT = Command.toDefaultLocalizedCommand({
+        id: 'webide.connect2',
+        category: 'Preferences',
+        label: '连接控制器',
+    });
+
 }
 
 
@@ -124,18 +132,19 @@ export namespace WasomeMenus {
     export const FILE = [...MAIN_MENU_BAR, '1_file']; // 文件
     export const FILE_PROJECT = [...FILE, '1_project'];
     export const FILE_WINDOW = [...FILE, '2_window'];
+    export const EDIT_SAVE = [...FILE, '3_save']; // 保存
     export const FILE_CLOSE = [...FILE, '6_close'];
 
     export const EDIT = [...MAIN_MENU_BAR, '2_edit']; // 编辑
-    export const EDIT_SAVE = [...EDIT, '1_save']; // 保存
+    export const EDIT_EDIT = [...EDIT, '1_edit']; // 编辑
     export const EDIT_SEARCH = [...EDIT, '2_search']; // 搜索
-    export const EDIT_CLOSE = [...EDIT, '3_close']; // 关闭编辑
+    // export const EDIT_CLOSE = [...EDIT, '3_close']; // 关闭编辑
 
     export const VIEW = [...MAIN_MENU_BAR, '3_view']; // 视图
-    export const WELCOME = [...VIEW, '1_welcome']; // 起始页面
-    export const CROSS_REFERENCE = [...VIEW, '3_cross_reference']; // 交叉引用
-    export const PROJECT_OUTPUT = [...VIEW, '4_project_output']; // 项目输出
-    export const TOOLBAR = [...VIEW, '5_toolbar']; // 工具栏
+    // export const WELCOME = [...VIEW, '1_welcome']; // 起始页面
+    export const VIEW_CROSS_REFERENCE = [...VIEW, '3_cross_reference']; // 交叉引用
+    export const VIEW_PROJECT_OUTPUT = [...VIEW, '4_project_output']; // 项目输出
+    export const VIEW_TOOLBAR = [...VIEW, '5_toolbar']; // 工具栏
 
     export const PROJECT = [...MAIN_MENU_BAR, '4_project']; // 项目
     /**
@@ -161,33 +170,58 @@ export namespace WasomeMenus {
      * 9. 新增用户库
      * 
      */
-    export const POU = [...PROJECT, '1_pou']; // POU
-    export const POU_NEW_PRG = [...POU, '1_new_prg'];
-    export const POU_NEW_ST = [...POU, '2_new_st'];
-    export const POU_NEW_FUNC = [...POU, '3_new_fun'];
-    export const POU_NEW_FB = [...POU, '4_new_fb'];
-    export const GLOBAL_VARIABLE = [...PROJECT, '2_global_variable']; // 全局变量
-    export const GLOBAL_VARIABLE_NEW_GROUP = [...GLOBAL_VARIABLE, '1_new_group'];
-    export const GLOBAL_VARIABLE_IMPORT = [...GLOBAL_VARIABLE, '2_import'];
-    export const TRACE = [...PROJECT, '3_trace']; // 变量跟踪（示波器）
-    export const TRACE_NEW_TASK = [...TRACE, '1_new_task']; // 新建跟踪任务
-    export const TRACE_OFFLINE_VIEW = [...TRACE, '2_offline_view']; // 离线查看跟踪缓存数据
-    export const VARIABLE = [...PROJECT, '4_variable']; // 变量与监视
-    export const VARIABLE_NEW_WATCH_GROUP = [...VARIABLE, '2_new_watch_group']; // 新建变量监视组
-    export const VARIABLE_PANORAMA = [...VARIABLE, '1_panorama']; // 变量全景视图
-    export const EVENT = [...PROJECT, '5_new_event']; // 新增系统事件
-    export const USER_LIBRARY = [...PROJECT, '6_user_library']; // 新增用户库
-    export const IO_CHANNEL = [...PROJECT, '7_io_channel']; // IO通道与组网
-    export const TASK = [...PROJECT, '8_task']; // 任务配置
-    export const UPPER_MACHINE = [...PROJECT, '9_upper_machine']; // 上位机配置
-    export const SYSTEM_LIBRARY = [...PROJECT, '9a_system_library']; // 系统库管理
 
-    export const DEBUG = [...MAIN_MENU_BAR, '5_debug']; // 编译与调试
+    export const PROJECT_NEW = [...PROJECT, '1_new']; // 新建
+    export const PROJECT_NEW_POU = [...PROJECT_NEW, '1_pou']; // 程序组织单元POU
+    export const PROJECT_NEW_VAR_GROUP = [...PROJECT_NEW, '2_new_group']; // 新建全局变量组
+    export const PROJECT_NEW_USER_LIBRARY = [...PROJECT_NEW, '6_user_library']; // 新增用户库
+    export const PROJECT_NEW_EVENT = [...PROJECT_NEW, '6_event']; // 新增系统事件处理
+    export const PROJECT_NEW_WATCH_GROUP = [...PROJECT_NEW, '6_watch_group']; // 新增变量监视组
+    export const PROJECT_NEW_TRACE = [...PROJECT_NEW, '6_trace']; // 新增变量跟踪任务
 
-    export const IMPORT = [...MAIN_MENU_BAR, '6_import']; // 导入导出
+    export const PROJECT_IO_CHANNEL = [...PROJECT, '3_io_channel']; // 硬件组态
+    export const PROJECT_TASK = [...PROJECT, '4_task']; // 任务配置
+    export const PROJECT_UPPER_MACHINE = [...PROJECT, '5_upper_machine']; // 上位机配置
+    export const PROJECT_VARIABLE_PANORAMA = [...PROJECT, '6_panorama']; // 变量全景视图
+    // export const POU_NEW_PRG = [...PROJECT_NEW_POU, '1_new_prg'];
+    // export const POU_NEW_ST = [...PROJECT_NEW_POU, '2_new_st'];
+    // export const POU_NEW_FUNC = [...PROJECT_NEW_POU, '3_new_fun'];
+    // export const POU_NEW_FB = [...PROJECT_NEW_POU, '4_new_fb'];
+    // export const GLOBAL_VARIABLE = [...PROJECT, '2_global_variable']; // 全局变量
+    // export const GLOBAL_VARIABLE_NEW_GROUP = [...GLOBAL_VARIABLE, '1_new_group'];
+    // export const GLOBAL_VARIABLE_IMPORT = [...GLOBAL_VARIABLE, '2_import'];
+    // export const TRACE = [...PROJECT, '3_trace']; // 变量跟踪（示波器）
+    // export const TRACE_NEW_TASK = [...TRACE, '1_new_task']; // 新建跟踪任务
+
+    // export const VARIABLE_NEW_WATCH_GROUP = [...VARIABLE, '2_new_watch_group']; // 新建变量监视组
+
+    // export const EVENT = [...PROJECT, '5_new_event']; // 新增系统事件
+    // export const USER_LIBRARY = [...PROJECT, '6_user_library']; // 新增用户库
+
+
+
+    export const LIBRARY = [...MAIN_MENU_BAR, '5_library']; // 库管理
+    export const LIBRARY_SYSTEM = [...LIBRARY, '1_system_library']; // 系统库管理
+    export const LIBRARY_DEVICE = [...LIBRARY, '2_device_library']; // 设备库
+    export const LIBRARY_DEVICE_CAN = [...LIBRARY_DEVICE, '1_device_library_can']; // 设备库CANOEPN
+    export const LIBRARY_DEVICE_EtherCAT = [...LIBRARY_DEVICE, '2_device_library_ethercat']; // 设备库EtherCAT
+    export const LIBRARY_DEVICE_PN = [...LIBRARY_DEVICE, '3_device_library_pn']; // 设备库PN
+    export const LIBRARY_DEVICE_Eip = [...LIBRARY_DEVICE, '4_device_library_eip']; // 设备库Eip
+    export const LIBRARY_DEVICE_WADS = [...LIBRARY_DEVICE, '5_device_library_wads']; // 设备库WADS
+
+    export const DEBUG = [...MAIN_MENU_BAR, '6_debug']; // 编译与调试
+    export const DEBUG_TRACE_OFFLINE_VIEW = [...DEBUG, '4_offline_view']; // 离线查看跟踪缓存数据
+
+    export const ONLINE = [...MAIN_MENU_BAR, '7_online']; // 在线
+
+    export const IMPORT = [...MAIN_MENU_BAR, '8_import']; // 导入导出
+    export const IMPORT_PROJECT = [...IMPORT, '1_import']; // 导入导出项目
+    export const IMPORT_LIBRARY = [...IMPORT, '2_lib']; // 导入系统库
+    export const IMPORT_VAR_GLOBAL = [...IMPORT, '3_var_global']; // 导入导出全局变量
 
     export const HELP = [...MAIN_MENU_BAR, '9_help']; // 帮助
     export const TO_HELP = [...MAIN_MENU_BAR, '9_help', '1_help'];
+    export const HELP_RELOAD = [...MAIN_MENU_BAR, '9_help', '9_reload'];
 
 }
 
@@ -203,6 +237,12 @@ export class SampleCommandContribution implements CommandContribution {
 
     @inject(CommandRegistry)
     protected readonly commandRegistry: CommandRegistry;
+
+    @inject(ContextKeyService)
+    protected readonly contextKeyService: ContextKeyService;
+
+    enabled: boolean = true;
+    visible: boolean = true;
 
     registerCommands(commands: CommandRegistry): void {
 
@@ -325,11 +365,25 @@ export class SampleCommandContribution implements CommandContribution {
         });
 
         commands.registerCommand(WasomeCommands.EVENT_NEW, {
-            execute: () => this.webideCreate("EVENT")
+            execute: () => this.webideCreate("EVENT"),
+            // isEnabled: (context?: any) => {
+            //     return context && context['webideProjectReady'];
+            //     return false;
+            //     // return this.contextKeyService.match('webideProjectReady');
+            // },
+            // isVisible: (context?: any) => {
+            //     return context && context['webideProjectReady'];
+            //     return false;
+            //     // return this.contextKeyService.match('webideProjectReady');
+            // },
         });
 
         commands.registerCommand(WasomeCommands.POU_NEW_LIB, {
-            execute: () => this.webideCreate("LIB")
+            execute: () => this.webideCreate("LIB"),
+            // isEnabled: () => {
+            //     return false;
+            //     // return this.contextKeyService.match('webideProjectReady');
+            // }
         });
 
         commands.registerCommand(WasomeCommands.FORM_DIALOG, {
@@ -385,6 +439,27 @@ export class SampleCommandContribution implements CommandContribution {
             }
         });
 
+        commands.registerCommand(WasomeCommands.CONNECT, {
+            execute: () => {
+                this.commandRegistry.executeCommand("webide.connect");
+                // if (this.enabled) {
+                //     this.enabled = false;
+                // }
+                if (this.visible) {
+                    this.visible = false;
+                }
+                // this.contextKeyService.setContext('selectedModeHost2', true);
+            },
+            isEnabled: () => {
+                return this.contextKeyService.match('webideProjectReady') && !this.contextKeyService.match('selectedModeHost');
+            },
+            isVisible: () => this.visible
+            // isVisible: () => {
+            //     // return !this.contextKeyService.match('selectedModeHost');
+            //     return false;
+            //     // return this.contextKeyService.match('webideProjectReady');
+            // },
+        })
 
     }
 
@@ -409,6 +484,9 @@ export class SampleCommandContribution implements CommandContribution {
 
 @injectable()
 export class SampleMenuContribution implements MenuContribution {
+
+    @inject(ContextKeyService)
+    protected readonly contextKeyService: ContextKeyService;
     registerMenus(menus: MenuModelRegistry): void {
         setTimeout(() => {
             menus.registerSubmenu(WasomeMenus.FILE, '文件');
@@ -416,12 +494,14 @@ export class SampleMenuContribution implements MenuContribution {
             menus.registerSubmenu(WasomeMenus.VIEW, '视图');
             menus.registerSubmenu(WasomeMenus.PROJECT, '项目');
             menus.registerSubmenu(WasomeMenus.DEBUG, '编译与调试');
+            menus.registerSubmenu(WasomeMenus.ONLINE, '在线');
             menus.registerSubmenu(WasomeMenus.IMPORT, '导入导出');
             menus.registerSubmenu(WasomeMenus.HELP, '帮助');
 
             menus.registerMenuAction(WasomeMenus.FILE_PROJECT, {
                 commandId: "webide.project.new",
                 label: '新建项目',
+                order: '1'
             });
             menus.registerMenuAction(WasomeMenus.FILE_PROJECT, {
                 commandId: "workspace:openFolder",
@@ -438,16 +518,23 @@ export class SampleMenuContribution implements MenuContribution {
                 label: '项目空间',
             });
 
-            menus.registerMenuAction(WasomeMenus.FILE_PROJECT, {
-                commandId: "workspace:close",
-                label: nls.localizeByDefault('关闭当前项目'),
+
+            menus.registerMenuAction(WasomeMenus.FILE_CLOSE, {
+                commandId: CommonCommands.CLOSE_MAIN_TAB.id,
+                order: '1',
+                label: nls.localizeByDefault('关闭当前编辑文件'),
             });
 
             menus.registerMenuAction(WasomeMenus.FILE_CLOSE, {
-                commandId: "view.reload"
+                commandId: "workspace:close",
+                label: nls.localizeByDefault('关闭当前项目'),
+                order: '2'
             });
+
             menus.registerMenuAction(WasomeMenus.FILE_CLOSE, {
-                commandId: "close.window"
+                commandId: "close.window",
+                label: nls.localizeByDefault('退出'),
+                order: '3'
             });
 
             menus.registerMenuAction(WasomeMenus.EDIT_SAVE, {
@@ -461,64 +548,195 @@ export class SampleMenuContribution implements MenuContribution {
             });
 
 
-            menus.registerMenuAction(WasomeMenus.EDIT_SAVE, {
+            menus.registerMenuAction(WasomeMenus.EDIT_EDIT, {
                 commandId: CommonCommands.UNDO.id,
                 label: nls.localizeByDefault('撤销'),
             });
-            menus.registerMenuAction(WasomeMenus.EDIT_SAVE, {
+
+            menus.registerMenuAction(WasomeMenus.EDIT_EDIT, {
                 commandId: CommonCommands.REDO.id,
                 label: nls.localizeByDefault('恢复'),
             });
 
             menus.registerMenuAction(WasomeMenus.EDIT_SEARCH, {
                 commandId: CommonCommands.FIND.id,
-                label: '查找(基于文本)',
+                label: '查找',
                 order: '0'
             });
             menus.registerMenuAction(WasomeMenus.EDIT_SEARCH, {
                 commandId: CommonCommands.REPLACE.id,
-                label: '替换(基于文本)',
+                label: '替换',
                 order: '1'
             });
             menus.registerMenuAction(WasomeMenus.EDIT_SEARCH, {
                 commandId: SearchInWorkspaceCommands.OPEN_SIW_WIDGET.id,
-                label: '基于项目查找',
+                label: '项目查找',
                 order: '2'
             });
             menus.registerMenuAction(WasomeMenus.EDIT_SEARCH, {
                 commandId: SearchInWorkspaceCommands.REPLACE_IN_FILES.id,
-                label: '基于项目替换',
+                label: '项目替换',
                 order: '3'
             });
 
-            menus.registerMenuAction(WasomeMenus.EDIT_CLOSE, {
-                commandId: CommonCommands.CLOSE_MAIN_TAB.id,
-                label: nls.localizeByDefault('关闭当前编辑器'),
-            });
+            // menus.registerMenuAction(WasomeMenus.WELCOME, {
+            //     commandId: 'getting.started.widget',
+            //     label: nls.localizeByDefault('欢迎页面'),
+            // });
 
-            menus.registerMenuAction(WasomeMenus.WELCOME, {
-                commandId: 'getting.started.widget',
-                label: nls.localizeByDefault('起始页面'),
-            });
-
-            menus.registerMenuAction(WasomeMenus.CROSS_REFERENCE, {
+            menus.registerMenuAction(WasomeMenus.VIEW_CROSS_REFERENCE, {
                 commandId: WasomeCommands.OPEN_CROSS_REFERENCE.id,
                 label: nls.localizeByDefault('交叉引用'),
             });
 
-            menus.registerMenuAction(WasomeMenus.PROJECT_OUTPUT, {
+            menus.registerMenuAction(WasomeMenus.VIEW_PROJECT_OUTPUT, {
                 commandId: WasomeCommands.OPEN_IDE_OUTPUT.id,
                 label: nls.localizeByDefault('项目输出')
             });
 
-            menus.registerMenuAction(WasomeMenus.IMPORT, {
-                commandId: "webide.project.exportProject",
-                label: '导出项目'
+
+            menus.registerMenuAction(WasomeMenus.VIEW_TOOLBAR, {
+                commandId: "toolbar.view.toggle",
+                label: '显示/隐藏工具栏'
             });
-            menus.registerMenuAction(WasomeMenus.IMPORT, {
-                commandId: "webide.project.importProject",
-                label: '导入项目'
+
+            menus.registerSubmenu(WasomeMenus.PROJECT_NEW, '新建');
+            // menus.registerMenuAction(WasomeMenus.PROJECT_NEW_POU, {
+            //     commandId: "webide.pou.new",
+            //     label: '程序单元组织（POU）',
+            //     order: '1a'
+            // });
+
+            menus.registerMenuAction(WasomeMenus.PROJECT_NEW_VAR_GROUP, {
+                commandId: "webide.gvar.addNewGroup",
+                label: '全局变量组',
+                order: '1b'
             });
+
+            menus.registerMenuAction(WasomeMenus.PROJECT_NEW_USER_LIBRARY, {
+                commandId: WasomeCommands.POU_NEW_LIB.id,
+                label: '用户库',
+                order: '2'
+            });
+
+            menus.registerMenuAction(WasomeMenus.PROJECT_NEW_EVENT, {
+                commandId: WasomeCommands.EVENT_NEW.id,
+                label: '系统事件处理',
+                order: '3'
+            });
+            menus.registerMenuAction(WasomeMenus.PROJECT_NEW_WATCH_GROUP, {
+                commandId: "webide.monitor.addNewGroup",
+                label: '变量监视组',
+                order: '4'
+            });
+            menus.registerMenuAction(WasomeMenus.PROJECT_NEW_TRACE, {
+                commandId: "webide.trace.createNewTask",
+                label: '示波器',
+                order: '5'
+            });
+
+            menus.registerMenuAction(WasomeMenus.PROJECT_IO_CHANNEL, {
+                commandId: "webide.app.showIO",
+                label: '硬件组网', // TODO 定制客户需求，label 改变
+                // order: '3'
+            });
+
+            menus.registerMenuAction(WasomeMenus.PROJECT_IO_CHANNEL, {
+                commandId: "webide.app.showIoChannel",
+                label: 'I/O通道配置',
+                // order: '3'
+            });
+
+            menus.registerMenuAction(WasomeMenus.PROJECT_TASK, {
+                commandId: "webide.app.showResources",
+                label: '任务配置',
+                // order: '2'
+            });
+
+            menus.registerMenuAction(WasomeMenus.PROJECT_UPPER_MACHINE, {
+                commandId: "webide.app.showHmi",
+                label: '上位机配置',
+                // order: '2'
+            });
+
+            menus.registerMenuAction(WasomeMenus.PROJECT_VARIABLE_PANORAMA, {
+                commandId: "webide.app.showMonitor",
+                label: '变量全景图'
+            });
+            // menus.registerMenuAction(WasomeMenus.POU_NEW_PRG, {
+            //     commandId: WasomeCommands.POU_NEW_PRG.id,
+            //     label: '新增程序（PRG）',
+            //     order: '0'
+            // });
+            // menus.registerMenuAction(WasomeMenus.POU_NEW_ST, {
+            //     commandId: WasomeCommands.POU_NEW_ST.id,
+            //     label: '新增程序（全ST）',
+            //     order: '1'
+            // });
+            // menus.registerMenuAction(WasomeMenus.POU_NEW_FUNC, {
+            //     commandId: WasomeCommands.POU_NEW_FUNC.id,
+            //     label: '新增函数（FUN）',
+            //     order: '2'
+            // });
+            // menus.registerMenuAction(WasomeMenus.POU_NEW_FB, {
+            //     commandId: WasomeCommands.POU_NEW_FB.id,
+            //     label: '新增函数块（FB）',
+            //     order: '3'
+            // });
+
+            // menus.registerSubmenu(WasomeMenus.GLOBAL_VARIABLE, '全局变量');
+            // menus.registerMenuAction(WasomeMenus.GLOBAL_VARIABLE_NEW_GROUP, {
+            //     commandId: "webide.gvar.addNewGroup",
+            //     label: '新增全局变量组',
+            //     order: '1'
+            // });
+            // menus.registerMenuAction(WasomeMenus.GLOBAL_VARIABLE_IMPORT, {
+            //     commandId: "webide.gvar.showGlobalVarImport",
+            //     label: '导入全局变量',
+            //     order: '2'
+            // });
+
+
+            // menus.registerSubmenu(WasomeMenus.VARIABLE, '变量与监视');
+
+
+            // menus.registerSubmenu(WasomeMenus.TRACE, '变量跟踪（示波器）');
+
+
+            menus.registerSubmenu(WasomeMenus.LIBRARY, '库管理');
+            menus.registerSubmenu(WasomeMenus.LIBRARY_DEVICE, '设备库');
+            menus.registerMenuAction(WasomeMenus.LIBRARY_SYSTEM, {
+                commandId: "webide.libManage",
+                label: '系统库'
+            });
+
+            menus.registerMenuAction(WasomeMenus.LIBRARY_DEVICE_CAN, {
+                commandId: "webide.showCanOpenLib",
+                label: 'CANopen'
+            });
+            menus.registerMenuAction(WasomeMenus.LIBRARY_DEVICE_EtherCAT, {
+                commandId: "webide.showEthLib",
+                label: 'EtherCAT'
+            });
+            menus.registerMenuAction(WasomeMenus.LIBRARY_DEVICE_PN, {
+                commandId: "webide.showPNLib",
+                label: 'Profinet'
+            });
+            menus.registerMenuAction(WasomeMenus.LIBRARY_DEVICE_Eip, {
+                commandId: "webide.showEipLib",
+                label: 'EtherNet/IP'
+            });
+            menus.registerMenuAction(WasomeMenus.LIBRARY_DEVICE_WADS, {
+                commandId: "webide.showWadsLib",
+                label: 'WADS'
+            });
+
+            // menus.registerMenuAction(WasomeMenus.USER_LIBRARY, {
+            //     commandId: WasomeCommands.POU_NEW_LIB.id,
+            //     label: '新增用户库',
+            //     // order: '4'
+            // });
+
             menus.registerMenuAction(WasomeMenus.DEBUG, {
                 commandId: "webide.project.compile",
                 label: '编译',
@@ -527,102 +745,87 @@ export class SampleMenuContribution implements MenuContribution {
             menus.registerMenuAction(WasomeMenus.DEBUG, {
                 commandId: "webide.project.debug",
                 label: '调试',
-                order: '1'
-            });
-
-            menus.registerSubmenu(WasomeMenus.POU, 'POU');
-            menus.registerMenuAction(WasomeMenus.POU_NEW_PRG, {
-                commandId: WasomeCommands.POU_NEW_PRG.id,
-                label: '新增程序（PRG）',
-                order: '0'
-            });
-            menus.registerMenuAction(WasomeMenus.POU_NEW_ST, {
-                commandId: WasomeCommands.POU_NEW_ST.id,
-                label: '新增程序（全ST）',
-                order: '1'
-            });
-            menus.registerMenuAction(WasomeMenus.POU_NEW_FUNC, {
-                commandId: WasomeCommands.POU_NEW_FUNC.id,
-                label: '新增函数（FUN）',
                 order: '2'
             });
-            menus.registerMenuAction(WasomeMenus.POU_NEW_FB, {
-                commandId: WasomeCommands.POU_NEW_FB.id,
-                label: '新增函数块（FB）',
+            menus.registerMenuAction(WasomeMenus.DEBUG, {
+                commandId: DebugCommands.STOP.id,
+                label: '结束调试',
                 order: '3'
             });
-
-            menus.registerSubmenu(WasomeMenus.GLOBAL_VARIABLE, '全局变量');
-            menus.registerMenuAction(WasomeMenus.GLOBAL_VARIABLE_NEW_GROUP, {
-                commandId: "webide.gvar.addNewGroup",
-                label: '新增全局变量组',
-                order: '1'
-            });
-            menus.registerMenuAction(WasomeMenus.GLOBAL_VARIABLE_IMPORT, {
-                commandId: "webide.gvar.showGlobalVarImport",
-                label: '导入全局变量',
-                order: '2'
-            });
-
-            menus.registerMenuAction(WasomeMenus.IO_CHANNEL, {
-                commandId: "webide.app.showIO",
-                label: 'IO通道与组网', // 定制客户需求，label 改变
-                // order: '3'
-            });
-
-            menus.registerMenuAction(WasomeMenus.VARIABLE_PANORAMA, {
-                commandId: "webide.app.showMonitor",
-                label: '变量全景视图'
-            });
-
-            menus.registerSubmenu(WasomeMenus.VARIABLE, '变量与监视');
-            menus.registerMenuAction(WasomeMenus.VARIABLE_NEW_WATCH_GROUP, {
-                commandId: "webide.monitor.addNewGroup",
-                label: '新增变量监视组'
-            });
-
-            menus.registerMenuAction(WasomeMenus.TASK, {
-                commandId: "webide.app.showResources",
-                label: '任务配置',
-                // order: '2'
-            });
-
-            menus.registerSubmenu(WasomeMenus.TRACE, '变量跟踪（示波器）');
-            menus.registerMenuAction(WasomeMenus.TRACE_NEW_TASK, {
-                commandId: "webide.trace.createNewTask",
-                label: '新建跟踪任务',
-                order: '1'
-            });
-            menus.registerMenuAction(WasomeMenus.TRACE_OFFLINE_VIEW, {
+            menus.registerMenuAction(WasomeMenus.DEBUG_TRACE_OFFLINE_VIEW, {
                 commandId: "webide.trace.importData",
-                label: '离线查看跟踪缓存数据',
+                label: '加载离线示波器数据',
+                order: '1'
+            });
+
+            menus.registerMenuAction(WasomeMenus.ONLINE, {
+                commandId: "webide.connect",
+                label: '连接控制器',
+                order: '1',
+                // when: 'webideProjectReady' // 可以通过when访问上下文键，但访问vscode的上下文键时，没有访问到
+            });
+            menus.registerMenuAction(WasomeMenus.ONLINE, {
+                commandId: "webide.online.plcDetail",
+                label: '在线状态',
                 order: '2'
             });
-
-            menus.registerMenuAction(WasomeMenus.EVENT, {
-                commandId: WasomeCommands.EVENT_NEW.id,
-                label: '新建系统事件',
-                // order: '1'
+            menus.registerMenuAction(WasomeMenus.ONLINE, {
+                commandId: "webide.online.deployApp",
+                label: '下装',
+                order: '3'
+            });
+            menus.registerMenuAction(WasomeMenus.ONLINE, {
+                commandId: "webide.target.uploadsource",
+                label: '读出项目',
+                order: '4'
+            });
+            menus.registerMenuAction(WasomeMenus.ONLINE, {
+                commandId: "webide.online.varMonitor",
+                label: '变量查看',
+                order: '5'
+            });
+            menus.registerMenuAction(WasomeMenus.ONLINE, {
+                commandId: "webide.online.redundent",
+                label: '冗余',
+                order: '6'
             });
 
-            menus.registerMenuAction(WasomeMenus.UPPER_MACHINE, {
-                commandId: "webide.app.showHmi",
-                label: '上位机配置',
-                // order: '2'
+            menus.registerMenuAction(WasomeMenus.ONLINE, {
+                commandId: "webide.online.alarm",
+                label: '告警',
+                order: '7'
             });
 
-            menus.registerMenuAction(WasomeMenus.SYSTEM_LIBRARY, {
-                commandId: "webide.libManage",
-                label: '系统库管理',
-                // order: '3'
+            menus.registerMenuAction(WasomeMenus.ONLINE, {
+                commandId: "webide.online.unlink",
+                label: '断开',
+                order: '8'
             });
 
-            menus.registerMenuAction(WasomeMenus.USER_LIBRARY, {
-                commandId: WasomeCommands.POU_NEW_LIB.id,
-                label: '新增用户库',
-                // order: '4'
+            menus.registerMenuAction(WasomeMenus.IMPORT_PROJECT, {
+                commandId: "webide.project.importProject",
+                label: '导入项目'
             });
 
+            menus.registerMenuAction(WasomeMenus.IMPORT_PROJECT, {
+                commandId: "webide.project.exportProject",
+                label: '导出项目'
+            });
+
+            menus.registerMenuAction(WasomeMenus.IMPORT_LIBRARY, {
+                commandId: "webide.importLib",
+                label: '导入系统库'
+            });
+
+            menus.registerMenuAction(WasomeMenus.IMPORT_VAR_GLOBAL, {
+                commandId: "webide.gvar.showGlobalVarImport",
+                label: '导入全局变量'
+            });
+            menus.registerMenuAction(WasomeMenus.IMPORT_VAR_GLOBAL, {
+                // commandId: "webide.gvar.showGlobalVarExport",  // 目前是在全景图中导出
+                commandId: "webide.app.showMonitor",
+                label: '导出全局变量'
+            });
 
             menus.registerMenuAction(WasomeMenus.TO_HELP, {
                 commandId: WasomeCommands.OPEN_HELP.id,
@@ -630,11 +833,10 @@ export class SampleMenuContribution implements MenuContribution {
                 order: '1'
             });
 
-            menus.registerMenuAction(WasomeMenus.TOOLBAR, {
-                commandId: "toolbar.view.toggle",
-                label: '显示/隐藏工具栏'
+            menus.registerMenuAction(WasomeMenus.HELP_RELOAD, {
+                commandId: "view.reload",
+                order: "5"
             });
-
 
 
         }, 100);

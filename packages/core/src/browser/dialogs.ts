@@ -566,13 +566,14 @@ export class SingleTextInputDialog extends AbstractDialog<string> {
 export interface FormDialogField {
     label: string;
     name: string;
-    elementType?: "input" | "select" | "textarea" | "tags";
+    elementType?: "input" | "select" | "textarea" | "tags" | "radio";
     type?: 'text' | 'number' | 'password' | 'email' | 'checkbox';
     options?: SelectOption[];
     disabled?: boolean;
     value?: string | boolean | any;
     placeholder?: string;
     multiple?: boolean; // tags用
+    direction?: "vertical" | "horizontal"; // radio用
 }
 
 export interface FormDialogProps extends DialogProps {
@@ -600,7 +601,47 @@ export class FormDialog extends AbstractDialog<Record<string, string>> {
             const inputCell = this.node.ownerDocument.createElement('td');
             let input: any = this.node.ownerDocument.createElement('input');
 
-            if (field.elementType === 'tags') {
+            if (field.elementType === 'radio') {
+                // label放在上方
+                labelCell.style.verticalAlign = 'top';
+                labelCell.style.paddingTop = '8px';
+
+                const radioGroupDiv = this.node.ownerDocument.createElement('div');
+                radioGroupDiv.style.display = field.direction === 'horizontal' ? 'flex' : 'block';
+                radioGroupDiv.style.gap = '12px';
+
+                if (field.options) {
+                    for (const option of field.options) {
+                        const radioLabel = this.node.ownerDocument.createElement('label');
+                        radioLabel.style.display = field.direction === 'horizontal' ? 'inline-flex' : 'flex';
+                        radioLabel.style.alignItems = 'center'; // 垂直居中
+                        radioLabel.style.marginRight = field.direction === 'horizontal' ? '16px' : '0';
+                        radioLabel.style.marginBottom = field.direction === 'vertical' ? '8px' : '0';
+
+                        const radioInput = this.node.ownerDocument.createElement('input');
+                        radioInput.type = 'radio';
+                        radioInput.name = field.name;
+                        radioInput.value = option.value || '';
+                        radioInput.disabled = !!field.disabled;
+                        radioInput.className = 'theia-input';
+                        radioInput.style.verticalAlign = 'middle'; // 垂直居中
+
+                        if (field.value === option.value) {
+                            radioInput.checked = true;
+                        }
+                        radioLabel.appendChild(radioInput);
+
+                        const labelText = this.node.ownerDocument.createElement('span');
+                        labelText.textContent = option.label || option.value || '';
+                        labelText.style.marginLeft = '6px';
+                        labelText.style.verticalAlign = 'middle'; // 垂直居中
+                        radioLabel.appendChild(labelText);
+
+                        radioGroupDiv.appendChild(radioLabel);
+                    }
+                }
+                input = radioGroupDiv;
+            } else if (field.elementType === 'tags') {
                 // 标签区域整体样式
                 const tagsDiv = this.node.ownerDocument.createElement('div');
                 tagsDiv.style.display = 'block';
@@ -718,7 +759,7 @@ export class FormDialog extends AbstractDialog<Record<string, string>> {
                 }
                 input.className = 'theia-input';
             }
-            if (field.elementType !== 'tags' && field.type !== 'checkbox') {
+            if (field.elementType !== 'tags' && field.elementType !== 'radio' && field.type !== 'checkbox') {
                 input.style.width = '100%';
             };
             if (field.disabled) {
@@ -742,6 +783,10 @@ export class FormDialog extends AbstractDialog<Record<string, string>> {
             const input = this.inputs[name];
             if (input instanceof HTMLDivElement && this.tagSelections[name]) {
                 result[name] = Array.from(this.tagSelections[name]).join(',');
+            } else if (input instanceof HTMLDivElement && input.querySelector('input[type="radio"]')) {
+                // radio 取选中的值
+                const checked = input.querySelector('input[type="radio"]:checked') as HTMLInputElement;
+                result[name] = checked ? checked.value : '';
             } else if (input instanceof HTMLSelectElement) {
                 result[name] = input.value;
             } else if (input instanceof HTMLInputElement && input.type === 'checkbox') {
