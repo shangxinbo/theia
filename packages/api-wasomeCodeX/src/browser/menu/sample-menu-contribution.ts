@@ -28,6 +28,8 @@ import { DebugCommands } from '@theia/debug/lib/browser/debug-frontend-applicati
 import { inject, injectable, interfaces } from '@theia/core/shared/inversify';
 import { SearchInWorkspaceCommands } from '@theia/search-in-workspace/lib/browser/search-in-workspace-frontend-contribution';
 import { ContextKey, ContextKeyService } from '@theia/core/lib/browser/context-key-service';
+import { Emitter, Event } from '@theia/core/lib/common/event';
+
 // import { WorkspaceCommands } from '@theia/workspace/src/browser';
 // import { FormDialog, FormDialogField } from "../dialogs";
 
@@ -241,10 +243,53 @@ export class SampleCommandContribution implements CommandContribution {
     @inject(ContextKeyService)
     protected readonly contextKeyService: ContextKeyService;
 
-    enabled: boolean = true;
-    visible: boolean = true;
+
+    private readonly _onStateChanged = new Emitter<void>();
+    readonly onStateChanged: Event<void> = this._onStateChanged.event;
+
+    private selectTarget: string = '';
+    private selectPlc: string = '';
+    private project: string = '';
+
+    setState(state: { selectTarget?: string, selectPlc?: string, project?: string }) {
+        let changed = false;
+        if (state.selectTarget !== undefined && state.selectTarget !== this.selectTarget) {
+            this.selectTarget = state.selectTarget;
+            changed = true;
+        }
+        if (state.selectPlc !== undefined && state.selectPlc !== this.selectPlc) {
+            this.selectPlc = state.selectPlc;
+            changed = true;
+        }
+        if (state.project !== undefined && state.project !== this.project) {
+            this.project = state.project;
+            changed = true;
+        }
+        if (changed) {
+            this._onStateChanged.fire();
+        }
+    }
+
+    getState() {
+        return {
+            selectTarget: this.selectTarget,
+            selectPlc: this.selectPlc,
+            project: this.project
+        };
+    }
 
     registerCommands(commands: CommandRegistry): void {
+
+
+        commands.registerCommand({ id: 'wasome.setState' }, {
+            execute: (state: { selectTarget?: string, selectPlc?: string, project?: string }) => {
+                this.setState(state);
+            }
+        });
+
+        commands.registerCommand({ id: 'wasome.getState' }, {
+            execute: () => this.getState()
+        });
 
         commands.registerCommand(SampleSelectInputDialog, {
             execute: async () => {
