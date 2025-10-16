@@ -43,26 +43,39 @@ export namespace WasomeCommands {
     export const OPEN_WEBIDE_SETTING = Command.toDefaultLocalizedCommand({
         id: 'webide.setting',
         category: 'Preferences',
-        label: 'Open Settings',
+        label: '设置',
+    });
+
+    export const OPEN_DIALOG = Command.toDefaultLocalizedCommand({
+        id: 'core.openDialog',
+        label: 'Open Dialog'
+    });
+
+    export const FORM_DIALOG = Command.toDefaultLocalizedCommand({
+        id: 'core.formDialog',
+        label: 'Form Dialog'
     });
 
     export const OPEN_HELP = Command.toDefaultLocalizedCommand({
         id: 'webide.project.showHelpPage',
-        category: 'Preferences',
-        label: 'Open Help',
+        label: '帮助',
     });
 
     export const PROJECT_HOME = Command.toDefaultLocalizedCommand({
-        id: 'webide.project.home',
-        category: 'Preferences',
-        label: 'Open Project',
+        id: 'project.home',
+        label: '打开项目',
     });
 
     export const NEW_PROJECT = Command.toDefaultLocalizedCommand({
-        id: 'webide.project.new',
-        category: 'Preferences',
-        label: 'New Project',
+        id: 'project.new',
+        category: 'Create',
+        label: '新建项目',
     });
+
+    export const PROJECT_WORKSPACE = Command.toDefaultLocalizedCommand({
+        id: 'project.workspace',
+        label: "项目空间"
+    })
 
     export const POU_NEW_PRG = Command.toDefaultLocalizedCommand({
         id: 'webide.pou.newPrg',
@@ -75,11 +88,13 @@ export namespace WasomeCommands {
         category: 'Create',
         label: '新增功能块（FB）',
     });
+
     export const POU_NEW_ST = Command.toDefaultLocalizedCommand({
         id: 'webide.pou.newSt',
         category: 'Create',
         label: '新增程序（全ST）',
     });
+
     export const POU_NEW_FUNC = Command.toDefaultLocalizedCommand({
         id: 'webide.pou.newFunc',
         category: 'Create',
@@ -98,44 +113,168 @@ export namespace WasomeCommands {
         label: '新增用户库',
     });
 
-    export const OPEN_DIALOG = Command.toDefaultLocalizedCommand({
-        id: 'core.openDialog',
-        label: 'Open Dialog'
+    export const GVAR_NEWGROUP = Command.toDefaultLocalizedCommand({
+        id: 'gvar.newGroup',
+        category: 'Create',
+        label: '新增全局变量组',
     });
 
-    export const FORM_DIALOG = Command.toDefaultLocalizedCommand({
-        id: 'core.formDialog',
-        label: 'Form Dialog'
+    export const USER_LIB_NEW = Command.toDefaultLocalizedCommand({
+        id: 'userLib.new',
+        category: 'Create',
+        label: '新增用户库',
     });
+
+    export const MONITOR_NEW = Command.toDefaultLocalizedCommand({
+        id: 'monitor.new',
+        category: 'Create',
+        label: '新增监视组',
+    });
+
+    export const TRACE_NEW = Command.toDefaultLocalizedCommand({
+        id: 'trace.new',
+        category: 'Create',
+        label: '新增示波器',
+    });
+
+    export const IO = Command.toDefaultLocalizedCommand({
+        id: "io.new",
+        label: '硬件组网',
+    });
+
+    export const IO_CHANNEL = Command.toDefaultLocalizedCommand({
+        id: "io.channel",
+        label: 'I/O通道配置',
+    });
+
+    export const TASK = Command.toDefaultLocalizedCommand({
+        id: "webide.task",
+        label: '任务配置',
+    });
+
+    export const HMI = Command.toDefaultLocalizedCommand({
+        id: "webide.hmi",
+        label: '上位机配置',
+    })
 
     export const OPEN_CROSS_REFERENCE = Command.toDefaultLocalizedCommand({
         id: 'webide.panel.crossReference',
-        category: 'Preferences',
         label: '交叉引用',
     });
 
     export const OPEN_IDE_OUTPUT = Command.toDefaultLocalizedCommand({
         id: 'webide.panel.ideOutput',
-        category: 'Preferences',
         label: '项目输出',
     });
 
     export const CONNECT = Command.toDefaultLocalizedCommand({
         id: 'webide.connect.start',
-        category: 'Preferences',
         label: '连接控制器',
     });
 
+    export const PLC_DETAIL = Command.toDefaultLocalizedCommand({
+        id: 'plcDetail',
+        label: '在线状态',
+    });
+
+    export const DEPLAY_APP = Command.toDefaultLocalizedCommand({
+        id: "deployApp",
+        label: '下装',
+    });
+
+    export const UPLOAD_SOURCE = Command.toDefaultLocalizedCommand({
+        id: "uploadsource",
+        label: '上传项目',
+    });
+
+    export const VAR_MONITOR = Command.toDefaultLocalizedCommand({
+        id: "varMonitor",
+        label: '变量监视',
+    })
+
+    export const REDUNDENT = Command.toDefaultLocalizedCommand({
+        id: "redundent",
+        label: '冗余',
+    });
+
+    export const ALARM = Command.toDefaultLocalizedCommand({
+        id: 'webide.alarm',
+        label: '告警',
+    });
+
+    export const UNLINK = Command.toDefaultLocalizedCommand({
+        id: "webide.unlink",
+        label: '断开连接',
+    })
+
     export const LIB_MANAGE = Command.toDefaultLocalizedCommand({
-        id: 'webide.libManage.start',
-        category: 'Preferences',
+        id: 'libManage',
         label: '系统库管理',
     });
 
-    export const IMPORT_START = Command.toDefaultLocalizedCommand({
-        id: 'webide.project.importProject.start',
-        category: 'Preferences',
+    export const IMPORT_PROJECT = Command.toDefaultLocalizedCommand({
+        id: 'importProject',
         label: '导入项目',
+    });
+
+    export const EXPORT_PROJECT = Command.toDefaultLocalizedCommand({
+        id: 'exportProject',
+        label: '导出项目',
+    });
+
+    export const IMPORT_LIBRARY = Command.toDefaultLocalizedCommand({
+        id: 'importLibrary',
+        label: '导入系统库',
+    });
+
+    export const IMPORT_GVAR = Command.toDefaultLocalizedCommand({
+        id: 'importGvar',
+        label: '导入全局变量',
+    });
+
+    export const MONITOR = Command.toDefaultLocalizedCommand({
+        id: "showMonitor",
+        label: '变量全景视图'
+    });
+
+    export const LIB_CAN = Command.toDefaultLocalizedCommand({
+        id: 'libCan',
+        label: 'CANopen设备库',
+    });
+
+    export const LIB_ETH = Command.toDefaultLocalizedCommand({
+        id: 'libEth',
+        label: 'EtherCAT设备库',
+    });
+
+    export const LIB_PN = Command.toDefaultLocalizedCommand({
+        id: "libPn",
+        label: "Profinet设备库"
+    });
+
+    export const LIB_EIP = Command.toDefaultLocalizedCommand({
+        id: "libEip",
+        label: "EtherNet/IP设备库"
+    });
+
+    export const LIB_WADS = Command.toDefaultLocalizedCommand({
+        id: "libWads",
+        label: "WADS设备库"
+    });
+
+    export const COMPILE = Command.toDefaultLocalizedCommand({
+        id: "webide.compile",
+        label: "编译"
+    });
+
+    export const DEBUG = Command.toDefaultLocalizedCommand({
+        id: "webide.debug",
+        label: "调试"
+    });
+
+    export const TRACE_OFFLINE = Command.toDefaultLocalizedCommand({
+        id: "trace.offline",
+        label: "加载离线示波器数据"
     });
 
 }
@@ -292,7 +431,6 @@ export class SampleCommandContribution implements CommandContribution {
 
     registerCommands(commands: CommandRegistry): void {
 
-
         commands.registerCommand({ id: 'wasome.setState' }, {
             execute: (state: { selectTarget?: string, selectPlc?: string, project?: string }) => {
                 this.setState(state);
@@ -408,6 +546,17 @@ export class SampleCommandContribution implements CommandContribution {
                 channel.appendLine(`Form Dialog returned with: \`${JSON.stringify(result)}\``, OutputChannelSeverity.Warning);
             }
         });
+
+        commands.registerCommand(WasomeCommands.COMPILE, {
+            execute: () => this.commandRegistry.executeCommand('webide.project.compile'),
+            isEnabled: () => !!this.project
+        });
+
+        commands.registerCommand(WasomeCommands.DEBUG, {
+            execute: () => this.commandRegistry.executeCommand('webide.project.debug'),
+            isEnabled: () => !!this.project && !!this.selectPlc && !!this.selectTarget
+        });
+
         commands.registerCommand(WasomeCommands.POU_NEW_PRG, {
             execute: () => this.webideCreate("PRG")
         });
@@ -423,24 +572,12 @@ export class SampleCommandContribution implements CommandContribution {
 
         commands.registerCommand(WasomeCommands.EVENT_NEW, {
             execute: () => this.webideCreate("EVENT"),
-            // isEnabled: (context?: any) => {
-            //     return context && context['webideProjectReady'];
-            //     return false;
-            //     // return this.contextKeyService.match('webideProjectReady');
-            // },
-            // isVisible: (context?: any) => {
-            //     return context && context['webideProjectReady'];
-            //     return false;
-            //     // return this.contextKeyService.match('webideProjectReady');
-            // },
+            isEnabled: () => !!this.project
         });
 
         commands.registerCommand(WasomeCommands.POU_NEW_LIB, {
             execute: () => this.webideCreate("LIB"),
-            // isEnabled: () => {
-            //     return false;
-            //     // return this.contextKeyService.match('webideProjectReady');
-            // }
+            isEnabled: () => !!this.project
         });
 
         commands.registerCommand(WasomeCommands.FORM_DIALOG, {
@@ -496,36 +633,144 @@ export class SampleCommandContribution implements CommandContribution {
             }
         });
 
+        commands.registerCommand(WasomeCommands.PROJECT_HOME, {
+            execute: () => this.commandRegistry.executeCommand("webide.project.home"),
+            isEnabled: () => !!this.project
+        });
+
+        commands.registerCommand(WasomeCommands.NEW_PROJECT, {
+            execute: () => this.commandRegistry.executeCommand("webide.project.new"),
+        });
+
+        commands.registerCommand(WasomeCommands.PROJECT_WORKSPACE, {
+            execute: () => this.commandRegistry.executeCommand("webide.project.workspace"),
+        });
+
+        commands.registerCommand(WasomeCommands.IMPORT_PROJECT, {
+            execute: () => this.commandRegistry.executeCommand("webide.project.importProject"),
+        });
+
         commands.registerCommand(WasomeCommands.CONNECT, {
-            execute: () => {
-                this.commandRegistry.executeCommand("webide.connect");
-                // if (this.enabled) {
-                //     this.enabled = false;
-                // }
-                // if (this.visible) {
-                //     this.visible = false;
-                // }
-                // this.contextKeyService.setContext('selectedModeHost2', true);
-            },
-            // isEnabled: () => {
-            //     return this.contextKeyService.match('webideProjectReady') && !this.contextKeyService.match('selectedModeHost');
-            // },
-            // isVisible: () => this.visible
-            // isVisible: () => {
-            //     // return !this.contextKeyService.match('selectedModeHost');
-            //     return false;
-            //     // return this.contextKeyService.match('webideProjectReady');
-            // },
+            execute: () => this.commandRegistry.executeCommand("webide.connect"),
+            isEnabled: () => !this.selectPlc && !this.selectTarget
+        });
+
+        commands.registerCommand(WasomeCommands.GVAR_NEWGROUP, {
+            execute: () => this.commandRegistry.executeCommand("webide.gvar.addNewGroup"),
+            isEnabled: () => !!this.project
+        });
+
+        commands.registerCommand(WasomeCommands.MONITOR_NEW, {
+            execute: () => this.commandRegistry.executeCommand("webide.monitor.addNewGroup"),
+            isEnabled: () => !!this.project
+        });
+
+        commands.registerCommand(WasomeCommands.TRACE_NEW, {
+            execute: () => this.commandRegistry.executeCommand("webide.trace.createNewTask"),
+            isEnabled: () => !!this.project
+        });
+
+        commands.registerCommand(WasomeCommands.TRACE_OFFLINE, {
+            execute: () => this.commandRegistry.executeCommand("webide.trace.importData")
         })
+
+        commands.registerCommand(WasomeCommands.IO, {
+            execute: () => this.commandRegistry.executeCommand("webide.app.showIO"),
+            isEnabled: () => !!this.project
+        });
+
+        commands.registerCommand(WasomeCommands.IO_CHANNEL, {
+            execute: () => this.commandRegistry.executeCommand("webide.app.showIoChannel"),
+            isEnabled: () => !!this.project
+        });
+
+        commands.registerCommand(WasomeCommands.TASK, {
+            execute: () => this.commandRegistry.executeCommand("webide.app.showResources"),
+            isEnabled: () => !!this.project
+        });
+
+        commands.registerCommand(WasomeCommands.HMI, {
+            execute: () => this.commandRegistry.executeCommand("webide.app.showHmi"),
+            isEnabled: () => !!this.project
+        });
 
         commands.registerCommand(WasomeCommands.LIB_MANAGE, {
             execute: () => this.commandRegistry.executeCommand("webide.libManage"),
-        })
+        });
 
-        commands.registerCommand(WasomeCommands.IMPORT_START, {
-            execute: () => this.commandRegistry.executeCommand("webide.project.importProject"),
-        })
+        commands.registerCommand(WasomeCommands.PLC_DETAIL, {
+            execute: () => this.commandRegistry.executeCommand("webide.online.plcDetail"),
+            isEnabled: () => !!this.selectPlc && !!this.selectTarget
+        });
 
+        commands.registerCommand(WasomeCommands.DEPLAY_APP, {
+            execute: () => this.commandRegistry.executeCommand("webide.online.deployApp"),
+            isEnabled: () => !!this.selectPlc && !!this.selectTarget
+        });
+
+        commands.registerCommand(WasomeCommands.UPLOAD_SOURCE, {
+            execute: () => this.commandRegistry.executeCommand("webide.target.uploadsource"),
+            isEnabled: () => !!this.selectPlc && !!this.selectTarget
+        });
+
+        commands.registerCommand(WasomeCommands.VAR_MONITOR, {
+            execute: () => this.commandRegistry.executeCommand("webide.online.varMonitor"),
+            isEnabled: () => !!this.selectPlc && !!this.selectTarget
+        });
+
+        commands.registerCommand(WasomeCommands.REDUNDENT, {
+            execute: () => this.commandRegistry.executeCommand("webide.online.redundent"),
+            isEnabled: () => !!this.selectPlc && !!this.selectTarget
+        });
+
+        commands.registerCommand(WasomeCommands.ALARM, {
+            execute: () => this.commandRegistry.executeCommand("webide.online.alarm"),
+            isEnabled: () => !!this.selectPlc && !!this.selectTarget
+        });
+
+        commands.registerCommand(WasomeCommands.UNLINK, {
+            execute: () => this.commandRegistry.executeCommand("webide.online.unlink"),
+            isEnabled: () => !!this.selectTarget
+        });
+
+        commands.registerCommand(WasomeCommands.EXPORT_PROJECT, {
+            execute: () => this.commandRegistry.executeCommand("webide.project.exportProject"),
+            isEnabled: () => !!this.project
+        });
+
+        commands.registerCommand(WasomeCommands.IMPORT_LIBRARY, {
+            execute: () => this.commandRegistry.executeCommand("webide.importLib"),
+        });
+
+        commands.registerCommand(WasomeCommands.IMPORT_GVAR, {
+            execute: () => this.commandRegistry.executeCommand("webide.gvar.showGlobalVarImport"),
+            isEnabled: () => !!this.project
+        });
+
+        commands.registerCommand(WasomeCommands.MONITOR, {
+            execute: () => this.commandRegistry.executeCommand("webide.app.showMonitor"), // TODO 后续换成导出弹框
+            isEnabled: () => !!this.project
+        });
+
+        commands.registerCommand(WasomeCommands.LIB_CAN, {
+            execute: () => this.commandRegistry.executeCommand("webide.showCanOpenLib")
+        });
+
+        commands.registerCommand(WasomeCommands.LIB_ETH, {
+            execute: () => this.commandRegistry.executeCommand("webide.showEthLib")
+        });
+
+        commands.registerCommand(WasomeCommands.LIB_PN, {
+            execute: () => this.commandRegistry.executeCommand("webide.showPNLib")
+        });
+
+        commands.registerCommand(WasomeCommands.LIB_EIP, {
+            execute: () => this.commandRegistry.executeCommand("webide.showEipLib")
+        });
+
+        commands.registerCommand(WasomeCommands.LIB_WADS, {
+            execute: () => this.commandRegistry.executeCommand("webide.showWadsLib")
+        });
     }
 
     protected webideCreate(type: string): void {
@@ -542,9 +787,7 @@ export class SampleCommandContribution implements CommandContribution {
             contextValue: valueMap.get(type) || ""
         }
         this.commandRegistry.executeCommand("webide.app.addNew", node);
-    }
-
-
+    };
 }
 
 @injectable()
@@ -564,7 +807,7 @@ export class SampleMenuContribution implements MenuContribution {
             menus.registerSubmenu(WasomeMenus.HELP, '帮助');
 
             menus.registerMenuAction(WasomeMenus.FILE_PROJECT, {
-                commandId: "webide.project.new",
+                commandId: WasomeCommands.NEW_PROJECT.id,
                 label: '新建项目',
                 order: '1'
             });
@@ -574,12 +817,12 @@ export class SampleMenuContribution implements MenuContribution {
             });
 
             menus.registerMenuAction(WasomeMenus.FILE_PROJECT, {
-                commandId: "webide.project.home",
+                commandId: WasomeCommands.PROJECT_HOME.id,
                 label: '项目信息',
             });
 
             menus.registerMenuAction(WasomeMenus.FILE_PROJECT, {
-                commandId: "webide.project.workspace",
+                commandId: WasomeCommands.PROJECT_WORKSPACE.id,
                 label: '项目空间',
             });
 
@@ -673,7 +916,7 @@ export class SampleMenuContribution implements MenuContribution {
             // });
 
             menus.registerMenuAction(WasomeMenus.PROJECT_NEW_VAR_GROUP, {
-                commandId: "webide.gvar.addNewGroup",
+                commandId: WasomeCommands.GVAR_NEWGROUP.id,
                 label: '全局变量组',
                 order: '1b'
             });
@@ -690,83 +933,44 @@ export class SampleMenuContribution implements MenuContribution {
                 order: '3'
             });
             menus.registerMenuAction(WasomeMenus.PROJECT_NEW_WATCH_GROUP, {
-                commandId: "webide.monitor.addNewGroup",
+                commandId: WasomeCommands.MONITOR_NEW.id,
                 label: '变量监视组',
                 order: '4'
             });
             menus.registerMenuAction(WasomeMenus.PROJECT_NEW_TRACE, {
-                commandId: "webide.trace.createNewTask",
+                commandId: WasomeCommands.TRACE_NEW.id,
                 label: '示波器',
                 order: '5'
             });
 
             menus.registerMenuAction(WasomeMenus.PROJECT_IO_CHANNEL, {
-                commandId: "webide.app.showIO",
+                commandId: WasomeCommands.IO.id,
                 label: '硬件组网', // TODO 定制客户需求，label 改变
                 // order: '3'
             });
 
             menus.registerMenuAction(WasomeMenus.PROJECT_IO_CHANNEL, {
-                commandId: "webide.app.showIoChannel",
+                commandId: WasomeCommands.IO_CHANNEL.id,
                 label: 'I/O通道配置',
                 // order: '3'
             });
 
             menus.registerMenuAction(WasomeMenus.PROJECT_TASK, {
-                commandId: "webide.app.showResources",
+                commandId: WasomeCommands.TASK.id,
                 label: '任务配置',
                 // order: '2'
             });
 
             menus.registerMenuAction(WasomeMenus.PROJECT_UPPER_MACHINE, {
-                commandId: "webide.app.showHmi",
+                commandId: WasomeCommands.HMI.id,
                 label: '上位机配置',
                 // order: '2'
             });
 
             menus.registerMenuAction(WasomeMenus.PROJECT_VARIABLE_PANORAMA, {
-                commandId: "webide.app.showMonitor",
+                commandId: WasomeCommands.MONITOR.id,
                 label: '变量全景图'
             });
-            // menus.registerMenuAction(WasomeMenus.POU_NEW_PRG, {
-            //     commandId: WasomeCommands.POU_NEW_PRG.id,
-            //     label: '新增程序（PRG）',
-            //     order: '0'
-            // });
-            // menus.registerMenuAction(WasomeMenus.POU_NEW_ST, {
-            //     commandId: WasomeCommands.POU_NEW_ST.id,
-            //     label: '新增程序（全ST）',
-            //     order: '1'
-            // });
-            // menus.registerMenuAction(WasomeMenus.POU_NEW_FUNC, {
-            //     commandId: WasomeCommands.POU_NEW_FUNC.id,
-            //     label: '新增函数（FUN）',
-            //     order: '2'
-            // });
-            // menus.registerMenuAction(WasomeMenus.POU_NEW_FB, {
-            //     commandId: WasomeCommands.POU_NEW_FB.id,
-            //     label: '新增函数块（FB）',
-            //     order: '3'
-            // });
-
-            // menus.registerSubmenu(WasomeMenus.GLOBAL_VARIABLE, '全局变量');
-            // menus.registerMenuAction(WasomeMenus.GLOBAL_VARIABLE_NEW_GROUP, {
-            //     commandId: "webide.gvar.addNewGroup",
-            //     label: '新增全局变量组',
-            //     order: '1'
-            // });
-            // menus.registerMenuAction(WasomeMenus.GLOBAL_VARIABLE_IMPORT, {
-            //     commandId: "webide.gvar.showGlobalVarImport",
-            //     label: '导入全局变量',
-            //     order: '2'
-            // });
-
-
-            // menus.registerSubmenu(WasomeMenus.VARIABLE, '变量与监视');
-
-
-            // menus.registerSubmenu(WasomeMenus.TRACE, '变量跟踪（示波器）');
-
 
             menus.registerSubmenu(WasomeMenus.LIBRARY, '库管理');
             menus.registerSubmenu(WasomeMenus.LIBRARY_DEVICE, '设备库');
@@ -776,23 +980,23 @@ export class SampleMenuContribution implements MenuContribution {
             });
 
             menus.registerMenuAction(WasomeMenus.LIBRARY_DEVICE_CAN, {
-                commandId: "webide.showCanOpenLib",
+                commandId: WasomeCommands.LIB_CAN.id,
                 label: 'CANopen'
             });
             menus.registerMenuAction(WasomeMenus.LIBRARY_DEVICE_EtherCAT, {
-                commandId: "webide.showEthLib",
+                commandId: WasomeCommands.LIB_ETH.id,
                 label: 'EtherCAT'
             });
             menus.registerMenuAction(WasomeMenus.LIBRARY_DEVICE_PN, {
-                commandId: "webide.showPNLib",
+                commandId: WasomeCommands.LIB_PN.id,
                 label: 'Profinet'
             });
             menus.registerMenuAction(WasomeMenus.LIBRARY_DEVICE_Eip, {
-                commandId: "webide.showEipLib",
+                commandId: WasomeCommands.LIB_EIP.id,
                 label: 'EtherNet/IP'
             });
             menus.registerMenuAction(WasomeMenus.LIBRARY_DEVICE_WADS, {
-                commandId: "webide.showWadsLib",
+                commandId: WasomeCommands.LIB_WADS.id,
                 label: 'WADS'
             });
 
@@ -803,12 +1007,12 @@ export class SampleMenuContribution implements MenuContribution {
             // });
 
             menus.registerMenuAction(WasomeMenus.DEBUG, {
-                commandId: "webide.project.compile",
+                commandId: WasomeCommands.COMPILE.id,
                 label: '编译',
                 order: '1'
             });
             menus.registerMenuAction(WasomeMenus.DEBUG, {
-                commandId: "webide.project.debug",
+                commandId: WasomeCommands.DEBUG.id,
                 label: '调试',
                 order: '2'
             });
@@ -818,7 +1022,7 @@ export class SampleMenuContribution implements MenuContribution {
                 order: '3'
             });
             menus.registerMenuAction(WasomeMenus.DEBUG_TRACE_OFFLINE_VIEW, {
-                commandId: "webide.trace.importData",
+                commandId: WasomeCommands.TRACE_OFFLINE.id,
                 label: '加载离线示波器数据',
                 order: '1'
             });
@@ -830,65 +1034,65 @@ export class SampleMenuContribution implements MenuContribution {
                 // when: 'webideProjectReady' // 可以通过when访问上下文键，但访问vscode的上下文键时，没有访问到
             });
             menus.registerMenuAction(WasomeMenus.ONLINE, {
-                commandId: "webide.online.plcDetail",
+                commandId: WasomeCommands.PLC_DETAIL.id,
                 label: '在线状态',
                 order: '2'
             });
             menus.registerMenuAction(WasomeMenus.ONLINE, {
-                commandId: "webide.online.deployApp",
+                commandId: WasomeCommands.DEPLAY_APP.id,
                 label: '下装',
                 order: '3'
             });
             menus.registerMenuAction(WasomeMenus.ONLINE, {
-                commandId: "webide.target.uploadsource",
+                commandId: WasomeCommands.UPLOAD_SOURCE.id,
                 label: '读出项目',
                 order: '4'
             });
             menus.registerMenuAction(WasomeMenus.ONLINE, {
-                commandId: "webide.online.varMonitor",
+                commandId: WasomeCommands.VAR_MONITOR.id,
                 label: '变量查看',
                 order: '5'
             });
             menus.registerMenuAction(WasomeMenus.ONLINE, {
-                commandId: "webide.online.redundent",
+                commandId: WasomeCommands.REDUNDENT.id,
                 label: '冗余',
                 order: '6'
             });
 
             menus.registerMenuAction(WasomeMenus.ONLINE, {
-                commandId: "webide.online.alarm",
+                commandId: WasomeCommands.ALARM.id,
                 label: '告警',
                 order: '7'
             });
 
             menus.registerMenuAction(WasomeMenus.ONLINE, {
-                commandId: "webide.online.unlink",
+                commandId: WasomeCommands.UNLINK.id,
                 label: '断开',
                 order: '8'
             });
 
             menus.registerMenuAction(WasomeMenus.IMPORT_PROJECT, {
-                commandId: WasomeCommands.IMPORT_START.id,
+                commandId: WasomeCommands.IMPORT_PROJECT.id,
                 label: '导入项目'
             });
 
             menus.registerMenuAction(WasomeMenus.IMPORT_PROJECT, {
-                commandId: "webide.project.exportProject",
+                commandId: WasomeCommands.EXPORT_PROJECT.id,
                 label: '导出项目'
             });
 
             menus.registerMenuAction(WasomeMenus.IMPORT_LIBRARY, {
-                commandId: "webide.importLib",
+                commandId: WasomeCommands.IMPORT_LIBRARY.id,
                 label: '导入系统库'
             });
 
             menus.registerMenuAction(WasomeMenus.IMPORT_VAR_GLOBAL, {
-                commandId: "webide.gvar.showGlobalVarImport",
+                commandId: WasomeCommands.IMPORT_GVAR.id,
                 label: '导入全局变量'
             });
             menus.registerMenuAction(WasomeMenus.IMPORT_VAR_GLOBAL, {
-                // commandId: "webide.gvar.showGlobalVarExport",  // 目前是在全景图中导出
-                commandId: "webide.app.showMonitor",
+                // commandId: "webide.gvar.showGlobalVarExport",  // TODO 目前是在全景图中导出
+                commandId: WasomeCommands.MONITOR.id,
                 label: '导出全局变量'
             });
 

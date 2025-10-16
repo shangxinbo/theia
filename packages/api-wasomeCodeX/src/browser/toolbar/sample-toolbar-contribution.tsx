@@ -135,21 +135,21 @@ export class SampleToolbarContribution extends AbstractToolbarContribution
         registry.registerMenuAction(ToolbarMenus.SEARCH_WIDGET_DROPDOWN_MENU, {
             commandId: "core.find",
             order: 'b',
-            label: '查找(基于文本)'
+            label: '查找'
         });
         registry.registerMenuAction(ToolbarMenus.SEARCH_WIDGET_DROPDOWN_MENU, {
             commandId: "core.replace",
             order: 'b',
-            label: '替换(基于文本)'
+            label: '替换'
         });
         registry.registerMenuAction(ToolbarMenus.SEARCH_WIDGET_DROPDOWN_MENU, {
             commandId: SearchInWorkspaceCommands.OPEN_SIW_WIDGET.id,
-            label: '基于项目查找',
+            label: '项目查找',
             order: 'c',
         });
         registry.registerMenuAction(ToolbarMenus.SEARCH_WIDGET_DROPDOWN_MENU, {
             commandId: SearchInWorkspaceCommands.REPLACE_IN_FILES.id,
-            label: '基于项目替换',
+            label: '项目替换',
             order: 'd',
         });
 
