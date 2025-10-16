@@ -23,19 +23,19 @@ export const SampleToolbarDefaultsOverride: () => DeflatedToolbarTree = () => ({
             [
                 {
                     id: 'webide.project.home',
-                    command: 'webide.project.home',
+                    command: 'project.home',
                     icon: 'codicon codicon-home',
                     tooltip: '项目',
                 },
                 {
                     id: 'webide.project.debug',
-                    command: 'webide.project.debug',
+                    command: 'webide.debug',
                     icon: 'codicon codicon-debug',
                     tooltip: '调试',
                 },
                 {
                     id: 'webide.project.compile',
-                    command: 'webide.project.compile',
+                    command: 'webide.compile',
                     icon: 'codicon codicon-combine',
                     tooltip: '编译',
                 },
