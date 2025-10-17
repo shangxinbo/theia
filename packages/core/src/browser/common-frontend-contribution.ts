@@ -842,6 +842,7 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
 
         commandRegistry.registerCommand(CommonCommands.UNDO, {
             execute: () => {
+                console.log('Executing undo command');
                 this.undoRedoHandlerService.undo();
             }
         });

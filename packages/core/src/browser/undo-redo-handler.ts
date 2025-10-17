@@ -33,6 +33,8 @@ export class UndoRedoHandlerService {
     protected readonly provider: ContributionProvider<UndoRedoHandler<unknown>>;
 
     protected handlers: UndoRedoHandler<unknown>[];
+    private lastUndoTime: number = 0;
+    private lastRedoTime: number = 0;
 
     @postConstruct()
     protected init(): void {
@@ -40,9 +42,15 @@ export class UndoRedoHandlerService {
     }
 
     undo(): void {
+        const now = Date.now();
+        if (now - this.lastUndoTime < 50) {
+            return;
+        };
+        this.lastUndoTime = now;
         for (const handler of this.handlers) {
             const selection = handler.select();
             if (selection) {
+                console.log('Undoing action for:', selection);
                 handler.undo(selection);
                 return;
             }
@@ -50,9 +58,15 @@ export class UndoRedoHandlerService {
     }
 
     redo(): void {
+        const now = Date.now();
+        if (now - this.lastRedoTime < 50) {
+            return;
+        };
+        this.lastRedoTime = now;
         for (const handler of this.handlers) {
             const selection = handler.select();
             if (selection) {
+                console.log('Redoing action for:', selection);
                 handler.redo(selection);
                 return;
             }
