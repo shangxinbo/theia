@@ -14,9 +14,7 @@
 // SPDX-License-Identifier: EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0
 // *****************************************************************************
 
-import { CommonMenus, ConfirmDialog, Dialog, QuickInputService, SingleTextInputDialog, FormDialog, FormDialogField, CommonCommands, ContextMenu } from '@theia/core/lib/browser';
-import { ReactDialog } from '@theia/core/lib/browser/dialogs/react-dialog';
-import { SelectComponent } from '@theia/core/lib/browser/widgets/select-component';
+import { QuickInputService, SingleTextInputDialog, CommonCommands } from '@theia/core/lib/browser';
 import {
     Command, CommandContribution, CommandMenu, CommandRegistry, ContextExpressionMatcher, MAIN_MENU_BAR,
     MenuContribution, MenuModelRegistry, MenuPath, MessageService,
@@ -29,9 +27,10 @@ import { inject, injectable, interfaces } from '@theia/core/shared/inversify';
 import { SearchInWorkspaceCommands } from '@theia/search-in-workspace/lib/browser/search-in-workspace-frontend-contribution';
 import { ContextKey, ContextKeyService } from '@theia/core/lib/browser/context-key-service';
 import { Emitter, Event } from '@theia/core/lib/common/event';
+import { NewPOU } from '../dialogs';
 
 // import { WorkspaceCommands } from '@theia/workspace/src/browser';
-// import { FormDialog, FormDialogField } from "../dialogs";
+import { FormDialog, FormDialogField } from "../dialogs";
 
 const SampleSelectInputDialog: Command = {
     id: 'sample-command-select-input-dialog',
@@ -99,6 +98,12 @@ export namespace WasomeCommands {
         id: 'webide.pou.newFunc',
         category: 'Create',
         label: '新增函数（FUNC）',
+    });
+
+    export const POU_NEW = Command.toDefaultLocalizedCommand({
+        id: 'webide.newPou',
+        category: 'Create',
+        label: '新增程序单元组织(POU)',
     });
 
     export const EVENT_NEW = Command.toDefaultLocalizedCommand({
@@ -618,6 +623,11 @@ export class SampleCommandContribution implements CommandContribution {
             isEnabled: () => true,
         });
 
+        commands.registerCommand(WasomeCommands.POU_NEW, {
+            execute: () => this.newPou,
+            isEnabled: () => !!this.project
+        })
+
         commands.registerCommand(WasomeCommands.OPEN_CROSS_REFERENCE, {
             execute: () => this.commandRegistry.executeCommand("webide-panel.crossReference.focus"),
         });
@@ -788,6 +798,20 @@ export class SampleCommandContribution implements CommandContribution {
         }
         this.commandRegistry.executeCommand("webide.app.addNew", node);
     };
+
+    protected newPou(): void {
+        const dialog = new NewPOU({
+            onCreate: async (data) => {
+                // TODO 调用IDE接口获取创建成功与否 返回 true/false
+                return true;
+            },
+            getReturnTypes: async () => {
+                // TODO 调用IDE获取返回值类型
+                return ['BOOL'];
+            }
+        });
+        dialog.open();
+    }
 }
 
 @injectable()
