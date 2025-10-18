@@ -14,7 +14,7 @@
 // SPDX-License-Identifier: EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0
 // *****************************************************************************
 
-import { QuickInputService, SingleTextInputDialog, CommonCommands } from '@theia/core/lib/browser';
+import { QuickInputService, SingleTextInputDialog, CommonCommands, ConfirmDialog } from '@theia/core/lib/browser';
 import {
     Command, CommandContribution, CommandMenu, CommandRegistry, ContextExpressionMatcher, MAIN_MENU_BAR,
     MenuContribution, MenuModelRegistry, MenuPath, MessageService,
@@ -27,11 +27,8 @@ import { inject, injectable, interfaces } from '@theia/core/shared/inversify';
 import { SearchInWorkspaceCommands } from '@theia/search-in-workspace/lib/browser/search-in-workspace-frontend-contribution';
 import { ContextKey, ContextKeyService } from '@theia/core/lib/browser/context-key-service';
 import { Emitter, Event } from '@theia/core/lib/common/event';
-import { NewPOU } from '../dialogs';
-import { ArraySetDialog } from '../dialogs/array-set-dialog';
 
-// import { WorkspaceCommands } from '@theia/workspace/src/browser';
-import { FormDialog, FormDialogField } from "../dialogs";
+import { FormDialog, FormDialogField, NewPOU, ArraySetDialog } from "../dialogs";
 
 const SampleSelectInputDialog: Command = {
     id: 'sample-command-select-input-dialog',
