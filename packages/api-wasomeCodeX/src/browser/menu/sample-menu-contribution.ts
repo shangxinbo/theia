@@ -14,7 +14,7 @@
 // SPDX-License-Identifier: EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0
 // *****************************************************************************
 
-import { QuickInputService, SingleTextInputDialog, CommonCommands } from '@theia/core/lib/browser';
+import { QuickInputService, SingleTextInputDialog, CommonCommands, ConfirmDialog } from '@theia/core/lib/browser';
 import {
     Command, CommandContribution, CommandMenu, CommandRegistry, ContextExpressionMatcher, MAIN_MENU_BAR,
     MenuContribution, MenuModelRegistry, MenuPath, MessageService,
@@ -27,10 +27,8 @@ import { inject, injectable, interfaces } from '@theia/core/shared/inversify';
 import { SearchInWorkspaceCommands } from '@theia/search-in-workspace/lib/browser/search-in-workspace-frontend-contribution';
 import { ContextKey, ContextKeyService } from '@theia/core/lib/browser/context-key-service';
 import { Emitter, Event } from '@theia/core/lib/common/event';
-import { NewPOU } from '../dialogs';
 
-// import { WorkspaceCommands } from '@theia/workspace/src/browser';
-import { FormDialog, FormDialogField } from "../dialogs";
+import { FormDialog, FormDialogField, NewPOU, ArraySetDialog } from "../dialogs";
 
 const SampleSelectInputDialog: Command = {
     id: 'sample-command-select-input-dialog',
@@ -282,6 +280,16 @@ export namespace WasomeCommands {
         label: "加载离线示波器数据"
     });
 
+
+    export const DIALOG_ARRAYSET = Command.toDefaultLocalizedCommand({
+        id: "webide.dialog.arrayset",
+        label: "数组设置弹窗"
+    });
+
+    export const DIALOG_CONFIRM = Command.toDefaultLocalizedCommand({
+        id: "webide.dialog.confirm",
+        label: "确认弹窗"
+    });
 }
 
 
@@ -781,6 +789,25 @@ export class SampleCommandContribution implements CommandContribution {
         commands.registerCommand(WasomeCommands.LIB_WADS, {
             execute: () => this.commandRegistry.executeCommand("webide.showWadsLib")
         });
+
+        commands.registerCommand(WasomeCommands.DIALOG_ARRAYSET, {
+            execute: async (args) => {
+                const dialog = new ArraySetDialog({ initialValue: args.initValue });
+                const res = await dialog.open();
+                console.info('Array Set Dialog result:', res);
+                return res;
+            }
+        });
+        commands.registerCommand(WasomeCommands.DIALOG_CONFIRM, {
+            execute: async (options) => {
+                const choice = await new ConfirmDialog({
+                    title: options.title || '确认提示',
+                    msg: options.msg,
+                }).open();
+                console.info('Confirm Dialog choice:', choice);
+                return choice
+            }
+        });
     }
 
     protected webideCreate(type: string): void {
@@ -1130,7 +1157,6 @@ export class SampleMenuContribution implements MenuContribution {
                 commandId: "view.reload",
                 order: "5"
             });
-
 
         }, 100);
     }
