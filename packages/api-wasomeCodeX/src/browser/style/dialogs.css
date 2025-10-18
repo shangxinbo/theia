@@ -1,0 +1,18 @@
+.array-set-box{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap:0.5rem;
+}
+.array-set-box input{
+  width: 100px;
+  height: 1.3rem;
+  line-height: 1.3rem;
+}
+.array-set-box label{
+  margin-right:1rem;
+}
+
+.array-set-box .error{
+  margin-top:0.2rem;
+}
