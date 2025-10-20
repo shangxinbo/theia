@@ -6,8 +6,8 @@
     "node": ">=20"
   },
   "build": {
-    "appId": "com.yourcompany.yourtheiaapp",
-    "productName": "Your Theia App",
+    "appId": "WasomeCodeX",
+    "productName": "WasomeCodeX",
     "directories": {
       "output": "dist"
     },

@@ -28,7 +28,8 @@ import { SearchInWorkspaceCommands } from '@theia/search-in-workspace/lib/browse
 import { ContextKey, ContextKeyService } from '@theia/core/lib/browser/context-key-service';
 import { Emitter, Event } from '@theia/core/lib/common/event';
 
-import { FormDialog, FormDialogField, NewPOU, ArraySetDialog } from "../dialogs";
+import { FormDialog, FormDialogField, NewPOU } from "../dialogs";
+import { ArraySetDialog } from "../dialogs/array-set-dialog";
 
 const SampleSelectInputDialog: Command = {
     id: 'sample-command-select-input-dialog',
@@ -792,7 +793,7 @@ export class SampleCommandContribution implements CommandContribution {
 
         commands.registerCommand(WasomeCommands.DIALOG_ARRAYSET, {
             execute: async (args) => {
-                const dialog = new ArraySetDialog({ initialValue: args.initValue });
+                const dialog = new ArraySetDialog({ initialValue: args?.initValue || [] });
                 const res = await dialog.open();
                 console.info('Array Set Dialog result:', res);
                 return res;
