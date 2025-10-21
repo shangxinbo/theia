@@ -22,10 +22,18 @@ export const SampleToolbarDefaultsOverride: () => DeflatedToolbarTree = () => ({
             // 新增文件操作组
             [
                 {
+                    id: 'webide.show',
+                    command: 'webide.show',
+                    icon: 'codicon codicon-home',
+                    tooltip: '视图',
+                }
+            ],
+            [
+                {
                     id: 'webide.project.home',
                     command: 'project.home',
-                    icon: 'codicon codicon-home',
-                    tooltip: '项目',
+                    icon: 'codicon codicon-repo',
+                    tooltip: '视图',
                 },
                 {
                     id: 'webide.project.debug',
@@ -36,7 +44,7 @@ export const SampleToolbarDefaultsOverride: () => DeflatedToolbarTree = () => ({
                 {
                     id: 'webide.project.compile',
                     command: 'webide.compile',
-                    icon: 'codicon codicon-combine',
+                    icon: 'codicon codicon-circuit-board',
                     tooltip: '编译',
                 },
                 {

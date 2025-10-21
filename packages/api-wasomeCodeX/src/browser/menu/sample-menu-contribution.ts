@@ -59,6 +59,11 @@ export namespace WasomeCommands {
         label: '帮助',
     });
 
+    export const WEBIDE_SHOW = Command.toDefaultLocalizedCommand({
+        id: 'webide.show',
+        label: '编辑器视图',
+    })
+
     export const PROJECT_HOME = Command.toDefaultLocalizedCommand({
         id: 'project.home',
         label: '打开项目',
@@ -652,6 +657,13 @@ export class SampleCommandContribution implements CommandContribution {
             }
         });
 
+        commands.registerCommand(WasomeCommands.WEBIDE_SHOW, {
+            execute: () => () => {
+                this.commandRegistry.executeCommand("webide-activitybar.appManage.focus");
+                this.commandRegistry.executeCommand("getting.started.widget");
+            },
+        });
+
         commands.registerCommand(WasomeCommands.PROJECT_HOME, {
             execute: () => this.commandRegistry.executeCommand("webide.project.home"),
             isEnabled: () => !!this.project
@@ -954,6 +966,10 @@ export class SampleMenuContribution implements MenuContribution {
                 label: nls.localizeByDefault('项目输出')
             });
 
+            menus.registerMenuAction(WasomeMenus.VIEW_TOOLBAR, {
+                commandId: "webide-activitybar.appManage.focus",
+                label: '显示项目树'
+            });
 
             menus.registerMenuAction(WasomeMenus.VIEW_TOOLBAR, {
                 commandId: "toolbar.view.toggle",
