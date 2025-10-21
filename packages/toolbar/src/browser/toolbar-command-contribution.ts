@@ -64,7 +64,7 @@ export class ToolbarCommandContribution implements CommandContribution, Keybindi
     registerSchemas(context: JsonSchemaRegisterContext): void {
         this.schemaStore.setSchema(this.schemaURI, toolbarConfigurationSchema);
         context.registerSchema({
-            fileMatch: ['toolbar.json'],
+            fileMatch: ['wa-toolbar.json'],
             url: this.schemaURI.toString(),
         });
     }
