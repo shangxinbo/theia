@@ -64,7 +64,7 @@ export namespace ToolbarCommands {
 }
 
 export const UserToolbarURI = Symbol('UserToolbarURI');
-export const USER_TOOLBAR_URI = new URI().withScheme(UserStorageUri.scheme).withPath('/user/toolbar.json');
+export const USER_TOOLBAR_URI = new URI().withScheme(UserStorageUri.scheme).withPath('/user/wa-toolbar.json');
 export namespace ToolbarMenus {
     export const TOOLBAR_ITEM_CONTEXT_MENU: MenuPath = ['toolbar:toolbarItemContextMenu'];
     export const TOOLBAR_BACKGROUND_CONTEXT_MENU: MenuPath = ['toolbar:backgroundContextMenu'];
