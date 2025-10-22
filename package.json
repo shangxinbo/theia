@@ -5,32 +5,6 @@
   "engines": {
     "node": ">=20"
   },
-  "build": {
-    "appId": "WasomeCodeX",
-    "productName": "WasomeCodeX",
-    "directories": {
-      "output": "dist"
-    },
-    "asar": false,
-    "files": [
-      "lib/**/*",
-      "plugins/**/*",
-      "src-gen/**/*",
-      "package.json",
-      "!**/*.map"
-    ],
-    "linux": {
-      "target": [
-        "AppImage",
-        "deb"
-      ],
-      "category": "Development"
-    },
-    "win": {
-      "target": "nsis",
-      "icon": "build/icon.ico"
-    }
-  },
   "overrides": {
     "perfect-scrollbar": "1.5.5",
     "@types/express": "^4.17.21"
@@ -141,12 +115,7 @@
     "sample-plugins/*/*"
   ],
   "theiaPluginsDir": "plugins",
-  "theiaPlugins": {},
-  "theiaPluginsExcludeIds": [
-    "webide.webide"
-  ],
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.18.1",
-    "electron": "^37.2.1"
+  "theiaPlugins": {
+    "eclipse-theia.builtin-extension-pack": "https://open-vsx.org/api/eclipse-theia/builtin-extension-pack/1.95.3/file/eclipse-theia.builtin-extension-pack-1.95.3.vsix"
   }
 }

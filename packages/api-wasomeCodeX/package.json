@@ -35,6 +35,9 @@
     },
     {
       "frontendPreload": "lib/browser/api-samples-preload-module"
+    },
+    {
+      "frontend": "lib/browser/always-trust-workspace-frontend-module"
     }
   ],
   "keywords": [
