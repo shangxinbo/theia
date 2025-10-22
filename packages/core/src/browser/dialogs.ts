@@ -134,6 +134,7 @@ export class DialogOverlayService implements FrontendApplicationContribution {
 
 @injectable()
 export abstract class AbstractDialog<T> extends BaseWidget {
+    [x: string]: any;
 
     protected readonly titleNode: HTMLDivElement;
     protected readonly contentNode: HTMLDivElement;
@@ -269,7 +270,17 @@ export abstract class AbstractDialog<T> extends BaseWidget {
         super.onActivateRequest(msg);
         if (this.acceptButton) {
             this.acceptButton.focus();
+        };
+        // TODO 移动到自有代码中，目前在自有代码中写不生效，目前AI建议在这改造
+        if (this.inputs) {
+            const firstInput = Object.values(this.inputs)[0];
+            console.log('firstInput', firstInput);
+            console.log('input', this.inputs);
+            if (firstInput) {
+                (firstInput as any)?.focus && (firstInput as any)?.focus();
+            }
         }
+
     }
 
     open(disposeOnResolve: boolean = true): Promise<T | undefined> {

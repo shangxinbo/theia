@@ -9,6 +9,9 @@ export abstract class DraggableDialog<T> extends AbstractDialog<T> {
         super.onAfterAttach(msg);
         this.enableDrag();
     }
+    protected override onActivateRequest(msg: any): void {
+        super.onActivateRequest(msg);
+    }
 
     protected enableDrag(): void {
         // 拖拽区域为标题栏（titleNode 的父节点），排除关闭按钮

@@ -658,7 +658,7 @@ export class SampleCommandContribution implements CommandContribution {
         });
 
         commands.registerCommand(WasomeCommands.WEBIDE_SHOW, {
-            execute: () => () => {
+            execute: () => {
                 this.commandRegistry.executeCommand("webide-activitybar.appManage.focus");
                 this.commandRegistry.executeCommand("getting.started.widget");
             },

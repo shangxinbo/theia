@@ -449,6 +449,16 @@ export class FormDialog extends DraggableDialog<Record<string, string>> {
         this.appendAcceptButton(props.ok);
     }
 
+    protected override onActivateRequest(msg: any): void {
+        super.onActivateRequest(msg);
+        const firstInput = Object.values(this.inputs)[0];
+        console.log('firstInput', firstInput);
+        console.log('input', this.inputs);
+        if (firstInput) {
+            (firstInput as any)?.focus && (firstInput as any)?.focus();
+        }
+    }
+
     get value(): Record<string, string> {
         const result: Record<string, any> = {};
         for (const name in this.inputs) {
