@@ -33,3 +33,8 @@
   -webkit-mask: url("window-icon.svg");
   mask: url("window-icon.svg");
 }
+
+/* Override: allow text selection inside webview widgets (core sets user-select: none). */
+.theia-webview {
+  user-select: none;
+}
