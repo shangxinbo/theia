@@ -41,7 +41,7 @@ export const SampleToolbarDefaultsOverride: () => DeflatedToolbarTree = () => ({
                 },
                 {
                     id: 'webide.project.showHelpPage',
-                    command: 'webide.project.showHelpPage',
+                    command: 'webide.showHelpPage',
                     icon: 'codicon codicon-briefcase',
                     tooltip: '帮助',
                 },
