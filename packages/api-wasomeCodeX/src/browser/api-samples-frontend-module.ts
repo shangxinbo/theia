@@ -24,13 +24,8 @@ import { bindSampleToolbarContribution } from './toolbar/sample-toolbar-contribu
 
 import '../../src/browser/style/branding.css';
 import '../../src/browser/style/dialogs.css'
-import { bindMonacoPreferenceExtractor } from './monaco-editor-preferences/monaco-editor-preference-extractor';
-import { rebindOVSXClientFactory } from '../common/vsx/sample-ovsx-client-factory';
-import { bindSampleAppInfo } from './vsx/sample-frontend-app-info';
-import { bindChatNodeToolbarActionContribution } from './chat/chat-node-toolbar-action-contribution';
-import { bindAskAndContinueChatAgentContribution } from './chat/ask-and-continue-chat-agent-contribution';
-import { bindChangeSetChatAgentContribution } from './chat/change-set-chat-agent-contribution';
-import { bindOriginalStateTestAgentContribution } from './chat/original-state-test-agent-contribution';
+import { DefaultLocaleFrontendContribution } from './default-locale-contribution';
+import { FrontendApplicationContribution } from '@theia/core/lib/browser/frontend-application-contribution';
 
 export default new ContainerModule((
     bind: interfaces.Bind,
@@ -51,6 +46,9 @@ export default new ContainerModule((
     // bindVSXCommand(bind);
     // bindSampleFilteredCommandContribution(bind);
     bindSampleToolbarContribution(bind, rebind);
+    // Custom: bind default locale (zh-hans) initializer
+    bind(DefaultLocaleFrontendContribution).toSelf().inSingletonScope();
+    bind(FrontendApplicationContribution).toService(DefaultLocaleFrontendContribution);
     // bindMonacoPreferenceExtractor(bind);
     // bindSampleAppInfo(bind);
     // bindSampleFileSystemCapabilitiesCommands(bind);
