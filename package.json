@@ -116,6 +116,7 @@
   ],
   "theiaPluginsDir": "plugins",
   "theiaPlugins": {
-    "eclipse-theia.builtin-extension-pack": "https://open-vsx.org/api/eclipse-theia/builtin-extension-pack/1.95.3/file/eclipse-theia.builtin-extension-pack-1.95.3.vsix"
+    "cat-customs": "https://open-vsx.org/api/cat-customs/cat-customs/0.0.1/file/cat-customs.cat-customs-0.0.1.vsix",
+    "vscode-language-pack-zh-hans": "https://marketplace.windsurf.com/api/MS-CEINTL/vscode-language-pack-zh-hans/1.105.0/file/MS-CEINTL.vscode-language-pack-zh-hans-1.105.0.vsix"
   }
 }
