@@ -55,7 +55,7 @@ export namespace WasomeCommands {
     });
 
     export const OPEN_HELP = Command.toDefaultLocalizedCommand({
-        id: 'webide.project.showHelpPage',
+        id: 'webide.showHelpPage',
         label: '帮助',
     });
 
@@ -662,6 +662,10 @@ export class SampleCommandContribution implements CommandContribution {
                 this.commandRegistry.executeCommand("webide-activitybar.appManage.focus");
                 this.commandRegistry.executeCommand("getting.started.widget");
             },
+        });
+
+        commands.registerCommand(WasomeCommands.OPEN_HELP, {
+            execute: () => this.commandRegistry.executeCommand("webide.project.showHelpPage"),
         });
 
         commands.registerCommand(WasomeCommands.PROJECT_HOME, {
