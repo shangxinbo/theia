@@ -38,3 +38,25 @@
 .theia-webview {
   user-select: none;
 }
+
+.compile-icon {
+  /* background-image: url("../icons/compile.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain; */
+  background: var(--theia-icon-foreground) !important;
+  -webkit-mask-image: url("../icons/compile.svg");
+  mask-image: url("../icons/compile.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}
+
+.compile-icon:hover,
+.compile-icon:active,
+.compile-icon:focus {
+  background-color: var(--theia-icon-foreground) !important;
+}
+
+.icon-opacity {
+  opacity: 0.7;
+}

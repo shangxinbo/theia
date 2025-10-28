@@ -28,6 +28,8 @@ import { SearchInWorkspaceCommands } from '@theia/search-in-workspace/lib/browse
 import { ContextKey, ContextKeyService } from '@theia/core/lib/browser/context-key-service';
 import { Emitter, Event } from '@theia/core/lib/common/event';
 
+import { ToolbarController } from '@theia/toolbar/lib/browser/toolbar-controller';
+
 import { FormDialog, FormDialogField, NewPOU } from "../dialogs";
 import { ArraySetDialog } from "../dialogs/array-set-dialog";
 
@@ -66,7 +68,7 @@ export namespace WasomeCommands {
 
     export const PROJECT_HOME = Command.toDefaultLocalizedCommand({
         id: 'project.home',
-        label: '打开项目',
+        label: '项目信息',
     });
 
     export const NEW_PROJECT = Command.toDefaultLocalizedCommand({
@@ -298,7 +300,6 @@ export namespace WasomeCommands {
     });
 }
 
-
 export namespace WasomeMenus {
 
     export const FILE = [...MAIN_MENU_BAR, '1_file']; // 文件
@@ -413,6 +414,8 @@ export class SampleCommandContribution implements CommandContribution {
     @inject(ContextKeyService)
     protected readonly contextKeyService: ContextKeyService;
 
+    @inject(ToolbarController)
+    protected readonly toolbarController: ToolbarController;
 
     private readonly _onStateChanged = new Emitter<void>();
     readonly onStateChanged: Event<void> = this._onStateChanged.event;
@@ -436,6 +439,7 @@ export class SampleCommandContribution implements CommandContribution {
             changed = true;
         }
         if (changed) {
+            this.toolbarController.refresh();
             this._onStateChanged.fire();
         }
     }

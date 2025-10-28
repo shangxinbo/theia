@@ -91,11 +91,14 @@ export class ToolbarStorageProvider implements Disposable {
             this.toDispose.push(this.model.onDirtyChanged(() => this.readConfiguration()));
             this.toDispose.push(this.model.onDidChangeValid(() => this.readConfiguration()));
         }
+
         this.toDispose.push(this.toolbarItemsUpdatedEmitter);
         await this.appState.reachedState('ready');
         this.monacoWorkspace = this.lateInjector(MonacoWorkspace);
         this.editorManager = this.lateInjector(EditorManager);
         this._ready.resolve();
+        await this.restoreToolbarDefaults();
+        this.readConfiguration();
     }
 
     protected readConfiguration(): void {
@@ -322,7 +325,7 @@ export class ToolbarStorageProvider implements Disposable {
 
     async openOrCreateJSONFile(state: ToolbarTreeSchema, doOpen = false): Promise<Widget | undefined> {
         const fileExists = await this.fileService.exists(this.USER_TOOLBAR_URI);
-        let doWriteStateToFile = false;
+        let doWriteStateToFile = true;
         if (fileExists) {
             const fileContent = await this.fileService.read(this.USER_TOOLBAR_URI);
             if (fileContent.value.trim() === '') {

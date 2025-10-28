@@ -63,6 +63,10 @@ export class ToolbarController {
         this.toolbarModelDidUpdateEmitter.fire();
     }
 
+    refresh() {
+        this.toolbarModelDidUpdateEmitter.fire();
+    }
+
     protected inflateItems(schema?: DeflatedToolbarTree): ToolbarTreeSchema {
         const newTree: ToolbarTreeSchema = {
             items: {

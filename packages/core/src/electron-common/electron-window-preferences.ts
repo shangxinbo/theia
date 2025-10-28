@@ -21,7 +21,7 @@ import { PreferenceContribution, PreferenceSchema } from '../common/preferences/
 import { createPreferenceProxy, PreferenceProxy, PreferenceScope, PreferenceService } from '../common/preferences';
 
 export namespace ZoomLevel {
-    export const DEFAULT = 0;
+    export const DEFAULT = -0.5;
     // copied from https://github.com/microsoft/vscode/blob/dda96b69bfc63f309e60cfc5f98cb863c46b32ac/src/vs/workbench/electron-sandbox/actions/windowActions.ts#L47-L48
     export const MIN = -8;
     export const MAX = 9;
