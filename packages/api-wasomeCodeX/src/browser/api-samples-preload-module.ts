@@ -17,7 +17,11 @@
 import { ContainerModule } from '@theia/core/shared/inversify';
 import { TextReplacementContribution } from '@theia/core/lib/browser/preload/text-replacement-contribution';
 import { TextSampleReplacementContribution } from './preload/text-replacement-sample';
+import { FrontendApplicationContribution } from '@theia/core/lib/browser/frontend-application-contribution';
+import { DragWebviewEnhancedFixContribution } from './drag/drag-webview-enhanced-fix-contribution';
 
 export default new ContainerModule(bind => {
     bind(TextReplacementContribution).to(TextSampleReplacementContribution).inSingletonScope();
+    bind(DragWebviewEnhancedFixContribution).toSelf().inSingletonScope();
+    bind(FrontendApplicationContribution).toService(DragWebviewEnhancedFixContribution);
 });
