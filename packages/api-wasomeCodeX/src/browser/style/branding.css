@@ -39,6 +39,17 @@
   user-select: none;
 }
 
+/* 
+  lumino 内部样式问题 @/lumino/widgets/style/dockpanel.css
+  默认会把拖拽时overlay层的pointer-events设为 none，造成鼠标事件穿透
+  在正常编辑器情况下没有问题，在webview里就鼠标指针事件就会被下层webview截获，影响拖拽操作
+*/
+ .lm-DockPanel-overlay {
+  pointer-events: auto;
+  /* 1000以下通用组件级别，2000以下为高应用级别 */
+  z-index: 2000;
+}
+
 .compile-icon {
   /* background-image: url("../icons/compile.svg");
   background-position: center;
