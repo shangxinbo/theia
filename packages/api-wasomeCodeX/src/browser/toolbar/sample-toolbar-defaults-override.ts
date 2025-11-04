@@ -42,6 +42,12 @@ export const SampleToolbarDefaultsOverride: () => DeflatedToolbarTree = () => ({
                     tooltip: '项目信息',
                 },
                 {
+                    id: 'project.workspace',
+                    command: 'project.workspace',
+                    icon: 'codicon codicon-list-unordered',
+                    tooltip: '项目空间',
+                },
+                {
                     id: 'workspace:openFolder',
                     command: 'workspace:openFolder',
                     icon: 'fa fa-folder-open-o',
@@ -118,6 +124,10 @@ export const SampleToolbarDefaultsOverride: () => DeflatedToolbarTree = () => ({
                     command: 'webide.debug',
                     icon: 'codicon codicon-debug',
                     tooltip: '调试',
+                },
+                {
+                    id: 'workbench.action.debug.continue',
+                    command: 'workbench.action.debug.continue',
                 },
                 {
                     id: 'workbench.action.debug.pause',
