@@ -915,7 +915,7 @@ export class SampleMenuContribution implements MenuContribution {
             menus.registerSubmenu(WasomeMenus.FILE, '文件');
             menus.registerSubmenu(WasomeMenus.EDIT, '编辑');
             menus.registerSubmenu(WasomeMenus.VIEW, '视图');
-            menus.registerSubmenu(WasomeMenus.PROJECT, '项目');
+            menus.registerSubmenu(WasomeMenus.PROJECT, '项目组态');
             menus.registerSubmenu(WasomeMenus.DEBUG, '编译与调试');
             menus.registerSubmenu(WasomeMenus.ONLINE, '在线');
             menus.registerSubmenu(WasomeMenus.IMPORT, '导入导出');
