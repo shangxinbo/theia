@@ -17,6 +17,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import * as React from '@theia/core/shared/react';
+import { OutputChannelManager, OutputChannelSeverity } from '@theia/output/lib/browser/output-channel';
 import { LabelProvider } from '@theia/core/lib/browser';
 import { DebugProtocol } from '@vscode/debugprotocol';
 import { Emitter, Event, DisposableCollection, Disposable, MessageClient, MessageType, Mutable, ContributionProvider } from '@theia/core/lib/common';
@@ -46,6 +47,27 @@ import { DebugInstructionBreakpoint } from './model/debug-instruction-breakpoint
 import { nls } from '@theia/core';
 import { TestService, TestServices } from '@theia/test/lib/browser/test-service';
 import { DebugSessionManager } from './debug-session-manager';
+import { inject, injectable, interfaces } from '@theia/core/shared/inversify';
+import path = require('path');
+
+/**
+ * 标准化文件路径，统一盘符为大写（如 D: -> d:）
+ * @param path 原始文件路径
+ * @returns 标准化后的路径
+ */
+function normalizeFilePath(path: string | undefined): string | undefined {
+    if (!path) {
+        return path;
+    }
+    // 匹配 Windows 盘符（如 D: 或 d:）
+    const driveLetterMatch = path.match(/^([A-Za-z]):/);
+    if (driveLetterMatch) {
+        // 将盘符转为小写，拼接剩余路径
+        return driveLetterMatch[1].toLowerCase() + path.slice(1);
+    }
+    // 非 Windows 路径或无盘符，直接返回
+    return path;
+}
 
 export enum DebugState {
     Inactive,
@@ -79,6 +101,10 @@ export function formatMessage(format: string, variables?: { [key: string]: strin
 
 // FIXME: make injectable to allow easily inject services
 export class DebugSession implements CompositeTreeElement {
+
+    @inject(OutputChannelManager)
+    protected readonly outputChannelManager: OutputChannelManager;
+
     protected readonly deferredOnDidConfigureCapabilities = new Deferred<void>();
 
     protected readonly onDidChangeEmitter = new Emitter<void>();
@@ -657,9 +683,11 @@ export class DebugSession implements CompositeTreeElement {
 
     protected updateBreakpoint(body: DebugProtocol.BreakpointEvent['body']): void {
         this.updatingBreakpoints = true;
+        const channel = this.outputChannelManager.getChannel('API Sample: my test channel');
         try {
             const raw = body.breakpoint;
             if (body.reason === 'new') {
+                channel.appendLine(`add breakpoint ${JSON.stringify(raw)}`);
                 if (raw.source && typeof raw.line === 'number') {
                     const uri = DebugSource.toUri(raw.source);
                     const origin = SourceBreakpoint.create(uri, { line: raw.line, column: raw.column });
@@ -673,6 +701,7 @@ export class DebugSession implements CompositeTreeElement {
                 }
             }
             if (body.reason === 'removed' && typeof raw.id === 'number') {
+                channel.appendLine(`remove breakpoint ${JSON.stringify(raw)}`);
                 const toRemove = this.findBreakpoint(b => b.idFromAdapter === raw.id);
                 if (toRemove) {
                     toRemove.remove();
@@ -685,6 +714,7 @@ export class DebugSession implements CompositeTreeElement {
                 }
             }
             if (body.reason === 'changed' && typeof raw.id === 'number') {
+                channel.appendLine(`change breakpoint ${JSON.stringify(raw)}`);
                 const toUpdate = this.findBreakpoint(b => b.idFromAdapter === raw.id);
                 if (toUpdate) {
                     toUpdate.update({ raw });
@@ -797,6 +827,7 @@ export class DebugSession implements CompositeTreeElement {
 
     protected async sendSourceBreakpoints(affectedUri: URI, sourceModified?: boolean): Promise<void> {
         const source = await this.toSource(affectedUri);
+        const path = normalizeFilePath(source.raw.path);
         const all = this.breakpoints.findMarkers({ uri: affectedUri }).map(({ data }) =>
             new DebugSourceBreakpoint(data, this.asDebugBreakpointOptions())
         );
@@ -804,7 +835,10 @@ export class DebugSession implements CompositeTreeElement {
         try {
             const breakpoints = enabled.map(({ origin }) => origin.raw);
             const response = await this.sendRequest('setBreakpoints', {
-                source: source.raw,
+                source: {
+                    ...source.raw,
+                    path: normalizeFilePath(source.raw.path)
+                },
                 sourceModified,
                 breakpoints,
                 lines: breakpoints.map(({ line }) => line)
