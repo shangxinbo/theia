@@ -38,6 +38,7 @@ import { DebugFunctionBreakpoint } from './model/debug-function-breakpoint';
 import * as monaco from '@theia/monaco-editor-core';
 import { DebugInstructionBreakpoint } from './model/debug-instruction-breakpoint';
 import { DebugSessionConfigurationLabelProvider } from './debug-session-configuration-label-provider';
+import { ToolbarController } from '@theia/toolbar/lib/browser/toolbar-controller';
 
 export interface WillStartDebugSession extends WaitUntilEvent {
 }
@@ -155,6 +156,9 @@ export class DebugSessionManager {
 
     @inject(DebugSessionConfigurationLabelProvider)
     protected readonly sessionConfigurationLabelProvider: DebugSessionConfigurationLabelProvider;
+
+    @inject(ToolbarController)
+    protected readonly toolbarController: ToolbarController;
 
     protected debugTypeKey: ContextKey<string>;
     protected inDebugModeKey: ContextKey<boolean>;
@@ -567,6 +571,7 @@ export class DebugSessionManager {
     }
     protected updateCurrentSession(session: DebugSession | undefined): void {
         this.currentSession = session || this.sessions[0];
+        this.toolbarController.refresh();
     }
 
     get currentThread(): DebugThread | undefined {

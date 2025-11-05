@@ -233,6 +233,16 @@ export namespace WasomeCommands {
         label: '导出项目',
     });
 
+    export const IMPORT_PROJECT_XML = Command.toDefaultLocalizedCommand({
+        id: 'importProjectXml',
+        label: '导入PlcOpen格式XML',
+    });
+
+    export const EXPORT_PROJECT_XML = Command.toDefaultLocalizedCommand({
+        id: 'exportProjectXml',
+        label: '导出项目XML',
+    });
+
     export const IMPORT_LIBRARY = Command.toDefaultLocalizedCommand({
         id: 'importLibrary',
         label: '导入系统库',
@@ -286,6 +296,16 @@ export namespace WasomeCommands {
     export const TRACE_OFFLINE = Command.toDefaultLocalizedCommand({
         id: "trace.offline",
         label: "加载离线示波器数据"
+    });
+
+    export const OPEN_PROBLEMS_VIEW = Command.toDefaultLocalizedCommand({
+        id: "view.openProblems",
+        label: "打开问题窗口"
+    });
+
+    export const TOGGLE_VIEW_MENU = Command.toDefaultLocalizedCommand({
+        id: "view.toggleViewMenu",
+        label: "关闭/打开底部视图"
     });
 
 
@@ -389,8 +409,9 @@ export namespace WasomeMenus {
 
     export const IMPORT = [...MAIN_MENU_BAR, '8_import']; // 导入导出
     export const IMPORT_PROJECT = [...IMPORT, '1_import']; // 导入导出项目
-    export const IMPORT_LIBRARY = [...IMPORT, '2_lib']; // 导入系统库
-    export const IMPORT_VAR_GLOBAL = [...IMPORT, '3_var_global']; // 导入导出全局变量
+    export const IMPORT_XML_PROJECT = [...IMPORT, '2_import_xml']; // 导入导出plcOpenXml项目
+    export const IMPORT_LIBRARY = [...IMPORT, '3_lib']; // 导入系统库
+    export const IMPORT_VAR_GLOBAL = [...IMPORT, '4_var_global']; // 导入导出全局变量
 
     export const HELP = [...MAIN_MENU_BAR, '9_help']; // 帮助
     export const TO_HELP = [...MAIN_MENU_BAR, '9_help', '1_help'];
@@ -694,6 +715,10 @@ export class SampleCommandContribution implements CommandContribution {
             isEnabled: () => !this.selectPlc && !this.selectTarget
         });
 
+        commands.registerCommand(WasomeCommands.IMPORT_PROJECT_XML, {
+            execute: () => this.commandRegistry.executeCommand("webide.importXML"),
+        });
+
         commands.registerCommand(WasomeCommands.GVAR_NEWGROUP, {
             execute: () => this.commandRegistry.executeCommand("webide.gvar.addNewGroup"),
             isEnabled: () => !!this.project
@@ -777,6 +802,11 @@ export class SampleCommandContribution implements CommandContribution {
             isEnabled: () => !!this.project
         });
 
+        commands.registerCommand(WasomeCommands.EXPORT_PROJECT_XML, {
+            execute: () => this.commandRegistry.executeCommand("webide.exportXML"),
+            isEnabled: () => !!this.project
+        });
+
         commands.registerCommand(WasomeCommands.IMPORT_LIBRARY, {
             execute: () => this.commandRegistry.executeCommand("webide.importLib"),
         });
@@ -829,6 +859,19 @@ export class SampleCommandContribution implements CommandContribution {
                 return choice
             }
         });
+        // 打开问题窗口
+        commands.registerCommand(WasomeCommands.OPEN_PROBLEMS_VIEW, {
+            execute: () => {
+                this.commandRegistry.executeCommand('problemsView:toggle');
+            }
+        });
+
+        // 关闭/打开下面的菜单（这里模拟切换项目输出面板）
+        commands.registerCommand(WasomeCommands.TOGGLE_VIEW_MENU, {
+            execute: () => {
+                this.commandRegistry.executeCommand('output:toggle');
+            }
+        });
     }
 
     protected webideCreate(type: string): void {
@@ -872,7 +915,7 @@ export class SampleMenuContribution implements MenuContribution {
             menus.registerSubmenu(WasomeMenus.FILE, '文件');
             menus.registerSubmenu(WasomeMenus.EDIT, '编辑');
             menus.registerSubmenu(WasomeMenus.VIEW, '视图');
-            menus.registerSubmenu(WasomeMenus.PROJECT, '项目');
+            menus.registerSubmenu(WasomeMenus.PROJECT, '项目组态');
             menus.registerSubmenu(WasomeMenus.DEBUG, '编译与调试');
             menus.registerSubmenu(WasomeMenus.ONLINE, '在线');
             menus.registerSubmenu(WasomeMenus.IMPORT, '导入导出');
@@ -974,9 +1017,26 @@ export class SampleMenuContribution implements MenuContribution {
                 label: nls.localizeByDefault('项目输出')
             });
 
+            // 新增：视图菜单下两个按钮
+            menus.registerMenuAction(WasomeMenus.VIEW, {
+                commandId: WasomeCommands.OPEN_PROBLEMS_VIEW.id,
+                label: '打开问题窗口',
+                order: '99'
+            });
+            menus.registerMenuAction(WasomeMenus.VIEW, {
+                commandId: WasomeCommands.TOGGLE_VIEW_MENU.id,
+                label: '关闭/打开底部视图',
+                order: '100'
+            });
+
             menus.registerMenuAction(WasomeMenus.VIEW_TOOLBAR, {
                 commandId: "webide-activitybar.appManage.focus",
                 label: '显示项目树'
+            });
+
+            menus.registerMenuAction(WasomeMenus.VIEW_TOOLBAR, {
+                commandId: "webide-right.variable.focus",
+                label: '显示库视图'
             });
 
             menus.registerMenuAction(WasomeMenus.VIEW_TOOLBAR, {
@@ -1155,6 +1215,16 @@ export class SampleMenuContribution implements MenuContribution {
             menus.registerMenuAction(WasomeMenus.IMPORT_PROJECT, {
                 commandId: WasomeCommands.EXPORT_PROJECT.id,
                 label: '导出项目'
+            });
+
+            menus.registerMenuAction(WasomeMenus.IMPORT_XML_PROJECT, {
+                commandId: WasomeCommands.IMPORT_PROJECT_XML.id,
+                label: '导入PlcOpen格式XML'
+            });
+
+            menus.registerMenuAction(WasomeMenus.IMPORT_XML_PROJECT, {
+                commandId: WasomeCommands.EXPORT_PROJECT_XML.id,
+                label: '导出PlcOpen格式XML'
             });
 
             menus.registerMenuAction(WasomeMenus.IMPORT_LIBRARY, {
