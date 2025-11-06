@@ -26,6 +26,7 @@ import '../../src/browser/style/branding.css';
 import '../../src/browser/style/dialogs.css'
 import { DefaultLocaleFrontendContribution } from './default-locale-contribution';
 import { FrontendApplicationContribution } from '@theia/core/lib/browser/frontend-application-contribution';
+import { bindWebviewViewStabilityPatch } from './webview/webview-view-stability-patch';
 
 export default new ContainerModule((
     bind: interfaces.Bind,
@@ -49,6 +50,8 @@ export default new ContainerModule((
     // Custom: bind default locale (zh-hans) initializer
     bind(DefaultLocaleFrontendContribution).toSelf().inSingletonScope();
     bind(FrontendApplicationContribution).toService(DefaultLocaleFrontendContribution);
+    // WebviewView stability (Scheme A) runtime patch.
+    bindWebviewViewStabilityPatch(bind);
     // bindMonacoPreferenceExtractor(bind);
     // bindSampleAppInfo(bind);
     // bindSampleFileSystemCapabilitiesCommands(bind);
