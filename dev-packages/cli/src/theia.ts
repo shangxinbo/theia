@@ -110,7 +110,9 @@ async function theiaCli(): Promise<void> {
     const projectPath = process.cwd();
     // Create a sub `yargs` parser to read `app-target` without
     // affecting the global `yargs` instance used by the CLI.
-    const { appTarget } = defineCommonOptions(yargsFactory()).help(false).parse();
+    // Work around yargs typing returning union with Promise for parse(); safely cast expected shape.
+    const parsedAppTarget = defineCommonOptions(yargsFactory()).help(false).parse() as { appTarget?: 'browser' | 'electron' | 'browser-only' };
+    const { appTarget } = parsedAppTarget;
     const manager = new ApplicationPackageManager({ projectPath, appTarget });
     const localizationManager = new LocalizationManager();
     const { target } = manager.pck;
