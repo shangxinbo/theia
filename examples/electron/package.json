@@ -103,13 +103,13 @@
     "wasomecodex": "file:../../packages/api-wasomeCodeX"
   },
   "scripts": {
-    "build": "theiaext build && npm run -s bundle",
-    "bundle": "npm run rebuild && theia build --mode development",
-    "clean": "theia clean && rimraf node_modules",
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 theiaext build && npm run -s bundle",
+    "bundle": "npm run rebuild && cross-env NODE_OPTIONS=--max-old-space-size=8192 theia build --mode development",
+    "clean": "theiaext clean && rimraf node_modules",
     "clean:dist": "rimraf dist",
     "compile": "tsc -b",
     "lint": "theiaext lint",
-    "rebuild": "theia rebuild:electron --cacheRoot ../..",
+    "rebuild": "cross-env NODE_OPTIONS=--max-old-space-size=8192 theia rebuild:electron --cacheRoot ../..",
     "start": "theia start --plugins=local-dir:../../plugins --ovsx-router-config=../ovsx-router-config.json",
     "start:debug": "npm run -s start --log-level=debug --remote-debugging-port=9222",
     "start:watch": "concurrently --kill-others -n tsc,bundle,run -c red,yellow,green \"tsc -b -w --preserveWatchOutput\" \"npm run -s watch:bundle\" \"npm run -s start\"",
@@ -118,6 +118,7 @@
     "watch:bundle": "theia build --watch --mode development",
     "watch:compile": "tsc -b -w",
     "package": "yarn clean:dist && yarn rebuild && electron-builder -c.mac.identity=null --publish never",
+    "package:win": "yarn clean:dist && yarn rebuild  && electron-builder --win",
     "package:preview": "yarn clean:dist && yarn rebuild && electron-builder -c.mac.identity=null --dir"
   },
   "devDependencies": {
@@ -143,6 +144,7 @@
     "ts-node": "^10.0.0",
     "wdio-chromedriver-service": "^6.0.4",
     "webdriverio": "^6.10.2",
+    "cross-env": "^7.0.3",
     "yargs": "17.2.1"
   }
 }

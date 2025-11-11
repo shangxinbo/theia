@@ -302,9 +302,24 @@ async function collectPackageJsonPaths(pluginDir: string): Promise<string[]> {
     // Recursively fetch the list of extension `package.json` files.
     for (const file of files) {
         const filePath = path.join(pluginDir, file);
-        if ((await fs.stat(filePath)).isDirectory()) {
+        // Skip traversing dependency trees entirely – we only care about extension roots.
+        if (file === 'node_modules') {
+            continue;
+        }
+        let stat;
+        try {
+            // Use stat (not lstat) intentionally; broken symlinks will throw ENOENT.
+            stat = await fs.stat(filePath);
+        } catch (err: any) {
+            // Ignore broken symlinks or race-deleted files; continue walking.
+            if (err && err.code === 'ENOENT') {
+                continue;
+            }
+            throw err;
+        }
+        if (stat.isDirectory()) {
             packageJsonPathList.push(...await collectPackageJsonPaths(filePath));
-        } else if (path.basename(filePath) === 'package.json' && !path.dirname(filePath).includes('node_modules')) {
+        } else if (path.basename(filePath) === 'package.json') {
             packageJsonPathList.push(filePath);
         }
     }
