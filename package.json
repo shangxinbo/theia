@@ -117,6 +117,7 @@
   "theiaPluginsDir": "plugins",
   "theiaPlugins": {
     "vscode-language-pack-zh-hans": "https://marketplace.windsurf.com/api/MS-CEINTL/vscode-language-pack-zh-hans/1.105.0/file/MS-CEINTL.vscode-language-pack-zh-hans-1.105.0.vsix",
-    "vscode-cpp": "https://openvsxorg.blob.core.windows.net/resources/vscode/cpp/1.95.3/vscode.cpp-1.95.3.vsix"
+    "vscode-cpp": "https://openvsxorg.blob.core.windows.net/resources/vscode/cpp/1.95.3/vscode.cpp-1.95.3.vsix",
+    "vscode-clangd": "https://openvsxorg.blob.core.windows.net/resources/llvm-vs-code-extensions/vscode-clangd/0.3.2/llvm-vs-code-extensions.vscode-clangd-0.3.2.vsix"
   }
 }
