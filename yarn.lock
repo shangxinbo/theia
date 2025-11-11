@@ -17091,10 +17091,7 @@ w3c-xmlserializer@^4.0.0:
   dependencies:
     xml-name-validator "^4.0.0"
 
-"wasomecodex@file:../../packages/api-wasomeCodeX":
-  resolved "file:examples/api-wasomeCodeX"
-
-"wasomecodex@file:/home/shangxinbo/develop/theia/packages/api-wasomeCodeX":
+"wasomecodex@file:../../packages/api-wasomeCodeX", "wasomecodex@file:/home/shangxinbo/develop/theia/packages/api-wasomeCodeX":
   version "0.0.1"
   resolved "file:packages/api-wasomeCodeX"
   dependencies:

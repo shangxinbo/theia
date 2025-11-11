@@ -24,7 +24,7 @@
     "@theia/plugin-ext": "{{version}}"
   },
   "scripts": {
-    "clean": "theia clean",
+    "clean": "theiaext clean",
     "build": "npm run -s compile && npm run -s bundle",
     "bundle": "theia build --mode development",
     "compile": "tsc -b",
