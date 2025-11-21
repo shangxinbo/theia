@@ -21,6 +21,8 @@ import { bindSampleMenu } from './menu/sample-menu-contribution';
 import { bindSampleFileWatching } from './file-watching/sample-file-watching-contribution';
 import { bindVSXCommand } from './vsx/sample-vsx-command-contribution';
 import { bindSampleToolbarContribution } from './toolbar/sample-toolbar-contribution';
+import { FileSystemWatcherErrorHandler } from '@theia/filesystem/lib/browser/filesystem-watcher-error-handler';
+import { LogOnlyFileSystemWatcherErrorHandler } from './file-watching/log-only-file-watcher-error-handler';
 
 import '../../src/browser/style/branding.css';
 import '../../src/browser/style/dialogs.css'
@@ -49,6 +51,7 @@ export default new ContainerModule((
     bindSampleToolbarContribution(bind, rebind);
     // Custom: bind default locale (zh-hans) initializer
     bind(DefaultLocaleFrontendContribution).toSelf().inSingletonScope();
+    rebind(FileSystemWatcherErrorHandler).to(LogOnlyFileSystemWatcherErrorHandler).inSingletonScope();
     bind(FrontendApplicationContribution).toService(DefaultLocaleFrontendContribution);
     // WebviewView stability (Scheme A) runtime patch.
     bindWebviewViewStabilityPatch(bind);
